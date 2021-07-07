@@ -173,13 +173,15 @@
 .port-con {
     display: flex;
     overflow: hidden;
+    transition: .9;
 }
 
 .port-img {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 300px;
+    min-width: 200px;
+    max-width: 200px;
     height: 400px;
     left: 50%;
     transform: translate(-50%, 0%);
