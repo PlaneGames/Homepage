@@ -172,16 +172,22 @@
 
 .port-con {
     display: flex;
-    position: relative;
-    justify-content: center;
-    width: 40%;
-    height: 40%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
-#project1 { background-image: url("../IMG/DungeonRpg3.png"); }
+.port-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 400px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin: 20px;
+    position: relative;
+}
+
+#project1 { background-image: url("../IMG/DungeonRpg3.png");}
 #project2 { background-image: url("../IMG/DungeonRpg2.png"); }
 #project3 { background-image: url("../IMG/TUDCutscene.png"); }
 #project4 { background-image: url("../IMG/MicroCastle.png"); }
