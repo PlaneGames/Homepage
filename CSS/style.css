@@ -185,8 +185,15 @@
     height: 400px;
     left: 50%;
     transform: translate(-50%, 0%);
-    margin: 20px;
+    margin-right: 40px;
     position: relative;
+    opacity: 0.4;
+    transition: .3s;
+}
+
+.port-img:hover {
+    opacity: 1;
+    transition: .3s;
 }
 
 #project1 { background-image: url("../IMG/DungeonRpg3.png");}
