@@ -189,11 +189,13 @@
     position: relative;
     opacity: 0.4;
     transition: .3s;
+    filter: grayscale(80%);
 }
 
 .port-img:hover {
     opacity: 1;
     transition: .3s;
+    filter: grayscale(0%);
 }
 
 #project1 { background-image: url("../IMG/DungeonRpg3.png");}
