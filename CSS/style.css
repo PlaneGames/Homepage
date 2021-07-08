@@ -65,6 +65,32 @@
     }
 }
 
+@keyframes showItemFromTop {
+    from {
+        opacity: 0;
+        margin-top: -200px;
+
+    }
+  
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+@keyframes showItemFromBottom {
+    from {
+        opacity: 0;
+        margin-top: 600px;
+
+    }
+  
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
 @keyframes showItemFromRight {
     from {
       transform: scaleX(1.1);
@@ -167,13 +193,25 @@
 }
 
 .gal-con .gal-imgl p {
-    color: rgba(80, 80, 80, 1)
+    color: rgba(80, 80, 80, 1);
 }
 
 .port-con {
     display: flex;
+    flex: 0;
     overflow: hidden;
     transition: .9;
+}
+
+.port-header {
+    display: flex;
+    flex: 0;
+    padding-top:144px;
+    padding-bottom: 24px;
+    max-width: 1000px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    position: relative;
 }
 
 .port-img {
@@ -187,15 +225,42 @@
     transform: translate(-50%, 0%);
     margin-right: 40px;
     position: relative;
-    opacity: 0.4;
+    opacity: 0.3;
     transition: .3s;
-    filter: grayscale(80%);
+    filter: sepia(80%);
 }
 
 .port-img:hover {
     opacity: 1;
     transition: .3s;
-    filter: grayscale(0%);
+    filter: sepia(0%);
+}
+
+.port-font {
+    color: rgb(214, 200, 178);
+    transition: .4s;
+}
+
+.port-font h1 {
+    transition: .4s;
+    text-align: center;
+    font-size: 20px;
+}
+
+.ani_frombottom {
+    animation-name: showItemFromBottom;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    animation-fill-mode: both;
+    animation-delay: 1.05s;
+}
+
+.ani_fromtop {
+    animation-name: showItemFromTop;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    animation-fill-mode: both;
+    animation-delay: 1.05s;
 }
 
 #project1 { background-image: url("../IMG/DungeonRpg3.png");}
@@ -207,10 +272,17 @@
 #project7 { background-image: url("../IMG/VendingMachine.png"); }
 #project8 { background-image: url("../IMG/TypingOfLegend.png"); }
 
+html, body {
+    scroll-behavior:auto;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
 
 body {
+    margin: 0px;
+    padding: 0px;
     font-family: 'Nanum Gothic', sans-serif;
-    margin-top: 200px;
     transition: .5s;
     animation-name: showItemFromRight;
     animation-duration: 1s;
