@@ -11,6 +11,54 @@
     <meta http-equiv="page-enter" content="blendTrans(duration=0.3)">
     <meta http-equiv="page-exit" content="blendTrans(duration=0.3)">
     <style>
+        .sbar {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+
+            height:100%;
+            left: 100%;
+            position: fixed;
+            margin-left: -40px;
+        }
+
+        .sbar-circle {
+            opacity: 0.2;
+            text-align: center;
+            margin: 4px;
+        }
+
+        .box {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        .box::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera*/
+        }
+
+        .scbar {
+                width: 200px;
+                height: 400px;
+                overflow: auto;
+                color: white;
+        }
+ 
+        .scbar::-webkit-scrollbar {
+                width: 16px; /*스크롤바의 너비*/
+            }
+ 
+        .scbar::-webkit-scrollbar-thumb {
+                background-color: rgb(93, 118, 156); /*스크롤바의 색상*/
+                background-clip: padding-box;
+                border: 1px solid transparent;
+                border-radius: 10px;
+            }
+ 
+        .scbar::-webkit-scrollbar-track {
+            background-color: rgba(146, 146, 146, 0.3);
+        }
+
         .container {
           width: 250px;
           height: 140px;
@@ -28,6 +76,7 @@
           border-radius: 10px;
           box-shadow: inset 0px 0px 5px white;
         }
+        
     </style>
     <style>
         #wrapper{
@@ -42,31 +91,11 @@
             height:100%;
             position:absolute;
         }
-        .box{
-            width:100px;
-            height:100px;
-            background:red;
-            position:absolute;
-        }
-        #box1{
-            top:50px;
-            left:200px;
-        }
-        #box2{
-            top:350px;
-            left:400px;
-        }
-        #box3{
-            bottom:20px;
-            left:400px;
-        }
-
     </style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script src="../src/jquery.smoothwheel.js"></script>
-
     <script>
-
+        
         $(document).ready(function(){
             $("#wrapper").smoothWheel()
         });
@@ -74,13 +103,23 @@
     </script>
 </head>
 
-<div id="wrapper">
+<div class="box" id="wrapper">
 <div id="container">
 
 <body link = "79A1DC" vlink = "79A1DC" alink = "79A1DC">
 
-    <script>
-    </script>
+    <div class="sbar">
+        <div class="sbar-circle"><img src="../IMG/Circle.png" width="20px"></div>
+        <div class="sbar-circle"><img src="../IMG/Circle.png" width="20px"></div>
+        <div class="sbar-circle"><img src="../IMG/Circle.png" width="20px"></div>
+        <div class="sbar-circle"><img src="../IMG/Circle.png" width="20px"></div>
+        <div class="sbar-circle"><img src="../IMG/Circle.png" width="20px"></div>
+        <div class="sbar-circle"><img src="../IMG/Circle.png" width="20px"></div>
+        <div class="sbar-circle"><img src="../IMG/Circle.png" width="20px"></div>
+        <div class="sbar-circle"><img src="../IMG/Circle.png" width="20px"></div>
+        <div class="sbar-circle"><img src="../IMG/Circle.png" width="20px"></div>
+    </div>
+    
 
     <!-- HEADER -->
     <header class="flex-header">

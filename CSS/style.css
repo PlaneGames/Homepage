@@ -196,6 +196,13 @@
     color: rgba(80, 80, 80, 1);
 }
 
+.port-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
 .port-con {
     display: flex;
     flex: 0;
@@ -206,7 +213,6 @@
 .port-header {
     display: flex;
     flex: 0;
-    padding-top:144px;
     padding-bottom: 24px;
     max-width: 1000px;
     left: 50%;

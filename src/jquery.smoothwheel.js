@@ -9,9 +9,9 @@
 (function ($) {
 
     var self = this, container, running=false, currentY = 0, targetY = 0, oldY = 0, maxScrollTop= 0, minScrollTop, direction, onRenderCallback=null,
-            fricton = 0.95, // higher value for slower deceleration
+            fricton = 0.8, // higher value for slower deceleration
             vy = 0,
-            stepAmt = 1,
+            stepAmt = 3.5,
             minMovement= 0.1,
             ts=0.1;
 
@@ -20,9 +20,8 @@
         vy += (targetY - oldY) * stepAmt;
       
         oldY = targetY;
-
-
     }
+
     var render = function () {
         if (vy < -(minMovement) || vy > minMovement) {
 
@@ -37,8 +36,11 @@
             container.scrollTop(-currentY);
 
             vy *= fricton;
-            
-         //   vy += ts * (currentY-targetY);
+            console.log(minScrollTop);
+
+
+
+            // vy += ts * (currentY-targetY);
             // scrollTopTweened += settings.tweenSpeed * (scrollTop - scrollTopTweened);
             // currentY += ts * (targetY - currentY);
 
@@ -47,12 +49,14 @@
             }
         }
     }
+
     var animateLoop = function () {
         if(! running)return;
         requestAnimFrame(animateLoop);
         render();
         //log("45","animateLoop","animateLoop", "",stop);
     }
+
     var onWheel = function (e) {
         e.preventDefault();
         var evt = e.originalEvent;
@@ -82,8 +86,6 @@
                 function (callback) {
                     window.setTimeout(callback, 1000 / 60);
                 }; 
-              
-                
     })();
 
     /*
