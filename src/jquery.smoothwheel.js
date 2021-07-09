@@ -12,8 +12,10 @@
             fricton = 0.8, // higher value for slower deceleration
             vy = 0,
             stepAmt = 3.5,
-            minMovement= 0.1,
-            ts=0.1;
+            minMovement = 0.1,
+            ts = 0.1,
+            bar = document.getElementsByClassName("sbar-circle"),
+            barSlt = 0;
 
     var updateScrollTarget = function (amt) {
         targetY += amt;
@@ -36,9 +38,23 @@
             container.scrollTop(-currentY);
 
             vy *= fricton;
-            console.log(minScrollTop);
+            
+            barSlt = (minScrollTop - currentY)/(minScrollTop/8);
+            if (barSlt > 7) {
+                barSlt = 7;
+            } else if (barSlt < 1) {
+                barSlt = 0;
+            }
+            barSlt = 7-Math.floor(barSlt);
+            /*
+            var ani = bar[barSlt].animate([{opacity:".6"}], 500);
+            ani.addEventListener('finish', function() {
+                bar[barSlt].style.transition = '.5s';
+                bar[barSlt].style.opacity = '.6';
+            });
+            */
 
-
+            console.log(barSlt);
 
             // vy += ts * (currentY-targetY);
             // scrollTopTweened += settings.tweenSpeed * (scrollTop - scrollTopTweened);
@@ -54,6 +70,13 @@
         if(! running)return;
         requestAnimFrame(animateLoop);
         render();
+        var ani = bar[barSlt].animate([{opacity:".7"}], 1000);
+
+        for(var i = 0; i < 8; i ++) {
+            if (i != barSlt)
+                bar[i].animate([{opacity:".2"}], 1000);
+        }
+
         //log("45","animateLoop","animateLoop", "",stop);
     }
 

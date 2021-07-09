@@ -196,6 +196,16 @@
     color: rgba(80, 80, 80, 1);
 }
 
+.sbar-circle {
+    opacity: 0.2;
+    text-align: center;
+    margin: 4px;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    animation-fill-mode:forwards;
+    animation-delay: 1.05s;
+}
+
 .port-body {
     display: flex;
     flex-direction: column;
