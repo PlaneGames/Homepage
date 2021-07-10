@@ -6,6 +6,7 @@
  * Time: 11:04 AM
  *
  */
+
 (function ($) {
 
     var self = this, container, running=false, currentY = 0, targetY = 0, oldY = 0, maxScrollTop= 0, minScrollTop, direction, onRenderCallback=null,
@@ -22,6 +23,7 @@
         vy += (targetY - oldY) * stepAmt;
       
         oldY = targetY;
+        $('.sbar-circle').clearQueue();
     }
 
     var render = function () {
@@ -39,21 +41,6 @@
 
             vy *= fricton;
             
-            barSlt = (minScrollTop - currentY)/(minScrollTop/8);
-            if (barSlt > 7) {
-                barSlt = 7;
-            } else if (barSlt < 1) {
-                barSlt = 0;
-            }
-            barSlt = 7-Math.floor(barSlt);
-            /*
-            var ani = bar[barSlt].animate([{opacity:".6"}], 500);
-            ani.addEventListener('finish', function() {
-                bar[barSlt].style.transition = '.5s';
-                bar[barSlt].style.opacity = '.6';
-            });
-            */
-
             console.log(barSlt);
 
             // vy += ts * (currentY-targetY);
@@ -66,16 +53,73 @@
         }
     }
 
+    // console.log("Selected!" + String($('.sbar-circle').index()));
+    //$('.sbar-circle:nth-of-type(2)').off();
+
+    $(document).ready(function() 
+    {
+        $('.sbar').on('mousedown', function() {
+            $('.sbar-circle:nth-of-type(1)').on('mouseover', function(){
+                currentY = minScrollTop - (8-0)*(minScrollTop/8) - 1;
+            });
+            $('.sbar-circle:nth-of-type(2)').on('mouseover', function(){
+                currentY = minScrollTop - (8-1)*(minScrollTop/8) - 1;
+            });
+            $('.sbar-circle:nth-of-type(3)').on('mouseover', function(){
+                currentY = minScrollTop - (8-2)*(minScrollTop/8) - 1;
+            });
+            $('.sbar-circle:nth-of-type(4)').on('mouseover', function(){
+                currentY = minScrollTop - (8-3)*(minScrollTop/8) - 1;
+            });
+            $('.sbar-circle:nth-of-type(5)').on('mouseover', function(){
+                currentY = minScrollTop - (8-4)*(minScrollTop/8) - 1;
+            });
+            $('.sbar-circle:nth-of-type(6)').on('mouseover', function(){
+                currentY = minScrollTop - (8-5)*(minScrollTop/8) - 1;
+            });
+            $('.sbar-circle:nth-of-type(7)').on('mouseover', function(){
+                currentY = minScrollTop - (8-6)*(minScrollTop/8) - 1;
+            });
+            $('.sbar-circle:nth-of-type(8)').on('mouseover', function(){
+                currentY = minScrollTop - (8-7)*(minScrollTop/8) - 1;
+            });
+            vy = 0;
+            container.animate({scrollTop: -currentY}, 600) ;
+        });
+        
+    });
+
+
     var animateLoop = function () {
-        if(! running)return;
-        requestAnimFrame(animateLoop);
-        render();
+
+        minScrollTop = container.get(0).clientHeight - container.get(0).scrollHeight;
+        console.log(minScrollTop);
+
+        barSlt = (minScrollTop - currentY)/(minScrollTop/8);
+        if (barSlt > 7) {
+            barSlt = 7;
+        } else if (barSlt < 1) {
+            barSlt = 0;
+        }
+        barSlt = 7-Math.floor(barSlt);
+
         var ani = bar[barSlt].animate([{opacity:".7"}], 1000);
 
         for(var i = 0; i < 8; i ++) {
             if (i != barSlt)
                 bar[i].animate([{opacity:".2"}], 1000);
         }
+
+        if(!running)return;
+        requestAnimFrame(animateLoop);
+        render();
+        
+        /*
+        $(".sbar-circle").one('click', function() {
+            console.log("Selected!");
+            $(this).off();
+        });
+        */
 
         //log("45","animateLoop","animateLoop", "",stop);
     }
@@ -93,7 +137,9 @@
 
         //reset currentY in case non-wheel scroll has occurred (scrollbar drag, etc.)
         currentY = -container.scrollTop();
-        
+        fricton = 0.8;
+        container.clearQueue();
+        container.stop();
         updateScrollTarget(delta);
     }
 
@@ -157,6 +203,7 @@
                 currentY = -targetY;
                 
                 minScrollTop = container.get(0).clientHeight - container.get(0).scrollHeight;
+
                 if(options.onRender){
                     onRenderCallback = options.onRender;
                 }
