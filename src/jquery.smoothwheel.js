@@ -95,8 +95,18 @@
             currentY = minScrollTop - (8-7)*(minScrollTop/8) - 1;
             setScrollAni();
         });
-    });
 
+        $('.gal-con').on('click', function(){
+            $(".screen-ani").css("width", '100%');
+            setTimeout(function() {
+                $(".screen-ani").css("width", '10%');
+                var link = '../PAGE/portfolio.html';
+                location.href = link;
+                window.open(link);
+            }, 1000);
+        });
+
+    });
 
     var animateLoop = function () {
 
