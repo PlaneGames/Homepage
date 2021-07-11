@@ -262,12 +262,14 @@
     opacity: 0.3;
     transition: .3s;
     filter: sepia(80%);
+    border-radius: 16px;
 }
 
 .port-img:hover {
     opacity: 1;
-    transition: .3s;
+    transition: .5s;
     filter: sepia(0%);
+    border-radius: 0px;
 }
 
 .port-font {
@@ -386,6 +388,8 @@ body {
     transform: translate(-50%, 0%);
     position: relative;
     text-align: left;
+    box-sizing : border-box;
+    overflow : hidden;
 }
 
 .flex-nav {
@@ -421,10 +425,13 @@ body {
 }
 
 .flex-footer {
+    padding-top: 240px;
+    padding-bottom: 240px;
     max-width: 1000px;
     left: 50%;
     transform: translate(-50%, 0%);
     position: relative;
+    flex-basis: auto;
 }
 
 .text-wrap{
@@ -483,6 +490,21 @@ body {
     margin-bottom: 10px;
 }
 
+.mlink a {
+    text-decoration: none; 
+    box-shadow: 0 -3px rgba(48, 60, 110, 0.9) inset;
+    transition: .25s;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.mlink a:hover {
+    transition: .25s;
+    text-decoration: none; 
+    box-shadow: 0 -17px rgba(48, 60, 110, 0.9) inset;
+    color: rgb(255, 255, 255);
+}
+
 .subline{
     border: 1px dashed rgba(20, 20, 20, 0.2);
     width: 400px;
@@ -497,12 +519,6 @@ body {
     padding-top: 2px;
     transform: translate(0%, 0%);
     position: relative;
-}
-
-a:hover, a:active{
-    color: #031023;
-    background-color: rgba(3, 16, 35, 0.1);
-    transition: .5s;
 }
 
 @media all and (max-width: 800px) {

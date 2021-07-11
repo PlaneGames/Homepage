@@ -56,37 +56,45 @@
     // console.log("Selected!" + String($('.sbar-circle').index()));
     //$('.sbar-circle:nth-of-type(2)').off();
 
-    $(document).ready(function() 
-    {
-        $('.sbar').on('mousedown', function() {
-            $('.sbar-circle:nth-of-type(1)').on('mouseover', function(){
-                currentY = minScrollTop - (8-0)*(minScrollTop/8) - 1;
-            });
-            $('.sbar-circle:nth-of-type(2)').on('mouseover', function(){
-                currentY = minScrollTop - (8-1)*(minScrollTop/8) - 1;
-            });
-            $('.sbar-circle:nth-of-type(3)').on('mouseover', function(){
-                currentY = minScrollTop - (8-2)*(minScrollTop/8) - 1;
-            });
-            $('.sbar-circle:nth-of-type(4)').on('mouseover', function(){
-                currentY = minScrollTop - (8-3)*(minScrollTop/8) - 1;
-            });
-            $('.sbar-circle:nth-of-type(5)').on('mouseover', function(){
-                currentY = minScrollTop - (8-4)*(minScrollTop/8) - 1;
-            });
-            $('.sbar-circle:nth-of-type(6)').on('mouseover', function(){
-                currentY = minScrollTop - (8-5)*(minScrollTop/8) - 1;
-            });
-            $('.sbar-circle:nth-of-type(7)').on('mouseover', function(){
-                currentY = minScrollTop - (8-6)*(minScrollTop/8) - 1;
-            });
-            $('.sbar-circle:nth-of-type(8)').on('mouseover', function(){
-                currentY = minScrollTop - (8-7)*(minScrollTop/8) - 1;
-            });
+    $(document).ready(function() {
+        var setScrollAni = function() {
             vy = 0;
+            container.clearQueue();
             container.animate({scrollTop: -currentY}, 600) ;
-        });
+        }
         
+        $('.sbar-circle:nth-of-type(1)').on('click', function(){
+            currentY = minScrollTop - (8-0)*(minScrollTop/8) - 1;
+            setScrollAni();
+        });
+        $('.sbar-circle:nth-of-type(2)').on('click', function(){
+            currentY = minScrollTop - (8-1)*(minScrollTop/8) - 1;
+            setScrollAni();
+        });
+        $('.sbar-circle:nth-of-type(3)').on('click', function(){
+            currentY = minScrollTop - (8-2)*(minScrollTop/8) - 1;
+            setScrollAni();
+        });
+        $('.sbar-circle:nth-of-type(4)').on('click', function(){
+            currentY = minScrollTop - (8-3)*(minScrollTop/8) - 1;
+            setScrollAni();
+        });
+        $('.sbar-circle:nth-of-type(5)').on('click', function(){
+            currentY = minScrollTop - (8-4)*(minScrollTop/8) - 1;
+            setScrollAni();
+        });
+        $('.sbar-circle:nth-of-type(6)').on('click', function(){
+            currentY = minScrollTop - (8-5)*(minScrollTop/8) - 1;
+            setScrollAni();
+        });
+        $('.sbar-circle:nth-of-type(7)').on('click', function(){
+            currentY = minScrollTop - (8-6)*(minScrollTop/8) - 1;
+            setScrollAni();
+        });
+        $('.sbar-circle:nth-of-type(8)').on('click', function(){
+            currentY = minScrollTop - (8-7)*(minScrollTop/8) - 1;
+            setScrollAni();
+        });
     });
 
 
