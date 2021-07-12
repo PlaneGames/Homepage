@@ -42,35 +42,68 @@ function wheel(event){
     if (delta) handle(delta);
 }
 
+var timeout;
+
 (function ($) {
 
     $(document).ready(function() {
-        //opacity: 1;
-        //transition: .7s;
-        //filter: sepia(0%);
-        var aaa = function(index) {
+
+        var resetPopup = function(index) {
 
             $('.port-img')
-            .css('min-width','200px')
-            .css('height','400px')
-            .css('opacity','.3')
-            .css('filter','sepia(80%)')
-            .css('transition','.5s')
-            .css('border-radius','16px');
+                .css('min-width','200px')
+                .css('height','400px')
+                .css('opacity','.0')
+                .css('filter','sepia(80%)')
+                .css('transition','.5s')
+                .css('border-radius','16px');
 
-            setTimeout(function() {
+            $(index)
+                .css('min-width','200px')
+                .css('height','400px')
+                .css('opacity','1')
+                .css('filter','sepia(0%)')
+                .css('transition','.5s')
+                .css('border-radius','16px');
+
+            clearTimeout(timeout);
+
+            $('.port-header')
+            .css('margin-bottom','-120px')
+            //.css('padding-bottom','0px')
+            .css('opacity','0')
+            .css('transition','.5s');
+
+            timeout = setTimeout(function() {
+                $('.port-header').hide();
+            }, 500);
+
+        }
+
+        var setPopup = function(index) {
+
             $(index)
                 .css('min-width','1280px')
                 .css('height','720px')
                 .css('opacity','1')
                 .css('filter','sepia(0%)')
-                .css('transition','2s')
+                .css('transition','1s')
                 .css('border-radius','0px');
+
+        }
+
+        var aaa = function(index) {
+
+            resetPopup(index);
+
+            timeout = setTimeout(function() {
+                setPopup(index);
             }, 500);
 
         }
 
         $(".port-img:nth-of-type(1)").on('click', function(){
+
             aa = 840;
             target.style.marginLeft = String(aa) + "px";
             aaa(this);
