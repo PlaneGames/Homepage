@@ -40,3 +40,15 @@ function wheel(event){
     } else if (event.detail) delta = -event.detail/3;
     if (delta) handle(delta);
 }
+
+(function ($) {
+
+    $(document).ready(function() {
+        //for (var i = 1; i < 9; i ++)
+        $(".port-img").on('click', function(){
+            aa = 840; //- 120*i;
+            target.style.marginLeft = String(aa) + "px";
+        });
+    });
+
+})(jQuery);
