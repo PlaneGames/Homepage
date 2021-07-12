@@ -200,6 +200,7 @@
     flex: 0;
     overflow: hidden;
     transition: .9;
+
 }
 
 .port-header {
@@ -216,6 +217,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
     min-width: 200px;
     max-width: 200px;
     height: 400px;
@@ -234,6 +236,8 @@
     transition: .5s;
     filter: sepia(0%);
     border-radius: 0px;
+    min-width: 640px;
+    justify-content: center;
 }
 
 .port-font {
@@ -291,7 +295,7 @@ body {
 }
 
 .flex-header {
-    padding-top: 24px;
+    padding-top: 240px;
     padding-bottom: 24px;
     max-width: 1000px;
     left: 50%;

@@ -99,10 +99,19 @@
         $('.gal-con').on('click', function(){
             $(".screen-ani").css("width", '100%');
             setTimeout(function() {
-                $(".screen-ani").css("width", '10%');
-                var link = '../PAGE/portfolio.html';
-                location.href = link;
-                window.open(link);
+
+                //$(".screen-ani").css("width", '10%');
+                //var link = '../PAGE/portfolio.html';
+                //location.href = link;
+                //window.open(link);
+
+                $(".screen-ani").load("../PAGE/portfolio.html", {"width" : "0%"}, function(){
+                    $(".screen-ani").css("width", '0%');
+                    var link = '../PAGE/portfolio.html';
+                    location.href = link;
+                    window.open(link);
+                });
+            
             }, 1000);
         });
 
