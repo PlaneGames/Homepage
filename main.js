@@ -2,6 +2,7 @@
 
 var target = document.getElementsByClassName("port-imgcon")[0];    //배열의 주소를 반환하므로 해당 인자를 지정해야 한다.
 var target2 = document.getElementsByClassName("port-img")[0];
+var i = 0;
 
 if (window.addEventListener)
     window.addEventListener('DOMMouseScroll', wheel, false);
@@ -44,9 +45,37 @@ function wheel(event){
 (function ($) {
 
     $(document).ready(function() {
-        //for (var i = 1; i < 9; i ++)
-        $(".port-img").on('click', function(){
-            aa = 840; //- 120*i;
+        
+        $(".port-img:nth-of-type(1)").on('click', function(){
+            aa = 840;
+            target.style.marginLeft = String(aa) + "px";
+        });
+        $(".port-img:nth-of-type(2)").on('click', function(){
+            aa = 840 - 240;
+            target.style.marginLeft = String(aa) + "px";
+        });
+        $(".port-img:nth-of-type(3)").on('click', function(){
+            aa = 840 - 240*2;
+            target.style.marginLeft = String(aa) + "px";
+        });
+        $(".port-img:nth-of-type(4)").on('click', function(){
+            aa = 840 - 240*3;
+            target.style.marginLeft = String(aa) + "px";
+        });
+        $(".port-img:nth-of-type(5)").on('click', function(){
+            aa = 840 - 240*4;
+            target.style.marginLeft = String(aa) + "px";
+        });
+        $(".port-img:nth-of-type(6)").on('click', function(){
+            aa = 840 - 240*5;
+            target.style.marginLeft = String(aa) + "px";
+        });
+        $(".port-img:nth-of-type(7)").on('click', function(){
+            aa = 840 - 240*6;
+            target.style.marginLeft = String(aa) + "px";
+        });
+        $(".port-img:nth-of-type(8)").on('click', function(){
+            aa = 840 - 240*7;
             target.style.marginLeft = String(aa) + "px";
         });
     });
