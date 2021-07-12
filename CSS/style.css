@@ -247,10 +247,6 @@
     opacity: 1;
     transition: .7s;
     filter: sepia(0%);
-    border-radius: 0px;
-    min-width: 1280px;
-    max-width: 1280px;
-    height: 720px;
 }
 
 .port-font {

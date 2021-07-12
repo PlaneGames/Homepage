@@ -45,38 +45,70 @@ function wheel(event){
 (function ($) {
 
     $(document).ready(function() {
-        
+        //opacity: 1;
+        //transition: .7s;
+        //filter: sepia(0%);
+        var aaa = function(index) {
+
+            $('.port-img')
+            .css('min-width','200px')
+            .css('height','400px')
+            .css('opacity','.3')
+            .css('filter','sepia(80%)')
+            .css('transition','.5s')
+            .css('border-radius','16px');
+
+            setTimeout(function() {
+            $(index)
+                .css('min-width','1280px')
+                .css('height','720px')
+                .css('opacity','1')
+                .css('filter','sepia(0%)')
+                .css('transition','2s')
+                .css('border-radius','0px');
+            }, 500);
+
+        }
+
         $(".port-img:nth-of-type(1)").on('click', function(){
             aa = 840;
             target.style.marginLeft = String(aa) + "px";
+            aaa(this);
         });
         $(".port-img:nth-of-type(2)").on('click', function(){
             aa = 840 - 240;
             target.style.marginLeft = String(aa) + "px";
+            aaa(this);
         });
         $(".port-img:nth-of-type(3)").on('click', function(){
             aa = 840 - 240*2;
             target.style.marginLeft = String(aa) + "px";
+            aaa(this);
         });
         $(".port-img:nth-of-type(4)").on('click', function(){
             aa = 840 - 240*3;
             target.style.marginLeft = String(aa) + "px";
+            aaa(this);
         });
         $(".port-img:nth-of-type(5)").on('click', function(){
             aa = 840 - 240*4;
             target.style.marginLeft = String(aa) + "px";
+            aaa(this);
         });
         $(".port-img:nth-of-type(6)").on('click', function(){
             aa = 840 - 240*5;
             target.style.marginLeft = String(aa) + "px";
+            aaa(this);
         });
         $(".port-img:nth-of-type(7)").on('click', function(){
             aa = 840 - 240*6;
             target.style.marginLeft = String(aa) + "px";
+            aaa(this);
         });
         $(".port-img:nth-of-type(8)").on('click', function(){
             aa = 840 - 240*7;
             target.style.marginLeft = String(aa) + "px";
+            aaa(this);
         });
     });
 

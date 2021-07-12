@@ -69,7 +69,7 @@
         });
         $('.sbar-circle:nth-of-type(2)').on('click', function(){
             currentY = minScrollTop - (8-1)*(minScrollTop/8) - 1;
-            setScrollAni();
+            setScrollAni(); 
         });
         $('.sbar-circle:nth-of-type(3)').on('click', function(){
             currentY = minScrollTop - (8-2)*(minScrollTop/8) - 1;
