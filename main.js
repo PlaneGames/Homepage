@@ -1,6 +1,6 @@
 'use strict';
 
-var target = document.getElementsByClassName("port-con")[0];    //배열의 주소를 반환하므로 해당 인자를 지정해야 한다.
+var target = document.getElementsByClassName("port-imgcon")[0];    //배열의 주소를 반환하므로 해당 인자를 지정해야 한다.
 var target2 = document.getElementsByClassName("port-img")[0];
 
 if (window.addEventListener)
@@ -12,19 +12,19 @@ animation.addEventListener('finish', function() {
     target.style.transition = '.5s';
 });
 
-var aa = 0;
+var aa = 840;
 
-// 마우스 휠~
+// 마우스 휠
 function handle(delta) {
     if (delta > 0) {
-        if (aa < 0) {
-            aa += 240;
+        if (aa < 840) {
+            aa += 120;
             target.style.marginLeft = String(aa) + "px";
         }
     }
     else {
-        if (aa > -3360) {
-            aa -= 240;
+        if (aa > -840) {
+            aa -= 120;
             target.style.marginLeft = String(aa) + "px";
         }
     }

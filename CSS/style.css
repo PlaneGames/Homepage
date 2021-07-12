@@ -197,10 +197,24 @@
 
 .port-con {
     display: flex;
-    flex: 0;
     overflow: hidden;
     transition: .9;
+    justify-content: center;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
 
+.port-imgcon {
+    display: flex;
+    
+    flex-direction: row;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    
+    transition: .9;
+    margin-left: 840px;
 }
 
 .port-header {
@@ -221,14 +235,12 @@
     min-width: 200px;
     max-width: 200px;
     height: 400px;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    margin-right: 40px;
-    position: relative;
     opacity: 0.3;
     transition: .3s;
     filter: sepia(80%);
     border-radius: 16px;
+
+    margin: 20px;
 }
 
 .port-img:hover {
@@ -237,7 +249,7 @@
     filter: sepia(0%);
     border-radius: 0px;
     min-width: 640px;
-    justify-content: center;
+    max-width: 640px;
 }
 
 .port-font {
