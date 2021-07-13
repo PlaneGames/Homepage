@@ -13,20 +13,21 @@ animation.addEventListener('finish', function() {
     target.style.transition = '.5s';
 });
 
-var aa = 840;
+var aa = 79.6;
 
 // 마우스 휠
 function handle(delta) {
     if (delta > 0) {
-        if (aa < 840) {
-            aa += 120;
-            target.style.marginLeft = String(aa) + "px";
+        if (aa < 79.6) {
+            aa += 4.8;
+            target.style.marginLeft = String(aa) + "vw";
         }
     }
     else {
-        if (aa > -840) {
-            aa -= 120;
-            target.style.marginLeft = String(aa) + "px";
+        if (aa > 12.5) {
+            aa -= 4.8;
+            target.style.marginLeft = String(aa) + "vw";
+            console.log(aa);
         }
     }
 }
@@ -51,16 +52,16 @@ var timeout;
         var resetPopup = function(index) {
 
             $('.port-img')
-                .css('min-width','200px')
-                .css('height','400px')
+                .css('min-width','8vm')
+                .css('height','16vm')
                 .css('opacity','.0')
                 .css('filter','sepia(80%)')
                 .css('transition','.5s')
                 .css('border-radius','16px');
 
             $(index)
-                .css('min-width','200px')
-                .css('height','400px')
+                .css('min-width','8vm')
+                .css('height','16vm')
                 .css('opacity','1')
                 .css('filter','sepia(0%)')
                 .css('transition','.5s')
@@ -104,43 +105,43 @@ var timeout;
 
         $(".port-img:nth-of-type(1)").on('click', function(){
 
-            aa = 840;
-            target.style.marginLeft = String(aa) + "px";
+            aa = 79.6;
+            target.style.marginLeft = String(aa) + "vw";
             aaa(this);
         });
         $(".port-img:nth-of-type(2)").on('click', function(){
-            aa = 840 - 240;
-            target.style.marginLeft = String(aa) + "px";
+            aa = 79.6 - 9.6;
+            target.style.marginLeft = String(aa) + "vw";
             aaa(this);
         });
         $(".port-img:nth-of-type(3)").on('click', function(){
-            aa = 840 - 240*2;
-            target.style.marginLeft = String(aa) + "px";
+            aa = 79.6 - (9.6*2);
+            target.style.marginLeft = String(aa) + "vw";
             aaa(this);
         });
         $(".port-img:nth-of-type(4)").on('click', function(){
-            aa = 840 - 240*3;
-            target.style.marginLeft = String(aa) + "px";
+            aa = 79.6 - (9.6*3);
+            target.style.marginLeft = String(aa) + "vw";
             aaa(this);
         });
         $(".port-img:nth-of-type(5)").on('click', function(){
-            aa = 840 - 240*4;
-            target.style.marginLeft = String(aa) + "px";
+            aa = 79.6 - 9.6*4;
+            target.style.marginLeft = String(aa) + "vw";
             aaa(this);
         });
         $(".port-img:nth-of-type(6)").on('click', function(){
-            aa = 840 - 240*5;
-            target.style.marginLeft = String(aa) + "px";
+            aa = 79.6 - 9.6*5;
+            target.style.marginLeft = String(aa) + "vw";
             aaa(this);
         });
         $(".port-img:nth-of-type(7)").on('click', function(){
-            aa = 840 - 240*6;
-            target.style.marginLeft = String(aa) + "px";
+            aa = 79.6 - 9.6*6;
+            target.style.marginLeft = String(aa) + "vw";
             aaa(this);
         });
         $(".port-img:nth-of-type(8)").on('click', function(){
-            aa = 840 - 240*7;
-            target.style.marginLeft = String(aa) + "px";
+            aa = 79.6 - 9.6*7;
+            target.style.marginLeft = String(aa) + "vw";
             aaa(this);
         });
     });
