@@ -86,6 +86,8 @@ var timeout;
                 $('.port-lore')
                     .css('opacity','1')
                     .css('transition','.5s');
+                $('body')
+                    .css('background-color','rgb(30, 32, 46)');
             }, 500);
 
         }
@@ -98,7 +100,8 @@ var timeout;
                 .css('opacity','1')
                 .css('filter','sepia(0%)')
                 .css('transition','1s')
-                .css('border-radius','0px');
+                .css('border-radius','0px')
+                .css('margin-right','21vw');
 
         }
 
