@@ -86,8 +86,6 @@ var timeout;
                 $('.port-lore')
                     .css('opacity','1')
                     .css('transition','.5s');
-                $('body')
-                    .css('background-color','rgb(30, 32, 46)');
             }, 500);
 
         }
@@ -95,14 +93,13 @@ var timeout;
         var setPopup = function(index) {
 
             $(index)
-                .css('min-width','48vw')
-                .css('height','27vw')
+                .css('min-width','32vw')
+                .css('height','18vw')
                 .css('opacity','1')
                 .css('filter','sepia(0%)')
                 .css('transition','1s')
                 .css('border-radius','0px')
-                .css('margin-right','21vw');
-
+                .css('margin-right','50vw');
         }
 
         var aaa = function(index) {
