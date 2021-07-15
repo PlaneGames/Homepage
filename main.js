@@ -8,7 +8,7 @@ if (window.addEventListener)
     window.addEventListener('DOMMouseScroll', wheel, false);
 window.onmousewheel = document.onmousewheel = wheel;
 
-var animation = target.animate([], 500);
+var animation = target.animate([], 200);
 animation.addEventListener('finish', function() {
     target.style.transition = '.5s';
 });
@@ -47,6 +47,10 @@ var timeout;
 
 (function ($) {
 
+    $('.port-lore').hide();
+    $('.port-lore')
+        .css('opacity','.0');
+
     $(document).ready(function() {
 
         var resetPopup = function(index) {
@@ -77,6 +81,19 @@ var timeout;
 
             timeout = setTimeout(function() {
                 $('.port-header').hide();
+
+                $('.port-lore').show();
+                $('.port-lore')
+                    .css('opacity','1')
+                    .css('transition','.5s');
+
+                $('.port-img')
+                .css('min-width','200px')
+                .css('height','400px')
+                .css('opacity','.0')
+                .css('filter','sepia(80%)')
+                .css('transition','.5s')
+                .css('border-radius','16px');
             }, 500);
 
         }
@@ -104,7 +121,6 @@ var timeout;
         }
 
         $(".port-img:nth-of-type(1)").on('click', function(){
-
             aa = 840;
             target.style.marginLeft = String(aa) + "px";
             aaa(this);

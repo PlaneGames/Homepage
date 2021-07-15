@@ -109,7 +109,7 @@
                     $(".screen-ani").css("width", '0%');
                     var link = '../PAGE/portfolio.html';
                     location.href = link;
-                    window.open(link);
+                    //window.open(link);
                 });
             
             }, 1000);
