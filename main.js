@@ -13,20 +13,20 @@ animation.addEventListener('finish', function() {
     target.style.transition = '.5s';
 });
 
-var aa = 840;
+var aa = 42;
 
 // 마우스 휠
 function handle(delta) {
     if (delta > 0) {
-        if (aa < 840) {
-            aa += 120;
-            target.style.marginLeft = String(aa) + "px";
+        if (aa < 42) {
+            aa += 6;
+            target.style.marginLeft = String(aa) + "vw";
         }
     }
     else {
-        if (aa > -840) {
-            aa -= 120;
-            target.style.marginLeft = String(aa) + "px";
+        if (aa > -42) {
+            aa -= 6;
+            target.style.marginLeft = String(aa) + "vw";
             console.log(aa);
         }
     }
@@ -56,16 +56,16 @@ var timeout;
         var resetPopup = function(index) {
 
             $('.port-img')
-                .css('min-width','200px')
-                .css('height','400px')
+                .css('min-width','10vw')
+                .css('height','20vw')
                 .css('opacity','.0')
                 .css('filter','sepia(80%)')
                 .css('transition','.5s')
                 .css('border-radius','16px');
 
             $(index)
-                .css('min-width','200px')
-                .css('height','400px')
+                .css('min-width','10vw')
+                .css('height','20vw')
                 .css('opacity','1')
                 .css('filter','sepia(0%)')
                 .css('transition','.5s')
@@ -86,14 +86,6 @@ var timeout;
                 $('.port-lore')
                     .css('opacity','1')
                     .css('transition','.5s');
-
-                $('.port-img')
-                .css('min-width','200px')
-                .css('height','400px')
-                .css('opacity','.0')
-                .css('filter','sepia(80%)')
-                .css('transition','.5s')
-                .css('border-radius','16px');
             }, 500);
 
         }
@@ -101,8 +93,8 @@ var timeout;
         var setPopup = function(index) {
 
             $(index)
-                .css('min-width','1280px')
-                .css('height','720px')
+                .css('min-width','48vw')
+                .css('height','27vw')
                 .css('opacity','1')
                 .css('filter','sepia(0%)')
                 .css('transition','1s')
@@ -121,43 +113,43 @@ var timeout;
         }
 
         $(".port-img:nth-of-type(1)").on('click', function(){
-            aa = 840;
-            target.style.marginLeft = String(aa) + "px";
+            aa = 42;
+            target.style.marginLeft = String(aa) + "vw";
             aaa(this);
         });
         $(".port-img:nth-of-type(2)").on('click', function(){
-            aa = 840 - 240;
-            target.style.marginLeft = String(aa) + "px";
+            aa = 42 - 12;
+            target.style.marginLeft = String(aa) + "vw";
             aaa(this);
         });
         $(".port-img:nth-of-type(3)").on('click', function(){
-            aa = 840 - (240*2);
-            target.style.marginLeft = String(aa) + "px";
+            aa = 42 - 12*2;
+            target.style.marginLeft = String(aa) + "vw";
             aaa(this);
         });
         $(".port-img:nth-of-type(4)").on('click', function(){
-            aa = 840 - (240*3);
-            target.style.marginLeft = String(aa) + "px";
+            aa = 42 - 12*3;
+            target.style.marginLeft = String(aa) + "vw";
             aaa(this);
         });
         $(".port-img:nth-of-type(5)").on('click', function(){
-            aa = 840 - 240*4;
-            target.style.marginLeft = String(aa) + "px";
+            aa = 42 - 12*4;
+            target.style.marginLeft = String(aa) + "vw";
             aaa(this);
         });
         $(".port-img:nth-of-type(6)").on('click', function(){
-            aa = 840 - 240*5;
-            target.style.marginLeft = String(aa) + "px";
+            aa = 42 - 12*5;
+            target.style.marginLeft = String(aa) + "vw";
             aaa(this);
         });
         $(".port-img:nth-of-type(7)").on('click', function(){
-            aa = 840 - 240*6;
-            target.style.marginLeft = String(aa) + "px";
+            aa = 42 - 12*6;
+            target.style.marginLeft = String(aa) + "vw";
             aaa(this);
         });
         $(".port-img:nth-of-type(8)").on('click', function(){
-            aa = 840 - 240*7;
-            target.style.marginLeft = String(aa) + "px";
+            aa = 42 - 12*7;
+            target.style.marginLeft = String(aa) + "vw";
             aaa(this);
         });
     });
