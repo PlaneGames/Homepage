@@ -48,10 +48,10 @@ var timeout;
 
 (function ($) {
 
-    $('.port-lore').hide();
     $('.port-lore')
         .css('opacity','.0');
-
+    $('.port-lore').hide();
+    
     $(document).ready(function() {
 
         var resetPopup = function(index) {
@@ -82,12 +82,6 @@ var timeout;
 
             timeout = setTimeout(function() {
                 $('.port-header').hide();
-
-                $('.port-lore').show();
-                $('.port-lore')
-                    .css('opacity','1')
-                    .css('transition','.5s');
-
                 $('body')
                     .css('background-color','rgb(225, 224, 222)');
             }, 500);
@@ -97,6 +91,10 @@ var timeout;
         var setPopup = function(index) {
 
             if (subpage == 0) {
+                $('.port-lore:nth-of-type(1)').show();
+                $('.port-lore:nth-of-type(1)')
+                    .css('opacity','1')
+                    .css('transition','.5s');
                 $(index)
                     .css('min-width','45vw')
                     .css('height','30vw')
@@ -108,6 +106,10 @@ var timeout;
                     .css('margin-right','60vw');
                 subpage++;
             } else if (subpage == 1) {
+                $('.port-lore:nth-of-type(2)').show();
+                $('.port-lore:nth-of-type(2)')
+                    .css('opacity','1')
+                    .css('transition','.5s');
                 $(index)
                     .css('min-width','450vw')
                     .css('height','30vw')
