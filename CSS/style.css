@@ -237,7 +237,11 @@
 .port-dungeonrpg3 {
 
 }
-#page1{} #page2{} #page3{} #page4{} #page5{}
+#page1{}
+#page2{transform: translateY(100%);}
+#page3{} 
+#page4{} 
+#page5{}
 
 .port-lore {
     position: absolute;
@@ -259,10 +263,17 @@
     transform: translateY(-50%);
 
     width: 25vw;
-    padding-left: 2vw;
+    padding-left: 0vw;
     background-color: rgb(95,94,103);
     transition: .5s;
-} 
+}
+
+.port-loreL .lore-sub {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .port-loreC {
     text-align: center;
@@ -291,12 +302,10 @@
     position: absolute;
     justify-content: center;
 
-    height: 50vh;
     left: 50vw;
     top: 50%;
     transform: translateY(-50%);
     width: 40vw;
-    padding-top: 12vh;
     transition: .5s;
 } 
 
@@ -349,18 +358,21 @@
 
 .video{
     position: relative;
-    padding-bottom:56.25%;
-    z-index: 1;
+    height:20vw;
+    max-height: 35vh;
+    background-color: rgb(80, 67, 54);
 }
 
 .video iframe{
     position: absolute;
     top: 0;
-    left: 0 ;
+    left: 0;
     right: 0;
     bottom: 0;
-    width:50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
+    
+    background-color: rgb(80, 67, 54);
 }
 
 .ani_frombottom {

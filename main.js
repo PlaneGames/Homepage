@@ -51,7 +51,7 @@ var timeout;
     $('.port-lore')
         .css('opacity','.0');
     $('.port-lore').hide();
-    
+
     $(document).ready(function() {
 
         var resetPopup = function(index) {
@@ -85,13 +85,12 @@ var timeout;
                 $('body')
                     .css('background-color','rgb(225, 224, 222)');
             }, 500);
-
+            $('.port-lore').show();
         }
 
         var setPopup = function(index) {
 
             if (subpage == 0) {
-                $('.port-lore:nth-of-type(1)').show();
                 $('.port-lore:nth-of-type(1)')
                     .css('opacity','1')
                     .css('transition','.5s');
@@ -106,19 +105,21 @@ var timeout;
                     .css('margin-right','60vw');
                 subpage++;
             } else if (subpage == 1) {
-                $('.port-lore:nth-of-type(2)').show();
+                $('.port-lore:nth-of-type(1)')
+                    .css('opacity','0')
+                    .css('transition','1.0s')
+                    .css('transform','translateY(-100%)');
                 $('.port-lore:nth-of-type(2)')
                     .css('opacity','1')
-                    .css('transition','.5s');
+                    .css('transition','1.0s')
+                    .css('transform','translateY(0%)');
                 $(index)
-                    .css('min-width','450vw')
-                    .css('height','30vw')
-                    .css('max-height','60vh')
-                    .css('opacity','1')
+                    .css('opacity','0')
                     .css('filter','sepia(0%)')
-                    .css('transition','1s')
+                    .css('transition','.5s')
                     .css('border-radius','0px')
                     .css('margin-right','60vw');
+                $('.port-imgcon').hide();
                 subpage++;
             }
             
