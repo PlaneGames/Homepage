@@ -3,7 +3,7 @@
     width:0%;
     height:100%;
     background-color: rgb(20, 22, 26);
-    z-index: 100;
+    z-index: 1;
     transition: 1s;
 }
 
@@ -235,7 +235,7 @@
 }
 
 .port-lore {
-    position: fixed;
+    position: absolute;
     opacity: 0;
     width: 100%;
     height: 100%;
@@ -245,13 +245,17 @@
 .port-loreL {
     position: absolute;
     justify-content: center;
-    height: 29vw;
-    
+    height: 49vw;
+    max-height: 80vh;
     left: 10vw;
+
     top: 50%;
     transform: translateY(-50%);
+
     width: 25vw;
     padding-left: 2vw;
+    background-color: rgb(95,94,103);
+    transition: .5s;
 } 
 
 .port-loreC {
@@ -265,6 +269,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: .5s;
 } 
 
 .port-loreC hr{
@@ -273,18 +278,20 @@
     width:100%;
     height:2px;
     background: rgba(214, 200, 178, 0.4);
+    transition: .5s;
 }
 
 .port-loreRT {
     position: absolute;
     justify-content: center;
 
-    height:100%;
+    height: 50vh;
     left: 50vw;
     top: 50%;
     transform: translateY(-50%);
-    width: 60vw;
-    padding-top: 10vw;
+    width: 40vw;
+    padding-top: 12vh;
+    transition: .5s;
 } 
 
 .lore-sub {
@@ -294,7 +301,8 @@
 
 .lore-subt {
     width:8vw;
-
+    min-width: 80px;
+    max-width: 100px;
 }
 .lore-subl {
 
@@ -307,7 +315,8 @@
 }
 
 .port-font {
-    color: rgb(214, 200, 178);
+    /*color: rgb(214, 200, 178);*/
+    color: rgb(40, 40, 40);
     transition: .4s;
 }
 
@@ -330,6 +339,22 @@
 
 .port-font p {
     font-size: 12px;
+}
+
+.video{
+    position: relative;
+    padding-bottom:56.25%;
+    z-index: 1;
+}
+
+.video iframe{
+    position: absolute;
+    top: 0;
+    left: 0 ;
+    right: 0;
+    bottom: 0;
+    width:50%;
+    height: 50%;
 }
 
 .ani_frombottom {
@@ -485,7 +510,7 @@ body {
 
 .text-wrap{
 	bottom:0;
-	z-index: 10;
+	z-index: 1;
     margin-left: 50px;
     margin-right: 50px;
     transition: .4s;

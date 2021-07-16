@@ -3,6 +3,7 @@
 var target = document.getElementsByClassName("port-imgcon")[0];    //배열의 주소를 반환하므로 해당 인자를 지정해야 한다.
 var target2 = document.getElementsByClassName("port-img")[0];
 var i = 0;
+var subpage = 0;
 
 if (window.addEventListener)
     window.addEventListener('DOMMouseScroll', wheel, false);
@@ -86,20 +87,39 @@ var timeout;
                 $('.port-lore')
                     .css('opacity','1')
                     .css('transition','.5s');
+
+                $('body')
+                    .css('background-color','rgb(225, 224, 222)');
             }, 500);
 
         }
 
         var setPopup = function(index) {
 
-            $(index)
-                .css('min-width','32vw')
-                .css('height','18vw')
-                .css('opacity','1')
-                .css('filter','sepia(0%)')
-                .css('transition','1s')
-                .css('border-radius','0px')
-                .css('margin-right','50vw');
+            if (subpage == 0) {
+                $(index)
+                    .css('min-width','45vw')
+                    .css('height','30vw')
+                    .css('max-height','60vh')
+                    .css('opacity','1')
+                    .css('filter','sepia(0%)')
+                    .css('transition','1s')
+                    .css('border-radius','0px')
+                    .css('margin-right','60vw');
+                subpage++;
+            } else if (subpage == 1) {
+                $(index)
+                    .css('min-width','450vw')
+                    .css('height','30vw')
+                    .css('max-height','60vh')
+                    .css('opacity','1')
+                    .css('filter','sepia(0%)')
+                    .css('transition','1s')
+                    .css('border-radius','0px')
+                    .css('margin-right','60vw');
+                subpage++;
+            }
+            
         }
 
         var aaa = function(index) {
