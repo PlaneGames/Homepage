@@ -34,5 +34,7 @@
     width: 50%;
     height: 50%;
     background-color: rgb(212, 210, 176);
-    flex-basis: 33.3%;
+    flex-basis: 33.3333%;
+    margin: 0px;
+    padding: 0px;
 }
