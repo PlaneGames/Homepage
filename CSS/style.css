@@ -294,7 +294,8 @@
     position: absolute;
 
     width: 68vw;
-    height: 40vw;
+    height: 49vw;
+    max-height: 80vh;
 
     top: 50%;
     left: 50%;
@@ -352,16 +353,16 @@
 .port-font h1 {
     transition: .4s;
     text-align: center;
-    font-size: 20px;
+    font-size: 1vw;
 }
 
 .port-font h2 {
-    font-size: 16px;
+    font-size: 2vw;
 }
 
 .port-font h3 {
     transition: .4s;
-    font-size: 32px;
+    font-size: 3vw;
     word-spacing: 1px;
     letter-spacing: 3px;
 }

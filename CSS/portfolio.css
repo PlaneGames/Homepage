@@ -1,0 +1,38 @@
+.po-con {
+    display:flex;
+    overflow: hidden;
+    position: absolute;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+
+    width: 80vw;
+    max-width: 120vh;
+
+    height: 56.26vw;
+    max-height: 80vh;
+
+    transform: translate(-50%, -50%);
+    background-color: rgb(93, 118, 139);
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.po-ratio {
+    display:flex;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 56.26vw;
+    max-height: 80vh;
+    background-color: rgb(119, 148, 172);
+}
+
+.po-box {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    background-color: rgb(212, 210, 176);
+    flex-basis: 33.3%;
+}

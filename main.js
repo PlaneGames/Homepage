@@ -48,10 +48,6 @@ var timeout;
 
 (function ($) {
 
-    $('.port-lore')
-        .css('opacity','.0');
-    $('.port-lore').hide();
-
     $(document).ready(function() {
 
         var resetPopup = function(index) {
@@ -85,13 +81,13 @@ var timeout;
                 $('body')
                     .css('background-color','rgb(225, 224, 222)');
             }, 500);
-            $('.port-lore').show();
+            $('.po-con').show();
         }
 
         var setPopup = function(index) {
 
             if (subpage == 0) {
-                $('.port-lore:nth-of-type(1)')
+                $('.po-con:nth-of-type(1)')
                     .css('opacity','1')
                     .css('transition','.5s');
                 $(index)
