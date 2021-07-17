@@ -47,7 +47,7 @@ function wheel(event){
 var timeout;
 
 (function ($) {
-
+    
     $(document).ready(function() {
 
         var resetPopup = function(index) {
