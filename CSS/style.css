@@ -7,15 +7,6 @@
     transition: 1s;
 }
 
-@keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
 @keyframes showItem {
     from {
         opacity: 0;

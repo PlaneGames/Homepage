@@ -3,17 +3,15 @@
     display: flex;
     position: absolute;
     justify-content: center;
+
     top: 50%;
     left: 50%;
-
     width: 80vw;
     max-width: 120vh;
-
     height: 56.26vw;
     max-height: 80vh;
-
     transform: translate(-50%, -50%);
-    /*background-color: rgb(93, 118, 139);*/
+
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-around;
@@ -40,6 +38,22 @@
     padding: 0px;
 }
 
+.po-box .po-button {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border: .1vw solid black;
+    border-radius: 16vw;
+    transition: .3s;
+}
+
+.po-box .po-button:hover {
+    transform: scale(1.1, 1.1);
+    background-color: black;
+    color: white;
+    transition: .3s;
+}
+
 .po-box h1 {
     font-size: 3vw;
     letter-spacing: .5vw;
@@ -59,22 +73,6 @@
     font-size: 1vw;
 }
 
-.po-box .po-button {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    border: .1vw solid black;
-    border-radius: 16vw;
-    transition: .3s;
-}
-
-.po-box .po-button:hover {
-    transform: scale(1.1, 1.1);
-    background-color: black;
-    color: white;
-    transition: .3s;
-}
-
 @media all and (min-width: 1080px) {
     .po-box h1 {
         font-size: 4vh;
@@ -88,5 +86,58 @@
     }
     .po-box p2 {
         font-size: 1vh;
+    }
+}
+
+.po-ani-rtl {
+    animation-name: boxRTL;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    animation-fill-mode: both;
+}
+
+.po-ani-btt {
+    animation-name: boxBTT;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    animation-fill-mode: both;
+}
+
+.po-ani-fadein {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    animation-fill-mode: both;
+    animation-delay: 1s;
+}
+
+@keyframes boxRTL {
+    from {
+        transform-origin: left center;
+        transform: scaleX(2);
+    }
+    to {
+        transform-origin: left center;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes boxBTT {
+    from {
+        transform-origin: top center;
+        transform: scaleY(2);
+    }
+    to {
+        transform-origin: top center;
+        transform: scaleY(.5);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
