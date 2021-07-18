@@ -15,24 +15,14 @@
     <script src="../src/jquery.smoothwheel.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <link   href="../CSS/textani.css" rel="stylesheet">
-    <script src="../src/TweenMax.textani.js"></script>
-    <script>
-        TweenLite.to('#class2', 2, {
-        left: 100,
-        top: 75,
-        backgroundColor:"#000",
-        ease: Power4.easeIn
-        });
-    </script>
+    <script src="../src/TweenMax.textani.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <div class="screen-ani">
 </div>
 
 <body link="79A1DC" vlink="79A1DC" alink="79A1DC" style="background-color:rgb(20, 22, 26);">
-    <ul>
-        <li id="class2">12</li>
-    </ul>
     <div class="port-body">
 
         <!-- #region DungeonRpg3 -->
@@ -82,12 +72,9 @@
                 <div class="po-box po-ani-fadein" style="background-color: rgba(156, 151, 148, 0);">
                     <div style="text-align: center; width: 80%; margin-left: auto; margin-right: auto;">
                     <br>
-
-
-                    <h1 class="text-ani">GA</h1>
-                    <h1 class="text-ani">ME</h1>
-                    <h1 class="text-ani">PLAY</h1>
-                    <br>
+                    <h1 class="po-text-ani">
+                        <span>GAMEPLAY</span>
+                    </h1>
                     <p>모바일 기기에서 즐길 수 있는 가벼운 게임입니다.</p>
                     <p>단조로운 조작과 특유의 공격방식을 가진 액션 플렛포머입니다.</p>
                     <p>단계적으로 스테이지를 클리어고 보스를 잡아 새로운 던전을 열 수 있습니다.</p>
@@ -104,9 +91,9 @@
                 <div class="po-box" style="width: 20.5%; background-color: transparent; color: white; display: flex; flex-direction: column; flex-wrap: nowrap;">
                     <div class="po-subbox" style="background-color: rgb(185, 76, 76);">
                         <div style="transform: translateX(10%)">
-                        <h2>CREATOR's</h2>
-                        <h2>REVIEW</h2>
-                        <p2 style="opacity: 0.6;">출처 : < 썩소 TV ></p2>
+                            <h2>CREATOR's</h2>
+                            <h2>REVIEW</h2>
+                            <p2 style="opacity: 0.6;">출처 : < 썩소 TV ></p2>
                         </div>
                     </div>
                     <div class="po-subbox po-ani-btt" style="background-color: rgb(71, 124, 160); transform: scaleY(50%); transform-origin: top center;">
@@ -116,7 +103,9 @@
                 <div class="po-box po-ani-rtl" style="text-align: center;">
                     <div class="po-ani-fadein">
                         <br>
-                        <h1>PLATFORM</h1>
+                        <h1 class="po-text-ani">
+                            <span>PLATFORM</span>
+                        </h1>
                         <div class = "mlink" style="justify-content: center; margin: 0px;">
                             <pimg><img src = "../IMG/playstore.png" width = "32" height = "32"></pimg>
                             <p style="padding-left: 1vw; justify-content: left;">GOOGLE PLAY STORE</p>

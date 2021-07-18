@@ -73,7 +73,7 @@
     font-size: 1vw;
 }
 
-@media all and (min-width: 1080px) {
+@media all and (min-width: 1280px) {
     .po-box h1 {
         font-size: 4vh;
         letter-spacing: .5vh;
