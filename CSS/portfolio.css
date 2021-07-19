@@ -89,6 +89,8 @@
     }
 }
 
+#po-page{}
+
 .po-ani-rtl {
     animation-name: boxRTL;
     animation-duration: 2s;

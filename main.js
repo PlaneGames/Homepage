@@ -50,6 +50,9 @@ var timeout;
 
     $('.po-con').hide();
     $('.po-con').css('opacity','0');
+    $('.po-con')
+        .css('transform','translate(-50%, 100vh)')
+        .css('transition','2s');
 
     $(document).ready(function() {
 
@@ -84,18 +87,23 @@ var timeout;
                 $('body')
                     .css('background-color','rgb(225, 224, 222)');
             }, 500);
-            
-            
+            $('.po-con').show();
         }
 
         var setPopup = function(index) {
 
             if (subpage == 0) {
                 animation();
-                $('.po-con').show();
+
                 $('.po-con')
                     .css('opacity','1')
                     .css('transition','1s');
+                $('.po-con:nth-of-type(3)')
+                    .css('opacity','1')
+                    .css('transform','translate(-50%, -50%)')
+                    .css('transition','2s');
+
+
                 $(index)
                     .css('opacity','0')
                     .css('filter','sepia(0%)')
@@ -104,15 +112,6 @@ var timeout;
                 subpage++;
                 $('.port-imgcon').hide()
             } else if (subpage == 1) {
-                $('.port-lore:nth-of-type(1)')
-                    .css('opacity','0')
-                    .css('transition','1.0s')
-                    .css('transform','translateY(-100%)');
-                $('.port-lore:nth-of-type(2)')
-                    .css('opacity','1')
-                    .css('transition','1.0s')
-                    .css('transform','translateY(0%)');
-                $('.port-imgcon').hide();
                 subpage++;
             }
             
