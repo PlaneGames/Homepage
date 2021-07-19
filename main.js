@@ -47,7 +47,10 @@ function wheel(event){
 var timeout;
 
 (function ($) {
-    
+
+    $('.po-con').hide();
+    $('.po-con').css('opacity','0');
+
     $(document).ready(function() {
 
         var resetPopup = function(index) {
@@ -81,25 +84,25 @@ var timeout;
                 $('body')
                     .css('background-color','rgb(225, 224, 222)');
             }, 500);
-            $('.po-con').show();
+            
+            
         }
 
         var setPopup = function(index) {
 
             if (subpage == 0) {
-                $('.po-con:nth-of-type(1)')
+                animation();
+                $('.po-con').show();
+                $('.po-con')
                     .css('opacity','1')
-                    .css('transition','.5s');
+                    .css('transition','1s');
                 $(index)
-                    .css('min-width','45vw')
-                    .css('height','30vw')
-                    .css('max-height','60vh')
-                    .css('opacity','1')
+                    .css('opacity','0')
                     .css('filter','sepia(0%)')
-                    .css('transition','1s')
+                    .css('transition','.5s')
                     .css('border-radius','0px')
-                    .css('margin-right','60vw');
                 subpage++;
+                $('.port-imgcon').hide()
             } else if (subpage == 1) {
                 $('.port-lore:nth-of-type(1)')
                     .css('opacity','0')
@@ -109,12 +112,6 @@ var timeout;
                     .css('opacity','1')
                     .css('transition','1.0s')
                     .css('transform','translateY(0%)');
-                $(index)
-                    .css('opacity','0')
-                    .css('filter','sepia(0%)')
-                    .css('transition','.5s')
-                    .css('border-radius','0px')
-                    .css('margin-right','60vw');
                 $('.port-imgcon').hide();
                 subpage++;
             }

@@ -28,7 +28,7 @@ function animation() {
 
 
 $(document).ready(function() {
-  animation();
+  
 }, 0);
 
 $('.button').click(function() {

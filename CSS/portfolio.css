@@ -103,6 +103,13 @@
     animation-fill-mode: both;
 }
 
+.po-ani-ttb {
+    animation-name: boxTTB;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    animation-fill-mode: both;
+}
+
 .po-ani-fadein {
     animation-name: fadeIn;
     animation-duration: 1s;
@@ -130,6 +137,17 @@
     to {
         transform-origin: top center;
         transform: scaleY(.5);
+    }
+}
+
+@keyframes boxTTB {
+    from {
+        transform-origin: top center;
+        height: 0%;
+    }
+    to {
+        transform-origin: top center;
+        height: 49%;
     }
 }
 
