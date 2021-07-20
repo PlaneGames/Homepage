@@ -123,6 +123,11 @@ var timeout;
                     .css('transform','translate(-50%, -50%)')
                     .css('transition','2s');
 
+                timeout = setTimeout(function() {
+                    $('.po-con:nth-of-type(1)')
+                        .css('transition','.0s');
+                }, 500);
+
                 $(index)
                     .css('opacity','0')
                     .css('filter','sepia(0%)')
