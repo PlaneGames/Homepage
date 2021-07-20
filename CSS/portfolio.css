@@ -16,7 +16,36 @@
     align-content: space-around;
 }
 
-.po-con img {
+.po-con-img {
+    width: 60%;
+    height: 43%;
+
+    position: absolute;
+    display: flex;
+
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+
+    transform: translate(33%, 50%);
+}
+
+.po-img {
+    position: relative;
+
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    width: 48%;
+    height: 48%;
+
+    filter: grayscale(10%) opacity(70%);
+}
+
+.po-con .overlay {
     overflow: hidden;
     height: 100vh;
 

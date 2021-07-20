@@ -14,11 +14,18 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../src/jquery.smoothwheel.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<link   href="../CSS/textani.css" rel="stylesheet">
-    <script src="../src/TweenMax.textani.js" defer></script>
+    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="../src/jquery.fittext.js"></script>
+
+    <link   href="../CSS/textani.css" rel="stylesheet">
+    <script src="../src/TweenMax.textani.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .fi-text-s {
+            
+        }
+    </style>
 </head>
 
 <div class="screen-ani">
@@ -33,15 +40,67 @@
             <div class="po-con" style="flex-direction: column;">
 
                 <div class="po-box" style="background-color: rgb(225, 224, 222); width: 50%; height: 100%; box-shadow: -4px 4px 4px rgba(20, 22, 26, 0.7);">
+                    
+                    <div style="transform: translate(0%, 50%); text-align: center; width: 90%; height:50%; margin-left: auto; margin-right: auto;">
+                    <h1 class="po-text-ani" id="fitt-text" style="top: 50%; transform: translate(0%, -50%); margin: 0px;"><span>DUNGEON RPG 3 : HERO</span></h1>
+                    </div>
 
-                    <h1 class="po-text-ani" id="fitt-text"><span>DUNGEON RPG 3 : HERO</span></h1>
+                    <div style="position: absolute; transform: translate(20%, 180%); text-align: left; width: 40%; height:10%; margin-left: auto; margin-right: auto;">
+                        <p id="fitt-text1" style="margin: 0px;">
+                            <span>ACTION PLATFORMER GAME<br><br></span>
+                        </p>
+                        <p id="fitt-text0" style="margin: 0px;">
+                            <span>출시 - 2017.3 ~</span>
+                        </p>
+                    </div>
+
+                    <div style="position: absolute; transform: translate(0%, 380%); text-align: right; width: 20%; height:10%; margin-left: auto; margin-right: auto;">
+                        <p id="fitt-text2" style="margin: 0px;">
+                            <span>PLATFORM<br><br></span>
+                            <span>IDE<br><br></span>
+                            <span>LANGUAGE</span>
+                        </p>
+                    </div>
+
+                    <div style="position: absolute; transform: translate(120%, 380%); text-align: left; width: 20%; height:10%; margin-left: auto; margin-right: auto;">
+                        <p id="fitt-text3" style="margin: 0px;">
+                            <span>ANDRIOD<br><br></span>
+                            <span>GMS<br><br></span>
+                            <span>GML</span>
+                        </p>
+                    </div>
+
                     <script type="text/javascript">$("#fitt-text").fitText();</script>
+                    <script type="text/javascript">$("#fitt-text0").fitText(1.5);</script>
+                    <script type="text/javascript">$("#fitt-text1").fitText();</script>
+                    <script type="text/javascript">$("#fitt-text2").fitText();</script>
+                    <script type="text/javascript">$("#fitt-text3").fitText();</script>
+
+                </div>
+
+                <div class="po-box" style="background-color: rgb(225, 224, 222); width: 30%; height: 60%; box-shadow: -4px 4px 4px rgba(20, 22, 26, 0.7);" >
+                    
+                    <div style="position: absolute; transform: translate(20%, 900%); text-align: left; width: 35%; height:10%; margin-left: auto; margin-right: auto;">
+                        <p class="fi-text-s" style="margin: 0px;">
+                            <span>Made By<br></span>
+                            <span>Kwon Jaeyoung</span>
+                        </p>
+                    </div>
+
+                    <div class="po-con-img">
+                            <div class="po-img" style="height: 98%; background-image: url('../IMG/DungeonRpg3.png');">
+                            </div>
+                            <div class="po-img" style="background-image: url('../IMG/DungeonRpg3.png');">
+                            </div>
+                            <div class="po-img" style="background-image: url('../IMG/DungeonRpg3.png');">
+                            </div>
+                    </div>
                     
                 </div>
-                <div class="po-box" style="background-color: rgb(225, 224, 222); width: 30%; height: 60%; box-shadow: -4px 4px 4px rgba(20, 22, 26, 0.7);" >
-                </div>
 
-                <img src="../IMG/leafshadow_overlay.png">
+                <script type="text/javascript">$(".fi-text-s").fitText();</script>
+                
+                <img class="overlay" src="../IMG/leafshadow_overlay.png">
 
             </div>
             <!-- #endregion -->

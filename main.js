@@ -50,11 +50,11 @@ var timeout;
 
     function resizing_overlay() {
         if (window.innerWidth*(66.675/100) <= window.innerHeight) {
-            $('.po-con img')
+            $('.po-con .overlay')
                 .css('width','149.98125vh')
                 .css('height','100vh');
         } else {
-            $('.po-con img')
+            $('.po-con .overlay')
                 .css('width','100vw')
                 .css('height','66.675vw');
         }
@@ -101,7 +101,7 @@ var timeout;
             timeout = setTimeout(function() {
                 $('.port-header').hide();
             }, 500);
-            $('.po-con:nth-of-type(2)').show();
+            $('.po-con:nth-of-type(1)').show();
         }
 
         var setPopup = function(index) {
@@ -118,15 +118,14 @@ var timeout;
                 $('.po-con')
                     .css('opacity','1')
                     .css('transition','1s');
-                $('.po-con:nth-of-type(2)')
+                $('.po-con:nth-of-type(1)')
                     .css('opacity','1')
                     .css('transform','translate(-50%, -50%)')
                     .css('transition','2s');
 
                 timeout = setTimeout(function() {
-                    $('.po-con:nth-of-type(2)')
+                    $('.po-con:nth-of-type(1)')
                         .css('transition','.0s');
-                        animation();
                 }, 500);
 
                 $(index)
