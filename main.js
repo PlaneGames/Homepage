@@ -101,7 +101,7 @@ var timeout;
             timeout = setTimeout(function() {
                 $('.port-header').hide();
             }, 500);
-            $('.po-con:nth-of-type(1)').show();
+            $('.po-con:nth-of-type(2)').show();
         }
 
         var setPopup = function(index) {
@@ -118,14 +118,15 @@ var timeout;
                 $('.po-con')
                     .css('opacity','1')
                     .css('transition','1s');
-                $('.po-con:nth-of-type(1)')
+                $('.po-con:nth-of-type(2)')
                     .css('opacity','1')
                     .css('transform','translate(-50%, -50%)')
                     .css('transition','2s');
 
                 timeout = setTimeout(function() {
-                    $('.po-con:nth-of-type(1)')
+                    $('.po-con:nth-of-type(2)')
                         .css('transition','.0s');
+                        animation();
                 }, 500);
 
                 $(index)

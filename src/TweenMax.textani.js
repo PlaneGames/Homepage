@@ -28,8 +28,8 @@ function animation() {
 
 
 $(document).ready(function() {
-  
-}, 0);
+  console.log("asdasd");
+}, 110);
 
 $('.button').click(function() {
   animation();
