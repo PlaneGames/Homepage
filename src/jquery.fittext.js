@@ -17,8 +17,9 @@
           settings = $.extend({
             'minFontSize' : Number.NEGATIVE_INFINITY,
             'maxFontSize' : Number.POSITIVE_INFINITY
+            
           }, options);
-  
+
       return this.each(function(){
   
         // Store the object

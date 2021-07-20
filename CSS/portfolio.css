@@ -44,6 +44,31 @@
 
     filter: grayscale(10%) opacity(70%);
 }
+.po-con-qr {
+    z-index: 1;
+    transform-origin: top center;
+    justify-content: center;
+    width: 35%;
+    height: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.po-con-qr .po-qr {
+    width: 40%;
+    max-width: 150px;
+    height: auto;
+    transition: .3s;
+    transform-origin: top center;
+}
+
+.po-con-qr:hover .po-qr {
+    width: 10vh; 
+    max-width: 150px;
+    height: auto;
+    transition: .3s;
+    transform-origin: top center;
+}
 
 .po-con .overlay {
     overflow: hidden;
@@ -53,6 +78,16 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+@media all and (orientation: landscape) {
+    .po-con-qr:hover .po-qr {
+        width: 10vw; 
+        max-width: 150px;
+        height: auto;
+        transition: .3s;
+        transform-origin: top center;
+    }
 }
 
 .po-box {
