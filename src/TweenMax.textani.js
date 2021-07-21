@@ -1,10 +1,14 @@
-$(document).ready(function() {
+function text_ani_reset() {
   $(".po-text-ani").lettering();
   $(".button").lettering();
+}
+
+$(document).ready(function() {
+  text_ani_reset();
 });
 
-
-function animation() {
+function text_ani() {
+  text_ani_reset();
   var title1 = new TimelineMax();
   title1.to(".button", 0, {
     visibility: 'hidden', opacity: 0
@@ -24,6 +28,7 @@ function animation() {
   title1.to(".button", 0.2, {
     visibility: 'visible', opacity: 1
   });
+  console.log("text_ani() Start!");
 }
 
 
@@ -32,6 +37,6 @@ $(document).ready(function() {
 }, 110);
 
 $('.button').click(function() {
-  animation();
+  text_ani();
 });
 

@@ -6,53 +6,71 @@
 	<title>PLANE | Game Developer</title>
 	<link href="../CSS/style.css" rel="stylesheet">
     <link href="../CSS/portfolio.css" rel="stylesheet">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <meta http-equiv="page-enter" content="blendTrans(duration=0.3)">
     <meta http-equiv="page-exit" content="blendTrans(duration=0.3)">
+    
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../src/jquery.smoothwheel.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="../src/jquery.fittext.js"></script>
 
     <link   href="../CSS/textani.css" rel="stylesheet">
-    <script src="../src/TweenMax.textani.js" defer></script>
+    <script src="../src/TweenMax.textani.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../src/include-html.min.js"></script>
+
     <style>
         .fi-text-s {
             
         }
     </style>
+
 </head>
 
 <div class="screen-ani">
 </div>
 
+<!--
+    < Page Sytem >
+    페이지 시스템의 경우, 사용 가능한 특정 레이아웃들이 HTML상에 구현되어있고,
+    세션에 따라 세부적인 내용들을 JS에서 동적으로 변경하도록 설계된다. 
+    + innerHTML이 보안에 취약하다는 점을 파악하였다.
+    재사용이 어려운 HTML언어의 특성상, 복잡해지지 않도록 하는 것에 초점을 맞춘다.
+-->
+
 <body link="79A1DC" vlink="79A1DC" alink="79A1DC" style="background-color:rgb(20, 22, 26);">
     <div class="port-body">
 
-        <!-- #region DungeonRpg3 -->
+        <!-- #region Portfolio Layout -->
 
-            <!-- #region DungeonRpg3 page1 -->
+            <!-- #region Layout 01 -- Main Pamphlet Style -->
+
+            <div include-html="../text2.html" id="footer_file"></div>
+            
+            <!--
             <div class="po-con" style="flex-direction: column;">
 
                 <div class="po-box" style="background-color: rgb(225, 224, 222); width: 50%; height: 100%; box-shadow: -4px 4px 4px rgba(20, 22, 26, 0.7);">
                     
                     <div style="position: absolute; transform: translate(0%, 350%); text-align: left; width: 100%; height:10%; margin-left: auto; margin-right: auto;">
-                        <p id="fitt-text1" style="margin: 0px; text-align: center;">
+                        <p id="sub-title" style="margin: 0px; text-align: center;">
                             <span>ACTION PLATFORMER GAME<br><br></span>
                         </p>
                     </div>
 
-                    <div style="transform: translate(0%, 50%); text-align: center; width: 90%; height:50%; margin-left: auto; margin-right: auto;">
-                    <h1 class="po-text-ani" id="fitt-text" style="top: 50%; transform: translate(0%, -50%); margin: 0px;"><span>DUNGEON RPG 3 : HERO</span></h1>
+                    <div class="main-title" style="transform: translate(0%, 50%); text-align: center; width: 90%; height:50%; margin-left: auto; margin-right: auto;">
+                        <h1 class="po-text-ani" id="main-title" style="top: 50%; transform: translate(0%, -50%); margin: 0px;">
+                            DUNGEON RPG 3 : HERO
+                        </h1>
                     </div>
 
                     <div style="position: absolute; transform: translate(-15%, 340%); text-align: right; width: 20%; height:10%; margin-left: auto; margin-right: auto;">
-                        <p id="fitt-text2" style="margin: 0px;">
+                        <p id="sub-info-title" style="margin: 0px;">
                             <span>출시일<br><br></span>
                             <span>PLATFORM<br><br></span>
                             <span>IDE<br><br></span>
@@ -61,19 +79,18 @@
                     </div>
 
                     <div style="position: absolute; transform: translate(100%, 340%); text-align: left; width: 20%; height:10%; margin-left: auto; margin-right: auto;">
-                        <p id="fitt-text3" style="margin: 0px;">
-                            <span>2017.4.1 ~<br><br></span>
+                        <p id="sub-info" style="margin: 0px;">
+                            <span>2017.4.1<br><br></span>
                             <span>ANDRIOD<br><br></span>
                             <span>GMS<br><br></span>
                             <span>GML</span>
                         </p>
                     </div>
 
-                    <script type="text/javascript">$("#fitt-text").fitText();</script>
-                    <script type="text/javascript">$("#fitt-text0").fitText();</script>
-                    <script type="text/javascript">$("#fitt-text1").fitText(3);</script>
-                    <script type="text/javascript">$("#fitt-text2").fitText();</script>
-                    <script type="text/javascript">$("#fitt-text3").fitText();</script>
+                    <script type="text/javascript">$("#main-title").fitText();</script>
+                    <script type="text/javascript">$("#sub-title").fitText(3);</script>
+                    <script type="text/javascript">$("#sub-info-title").fitText();</script>
+                    <script type="text/javascript">$("#sub-info").fitText();</script>
 
                 </div>
 
@@ -106,9 +123,10 @@
                 <img class="overlay" src="../IMG/leafshadow_overlay.png">
 
             </div>
+        -->
             <!-- #endregion -->
 
-            <!-- #region DungeonRpg3 page2 -->
+            <!-- #region Layout 02 -- Modern Block Style -->
             <div class="po-con">
 
                 <div class="po-box po-ani-ttb" style="width: 66.05%; animation-delay: 1.5s">
