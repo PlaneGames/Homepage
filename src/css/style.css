@@ -402,14 +402,14 @@
     animation-delay: 1.05s;
 }
 
-#project1 { background-image: url("../IMG/DungeonRpg3.png");}
-#project2 { background-image: url("../IMG/DungeonRpg2.png"); }
-#project3 { background-image: url("../IMG/TUDCutscene.png"); }
-#project4 { background-image: url("../IMG/MicroCastle.png"); }
-#project5 { background-image: url("../IMG/WayBackHome2.png"); }
-#project6 { background-image: url("../IMG/WayBackHome.png"); }
-#project7 { background-image: url("../IMG/VendingMachine.png"); }
-#project8 { background-image: url("../IMG/TypingOfLegend.png"); }
+#project1 { background-image: url("/src/images/DungeonRpg3.png");}
+#project2 { background-image: url("/src/images/DungeonRpg2.png"); }
+#project3 { background-image: url("/src/images/TUDCutscene.png"); }
+#project4 { background-image: url("/src/images/MicroCastle.png"); }
+#project5 { background-image: url("/src/images/WayBackHome2.png"); }
+#project6 { background-image: url("/src/images/WayBackHome.png"); }
+#project7 { background-image: url("/src/images/VendingMachine.png"); }
+#project8 { background-image: url("/src/images/TypingOfLegend.png"); }
 
 html, body {
     scroll-behavior:auto;

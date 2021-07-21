@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PLANE | Game Developer</title>
-	<link href="../CSS/style.css" rel="stylesheet">
-    <link href="../CSS/portfolio.css" rel="stylesheet">
+	<link href="../src/css/style.css" rel="stylesheet">
+    <link href="../src/css/portfolio.css" rel="stylesheet">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,15 +14,15 @@
     <meta http-equiv="page-exit" content="blendTrans(duration=0.3)">
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../src/jquery.smoothwheel.js"></script>
+    <script src="../src/js/jquery.smoothwheel.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     
-    <script src="../src/jquery.fittext.js"></script>
+    <script src="../src/js/jquery.fittext.js"></script>
 
-    <link   href="../CSS/textani.css" rel="stylesheet">
-    <script src="../src/TweenMax.textani.js"></script>
+    <link   href="../src/css/textani.css" rel="stylesheet">
+    <script src="../src/js/TweenMax.textani.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="../src/include-html.min.js"></script>
+    <script src="../src/js/include-html.min.js"></script>
 
     <style>
         .fi-text-s {
@@ -40,6 +40,7 @@
     페이지 시스템의 경우, 사용 가능한 특정 레이아웃들이 HTML상에 구현되어있고,
     세션에 따라 세부적인 내용들을 JS에서 동적으로 변경하도록 설계된다. 
     + innerHTML이 보안에 취약하다는 점을 파악하였다.
+    + include html 방식을 사용하여 html 구조를 분리하는 것으로 한다.
     재사용이 어려운 HTML언어의 특성상, 복잡해지지 않도록 하는 것에 초점을 맞춘다.
 -->
 
@@ -50,7 +51,7 @@
 
             <!-- #region Layout 01 -- Main Pamphlet Style -->
 
-            <div include-html="../text2.html" id="footer_file"></div>
+            <div include-html="../pages/01-DR3/dr3.html" id="footer_file"></div>
             
             <!--
             <div class="po-con" style="flex-direction: column;">
@@ -104,15 +105,15 @@
                     </div>
                     
                     <div class="po-con-qr" style="position: absolute; transform: translate(235%, 870%);">
-                        <img src="../IMG/DungeonRpg3QR.png" class="po-qr">
+                        <img src="../src/images/DungeonRpg3QR.png" class="po-qr">
                     </div>
 
                     <div class="po-con-img">
-                        <div class="po-img" style="height: 98%; background-image: url('../IMG/DungeonRpg3.png');">
+                        <div class="po-img" style="height: 98%; background-image: url('../src/images/DungeonRpg3.png');">
                         </div>
-                        <div class="po-img" style="background-image: url('../IMG/DungeonRpg3Icon.png');">
+                        <div class="po-img" style="background-image: url('../src/images/DungeonRpg3Icon.png');">
                         </div>
-                        <div class="po-img" style="background-image: url('../IMG/DungeonRpg3Room.png');">
+                        <div class="po-img" style="background-image: url('../src/images/DungeonRpg3Room.png');">
                         </div>
                     </div>
 
@@ -120,7 +121,7 @@
 
                 <script type="text/javascript">$(".fi-text-s").fitText();</script>
                 
-                <img class="overlay" src="../IMG/leafshadow_overlay.png">
+                <img class="overlay" src="../src/images/leafshadow_overlay.png">
 
             </div>
         -->
@@ -171,7 +172,7 @@
                         <br>
                         <h1>PLATFORM</h1>
                         <div class = "mlink" style="justify-content: center; margin: 0px;">
-                            <!--<pimg><img src = "../IMG/playstore.png" width = "32" height = "32"></pimg>-->
+                            <!--<pimg><img src = "../src/images/playstore.png" width = "32" height = "32"></pimg>-->
                             <p style="padding-left: 1vw; justify-content: left;">GOOGLE PLAY STORE</p>
                         </div>
                         <br>
@@ -213,7 +214,7 @@
 
     </div>
 
-    <script src="../main.js"></script>
+    <script src="../src/js/main.js"></script>
 </body>
 
 </html>
