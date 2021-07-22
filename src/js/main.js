@@ -65,24 +65,42 @@ function wheel(event){
     });
 
     $(window).on('load', function() {
+  
         // po-con Hide
-        $('.po-con').hide();
         $('.po-con').css('opacity','0');
         $('.po-con')
             .css('transform','translate(-50%, 100vh)')
             .css('transition','2s');
+        $('.po-con').hide();
         console.log("asdasd");
+       
     });
     
+    var page_info = [
+        ["#dr3-pamphlet", "#dr3-gameplay"],
+        ["#dr2-pamphlet", "#dr2-gameplay"],
+        ["#dr2-pamphlet", "#dr2-gameplay"],
+        ["#dr2-pamphlet", "#dr2-gameplay"],
+        ["#dr2-pamphlet", "#dr2-gameplay"],
+        ["#dr2-pamphlet", "#dr2-gameplay"],
+        ["#dr2-pamphlet", "#dr2-gameplay"],
+        ["#dr2-pamphlet", "#dr2-gameplay"],
+    ];
+
+    console.log(page_info[0].length);
+
+    var cur_subpage = 0;
+
     // Gallery Interaction
     $(document).ready(function() {
 
         var openProjectPopup = function(index) {
 
-            var nth_index = "nth-of-type("+(index+1)+")";
-    
+            var img_index   = "nth-of-type("+(index+1)+")";
+            var page        = page_info[0][cur_subpage];
+
             clearTimeout(timeout);
-            $('.port-img').not(".port-img:"+nth_index)
+            $('.port-img').not(".port-img:"+img_index)
                 .css('opacity','.0')
                 .css('filter','sepia(80%)')
                 .css('transition','.5s')
@@ -95,12 +113,12 @@ function wheel(event){
 
             timeout = setTimeout(function() {
 
-                $(".port-img:"+nth_index)
+                $(".port-img:"+img_index)
                     .css('width','0px')
                     .css('min-width','0px')
                     .css('max-width','0px')
                     .css('transition','1s');
-                $('.po-con:'+nth_index).show();
+                $(page + ' .po-con').show();
 
             }, 500);
 
@@ -109,7 +127,7 @@ function wheel(event){
                 $('body')
                     .css('background-color','rgb(81, 99, 94)')
                     .css('transition','1s');
-                $('.po-con:'+nth_index)
+                $(page + ' .po-con')
                     .css('opacity','1')
                     .css('transform','translate(-50%, -50%)')
                     .css('transition','2s');
@@ -124,10 +142,6 @@ function wheel(event){
 
         }
 
-        var projectLayout = function() {
-            document.getElementById("main-title").textContent = "Dungeon Rpg 4 : Heros";
-        }
-        
         var galleryButton = function(index) {
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
                 aa = 42 - 12*index;
@@ -137,9 +151,7 @@ function wheel(event){
                 //console.log(index); //console test
             });
         }
-        
-        
-        
+
         for(var i = 0; i < 8; i ++) {
             galleryButton(i);
         }
