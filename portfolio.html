@@ -1,5 +1,6 @@
 <!doctype html>
-<html>
+<!--onselectstart="return false"-->
+<html ondragstart="return false" onselectstart="return false">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,9 +33,28 @@
 
 </head>
 
-<div class="screen-ani">
-</div>
+<div class="screen-ani"></div>
 
+<div class="cursor_con">
+    <div class="cursor_wheelup"></div>
+    <div class="cursor_wheeldown"></div>
+    <div class="cursor_item">
+        <div class="cursor_wheel">
+            <span style="top: -.7rem;"></span>
+            <span style="top: -.45rem;"></span>
+            <span style="top: -.20rem;"></span>
+            <span style="top: .05rem;"></span>
+            <span style="top: .3rem;"></span>
+            <span style="top: .55rem;"></span>
+            <span style="top: .8rem;"></span>
+            <span style="top: 1.05rem;"></span>
+            <span style="top: 1.3rem;"></span>
+            <span style="top: 1.55rem;"></span>
+            <span style="top: 1.8rem;"></span>
+            <span style="top: 2.05rem;"></span>
+        </div>
+    </div>
+</div>
 <!--
     < Page Sytem >
     페이지 시스템의 경우, 사용 가능한 특정 레이아웃들이 HTML상에 구현되어있고,
@@ -61,7 +81,7 @@
             <div data-include-path="../pages/01-DR3/dr3-pamphlet.html" id="dr3-pamphlet"></div>
             <div data-include-path="../pages/01-DR3/dr3-gameplay.html" id="dr3-gameplay"></div>
             --> 
-            
+
         <!-- #endregion -->
 
         <div class="ani_fromtop">

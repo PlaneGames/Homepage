@@ -32,6 +32,22 @@ function handle(delta) {
     }
 }
 
+let cursor;
+let h1;
+let x, y;
+
+const mouseFunc = (e) => { 
+    x = e.clientX, 
+    y = e.clientY; 
+    cursor.style.transform = `translate(${x}px, ${y}px)`; 
+} 
+
+window.onload = () => { 
+    cursor = document.getElementsByClassName("cursor_con")[0]; 
+    h1 = document.getElementsByTagName("h1")[0]; 
+    document.addEventListener("mousemove", mouseFunc); 
+}
+
 // Mouse Event
 function wheel(event){
     var delta = 0;
@@ -43,7 +59,11 @@ function wheel(event){
     if (delta) handle(delta);
 }
 
+
 (function ($) {
+
+    $('body').mousedown(function(e){if(e.button==1)return false});
+    $('body').css('cursor','none');
 
     var timeout;
 
@@ -94,6 +114,15 @@ function wheel(event){
     // Gallery Interaction
     $(document).ready(function() {
 
+        var cursorWheelAni = function() {
+            $('.cursor_item .cursor_wheel')
+                .css('animation-name','cursorWheel')
+                .css('animation-duration','1s')
+                .css('animation-fill-mode','backwards')
+                .css('animation-timing-function','cubic-bezier(0.65, 0, 0.35, 1)')
+                .css('animation-iteration-count','5');
+        }
+
         var openProjectPopup = function(index) {
 
             var img_index   = "nth-of-type("+(index+1)+")";
@@ -139,6 +168,20 @@ function wheel(event){
                 $('.po-con')
                     .css('transition','0s');
             }, 1500);
+
+            timeout = setTimeout(function() {
+                cursorWheelAni();
+            }, 2000);
+
+            timeout = setTimeout(function() {
+                cursorWheelAni();
+                $(".cursor_con").removeClass(".cursor_item .cursor_wheel");
+                // trigger a DOM reflow
+                cursorWheelAni();
+                $(".cursor_con").width();
+                $(".cursor_con").addClass(".cursor_item .cursor_wheel");
+                cursorWheelAni();
+            }, 7000);
 
         }
 
