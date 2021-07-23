@@ -42,15 +42,16 @@ window.onload = () => {
     // resizing Overlay
     function resizing_overlay() {
         if (window.innerWidth*(66.675/100) <= window.innerHeight) {
-            $('.po-con .overlay')
+            $('.overlay')
                 .css('width','149.98125vh')
                 .css('height','100vh');
         } else {
-            $('.po-con .overlay')
+            $('.overlay')
                 .css('width','100vw')
                 .css('height','66.675vw');
         }
     }
+
     resizing_overlay();
     window.addEventListener('resize', function () {
         resizing_overlay();
@@ -64,12 +65,22 @@ window.onload = () => {
             .css('transform','translate(-50%, 100vh)')
             .css('transition','2s');
         $('.po-con').hide();
-        console.log("asdasd");
        
     });
     
     var page_info = [
         ["#dr3-pamphlet", "#dr3-gameplay"],
+        ["#dr2-pamphlet", "#dr2-gameplay"],
+        ["#dr2-pamphlet", "#dr2-gameplay"],
+        ["#dr2-pamphlet", "#dr2-gameplay"],
+        ["#dr2-pamphlet", "#dr2-gameplay"],
+        ["#dr2-pamphlet", "#dr2-gameplay"],
+        ["#dr2-pamphlet", "#dr2-gameplay"],
+        ["#dr2-pamphlet", "#dr2-gameplay"],
+    ];
+
+    var page_info_bgcolor = [
+        ["rgb(81, 99, 94)", "rgb(225, 224, 222)"],
         ["#dr2-pamphlet", "#dr2-gameplay"],
         ["#dr2-pamphlet", "#dr2-gameplay"],
         ["#dr2-pamphlet", "#dr2-gameplay"],
@@ -105,12 +116,22 @@ window.onload = () => {
                 }
                 if (scrollMode == 1){
                     scrollMode = 0;
-                    openProjectPopup(0);
-                    cur_subpage += 1;
+                    closeProjectPopup(0);
+                    cur_subpage = 1;
+                    nextProjectPopup(0);
                     console.log("subpage");
                 }
             }
         });
+
+        var hideOverlay = function() {
+            $('.overlay')
+                .css('opacity','0')
+                .css('transition','1s');
+            setTimeout(function() {
+                $('.overlay').hide();
+            }, 1000);
+        }
 
         var cursorWheelAni = function() {
             $('.cursor_item .cursor_wheel')
@@ -149,10 +170,36 @@ window.onload = () => {
                 .css('animation-iteration-count','6');
         }
 
-        var openProjectPopup = function(index) {
+        var closeProjectPopup = function(index) {
 
+            console.log("closeProjectPopup");
             var img_index   = "nth-of-type("+(index+1)+")";
             var page        = page_info[index][cur_subpage];
+
+            clearTimeout(timeout);
+
+            $(page + ' .po-con')
+                .css('opacity','1')
+                .css('transform','translate(-50%, calc(-50% - 100vh))')
+                .css('transition','2s');
+
+            hideOverlay();
+
+            setTimeout(function() {
+                text_ani();
+                $('.po-con')
+                    .css('transition','0s');
+                $(page + ' .po-con')
+                    .css('opacity','0');
+            }, 2000);
+        }
+
+        var openProjectPopup = function(index) {
+
+            console.log("openProjectPopup");
+            var img_index   = "nth-of-type("+(index+1)+")";
+            var page        = page_info[index][cur_subpage];
+            var page_bgcol  = page_info_bgcolor[index][cur_subpage];
 
             clearTimeout(timeout);
             $('.port-img').not(".port-img:"+img_index)
@@ -165,6 +212,7 @@ window.onload = () => {
                 .css('padding-bottom','0px')
                 .css('opacity','0')
                 .css('transition','.5s');
+            resizing_overlay();
 
             timeout = setTimeout(function() {
 
@@ -180,7 +228,7 @@ window.onload = () => {
             timeout = setTimeout(function() {
                 
                 $('body')
-                    .css('background-color','rgb(81, 99, 94)')
+                    .css('background-color', page_bgcol)
                     .css('transition','1s');
                 $(page + ' .po-con')
                     .css('opacity','1')
@@ -197,9 +245,35 @@ window.onload = () => {
 
             timeout = setTimeout(function() {
                 cursorWheelAni();
-                subpageChange = 1;
                 scrollMode = 1;
+                console.log("now can change subpage");
             }, 2000);
+
+        }
+
+        var nextProjectPopup = function(index) {
+
+            var page        = page_info[index][cur_subpage];
+            var page_bgcol  = page_info_bgcolor[index][cur_subpage];
+
+            clearTimeout(timeout);
+            $(page + ' .po-con').show();
+
+             $('body')
+                .css('background-color', page_bgcol)
+                .css('transition','1s');
+            $(page + ' .po-con')
+                .css('opacity','1')
+                .css('transform','translate(-50%, -50%)')
+                .css('transition','2s');
+
+            resizing_overlay();
+
+            timeout = setTimeout(function() {
+                text_ani();
+                $('.po-con')
+                    .css('transition','0s');
+            }, 1500);
 
         }
 

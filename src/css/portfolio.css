@@ -126,7 +126,7 @@
     max-width: 120vh;
     height: 56.26vw;
     max-height: 80vh;
-    transform: translate(-50%, 100vh);
+    transform: translate(-50%, calc(-50% + 100vh));
 
     flex-wrap: wrap;
     justify-content: space-around;
@@ -189,10 +189,9 @@
     transform-origin: top center;
 }
 
-.po-con .overlay {
+.overlay {
     overflow: hidden;
     height: 100vh;
-
     position: fixed;
     left: 50%;
     top: 50%;
