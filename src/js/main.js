@@ -4,9 +4,6 @@ var target = document.getElementsByClassName("port-imgcon")[0];    //배열의 �
 var i = 0;
 var subpage = 0;
 
-if (window.addEventListener)
-    window.addEventListener('DOMMouseScroll', wheel, false);
-window.onmousewheel = document.onmousewheel = wheel;
 
 var animation = target.animate([], 200);
 animation.addEventListener('finish', function() {
@@ -14,23 +11,10 @@ animation.addEventListener('finish', function() {
 });
 
 var aa = 42;
+var subpageChange = 0;
+var scrollMode = 0;
 
 // Mouse Wheel Process
-function handle(delta) {
-    if (delta > 0) {
-        if (aa < 42) {
-            aa += 6;
-            target.style.marginLeft = String(aa) + "vw";
-        }
-    }
-    else {
-        if (aa > -42) {
-            aa -= 6;
-            target.style.marginLeft = String(aa) + "vw";
-            console.log(aa);
-        }
-    }
-}
 
 let cursor;
 let h1;
@@ -47,18 +31,6 @@ window.onload = () => {
     h1 = document.getElementsByTagName("h1")[0]; 
     document.addEventListener("mousemove", mouseFunc); 
 }
-
-// Mouse Event
-function wheel(event){
-    var delta = 0;
-    if (!event) event = window.event;
-    if (event.wheelDelta) {
-        delta = event.wheelDelta/120;
-        if (window.opera) delta = -delta;
-    } else if (event.detail) delta = -event.detail/3;
-    if (delta) handle(delta);
-}
-
 
 (function ($) {
 
@@ -110,9 +82,35 @@ function wheel(event){
     console.log(page_info[0].length);
 
     var cur_subpage = 0;
+    var cur_page = 0;
 
     // Gallery Interaction
     $(document).ready(function() {
+
+        $(window).on("wheel", function (event){
+            console.log(event.originalEvent.deltaY);
+
+            if (event.originalEvent.deltaY < 0) {
+              if (aa < 42) {
+                    aa += 12;
+                    target.style.marginLeft = String(aa) + "vw";
+                }
+                console.log("wheel");
+            }
+            else {
+                if (aa > -42) {
+                    aa -= 12;
+                    target.style.marginLeft = String(aa) + "vw";
+                    console.log(aa);
+                }
+                if (scrollMode == 1){
+                    scrollMode = 0;
+                    openProjectPopup(0);
+                    cur_subpage += 1;
+                    console.log("subpage");
+                }
+            }
+        });
 
         var cursorWheelAni = function() {
             $('.cursor_item .cursor_wheel')
@@ -121,12 +119,40 @@ function wheel(event){
                 .css('animation-fill-mode','backwards')
                 .css('animation-timing-function','cubic-bezier(0.65, 0, 0.35, 1)')
                 .css('animation-iteration-count','5');
+            $('.cursor_item')
+                .css('animation-name','cursorWheelScale')
+                .css('animation-duration','.5s')
+                .css('animation-fill-mode','backwards')
+                .css('animation-direction','alternate')
+                .css('animation-timing-function','cubic-bezier(0.65, 0, 0.35, 1)')
+                .css('animation-iteration-count','10');
+            $('.cursor_wheelup')
+                .css('animation-name','cursorWheelUp')
+                .css('animation-duration','.5s')
+                .css('animation-fill-mode','backwards')
+                .css('animation-direction','alternate')
+                .css('animation-timing-function','cubic-bezier(0.65, 0, 0.35, 1)')
+                .css('animation-iteration-count','10');
+             $('.cursor_wheeldown')
+                .css('animation-name','cursorWheelDown')
+                .css('animation-duration','.5s')
+                .css('animation-fill-mode','backwards')
+                .css('animation-direction','alternate')
+                .css('animation-timing-function','cubic-bezier(0.65, 0, 0.35, 1)')
+                .css('animation-iteration-count','10');
+            $('.cursor_guide')
+                .css('transition','1s')
+                .css('animation-name','cursorGuideScale')
+                .css('animation-duration','1s')
+                .css('animation-direction','alternate')
+                .css('animation-timing-function','cubic-bezier(0.65, 0, 0.35, 1)')
+                .css('animation-iteration-count','6');
         }
 
         var openProjectPopup = function(index) {
 
             var img_index   = "nth-of-type("+(index+1)+")";
-            var page        = page_info[0][cur_subpage];
+            var page        = page_info[index][cur_subpage];
 
             clearTimeout(timeout);
             $('.port-img').not(".port-img:"+img_index)
@@ -171,17 +197,9 @@ function wheel(event){
 
             timeout = setTimeout(function() {
                 cursorWheelAni();
+                subpageChange = 1;
+                scrollMode = 1;
             }, 2000);
-
-            timeout = setTimeout(function() {
-                cursorWheelAni();
-                $(".cursor_con").removeClass(".cursor_item .cursor_wheel");
-                // trigger a DOM reflow
-                cursorWheelAni();
-                $(".cursor_con").width();
-                $(".cursor_con").addClass(".cursor_item .cursor_wheel");
-                cursorWheelAni();
-            }, 7000);
 
         }
 
@@ -189,7 +207,6 @@ function wheel(event){
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
                 aa = 42 - 12*index;
                 target.style.marginLeft = String(aa) + "vw";
-                
                 openProjectPopup(index);     
                 //console.log(index); //console test
             });

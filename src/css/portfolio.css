@@ -5,6 +5,18 @@
     background-size: cover;
 }
 
+.cursor_guide {
+    font-size: .75rem;
+    width: 100px;
+    height: 16px;
+    line-height: 16px;
+    margin-left: .75rem;
+    margin-top: -1.2rem;
+    position: absolute;
+    opacity: 0;
+    animation-duration: 1s;
+}
+
 .cursor_item {
     position: relative;
     width: 0.5rem;
@@ -14,8 +26,6 @@
     
     border: 0.15rem solid black;
     border-radius: 0.5rem;
-
-
     overflow: hidden;
 }
 
@@ -33,12 +43,49 @@
     margin-left: 0.05rem;
 }
 
+@keyframes cursorGuideScale {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 @keyframes cursorWheel {
     from {
         top: 0rem;
     }
     to {
         top: .75rem;
+    }
+}
+
+@keyframes cursorWheelUp {
+    from {
+        transform: rotate(315deg) scale(1, 1);
+        transition: .2s;
+    }
+    to {
+        transform: rotate(315deg) scale(1.4, 1.4);
+    }
+}
+
+@keyframes cursorWheelDown {
+    from {
+        transform: rotate(135deg) scale(1, 1);
+    }
+    to {
+        transform: rotate(135deg) scale(1.4, 1.4);
+    }
+}
+
+@keyframes cursorWheelScale {
+    from {
+        transform: scale(1, 1);
+    }
+    to {
+        transform: scale(1.1, 1.1);
     }
 }
 
