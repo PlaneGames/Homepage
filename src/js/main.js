@@ -308,6 +308,7 @@ window.onload = () => {
             
             clearTimeout(timeoutHide);
             text_ani(page);
+            resizing_fitText();
 
             timeout = setTimeout(function() {
                 $('.po-con')
@@ -337,7 +338,8 @@ window.onload = () => {
             clearTimeout(timeout);
             $(page + ' .po-con').show();
             text_ani(page);
-
+            resizing_fitText();
+        
             timeout = setTimeout(function() {
                 $('.po-con')
                     .css('transition','0s');
