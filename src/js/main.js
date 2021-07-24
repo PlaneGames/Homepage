@@ -9,12 +9,6 @@ animation.addEventListener('finish', function() {
     target.style.transition = '.5s';
 });
 
-var fitTextResize = 0;
-
-var resizing_fitText = function() {
-    fitTextResize = 1;
-}
-
 var aa              = 42;
 var scrollReady     = 0;
 var scrollMode      = 0;
@@ -45,6 +39,12 @@ window.onload = () => {
 
     var timeout;
     var timeoutHide;
+
+    var resizing_fitText = function() {
+        var evt = document.createEvent("HTMLEvents");
+        evt.initEvent('resize', true, false);
+        window.dispatchEvent(evt);
+    }
 
     // resizing Overlay
     function resizing_overlay() {
@@ -147,6 +147,10 @@ window.onload = () => {
                 }
             }
         });
+
+        //$('div').mouseenter(function(){
+        //    console.log(this);
+        //});
 
         var resetPageAni = function(index, previndex) {
             var page        = page_info[index][previndex];
@@ -295,6 +299,13 @@ window.onload = () => {
                 .css('opacity','0')
                 .css('transition','.5s');
 
+            setTimeout(function() {
+
+                $('.port-img').hide();
+                $('.port-header').hide();
+    
+            }, switching_spd * 1000);
+
         }
 
         var prevProjectPopup = function(index, previndex) {
@@ -310,12 +321,8 @@ window.onload = () => {
             var page        = page_info[index][previndex];
 
             clearTimeout(timeout);
-
-            console.log(timeoutHide);
-            
             clearTimeout(timeoutHide);
             text_ani(page);
-            resizing_fitText();
 
             timeout = setTimeout(function() {
                 $('.po-con')
@@ -344,8 +351,8 @@ window.onload = () => {
 
             clearTimeout(timeout);
             $(page + ' .po-con').show();
-            text_ani(page);
             resizing_fitText();
+            text_ani(page);
         
             timeout = setTimeout(function() {
                 $('.po-con')

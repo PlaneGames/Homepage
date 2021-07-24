@@ -240,7 +240,7 @@
     transition: .3s;
 }
 
-.po-box .po-button:hover {
+.po-button:hover {
     transform: scale(1.1, 1.1);
     background-color: black;
     color: white;
@@ -289,28 +289,28 @@
 
 .po-ani-rtl {
     animation-name: boxRTL;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
     animation-fill-mode: both;
 }
 
 .po-ani-btt {
     animation-name: boxBTT;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
     animation-fill-mode: both;
 }
 
 .po-ani-ttb {
     animation-name: boxTTB;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
     animation-fill-mode: both;
 }
 
 .po-ani-fadein {
     animation-name: fadeIn;
-    animation-duration: 1s;
+    animation-duration: .3s;
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
     animation-fill-mode: both;
     animation-delay: 1s;
@@ -341,11 +341,11 @@
 @keyframes boxTTB {
     from {
         transform-origin: top center;
-        height: 0%;
+        transform: scaleY(0);
     }
     to {
         transform-origin: top center;
-        height: 49%;
+        transform: scaleY(1);
     }
 }
 

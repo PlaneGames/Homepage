@@ -10,6 +10,8 @@
 
 (function($){
 
+    var resizer;
+
     $.fn.fitText = function( kompressor, options ) {
   
       // Setup options
@@ -35,12 +37,8 @@
 
         window.addEventListener('resize', function () {
           resizer();
+          console.log("resizing!!!!!!!!");
         });
-
-        if (fitTextResize == 1) {
-          resizer();
-          fitTextResize = 0;
-        }
 
         // Call on resize. Opera debounces their resize by default.
         $(window).on('resize.fittext orientationchange.fittext', resizer);
