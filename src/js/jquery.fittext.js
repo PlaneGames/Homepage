@@ -7,13 +7,8 @@
 * http://sam.zoy.org/wtfpl/
 *
 */
-var fitTextResize = 0;
 
-var resizing_fitText = function() {
-  fitTextResize = 1;
-}
-
-(function( $ ){
+(function($){
 
     $.fn.fitText = function( kompressor, options ) {
   
@@ -55,4 +50,3 @@ var resizing_fitText = function() {
     };
   
   })( jQuery );
-  
