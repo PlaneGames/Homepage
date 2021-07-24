@@ -118,6 +118,7 @@ window.onload = () => {
                         scrollReady = 0;
                         scrollMode  = 1;
                         cur_subpage--;
+                        resetPageAni(0, cur_subpage);
                         prevProjectPopup(0, cur_subpage+1);
                         nextProjectPopup(0, cur_subpage);
                         if (cur_subpage == 0) {
@@ -136,6 +137,7 @@ window.onload = () => {
                         scrollReady = 0;
                         scrollMode  = 0;
                         cur_subpage++;
+                        resetPageAni(0, cur_subpage);
                         prevProjectPopup(0, cur_subpage-1);
                         nextProjectPopup(0, cur_subpage);
                         if (cur_subpage != 0) {
@@ -146,13 +148,18 @@ window.onload = () => {
             }
         });
 
+        var resetPageAni = function(index, previndex) {
+            var page        = page_info[index][previndex];
+            $(page + ' .po-con').hide();
+        }
+
         var showOverlay = function() {
             $('.overlay').show();
             setTimeout(function() {
                 $('.overlay')
                     .css('transition', String(switching_spd/2) + 's')
                     .css('opacity', '1');
-            }, 100);
+            }, 1);
             setTimeout(function() {
                 $('.overlay')
                     .css('transition', '0s');
@@ -322,7 +329,7 @@ window.onload = () => {
                 $(page + ' .po-con').hide();
                 console.log("Hide()!");
             }, switching_spd * 1000);
-
+            
             $(page + ' .po-con')
                 .css('opacity','0')
                 .css('transform','translate(-50%, '+transY+')')
