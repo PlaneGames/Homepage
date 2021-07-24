@@ -7,6 +7,11 @@
 * http://sam.zoy.org/wtfpl/
 *
 */
+var fitTextResize = 0;
+
+var resizing_fitText = function() {
+  fitTextResize = 1;
+}
 
 (function( $ ){
 
@@ -34,9 +39,14 @@
         resizer();
 
         window.addEventListener('resize', function () {
-            resizer();
+          resizer();
         });
-  
+
+        if (fitTextResize == 1) {
+          resizer();
+          fitTextResize = 0;
+        }
+
         // Call on resize. Opera debounces their resize by default.
         $(window).on('resize.fittext orientationchange.fittext', resizer);
 

@@ -163,6 +163,7 @@
 
     filter: grayscale(10%) opacity(70%);
 }
+
 .po-con-qr {
     z-index: 1;
     transform-origin: top center;
@@ -196,6 +197,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    opacity: 0;
 }
 
 @media all and (orientation: landscape) {
@@ -253,6 +255,11 @@
 .po-box h2 {
     font-size: 2vw;
     font-weight: lighter;
+}
+
+.po-box h3 {
+    font-size: 3vw;
+    letter-spacing: .5vw;
 }
 
 .po-box p {

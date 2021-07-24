@@ -40,8 +40,6 @@
             container.scrollTop(-currentY);
 
             vy *= fricton;
-            
-            console.log(barSlt);
 
             // vy += ts * (currentY-targetY);
             // scrollTopTweened += settings.tweenSpeed * (scrollTop - scrollTopTweened);
@@ -115,7 +113,6 @@
     var animateLoop = function () {
 
         minScrollTop = container.get(0).clientHeight - container.get(0).scrollHeight;
-        console.log(minScrollTop);
 
         barSlt = (minScrollTop - currentY)/(minScrollTop/8);
         if (barSlt > 7) {
@@ -135,15 +132,7 @@
         if(!running)return;
         requestAnimFrame(animateLoop);
         render();
-        
-        /*
-        $(".sbar-circle").one('click', function() {
-            console.log("Selected!");
-            $(this).off();
-        });
-        */
 
-        //log("45","animateLoop","animateLoop", "",stop);
     }
 
     var onWheel = function (e) {

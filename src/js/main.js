@@ -10,9 +10,9 @@ animation.addEventListener('finish', function() {
     target.style.transition = '.5s';
 });
 
-var aa = 42;
-var subpageChange = 0;
-var scrollMode = 0;
+var aa          = 42;
+var scrollReady = 0;
+var scrollMode  = 0;
 
 // Mouse Wheel Process
 
@@ -65,6 +65,7 @@ window.onload = () => {
             .css('transform','translate(-50%, 100vh)')
             .css('transition','2s');
         $('.po-con').hide();
+        $('.overlay').hide();
        
     });
     
@@ -93,42 +94,70 @@ window.onload = () => {
     console.log(page_info[0].length);
 
     var cur_subpage = 0;
+    var max_subpage = 0;
     var cur_page = 0;
 
     // Gallery Interaction
     $(document).ready(function() {
 
         $(window).on("wheel", function (event){
-            console.log(event.originalEvent.deltaY);
-
             if (event.originalEvent.deltaY < 0) {
               if (aa < 42) {
                     aa += 12;
                     target.style.marginLeft = String(aa) + "vw";
                 }
-                console.log("wheel");
+                if (scrollReady == 1){
+                    if (cur_subpage > 0) {
+                        scrollReady = 0;
+                        scrollMode  = 1;
+                        cur_subpage--;
+                        prevProjectPopup(0, cur_subpage+1);
+                        nextProjectPopup(0, cur_subpage);
+                        if (cur_subpage == 0) {
+                            showOverlay();
+                        }
+                    }
+                }
             }
             else {
                 if (aa > -42) {
                     aa -= 12;
                     target.style.marginLeft = String(aa) + "vw";
-                    console.log(aa);
                 }
-                if (scrollMode == 1){
-                    scrollMode = 0;
-                    closeProjectPopup(0);
-                    cur_subpage = 1;
-                    nextProjectPopup(0);
-                    console.log("subpage");
+                if (scrollReady == 1){
+                    if (cur_subpage < page_info[0].length) {
+                        scrollReady = 0;
+                        scrollMode  = 0;
+                        cur_subpage++;
+                        prevProjectPopup(0, cur_subpage-1);
+                        nextProjectPopup(0, cur_subpage);
+                        if (cur_subpage != 0) {
+                            hideOverlay();
+                        }
+                    }
                 }
             }
         });
+
+        var showOverlay = function() {
+            setTimeout(function() {
+                $('.overlay')
+                    .css('transition','1s')
+                    .css('opacity','1');
+            }, 100);
+            setTimeout(function() {
+                $('.overlay')
+                    .css('transition','0s');
+            }, 110);
+        }
 
         var hideOverlay = function() {
             $('.overlay')
                 .css('opacity','0')
                 .css('transition','1s');
             setTimeout(function() {
+                 $('.overlay')
+                    .css('transition','0s');
                 $('.overlay').hide();
             }, 1000);
         }
@@ -172,21 +201,26 @@ window.onload = () => {
 
         var closeProjectPopup = function(index) {
 
-            console.log("closeProjectPopup");
+            var transY = "calc(-50% - 100vh)";
+
+            if (scrollMode == 0) {
+                transY = "calc(-50% + 100vh)";
+            } else {
+                transY = "calc(-50% - 100vh)";
+            }
+
             var img_index   = "nth-of-type("+(index+1)+")";
             var page        = page_info[index][cur_subpage];
 
             clearTimeout(timeout);
 
             $(page + ' .po-con')
-                .css('opacity','1')
-                .css('transform','translate(-50%, calc(-50% - 100vh))')
+                .css('opacity','0')
+                .css('transform','translate(-50%, '+transY+')')
                 .css('transition','2s');
 
-            hideOverlay();
-
             setTimeout(function() {
-                text_ani();
+                text_ani(page);
                 $('.po-con')
                     .css('transition','0s');
                 $(page + ' .po-con')
@@ -196,24 +230,11 @@ window.onload = () => {
 
         var openProjectPopup = function(index) {
 
-            console.log("openProjectPopup");
             var img_index   = "nth-of-type("+(index+1)+")";
             var page        = page_info[index][cur_subpage];
             var page_bgcol  = page_info_bgcolor[index][cur_subpage];
 
             clearTimeout(timeout);
-            $('.port-img').not(".port-img:"+img_index)
-                .css('opacity','.0')
-                .css('filter','sepia(80%)')
-                .css('transition','.5s')
-                .css('border-radius','16px');
-            $('.port-header')
-                .css('margin-bottom','-120px')
-                .css('padding-bottom','0px')
-                .css('opacity','0')
-                .css('transition','.5s');
-            resizing_overlay();
-
             timeout = setTimeout(function() {
 
                 $(".port-img:"+img_index)
@@ -238,28 +259,79 @@ window.onload = () => {
             }, 1000);
 
             timeout = setTimeout(function() {
-                text_ani();
+                text_ani(page);
                 $('.po-con')
                     .css('transition','0s');
             }, 1500);
 
             timeout = setTimeout(function() {
                 cursorWheelAni();
-                scrollMode = 1;
-                console.log("now can change subpage");
+                scrollReady = 1;
             }, 2000);
+
+            $('.port-img').not(".port-img:"+img_index)
+                .css('opacity','.0')
+                .css('filter','sepia(80%)')
+                .css('transition','.5s')
+                .css('border-radius','16px');
+            $('.port-header')
+                .css('margin-bottom','-120px')
+                .css('padding-bottom','0px')
+                .css('opacity','0')
+                .css('transition','.5s');
 
         }
 
-        var nextProjectPopup = function(index) {
+        var prevProjectPopup = function(index, previndex) {
 
-            var page        = page_info[index][cur_subpage];
-            var page_bgcol  = page_info_bgcolor[index][cur_subpage];
+            var transY = "calc(-50% - 100vh)";
+
+            if (scrollMode == 0) {
+                transY = "calc(-50% - 100vh)";
+            } else {
+                transY = "calc(-50% + 100vh)";
+            }
+
+            var page        = page_info[index][previndex];
+
+            clearTimeout(timeout);
+            text_ani(page);
+
+            setTimeout(function() {
+                $('.po-con')
+                    .css('transition','0s');
+                $(page + ' .po-con')
+                    .css('opacity','0');
+                $(page + ' .po-con').hide();
+            }, 2000);
+
+            $(page + ' .po-con')
+                .css('opacity','0')
+                .css('transform','translate(-50%, '+transY+')')
+                .css('transition','2s');
+            
+        }
+
+        var nextProjectPopup = function(index, nextindex) {
+
+            var page        = page_info[index][nextindex];
+            var page_bgcol  = page_info_bgcolor[index][nextindex];
 
             clearTimeout(timeout);
             $(page + ' .po-con').show();
+            text_ani(page);
 
-             $('body')
+            timeout = setTimeout(function() {
+                $('.po-con')
+                    .css('transition','0s');
+            }, 1500);
+
+            timeout = setTimeout(function() {
+                scrollReady = 1;
+                resizing_fitText();
+            }, 2000);
+
+            $('body')
                 .css('background-color', page_bgcol)
                 .css('transition','1s');
             $(page + ' .po-con')
@@ -267,22 +339,14 @@ window.onload = () => {
                 .css('transform','translate(-50%, -50%)')
                 .css('transition','2s');
 
-            resizing_overlay();
-
-            timeout = setTimeout(function() {
-                text_ani();
-                $('.po-con')
-                    .css('transition','0s');
-            }, 1500);
-
         }
 
         var galleryButton = function(index) {
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
                 aa = 42 - 12*index;
                 target.style.marginLeft = String(aa) + "vw";
-                openProjectPopup(index);     
-                //console.log(index); //console test
+                openProjectPopup(index);
+                showOverlay(); 
             });
         }
 
