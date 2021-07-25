@@ -77,7 +77,7 @@ window.onload = () => {
     });
     
     var page_info = [
-        ["#dr3-pamphlet", "#dr3-gameplay", "#dr3-development"],
+        ["#dr3-pamphlet", "#dr3-gameplay", "#dr3-gamedesign", "#dr3-development"],
         ["#dr2-pamphlet", "#dr2-gameplay"],
         ["#dr2-pamphlet", "#dr2-gameplay"],
         ["#dr2-pamphlet", "#dr2-gameplay"],
@@ -88,7 +88,7 @@ window.onload = () => {
     ];
 
     var page_info_bgcolor = [
-        ["rgb(81, 99, 94)", "rgb(225, 224, 222)", "rgb(225, 224, 222)"],
+        ["rgb(81, 99, 94)", "rgb(225, 224, 222)", "rgb(225, 224, 222)", "rgb(225, 224, 222)"],
         ["#dr2-pamphlet", "#dr2-gameplay"],
         ["#dr2-pamphlet", "#dr2-gameplay"],
         ["#dr2-pamphlet", "#dr2-gameplay"],
