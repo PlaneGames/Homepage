@@ -213,9 +213,8 @@
     min-width: 10vw;
     max-width: 10vw;
     height: 20vw;
-    opacity: 0.3;
     transition: 1.0s;
-    filter: sepia(80%);
+    filter: brightness(100%);
     border-radius: 16px;
 
     margin: 1vw;
@@ -327,8 +326,8 @@
 
 .port-img:hover {
     opacity: 1;
-    transition: .7s;
-    filter: sepia(0%);
+    transition: .4s;
+    filter: brightness(30%);
 }
 
 .port-font {

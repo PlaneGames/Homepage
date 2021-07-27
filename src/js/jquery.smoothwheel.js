@@ -98,9 +98,9 @@
             $(".screen-ani").css("width", '100%');
             setTimeout(function() {
 
-                $(".screen-ani").load("../portfolio.html", {"width" : "0%"}, function(){
+                $(".screen-ani").load("../index2.html", {"width" : "0%"}, function(){
                     $(".screen-ani").css("width", '0%');
-                    var link = '../portfolio.html';
+                    var link = '../index2.html';
                     location.href = link;
                     //window.open(link);
                 });
@@ -114,6 +114,7 @@
 
         minScrollTop = container.get(0).clientHeight - container.get(0).scrollHeight;
 
+        /*
         barSlt = (minScrollTop - currentY)/(minScrollTop/8);
         if (barSlt > 7) {
             barSlt = 7;
@@ -128,6 +129,7 @@
             if (i != barSlt)
                 bar[i].animate([{opacity:".2"}], 1000);
         }
+        */
 
         if(!running)return;
         requestAnimFrame(animateLoop);

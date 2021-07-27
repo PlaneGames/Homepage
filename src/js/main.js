@@ -1,13 +1,13 @@
 'use strict'; // Show Error Message With Console
-
-var target = document.getElementsByClassName("port-imgcon")[0];    //배열의 주소를 반환하므로 해당 인자를 지정해야 한다.
-var i = 0;
-var subpage = 0;
+var target = document.getElementsByClassName("port-imgcon")[0]; 
 
 var animation = target.animate([], 200);
 animation.addEventListener('finish', function() {
     target.style.transition = '.5s';
 });
+
+var i = 0;
+var subpage = 0;
 
 var aa              = 42;
 var scrollReady     = 0;
@@ -73,8 +73,6 @@ window.onload = () => {
             .css('transition', String(switching_spd) + 's');
         $('.po-con').hide();
         $('.overlay').hide();
-
-
     });
     
     var page_info = [
@@ -111,8 +109,9 @@ window.onload = () => {
         $(window).on("wheel", function (event){
             if (event.originalEvent.deltaY < 0) {
               if (aa < 42) {
-                    //aa += 12;
+                    aa += 12;
                     target.style.marginLeft = String(aa) + "vw";
+                    console.log("asdasd");
                 }
                 /*
                 if (scrollReady == 1){
@@ -132,7 +131,7 @@ window.onload = () => {
             }
             else {
                 if (aa > -42) {
-                    //aa -= 12;
+                    aa -= 12;
                     target.style.marginLeft = String(aa) + "vw";
                 }
                 /*
