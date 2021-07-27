@@ -65,14 +65,27 @@ window.onload = () => {
     
     $(window).on('load', function() {
 
-        resizing_overlay();
         // po-con Hide
-        //$('.po-con').css('opacity','0');
+        $('.po-con').css('opacity','0');
         $('.po-con')
-            .css('transform', 'translate(-50%, 100vh)')
             .css('transition', String(switching_spd) + 's');
         $('.po-con').hide();
         $('.overlay').hide();
+        console.log("1234");
+
+        
+        timeout = setTimeout(function() {
+
+           // po-con Hide
+            $('.po-con').css('opacity','0');
+            $('.po-con')
+                .css('transition', String(switching_spd) + 's');
+            $('.po-con').hide();
+            $('.overlay').hide();
+            console.log("1234");
+
+        }, 100);
+
     });
     
     var page_info = [
@@ -106,12 +119,28 @@ window.onload = () => {
     // Gallery Interaction
     $(document).ready(function() {
 
+        var galleryImgAni = function() {
+
+            clearTimeout(timeout);
+            
+            $(".port-img")
+                .css('transition','.9s');
+
+            timeout = setTimeout(function() {
+
+                $(".port-img")
+                    .css('transition','0s');
+
+            }, 1000);
+
+        }
+
         $(window).on("wheel", function (event){
             if (event.originalEvent.deltaY < 0) {
               if (aa < 42) {
                     aa += 12;
                     target.style.marginLeft = String(aa) + "vw";
-                    console.log("asdasd");
+                    
                 }
                 /*
                 if (scrollReady == 1){
@@ -133,6 +162,7 @@ window.onload = () => {
                 if (aa > -42) {
                     aa -= 12;
                     target.style.marginLeft = String(aa) + "vw";
+                    
                 }
                 /*
                 if (scrollReady == 1){
@@ -222,7 +252,7 @@ window.onload = () => {
                 .css('animation-timing-function','cubic-bezier(0.65, 0, 0.35, 1)')
                 .css('animation-iteration-count','6');
         }
-
+        
         var closeProjectPopup = function(index) {
 
             var transY = "calc(-50% - 100vh)";
@@ -259,43 +289,9 @@ window.onload = () => {
             var page_bgcol  = page_info_bgcolor[index][cur_subpage];
 
             clearTimeout(timeout);
-            timeout = setTimeout(function() {
-
-                $(".port-img:"+img_index)
-                    .css('width','0px')
-                    .css('min-width','0px')
-                    .css('max-width','0px')
-                    .css('transition', String(switching_spd/2) + 's');
-                $(page + ' .po-con').show();
-
-            }, 500);
-
-            timeout = setTimeout(function() {
-                
-                $('body')
-                    .css('background-color', page_bgcol)
-                    .css('transition', String(switching_spd/2) + 's');
-                $(page + ' .po-con')
-                    .css('opacity','1')
-                    .css('transform','translate(-50%, -50%)')
-                    .css('transition', String(switching_spd) + 's');
-
-            }, switching_spd * 500);
-
-            timeout = setTimeout(function() {
-                text_ani(page);
-                $('.po-con')
-                    .css('transition','0s');
-            }, (switching_spd * 500) + 500);
-
-            timeout = setTimeout(function() {
-                cursorWheelAni();
-                scrollReady = 1;
-            }, switching_spd * 1000);
 
             $('.port-img').not(".port-img:"+img_index)
                 .css('opacity','.0')
-                .css('filter','sepia(80%)')
                 .css('transition','.5s')
                 .css('border-radius','16px');
             $('.port-header')
@@ -308,8 +304,34 @@ window.onload = () => {
 
                 $('.port-img').hide();
                 $('.port-header').hide();
-    
+
             }, switching_spd * 1000);
+
+            timeout = setTimeout(function() {
+                $(".port-img:"+img_index)
+                    .css('width','0px')
+                    .css('min-width','0px')
+                    .css('max-width','0px')
+                    .css('transition', String(switching_spd/2) + 's');
+                //$(page + ' .po-con').show();
+                $('.po-con').show();
+            }, 500);
+
+            timeout = setTimeout(function() {
+                $('body')
+                    .css('background-color', page_bgcol)
+                    .css('transition', String(switching_spd/2) + 's');
+                $('.po-con')
+                    .css('opacity','1')
+                    .css('transform','translate(-50%, -50%)')
+                    .css('transition', String(switching_spd) + 's');
+            }, switching_spd * 500);
+
+            timeout = setTimeout(function() {
+                text_ani(page);
+                $('.po-con')
+                    .css('transition','0s');
+            }, (switching_spd * 500) + 500);
 
         }
 
@@ -379,49 +401,13 @@ window.onload = () => {
 
         }
 
-        var selectGallery = function(index) {
-
-            var img_index   = "nth-of-type("+(index+1)+")";
-
-            clearTimeout(timeout);
-            
-            timeout = setTimeout(function() {
-
-                $(".port-img:"+img_index)
-                    .css('width','0px')
-                    .css('min-width','0px')
-                    .css('max-width','0px')
-                    .css('transition', String(switching_spd/2) + 's');
-
-            }, 500);
-
-            $('.port-img').not(".port-img:"+img_index)
-                .css('opacity','.0')
-                .css('transition','.5s')
-                .css('border-radius','16px');
-            $('.port-header')
-                .css('margin-bottom','-120px')
-                .css('padding-bottom','0px')
-                .css('opacity','0')
-                .css('transition','.5s');
-
-            setTimeout(function() {
-
-                $('.port-img').hide();
-                $('.port-header').hide();
-
-            }, switching_spd * 1000);
-
-            console.log("afasf");
-
-        }
+        cursorWheelAni();
 
         var galleryButton = function(index) {
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
                 aa = 42 - 12*index;
                 target.style.marginLeft = String(aa) + "vw";
-                selectGallery(index);
-                showOverlay(); 
+                openProjectPopup(index);
             });
         }
 
