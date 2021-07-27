@@ -258,8 +258,6 @@ window.onload = () => {
             var page        = page_info[index][cur_subpage];
             var page_bgcol  = page_info_bgcolor[index][cur_subpage];
 
-            $('#container').show();
-
             clearTimeout(timeout);
             timeout = setTimeout(function() {
 
@@ -381,12 +379,48 @@ window.onload = () => {
 
         }
 
+        var selectGallery = function(index) {
+
+            var img_index   = "nth-of-type("+(index+1)+")";
+
+            clearTimeout(timeout);
+            
+            timeout = setTimeout(function() {
+
+                $(".port-img:"+img_index)
+                    .css('width','0px')
+                    .css('min-width','0px')
+                    .css('max-width','0px')
+                    .css('transition', String(switching_spd/2) + 's');
+
+            }, 500);
+
+            $('.port-img').not(".port-img:"+img_index)
+                .css('opacity','.0')
+                .css('transition','.5s')
+                .css('border-radius','16px');
+            $('.port-header')
+                .css('margin-bottom','-120px')
+                .css('padding-bottom','0px')
+                .css('opacity','0')
+                .css('transition','.5s');
+
+            setTimeout(function() {
+
+                $('.port-img').hide();
+                $('.port-header').hide();
+
+            }, switching_spd * 1000);
+
+            console.log("afasf");
+
+        }
 
         var galleryButton = function(index) {
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
                 aa = 42 - 12*index;
                 target.style.marginLeft = String(aa) + "vw";
-                openProjectPopup(index);
+                selectGallery(index);
                 showOverlay(); 
             });
         }
