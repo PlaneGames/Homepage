@@ -67,13 +67,14 @@ window.onload = () => {
 
         resizing_overlay();
         // po-con Hide
-        $('.po-con').css('opacity','0');
+        //$('.po-con').css('opacity','0');
         $('.po-con')
             .css('transform', 'translate(-50%, 100vh)')
             .css('transition', String(switching_spd) + 's');
         $('.po-con').hide();
         $('.overlay').hide();
-       
+
+
     });
     
     var page_info = [
@@ -110,9 +111,10 @@ window.onload = () => {
         $(window).on("wheel", function (event){
             if (event.originalEvent.deltaY < 0) {
               if (aa < 42) {
-                    aa += 12;
+                    //aa += 12;
                     target.style.marginLeft = String(aa) + "vw";
                 }
+                /*
                 if (scrollReady == 1){
                     if (cur_subpage > 0) {
                         scrollReady = 0;
@@ -126,12 +128,14 @@ window.onload = () => {
                         }
                     }
                 }
+                */
             }
             else {
                 if (aa > -42) {
-                    aa -= 12;
+                    //aa -= 12;
                     target.style.marginLeft = String(aa) + "vw";
                 }
+                /*
                 if (scrollReady == 1){
                     if (cur_subpage < page_info[0].length - 1) {
                         scrollReady = 0;
@@ -145,6 +149,7 @@ window.onload = () => {
                         }
                     }
                 }
+                */
             }
         });
 
@@ -152,9 +157,10 @@ window.onload = () => {
         //    console.log(this);
         //});
 
+        
         var resetPageAni = function(index, previndex) {
             var page        = page_info[index][previndex];
-            $(page + ' .po-con').hide();
+            //$(page + ' .po-con').hide();
         }
 
         var showOverlay = function() {
@@ -252,6 +258,8 @@ window.onload = () => {
             var img_index   = "nth-of-type("+(index+1)+")";
             var page        = page_info[index][cur_subpage];
             var page_bgcol  = page_info_bgcolor[index][cur_subpage];
+
+            $('#container').show();
 
             clearTimeout(timeout);
             timeout = setTimeout(function() {
@@ -373,6 +381,7 @@ window.onload = () => {
                 .css('transition', String(switching_spd) + 's');
 
         }
+
 
         var galleryButton = function(index) {
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){

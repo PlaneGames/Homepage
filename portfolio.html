@@ -21,19 +21,62 @@
     <script src="../src/js/jquery.fittext.js"></script>
 
     <link   href="../src/css/textani.css" rel="stylesheet">
-    <script src="../src/js/TweenMax.textani.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../src/js/include-html.min.js"></script>
-
+    
+    <script src="../src/js/TweenMax.textani.js"></script>
+    <style>
+        .box {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        .box::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera*/
+        }
+        .container {
+          width: 250px;
+          height: 140px;
+          overflow: auto;
+        }
+        .container::-webkit-scrollbar {
+          width: 10px;
+        }
+        .container::-webkit-scrollbar-thumb {
+          background-color: #2f3542;
+          border-radius: 10px;
+        }
+        .container::-webkit-scrollbar-track {
+          background-color: grey;
+          border-radius: 10px;
+          box-shadow: inset 0px 0px 5px white;
+        }
+        #wrapper{
+            width:100%;
+            height:100%;
+            overflow:auto;
+            -webkit-overflow-scrolling: touch;
+            position:relative;
+        }
+        #container{
+            width:100%;
+            height:100%;
+            position:absolute;
+        }
+    </style>
     <style>
         .fi-text-s {
             
         }
     </style>
 
+    
 </head>
 
 <div class="screen-ani"></div>
+
+<div class="box" id="wrapper">
+    <div id="container">
 
 <div class="cursor_con">
     <div class="cursor_guide">
@@ -118,5 +161,8 @@
 
     <script src="../src/js/main.js"></script>
 </body>
+
+</div>
+</div>
 
 </html>

@@ -95,7 +95,6 @@
     font-size: 24px;
     font-weight: bold;
     text-align: center;
-    margin-top: -50px;
     transition: .4s;
     opacity: 0;
 }
@@ -119,19 +118,16 @@
 }
 
 .gal-con:hover .gal-imgcon{
-    width: 250px;
-    height: 130px;
     transition: .4s;
 }
 
 .gal-con:hover .gal-img{
     transition: .4s;
-    filter:brightness(45%) blur(1px);
-
+    filter:brightness(45%);
 }
 
 .gal-con:hover .gal-seemore{
-    margin-top: -75px;
+    margin-top: -52px;
     transition: .4s;
     opacity: 1;
 }
