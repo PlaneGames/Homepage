@@ -123,8 +123,8 @@ window.onload = () => {
 
             clearTimeout(timeout);
             
-            $(".port-img")
-                .css('transition','.9s');
+                $(".port-img")
+                    .css('transition','.9s');
 
             timeout = setTimeout(function() {
 
@@ -314,24 +314,22 @@ window.onload = () => {
                     .css('max-width','0px')
                     .css('transition', String(switching_spd/2) + 's');
                 //$(page + ' .po-con').show();
-                $('.po-con').show();
+                
             }, 500);
 
             timeout = setTimeout(function() {
-                $('body')
-                    .css('background-color', page_bgcol)
-                    .css('transition', String(switching_spd/2) + 's');
+                $('.po-con').show();
                 $('.po-con')
                     .css('opacity','1')
-                    .css('transform','translate(-50%, -50%)')
+                    .css('transform','translate(-50%, 50%)')
                     .css('transition', String(switching_spd) + 's');
-            }, switching_spd * 500);
+            }, switching_spd * 1000);
 
             timeout = setTimeout(function() {
                 text_ani(page);
                 $('.po-con')
                     .css('transition','0s');
-            }, (switching_spd * 500) + 500);
+            }, (switching_spd * 1000) + 500);
 
         }
 

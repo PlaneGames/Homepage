@@ -126,7 +126,7 @@
     max-width: 120vh;
     height: 56.26vw;
     max-height: 80vh;
-    transform: translate(-50%, calc(-50% + 100vh));
+    transform: translate(-50%, -50%);
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-around;
