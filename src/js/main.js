@@ -321,7 +321,7 @@ window.onload = () => {
                 $('.po-con').show();
                 $('.po-con')
                     .css('opacity','1')
-                    .css('transform','translate(-50%, 50%)')
+                    .css('transform','translate(-50%, 0%)')
                     .css('transition', String(switching_spd) + 's');
             }, switching_spd * 1000);
 

@@ -1,5 +1,5 @@
 .cursor_con {
-    position: absolute;
+    position: fixed;
     z-index: 1000;
     pointer-events: none;
     background-size: cover;
@@ -115,24 +115,59 @@
     margin-left: -0.2rem;
 }
 
+.po-main {
+    margin: auto;
+
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .po-con {
     display: flex;
     position: relative;
     justify-content: center;
 
-    top: 50%;
     left: 50%;
     width: 80vw;
-    max-width: 120vh;
-    height: 56.26vw;
+    max-width: 160vh;
+    height: 40vw;
     max-height: 80vh;
     transform: translate(-50%, -50%);
+
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-around;
 
     opacity: 0;
+}
 
+.po-con-line {
+    position: relative;
+
+    width: 80vw;
+
+    padding-bottom: 4vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4vh;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+@media all and (min-width: 1280px) {
+    .po-main {
+        max-width: 1280px;
+    }
+    .po-con {
+        max-width: 1280px;
+        max-height: 640px;
+    }
+    .po-con-line{
+        max-width: 1280px;
+    }
 }
 
 .po-con-img {
@@ -211,14 +246,17 @@
 }
 
 .po-box {
-    position: relative;
-    width: 32.75%;
-    height: 49%;
-    background-color: rgb(214, 191, 127);
-    margin: 0px;
-    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; 
     justify-content: space-between;
     align-content: space-around;
+    position: relative;
+    width: 49.5%; 
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    
     opacity: 1;
     transition: 1s;
 }
@@ -229,6 +267,7 @@
     height: 49%;
     margin: 0px;
     padding: 0px;
+    background-color: rgb(216, 216, 216);
 }
 
 .po-box .po-button {
