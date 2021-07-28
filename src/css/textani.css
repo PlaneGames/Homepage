@@ -6,3 +6,21 @@
   transform: skew(0deg);
   position: relative;
 }
+
+.ft-main-title {
+  width: 90%;
+  height: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ft-main-lore {
+  width: 90%;
+  height: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ft-main-lore span {
+  font-weight: 100;
+}

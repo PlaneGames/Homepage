@@ -246,13 +246,8 @@
 }
 
 .po-box {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row; 
-    justify-content: space-between;
-    align-content: space-around;
     position: relative;
-    width: 49.5%; 
+    width: 50%; 
     height: 100%;
     margin: 0px;
     padding: 0px;
@@ -261,9 +256,17 @@
     transition: 1s;
 }
 
+.po-box-flexmode {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; 
+    justify-content: space-around;
+    align-content: space-around;
+}
+
 .po-box .po-subbox {
     position: relative;
-    width: 100%;
+    width: 49%;
     height: 49%;
     margin: 0px;
     padding: 0px;
@@ -298,12 +301,12 @@
 
 .po-box h3 {
     font-size: 3vw;
-    letter-spacing: .5vw;
+    letter-spacing: .2em;
 }
 
 .po-box p {
     font-size: 1.2vw;
-    font-weight: bold;
+    letter-spacing: .1em;
 }
 
 .po-box p2 {

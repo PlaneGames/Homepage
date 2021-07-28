@@ -37,7 +37,6 @@
 
         window.addEventListener('resize', function () {
           resizer();
-          console.log("resizing!!!!!!!!");
         });
 
         // Call on resize. Opera debounces their resize by default.
