@@ -273,6 +273,14 @@
     background-color: rgb(216, 216, 216);
 }
 
+.po-box .po-subbox .po-drawbox {
+    position: relative;
+    width: 25%;
+    height: 25%;
+    margin: 0px;
+    padding: 0px;
+}
+
 .po-box .po-button {
     width: 50%;
     margin-left: auto;

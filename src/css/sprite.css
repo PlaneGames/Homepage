@@ -1,0 +1,92 @@
+:root {
+    --pixel-size: 64px;
+    --pixel-scale: 1;
+    --img-frame: 6;
+    --img-speed: .5s;
+    --imgcon-size: 100%;
+ }
+
+.draw-img {
+    width: calc(var(--imgcon-size) * var(--pixel-scale));
+    height: calc(var(--imgcon-size) * var(--pixel-scale));
+
+    overflow: hidden;
+    position: relative;
+ }
+ 
+.draw-img-spritesheet {
+    animation: moveSpritesheet var(--img-speed) steps(var(--img-frame)) infinite;
+    width: calc(var(--imgcon-size) * var(--pixel-scale) * var(--img-frame));
+    position: absolute;
+ }
+ 
+.draw-pixelart {
+    image-rendering: pixelated;
+}
+ 
+@media all and (max-width: 800px) {
+    .draw-pixelart {
+        image-rendering: unset;
+    }
+}
+
+@media all and (min-width: 1280px) {
+    .draw-img {
+        --imgcon-size: var(--pixel-size);
+    }
+}
+
+ @keyframes moveSpritesheet {
+    from {
+       transform: translate3d(0px,0,0)
+    }
+    to {
+       transform: translate3d(-100%,0,0)
+    }
+}
+ 
+
+/*:root {
+    --pixel-size: 32px;
+    --pixel-scale: 2;
+    --img-frame: 6;
+    --img-speed: .5s;
+ }
+ 
+ .draw-img {
+    width: calc(var(--pixel-size) * var(--pixel-scale));
+    height: calc(var(--pixel-size) * var(--pixel-scale));
+
+    overflow: hidden;
+    position: relative;
+ }
+ 
+ .draw-img-spritesheet {
+    animation: moveSpritesheet var(--img-speed) steps(var(--img-frame)) infinite;
+    width: calc(var(--pixel-size) * var(--img-frame) * var(--pixel-scale));
+    position: absolute;
+ }
+ 
+ .draw-pixelart {
+    image-rendering: pixelated;
+ }
+ 
+ .face-right {
+    top: calc(-32px * var(--pixel-scale));
+ }
+ .face-up {
+    top: calc(-64px * var(--pixel-scale));
+ }
+ .face-left {
+    top: calc(-96px * var(--pixel-scale));
+ }
+ 
+ @keyframes moveSpritesheet {
+    from {
+       transform: translate3d(0px,0,0)
+    }
+    to {
+       transform: translate3d(-100%,0,0)
+    }
+ }
+ 
