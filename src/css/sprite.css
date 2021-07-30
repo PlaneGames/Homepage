@@ -30,7 +30,7 @@
     }
 }
 
-@media all and (min-width: 1280px) {
+@media all and (min-width: 960px) {
     .draw-img {
         --imgcon-size: var(--pixel-size);
     }

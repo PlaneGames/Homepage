@@ -9,16 +9,16 @@
 
 .ft-main-title {
   width: 90%;
-  height: 10%;
+  height: auto;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 .ft-main-lore {
   width: 90%;
-  height: 10%;
-  margin-left: auto;
-  margin-right: auto;
+  height: auto;
+  margin: auto;
 }
 
 .ft-main-lore span {
