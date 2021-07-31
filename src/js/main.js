@@ -67,10 +67,13 @@ window.onload = () => {
 
         // po-con Hide
         $('.po-con').css('opacity','0');
+        $('.po-con-line').css('opacity','0');
         $('.po-con')
             .css('transition', String(switching_spd) + 's');
         $('.po-con').hide();
         $('.overlay').hide();
+        $('.po-con-line').hide();
+
         console.log("1234");
 
         
@@ -78,10 +81,12 @@ window.onload = () => {
 
            // po-con Hide
             $('.po-con').css('opacity','0');
+            $('.po-con-line').css('opacity','0');
             $('.po-con')
                 .css('transition', String(switching_spd) + 's');
             $('.po-con').hide();
             $('.overlay').hide();
+            $('.po-con-line').hide();
             console.log("1234");
 
         }, 100);
@@ -323,6 +328,9 @@ window.onload = () => {
                     .css('opacity','1')
                     .css('transform','translate(-50%, 0%)')
                     .css('transition', String(switching_spd) + 's');
+                $('.po-con-line').show();
+                $('.po-con-line')
+                    .css('opacity','1');
             }, switching_spd * 1000);
 
             timeout = setTimeout(function() {
