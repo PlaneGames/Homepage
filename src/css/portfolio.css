@@ -195,8 +195,6 @@
 
     width: 48%;
     height: 48%;
-
-    filter: grayscale(10%) opacity(70%);
 }
 
 .po-con-qr {
