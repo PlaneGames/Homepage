@@ -67,10 +67,12 @@ window.onload = () => {
 
         // po-con Hide
         $('.po-con').css('opacity','0');
+        $('.po-contitle').css('opacity','0');
         $('.po-con-line').css('opacity','0');
         $('.po-con')
             .css('transition', String(switching_spd) + 's');
         $('.po-con').hide();
+        $('.po-contitle').hide();
         $('.overlay').hide();
         $('.po-con-line').hide();
 
@@ -80,13 +82,15 @@ window.onload = () => {
         timeout = setTimeout(function() {
 
            // po-con Hide
-            $('.po-con').css('opacity','0');
-            $('.po-con-line').css('opacity','0');
-            $('.po-con')
-                .css('transition', String(switching_spd) + 's');
-            $('.po-con').hide();
-            $('.overlay').hide();
-            $('.po-con-line').hide();
+           $('.po-con').css('opacity','0');
+           $('.po-contitle').css('opacity','0');
+           $('.po-con-line').css('opacity','0');
+           $('.po-con')
+               .css('transition', String(switching_spd) + 's');
+           $('.po-con').hide();
+           $('.po-contitle').hide();
+           $('.overlay').hide();
+           $('.po-con-line').hide();
             console.log("1234");
 
         }, 100);
@@ -187,11 +191,6 @@ window.onload = () => {
             }
         });
 
-        //$('div').mouseenter(function(){
-        //    console.log(this);
-        //});
-
-        
         var resetPageAni = function(index, previndex) {
             var page        = page_info[index][previndex];
             //$(page + ' .po-con').hide();
@@ -324,18 +323,26 @@ window.onload = () => {
 
             timeout = setTimeout(function() {
                 $('.po-con').show();
+                $('.po-contitle').show();
                 $('.po-con')
+                    .css('opacity','1')
+                    .css('transform','translate(-50%, 0%)')
+                    .css('transition', String(switching_spd) + 's');
+                $('.po-contitle')
                     .css('opacity','1')
                     .css('transform','translate(-50%, 0%)')
                     .css('transition', String(switching_spd) + 's');
                 $('.po-con-line').show();
                 $('.po-con-line')
                     .css('opacity','1');
+                
             }, switching_spd * 1000);
 
             timeout = setTimeout(function() {
                 text_ani(page);
                 $('.po-con')
+                    .css('transition','0s');
+                $('.po-contitle')
                     .css('transition','0s');
             }, (switching_spd * 1000) + 500);
 

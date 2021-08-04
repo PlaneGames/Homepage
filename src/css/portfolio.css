@@ -120,9 +120,24 @@
 
     display: flex;
     position: relative;
-    flex-wrap: wrap;
+
     flex-direction: column;
     justify-content: center;
+}
+
+.po-contitle {
+    position: relative;
+    justify-content: center;
+
+    left: 50%;
+    width: 100vw;
+    max-width: 100vw;
+    height: 50vh;
+    max-height: 50vh;
+    transform: translate(-50%, -50%);
+    
+    opacity: 0;
+    background-color: rgb(188, 188, 188);
 }
 
 .po-con {
