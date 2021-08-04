@@ -73,7 +73,7 @@ window.onload = () => {
             .css('transition', String(switching_spd) + 's');
         $('.po-con').hide();
         $('.po-contitle').hide();
-        $('.overlay').hide();
+        //$('.overlay').hide();
         $('.po-con-line').hide();
 
         console.log("1234");
@@ -89,7 +89,7 @@ window.onload = () => {
                .css('transition', String(switching_spd) + 's');
            $('.po-con').hide();
            $('.po-contitle').hide();
-           $('.overlay').hide();
+           //$('.overlay').hide();
            $('.po-con-line').hide();
             console.log("1234");
 
@@ -335,7 +335,11 @@ window.onload = () => {
                 $('.po-con-line').show();
                 $('.po-con-line')
                     .css('opacity','1');
-                
+
+                $(".ft-main-title").fitText(1.5);
+                $(".ft-main-lore").fitText(4);
+                $(".ft-main-lore2").fitText(3.6);
+
             }, switching_spd * 1000);
 
             timeout = setTimeout(function() {
