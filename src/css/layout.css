@@ -10,10 +10,14 @@
     max-width: 1000px;
     height: auto;
 
-    padding-top: 44px;
-    padding-bottom: 44px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
 
-    background-color: rgba(48, 60, 110, 0.1);
+.lo-box h2 {
+    color: rgb(50, 50, 50);
+    margin-bottom: -8px;
+    font-size: 24px;
 }
 
 .lo-subbox {
@@ -21,7 +25,18 @@
 }
 
 .lo-line {
-    
+    position: relative;
+
+    width: 95%;
+    max-width: 1000px;
+
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    padding-top: 10px;
+    margin-top: 10px;
+
+    border-top: 1px solid rgba(20, 20, 20, 0.2);
 }
 
 .lo-side {
@@ -34,6 +49,13 @@
 .lo-main {
     width: 75%;
     max-width: 750px;
+    margin-right: 50px;
+}
+
+.lo-wide {
+    width: 100%;
+    max-width: 1000px;
+    margin-left: 50px;
     margin-right: 50px;
 }
 
