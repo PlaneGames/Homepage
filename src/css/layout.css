@@ -1,0 +1,104 @@
+.lo-box {
+    overflow : hidden;
+    position: relative;
+    justify-content: center;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+
+    padding-top: 44px;
+    padding-bottom: 44px;
+
+    background-color: rgba(48, 60, 110, 0.1);
+}
+
+.lo-subbox {
+    height: auto;
+}
+
+.lo-line {
+    
+}
+
+.lo-side {
+    min-width: 250px;
+    width: 25%;
+    max-width: 250px;
+    margin-left: 50px;
+}
+
+.lo-main {
+    width: 75%;
+    max-width: 750px;
+    margin-right: 50px;
+}
+
+.lo-flexmode {
+    display: flex;
+    flex-direction: row;
+}
+
+.lo-textcenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lo-profile {
+    border-radius: 12px;
+    width: 150px;
+    height: 200px;
+}
+
+.lo-iconlink {
+    width: 16px;
+    height: 16px;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    color: rgb(48, 48, 48);
+    font-size: 12px;
+    /*word-break: break-all;*/
+    margin-bottom: 10px;
+    transition: .25s;
+}
+
+.lo-iconlink h1 {
+    position: absolute;
+    color: rgb(48, 48, 48);
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 24px;
+    word-break: normal;
+}
+
+.lo-iconlink a {
+    position: absolute;
+    text-decoration: none; 
+    box-shadow: 0 -3px rgba(48, 60, 110, 0.9) inset;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    margin-left: 100px;
+}
+
+.lo-iconlink a2 {
+    position: absolute;
+    text-decoration: none; 
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    margin-left: 100px;
+}
+
+.lo-iconlink a:hover {
+    transition: .25s;
+    text-decoration: none; 
+    box-shadow: 0 -17px rgba(48, 60, 110, 0.9) inset;
+    color: rgb(255, 255, 255);
+}
