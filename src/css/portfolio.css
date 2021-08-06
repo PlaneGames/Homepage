@@ -330,6 +330,12 @@
     font-size: 1vw;
 }
 
+.po-box p3 {
+    font-size: .5em;
+    letter-spacing: .1em;
+    line-height: 2em;
+}
+
 @media all and (min-width: 1280px) {
     .po-box h1 {
         font-size: 4vh;
