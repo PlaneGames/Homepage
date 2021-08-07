@@ -121,6 +121,19 @@
         $('.po-con-line').hide();
 
     });
+    
+    $(window).on('load', function() {
+
+        $('.po-con').css('opacity','0');
+        $('.po-contitle').css('opacity','0');
+        $('.po-con-line').css('opacity','0');
+        $('.po-con')
+            .css('transition', String(switching_spd) + 's');
+        $('.po-con').hide();
+        $('.po-contitle').hide();
+        //$('.overlay').hide();
+        $('.po-con-line').hide();
+    });
     </script>
 
 </body>
