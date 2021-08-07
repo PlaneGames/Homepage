@@ -95,7 +95,7 @@
         });
 
         $('.gal-con').on('click', function(){
-            var link = '../index2.html';
+            var link = 'index2.html';
                 location.href = link;
             /*
             $(".screen-ani").css("width", '100%');
