@@ -13,6 +13,7 @@ var aa              = 42;
 var scrollReady     = 0;
 var scrollMode      = 0;
 var switching_spd   = 1.5;
+var pageload        = 0;
 
 // Mouse Wheel Process
 
@@ -62,7 +63,7 @@ window.onload = () => {
     window.addEventListener('resize', function () {
         resizing_overlay();
     });
-    
+    /*
     $(window).on('load', function() {
 
         // po-con Hide
@@ -75,9 +76,7 @@ window.onload = () => {
         $('.po-contitle').hide();
         //$('.overlay').hide();
         $('.po-con-line').hide();
-
-        console.log("1234");
-
+        console.log("load1");
         
         timeout = setTimeout(function() {
 
@@ -91,11 +90,25 @@ window.onload = () => {
            $('.po-contitle').hide();
            //$('.overlay').hide();
            $('.po-con-line').hide();
-            console.log("1234");
+            console.log(pageload);
 
         }, 100);
 
     });
+    */
+
+    if (pageload == 1) {
+        $('.po-con').css('opacity','0');
+        $('.po-contitle').css('opacity','0');
+        $('.po-con-line').css('opacity','0');
+        $('.po-con')
+            .css('transition', String(switching_spd) + 's');
+        $('.po-con').hide();
+        $('.po-contitle').hide();
+        //$('.overlay').hide();
+        $('.po-con-line').hide();
+        console.log("load1");
+    }
     
     var page_info = [
         ["#dr3-pamphlet", "#dr3-gameplay", "#dr3-gamedesign", "#dr3-development"],
