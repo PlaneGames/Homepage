@@ -96,7 +96,7 @@
 
         $('.gal-con').on('click', function(){
             var link = '../index2.html';
-                    location.href = link;
+                location.href = link;
             /*
             $(".screen-ani").css("width", '100%');
             setTimeout(function() {
