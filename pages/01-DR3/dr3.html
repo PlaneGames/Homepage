@@ -265,17 +265,8 @@
 <div class="po-con-line"></div>
 
 <script>
+
     pageload++;
-    (function ($) {
-    $('.po-con').css('opacity','0');
-        $('.po-contitle').css('opacity','0');
-        $('.po-con-line').css('opacity','0');
-        $('.po-con')
-            .css('transition', String(switching_spd) + 's');
-        $('.po-con').hide();
-        $('.po-contitle').hide();
-        //$('.overlay').hide();
-        $('.po-con-line').hide();
-        console.log("load1");
-    })(jQuery);
+    plChecker();
+
 </script>

@@ -33,6 +33,21 @@ window.onload = () => {
     document.addEventListener("mousemove", mouseFunc); 
 }
 
+var plChecker = () => {
+    console.log(pageload);
+    if (pageload >= 1) {
+        $('.po-con').css('opacity','0');
+        $('.po-contitle').css('opacity','0');
+        $('.po-con-line').css('opacity','0');
+        $('.po-con')
+            .css('transition', String(switching_spd) + 's');
+        $('.po-con').hide();
+        $('.po-contitle').hide();
+        //$('.overlay').hide();
+        $('.po-con-line').hide();
+    }
+}
+
 (function ($) {
 
     $('body').mousedown(function(e){if(e.button==1)return false});
@@ -59,10 +74,11 @@ window.onload = () => {
                 .css('height','66.675vw');
         }
     }
-    
+
     window.addEventListener('resize', function () {
         resizing_overlay();
     });
+
     /*
     $(window).on('load', function() {
 
