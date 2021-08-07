@@ -162,6 +162,7 @@ header {
         margin-left: 20px;
     }
     .lo-main {
+        width: auto;
         margin-top: 30px;
         margin-left: 20px;
         margin-right: 20px;
@@ -182,5 +183,18 @@ header {
     .gal-imgl h3 {
         text-align: center;
         transition: .4s;
+    }
+    .lo-iconlink {
+        margin-left: 0px;
+    }
+    .lo-iconlink h1 {
+        margin-left: 0px;
+        opacity: 0;
+    }
+    .lo-iconlink a {
+        margin-left: 28px;
+    }
+    .lo-iconlink a2 {
+        margin-left: 28px;
     }
 }
