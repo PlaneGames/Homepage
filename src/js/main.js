@@ -12,21 +12,27 @@ var galleryButtonClick = function() {
     $('.gal-con').on('click', function(){
 
         active = "#page-portfolio";
-        // lo-con Hide
+
         $('.lo-con').css('opacity','0');
-        $('.lo-con').hide();
+
+        timeout = setTimeout(function() {
+
+            $('.lo-con').hide();
+            $('.lo-con').css('transition','0s');
+            
+            $(active + " .lo-con").show();
+            $(active + " .lo-con")
+                .css('opacity','1')
+                .css('transition','2s');
+
+        }, 1000);
         
-        $(active + " .lo-con").show();
-        $(active + " .lo-con")
-            .css('opacity','1')
-            .css('transition','1s');
-        console.log(active);
+        
     });
 }
 
 var loadpageChecker = () => {
 
-    console.log(loadpage);
     if (loadpage < 2) {
         // lo-con Hide
         $('.lo-con').css('opacity','0');
