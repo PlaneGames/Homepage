@@ -116,6 +116,7 @@ header {
     padding-bottom: 2px;
 
     margin-left: 100px;
+    transition: .25s;
 }
 
 .lo-iconlink a2 {
@@ -178,7 +179,8 @@ header {
         transition: .4s;
     }
     .gal-imgl {
-        padding-left: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     .gal-imgl h3 {
         text-align: center;
@@ -196,5 +198,9 @@ header {
     }
     .lo-iconlink a2 {
         margin-left: 28px;
+    }
+    .sbar {
+        opacity: 0;
+        visibility: hidden;
     }
 }
