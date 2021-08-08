@@ -80,6 +80,9 @@ var loadpageChecker = () => {
         $('.lo-con').css('opacity','0');
         $('.lo-con').hide();
     } else {
+        // lo-con Hide
+        $('.lo-con').css('opacity','0');
+        $('.lo-con').hide();
         loadcomplete = 1;
         galleryButtonClick();
         $("img").on('load', function() {
