@@ -7,6 +7,7 @@ var active = "#page-resume";
 var timeout;
 var maxpage = 2;
 var loadpage = 0;
+var loading_per = 0;
 var loadcomplete = 0;
 
 var galleryButtonClick = function() {
@@ -62,9 +63,13 @@ var showPage = function() {
 
     $(active + " .lo-con").show();
 
-    $(active + " .lo-con")
-        .css('opacity','1')
-        .css('transition','1s');
+    timeout = setTimeout(function() {
+
+        $(active + " .lo-con")
+            .css('opacity','1')
+            .css('transition','1s');
+
+    }, 100);
         
 }
 
@@ -77,13 +82,34 @@ var loadpageChecker = () => {
     } else {
         loadcomplete = 1;
         galleryButtonClick();
-    
-        $("img").on('load', function() { 
+        $("img").on('load', function() {
+            loading_per = 100;
             showPage();
+            $(".loader").html("<p>" + loading_per + "%</p>");
         });
     }
+    
+    var showLoading = function() {
 
-    $(".loader").html("<p>"+(loadpage/maxpage) * 100+"%</p>");
+        var frame 
+
+        frame = setTimeout(function() {
+            if (loading_per < 99) {
+                if (loading_per < (loadpage/maxpage) * 100) {
+                    loading_per += 1;
+                    showLoading();
+                } else {
+                    return 0;
+                }
+            } else {
+                return 0;
+            }
+        }, 10);
+
+        $(".loader").html("<p>" + loading_per + "%</p>");
+
+    }
+    showLoading();
 
 }
 
