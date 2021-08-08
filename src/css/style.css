@@ -197,6 +197,8 @@
 }
 
 .port-header {
+    left: 50%;
+    transform: translate(-50%, 0%);
     justify-content: center;
     display: flex;
 
