@@ -5,6 +5,7 @@
 
 var active = "#page-resume";
 var timeout;
+var maxpage = 2;
 var loadpage = 0;
 var loadcomplete = 0;
 
@@ -40,20 +41,26 @@ var loadpageChecker = () => {
         // lo-con Hide
         $('.lo-con').css('opacity','0');
         $('.lo-con').hide();
-        
+
         $(active + " .lo-con").show();
         $(active + " .lo-con")
             .css('opacity','1')
             .css('transition','1s');
         loadcomplete = 1;
         galleryButtonClick();
+        $("img").on('load', function() { console.log("image loaded correctly"); })
+
+        var images = document.images;
+        console.log(images);
     }
+    $(".loader").html("<p>"+(loadpage/maxpage) * 100+"%</p>");
 
 }
 
 (function ($) {
 
     $(document).ready(function() {
+        
     });
 
 })(jQuery);
