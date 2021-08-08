@@ -187,6 +187,8 @@
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: row;
 
     width: auto;
     height: auto;
@@ -218,9 +220,17 @@
     
     transition: 0.8s;
 
-    filter: brightness(100%);
+    filter: grayscale(90%);
+    opacity: 0.8;
 
     margin: 0.5%;
+    transition: .4s;
+}
+
+.port-img:hover {
+    opacity: 1;
+    transition: .4s;
+    filter: sepia(0%);
 }
 
 .port-dungeonrpg3 {
@@ -325,12 +335,6 @@
 }
 .lore-subl {
 
-}
-
-.port-img:hover {
-    opacity: 1;
-    transition: .4s;
-    filter: brightness(30%);
 }
 
 .port-font {

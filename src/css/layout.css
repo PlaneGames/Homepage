@@ -226,6 +226,19 @@ header {
         opacity: 0;
         visibility: hidden;
     }
+    .port-imgcon {
+        flex-direction: column;
+    }
+    .port-img {
+        width: 440px;
+        max-width: 80%;
+    
+        height: 80px;
+        max-height: auto;
+
+        margin: .3vh;
+        transition: .4s;
+    }
 }
 
 .lo-center-h {

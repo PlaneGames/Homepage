@@ -14,7 +14,9 @@ var galleryButtonClick = function() {
 
         active = "#page-portfolio";
 
-        $('.lo-con').css('opacity','0');
+        $('.lo-con')
+            .css('opacity','0')
+            .css('transition','.5s');
 
         timeout = setTimeout(function() {
 
@@ -23,7 +25,7 @@ var galleryButtonClick = function() {
             
             $(active + " .lo-con").show();
 
-        }, 1000);
+        }, 500);
 
         timeout = setTimeout(function() {
 
@@ -31,7 +33,7 @@ var galleryButtonClick = function() {
                 .css('opacity','1')
                 .css('transition','1s');
 
-        }, 1100);
+        }, 600);
         
     });
 }
