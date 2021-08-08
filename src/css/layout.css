@@ -221,7 +221,7 @@ header {
 }
 
 .loader {
-    position: absolute;
+    position: fixed;
 
     display: flex;
     flex-direction: column;
