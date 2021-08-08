@@ -27,7 +27,6 @@ var galleryButtonClick = function() {
 
         }, 1000);
         
-        
     });
 }
 
