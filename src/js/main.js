@@ -22,13 +22,31 @@ var galleryButtonClick = function() {
             $('.lo-con').css('transition','0s');
             
             $(active + " .lo-con").show();
-            $(active + " .lo-con")
+
+            $(active + " .lo-con").on('load', function() { 
+                $(active + " .lo-con")
                 .css('opacity','1')
                 .css('transition','2s');
+            })
 
         }, 1000);
         
     });
+}
+
+var showPage = function() {
+    // lo-con Hide
+    $('.lo-con').css('opacity','0');
+    $('.lo-con').hide();
+
+    $(active + " .lo-con").show();
+    timeout = setTimeout(function() {
+
+        $(active + " .lo-con")
+            .css('opacity','1')
+            .css('transition','1s');
+
+    }, 100);
 }
 
 var loadpageChecker = () => {
@@ -38,21 +56,17 @@ var loadpageChecker = () => {
         $('.lo-con').css('opacity','0');
         $('.lo-con').hide();
     } else {
-        // lo-con Hide
-        $('.lo-con').css('opacity','0');
-        $('.lo-con').hide();
-
-        $(active + " .lo-con").show();
-        $(active + " .lo-con")
-            .css('opacity','1')
-            .css('transition','1s');
         loadcomplete = 1;
         galleryButtonClick();
-        $("img").on('load', function() { console.log("image loaded correctly"); })
-
-        var images = document.images;
-        console.log(images);
+        
+        $("img").on('load', function() { 
+            console.log("image loaded!"); 
+        })
+        $("img").load(function(){
+            showPage();
+        });
     }
+
     $(".loader").html("<p>"+(loadpage/maxpage) * 100+"%</p>");
 
 }
@@ -60,7 +74,11 @@ var loadpageChecker = () => {
 (function ($) {
 
     $(document).ready(function() {
+
         
+
     });
+    
+    
 
 })(jQuery);

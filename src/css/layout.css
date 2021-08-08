@@ -146,6 +146,10 @@ header {
     color: rgb(255, 255, 255);
 }
 
+.lo-img {
+
+}
+
 @media all and (max-width: 800px) {
     header {
         margin-top: 80px;
