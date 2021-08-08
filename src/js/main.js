@@ -22,17 +22,25 @@ var galleryButtonClick = function() {
             $('.lo-con').css('transition','0s');
             
             $(active + " .lo-con").show();
-
-            $(active + " .lo-con").on('load', function() { 
-                $(active + " .lo-con")
+            $(active + " .lo-con")
                 .css('opacity','1')
-                .css('transition','2s');
-            })
+                .css('transition','1s');
 
         }, 1000);
         
     });
 }
+
+$('.lo-con').hide();
+$('.lo-con').css('transition','0s');
+
+$(active + " .lo-con").show();
+
+$(active + " .lo-con").on('load', function() { 
+    $(active + " .lo-con")
+    .css('opacity','1')
+    .css('transition','2s');
+})
 
 var showPage = function() {
     // lo-con Hide
@@ -40,13 +48,11 @@ var showPage = function() {
     $('.lo-con').hide();
 
     $(active + " .lo-con").show();
-    timeout = setTimeout(function() {
 
-        $(active + " .lo-con")
-            .css('opacity','1')
-            .css('transition','1s');
-
-    }, 100);
+    $(active + " .lo-con")
+        .css('opacity','1')
+        .css('transition','1s');
+        
 }
 
 var loadpageChecker = () => {
@@ -58,13 +64,11 @@ var loadpageChecker = () => {
     } else {
         loadcomplete = 1;
         galleryButtonClick();
-        
+    
         $("img").on('load', function() { 
-            console.log("image loaded!"); 
-        })
-        $("img").load(function(){
             showPage();
         });
+        
     }
 
     $(".loader").html("<p>"+(loadpage/maxpage) * 100+"%</p>");
