@@ -22,11 +22,16 @@ var galleryButtonClick = function() {
             $('.lo-con').css('transition','0s');
             
             $(active + " .lo-con").show();
+
+        }, 1000);
+
+        timeout = setTimeout(function() {
+
             $(active + " .lo-con")
                 .css('opacity','1')
                 .css('transition','1s');
 
-        }, 1000);
+        }, 1100);
         
     });
 }
@@ -43,6 +48,12 @@ $(active + " .lo-con").on('load', function() {
 })
 
 var showPage = function() {
+
+    // loader Hide
+    $('.loader')
+        .css('opacity','0')
+        .css('transition','.2s');
+
     // lo-con Hide
     $('.lo-con').css('opacity','0');
     $('.lo-con').hide();
@@ -68,7 +79,6 @@ var loadpageChecker = () => {
         $("img").on('load', function() { 
             showPage();
         });
-        
     }
 
     $(".loader").html("<p>"+(loadpage/maxpage) * 100+"%</p>");
