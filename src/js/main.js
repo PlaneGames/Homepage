@@ -15,7 +15,7 @@ var galleryButtonClick = function() {
     $('.gal-con').on('click', function(){
 
         active = "#page-portfolio";
-        history.pushState({ data: 'testData1' }, null, '/portfolio');
+        history.pushState({ data: 'testData1' }, null, '/pf');
 
         $('.lo-con')
             .css('opacity','0')
@@ -118,7 +118,7 @@ var loadpageChecker = () => {
             $(".loader").html("<p>" + loading_per + "%</p>");
         });
 
-        history.pushState({ data: 'testData0' }, null, '/resume');
+        history.pushState({ data: 'testData0' }, null, '/rs');
 
     }
     showLoading();
