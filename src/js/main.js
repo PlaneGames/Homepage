@@ -117,11 +117,12 @@ var loadpageChecker = () => {
             showPage();
             $(".loader").html("<p>" + loading_per + "%</p>");
         });
+
+        history.pushState({ data: 'testData0' }, null, '/resume');
+
     }
     showLoading();
 }
-
-
 
 window.addEventListener('popstate', function () {
 
