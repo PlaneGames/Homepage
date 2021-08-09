@@ -9,11 +9,14 @@ var maxpage = 2;
 var loadpage = 0;
 var loading_per = 0;
 var loadcomplete = 0;
+var state = { 'active': active };
 
 var galleryButtonClick = function() {
     $('.gal-con').on('click', function(){
 
         active = "#page-portfolio";
+        state = { 'active': active };
+        history.pushState(state, '', '/portfolio')
 
         $('.lo-con')
             .css('opacity','0')
@@ -50,12 +53,35 @@ $(active + " .lo-con").on('load', function() {
     .css('transition','2s');
 })
 
-var showPage = function() {
+var showLoading = function() {
 
+    var frame 
+
+    frame = setTimeout(function() {
+        if (loading_per < 99) {
+            if (loading_per < (loadpage/maxpage) * 100) {
+                loading_per += 1;
+                showLoading();
+            } else {
+                return 0;
+            }
+        } else {
+            return 0;
+        }
+    }, 10);
+
+    $(".loader").html("<p>" + loading_per + "%</p>");
+
+}
+
+var hideLoading = function() {
     // loader Hide
     $('.loader')
         .css('opacity','0')
         .css('transition','.2s');
+}
+
+var showPage = function() {
 
     // lo-con Hide
     $('.lo-con').css('opacity','0');
@@ -70,7 +96,8 @@ var showPage = function() {
             .css('transition','1s');
 
     }, 100);
-        
+    console.log(active);
+
 }
 
 var loadpageChecker = () => {
@@ -87,43 +114,25 @@ var loadpageChecker = () => {
         galleryButtonClick();
         $("img").on('load', function() {
             loading_per = 100;
+            hideLoading();
             showPage();
             $(".loader").html("<p>" + loading_per + "%</p>");
         });
     }
-    
-    var showLoading = function() {
-
-        var frame 
-
-        frame = setTimeout(function() {
-            if (loading_per < 99) {
-                if (loading_per < (loadpage/maxpage) * 100) {
-                    loading_per += 1;
-                    showLoading();
-                } else {
-                    return 0;
-                }
-            } else {
-                return 0;
-            }
-        }, 10);
-
-        $(".loader").html("<p>" + loading_per + "%</p>");
-
-    }
     showLoading();
-
 }
+
+history.pushState({ 'active': "#page-resume" }, '', '/resume')
+
+window.addEventListener('popstate', function () {
+    alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
+    showPage();
+});
 
 (function ($) {
 
     $(document).ready(function() {
 
-        
-
     });
     
-    
-
 })(jQuery);

@@ -271,3 +271,11 @@ header {
     font-size: 20px;
     font-weight: bolder;
 }
+
+#spot {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    background: red;
+}
