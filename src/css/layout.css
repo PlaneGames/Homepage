@@ -287,7 +287,7 @@ header {
     }
     .lo-gallery-header {
         position: relative;
-        height: auto;
+        height: 10%;
     }
 }
 
