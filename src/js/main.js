@@ -36,10 +36,32 @@ var galleryButtonClick = function() {
                 .css('opacity','1')
                 .css('transition','1s');
 
+                const body = document.querySelector('body');
+                let scrollPosition = 0;
+                
+                // 팝업 오픈
+                scrollPosition = window.pageYOffset;
+                body.style.overflow = 'hidden';
+                body.style.position = 'fixed';
+                body.style.top = `-${scrollPosition}px`;
+                body.style.width = '100%';
+
         }, 600);
         
     });
 }
+
+window.addEventListener('resize', function () {
+    const body = document.querySelector('body');
+                let scrollPosition = 0;
+                
+                // 팝업 오픈
+                scrollPosition = window.pageYOffset;
+                body.style.overflow = 'hidden';
+                body.style.position = 'fixed';
+                body.style.top = `-${scrollPosition}px`;
+                body.style.width = '100%';
+});
 
 $('.lo-con').hide();
 $('.lo-con').css('transition','0s');
