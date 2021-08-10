@@ -183,21 +183,6 @@
     transform: translate(-50%, 0%);
 }
 
-.port-imgcon {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-
-    width: auto;
-    height: auto;
-
-    transition: .9s;
-    /*margin-left: 42vw;*/
-    vertical-align: center;
-}
-
 .port-header {
     justify-content: center;
     display: flex;
@@ -206,32 +191,6 @@
     position: relative;
 }
 
-.port-img {
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
-    width: 10vw;
-    max-width: 160px;
-
-    height: 20vw;
-    max-height: 320px;
-    
-    transition: 0.8s;
-
-    filter: grayscale(90%);
-    opacity: 0.8;
-
-    margin: 0.5%;
-    transition: .4s;
-}
-
-.port-img:hover {
-    opacity: 1;
-    transition: .4s;
-    filter: sepia(0%);
-}
 
 .port-dungeonrpg3 {
 
