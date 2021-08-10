@@ -41,7 +41,7 @@ var galleryButtonClick = function() {
                 ele.style.overflow = 'hidden';
                 ele.style.height = '100%';
             };
-            toggleScrolling(active);
+            toggleScrolling("body");
 
         }, 600);
         
