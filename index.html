@@ -35,7 +35,6 @@
 
     <script>
         window.onpopstate = function(event) {
-            //alert(`location: ${document.location}, state: ${JSON.stringify(event.state.page)},`)
             alert(event.state.page);
             if (event.state.page == 1) {
                 active = "#page-resume";
@@ -52,7 +51,9 @@
             if(curUrl.indexOf("/rs") != -1 || 
             curUrl.indexOf("?page=1") != -1 ||
             curUrl == "jae0.com" ||
-            curUrl == "www.jae0.com") {
+            curUrl == "www.jae0.com" ||
+            curUrl == "www.jae0.com/index" ||
+            curUrl == "www.jae0.com/index.html") {
                 history.pushState({page: 1}, "title 1", "/rs");
                 history.replaceState({page: 1}, "title 1", "/rs");
                 active = "#page-resume";
