@@ -19,14 +19,8 @@ var galleryButtonClick = function() {
 
         toggleScrolling = function(active) {
             let ele = document.querySelector(active);
-            if(!ele) { return };
-            if (ele.style.overflow === 'hidden') {
-                ele.style.overflow = '';
-                ele.style.height = '';
-            } else {
-                ele.style.overflow = 'hidden';
-                ele.style.height = '100%';
-            }
+            ele.style.overflow = 'hidden';
+            ele.style.height = '100%';
         };
         toggleScrolling();
 
