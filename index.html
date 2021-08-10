@@ -48,12 +48,12 @@
 
         $(document).ready(function() {
             var curUrl = window.location.href;
-            if(curUrl.indexOf("/rs") != -1) {
+            if(curUrl.indexOf("/rs") != -1 || curUrl.indexOf("?page=1") != -1) {
                 alert("/rs");
                 history.pushState({page: 1}, "title 1", "/rs");
                 history.replaceState({page: 1}, "title 1", "/rs");
                 active = "#page-resume";
-            } else if(curUrl.indexOf("/pf") != -1) {
+            } else if(curUrl.indexOf("/pf") != -1 || curUrl.indexOf("?page=2") != -1) {
                 alert("/pf");
                 history.pushState({page: 2}, "title 1", "/pf");
                 history.replaceState({page: 2}, "title 1", "/pf");
