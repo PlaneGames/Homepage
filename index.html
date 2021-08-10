@@ -49,9 +49,8 @@
             }
         }
 
-        var curUrl = window.location.href;
-
         $(document).ready(function() {
+            var curUrl = window.location.href;
             if(curUrl.indexOf("/rs") != -1) {
                 alert("/rs");
                 active = "#page-resume";
@@ -60,6 +59,8 @@
                 active = "#page-portfolio";
             }
         });
+
+        console.log("restart index.html");
     </script>
 
 </head>
