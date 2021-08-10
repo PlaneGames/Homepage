@@ -36,12 +36,12 @@ var galleryButtonClick = function() {
                 .css('opacity','1')
                 .css('transition','1s');
 
-            toggleScrolling = function(active) {
-                let ele = document.querySelector(active);
+            toggleScrolling = function(index) {
+                let ele = document.querySelector(index);
                 ele.style.overflow = 'hidden';
                 ele.style.height = '100%';
             };
-            toggleScrolling();
+            toggleScrolling(active);
 
         }, 600);
         
