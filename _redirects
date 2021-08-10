@@ -1,4 +1,4 @@
 /index /index.html
 /index2 /index2.html
-/rs /?page=1
-/pf /?page=2
+/?page=1 /rs
+/?page=2 /pf
