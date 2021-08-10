@@ -53,7 +53,11 @@
             curUrl == "jae0.com" ||
             curUrl == "www.jae0.com" ||
             curUrl == "www.jae0.com/index" ||
-            curUrl == "www.jae0.com/index.html") {
+            curUrl == "www.jae0.com/index.html" ||
+            curUrl == "https://www.jae0.com/" ||
+            curUrl == "https://www.jae0.com" ||
+            curUrl == "https://www.jae0.com/index" ||
+            curUrl == "https://www.jae0.com/index.html") {
                 history.pushState({page: 1}, "title 1", "/rs");
                 history.replaceState({page: 1}, "title 1", "/rs");
                 active = "#page-resume";
