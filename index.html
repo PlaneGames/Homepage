@@ -34,9 +34,7 @@
     <script src="../src/js/include-html.min.js"></script>
 
     <script>
-        history.pushState({page: 1}, "title 1", "/rs");
-        history.pushState({page: 2}, "title 1", "/pf");
-        history.replaceState({page: 1}, "title 1", "/rs");
+
         window.onpopstate = function(event) {
             //alert(`location: ${document.location}, state: ${JSON.stringify(event.state.page)},`)
             alert(event.state.page);
@@ -58,6 +56,9 @@
                 alert("/pf");
                 active = "#page-portfolio";
             }
+            history.pushState({page: 1}, "title 1", "/rs");
+            history.pushState({page: 2}, "title 2", "/pf");
+            history.replaceState({page: 1}, "title 1", "/rs");
         });
 
         console.log("restart index.html");
