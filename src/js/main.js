@@ -17,6 +17,19 @@ var galleryButtonClick = function() {
         history.pushState({page: 2}, "title 2", "/pf");
         active = "#page-portfolio";
 
+        toggleScrolling = function(active) {
+            let ele = document.querySelector(active);
+            if(!ele) { return };
+            if (ele.style.overflow === 'hidden') {
+                ele.style.overflow = '';
+                ele.style.height = '';
+            } else {
+                ele.style.overflow = 'hidden';
+                ele.style.height = '100%';
+            }
+        };
+        toggleScrolling();
+
         $('.lo-con')
             .css('opacity','0')
             .css('transition','.5s');

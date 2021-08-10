@@ -172,6 +172,7 @@ header {
     transition: .4s;
     /*margin-left: 42vw;*/
     vertical-align: center;
+    background-color: antiquewhite;
 }
 
 .port-img {
@@ -303,8 +304,7 @@ header {
     }
     .lo-gallery-header {
         position: relative;
-        height: 100%;
-        padding-bottom: 35px;
+        padding-bottom: 2%;
     }
 }
 
