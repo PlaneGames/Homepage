@@ -39,6 +39,7 @@
         history.replaceState({page: 1}, "title 1", "/rs");
         window.onpopstate = function(event) {
             //alert(`location: ${document.location}, state: ${JSON.stringify(event.state.page)},`)
+            alert(event.state.page);
             if (event.state.page == 1) {
                 active = "#page-resume";
                 showPage();
@@ -47,6 +48,17 @@
                 showPage();
             }
         }
+        function getParameterByName(name) { 
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); 
+        }
+
+        $(document).ready(function() {
+            var patId = getParameterByName('page');
+            alert(patId);
+        });
     </script>
 
 </head>
