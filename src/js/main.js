@@ -44,6 +44,9 @@ var galleryButtonClick = function() {
                 .css('opacity','1')
                 .css('transition','1s');
 
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty("--vh", `${vh}px`);
+
         }, 600);
         
     });
