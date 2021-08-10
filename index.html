@@ -34,11 +34,6 @@
     <script src="../src/js/include-html.min.js"></script>
 
     <script>
-        history.pushState({page: 1}, "title 1", "/rs");
-        history.pushState({page: 2}, "title 2", "/pf");
-        history.replaceState({page: 2}, "title 1", "/pf");
-        history.replaceState({page: 1}, "title 1", "/rs");
-
         window.onpopstate = function(event) {
             //alert(`location: ${document.location}, state: ${JSON.stringify(event.state.page)},`)
             alert(event.state.page);
@@ -55,9 +50,13 @@
             var curUrl = window.location.href;
             if(curUrl.indexOf("/rs") != -1) {
                 alert("/rs");
+                history.pushState({page: 1}, "title 1", "/rs");
+                history.replaceState({page: 1}, "title 1", "/rs");
                 active = "#page-resume";
             } else if(curUrl.indexOf("/pf") != -1) {
                 alert("/pf");
+                history.pushState({page: 2}, "title 1", "/pf");
+                history.replaceState({page: 2}, "title 1", "/pf");
                 active = "#page-portfolio";
             }
         });
