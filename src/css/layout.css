@@ -288,8 +288,8 @@ header {
     .lo-gallery-header {
         position: relative;
         height: 100%;
-        padding-top: 1%;
-        padding-bottom: 5%;
+        padding-top: 10%;
+        padding-bottom: 4%;
     }
 }
 
