@@ -48,16 +48,17 @@
                 showPage();
             }
         }
-        function getParameterByName(name) { 
-            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-            results = regex.exec(location.search);
-            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); 
-        }
+
+        var curUrl = window.location.href;
 
         $(document).ready(function() {
-            var patId = getParameterByName('page');
-            alert(patId);
+            if(curUrl.indexOf("/rs") != -1) {
+                alert("/rs");
+                active = "#page-resume";
+            } else if(curUrl.indexOf("/pf") != -1) {
+                alert("/pf");
+                active = "#page-portfolio";
+            }
         });
     </script>
 
