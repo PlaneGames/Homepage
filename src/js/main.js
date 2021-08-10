@@ -14,6 +14,7 @@ var state = { 'active': active };
 var galleryButtonClick = function() {
     $('.gal-con').on('click', function(){
 
+        history.pushState({page: 2}, "title 2", "/pf");
         active = "#page-portfolio";
 
         $('.lo-con')
@@ -34,8 +35,6 @@ var galleryButtonClick = function() {
             $(active + " .lo-con")
                 .css('opacity','1')
                 .css('transition','1s');
-
-            history.pushState({page: 2}, "title 2", "?page=2");
 
         }, 600);
         
@@ -130,7 +129,7 @@ window.addEventListener('popstate', function () {
 (function ($) {
 
     $(document).ready(function() {
-        
+
     });
     
 })(jQuery);
