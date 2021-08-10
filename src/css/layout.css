@@ -302,6 +302,7 @@ header {
     .lo-gallery-header {
         position: relative;
         height: 10%;
+        padding-bottom: 25px;
     }
 }
 
