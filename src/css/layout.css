@@ -159,6 +159,11 @@ header {
     height: 10%;
 }
 
+.lo-anti-scroll {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+}
+
 .port-imgcon {
     position: relative;
     display: flex;

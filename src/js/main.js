@@ -15,9 +15,11 @@ let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty("--vh", `${vh}px`);
 
 window.addEventListener("resize", () => {
-    let vh = window.innerHeight * 0.01;
+    vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 });
+
+console.log(vh);
 
 var galleryButtonClick = function() {
     $('.gal-con').on('click', function(){
@@ -44,9 +46,10 @@ var galleryButtonClick = function() {
                 .css('opacity','1')
                 .css('transition','1s');
 
-            let vh = window.innerHeight * 0.01;
+            vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty("--vh", `${vh}px`);
-
+            console.log(vh);
+            
         }, 600);
         
     });
