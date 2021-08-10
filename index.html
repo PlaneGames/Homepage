@@ -34,6 +34,9 @@
     <script src="../src/js/include-html.min.js"></script>
 
     <script>
+        history.pushState({page: 1}, "title 1", "/rs");
+        history.pushState({page: 2}, "title 2", "/pf");
+        history.replaceState({page: 1}, "title 1", "/rs");
 
         window.onpopstate = function(event) {
             //alert(`location: ${document.location}, state: ${JSON.stringify(event.state.page)},`)
@@ -47,6 +50,7 @@
             }
         }
 
+        /*
         $(document).ready(function() {
             var curUrl = window.location.href;
             if(curUrl.indexOf("/rs") != -1) {
@@ -56,9 +60,25 @@
                 alert("/pf");
                 active = "#page-portfolio";
             }
-            history.pushState({page: 1}, "title 1", "/rs");
-            history.pushState({page: 2}, "title 2", "/pf");
-            history.replaceState({page: 1}, "title 1", "/rs");
+        });
+        */
+
+        history.pushState = ( f => function pushState(){
+            var ret = f.apply(this, arguments);
+            window.dispatchEvent(new Event('pushstate'));
+            window.dispatchEvent(new Event('locationchange'));
+            return ret;
+        })(history.pushState);
+
+        history.replaceState = ( f => function replaceState(){
+            var ret = f.apply(this, arguments);
+            window.dispatchEvent(new Event('replacestate'));
+            window.dispatchEvent(new Event('locationchange'));
+            return ret;
+        })(history.replaceState);
+
+        window.addEventListener('popstate',()=>{
+            window.dispatchEvent(new Event('locationchange'))
         });
 
         console.log("restart index.html");
