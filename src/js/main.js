@@ -95,7 +95,7 @@ var showPage = function() {
             .css('transition','1s');
 
     }, 100);
-    console.log(active);
+    //console.log(active);
 
 }
 

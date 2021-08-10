@@ -34,7 +34,7 @@ window.onload = () => {
 }
 
 var plChecker = () => {
-    console.log(pageload);
+    //console.log(pageload);
     if (pageload >= 1) {
         $('.po-con').css('opacity','0');
         $('.po-contitle').css('opacity','0');

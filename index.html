@@ -35,7 +35,7 @@
 
     <script>
         window.onpopstate = function(event) {
-            alert(event.state.page);
+            //alert(event.state.page);
             if (event.state.page == 1) {
                 active = "#page-resume";
                 showPage();
@@ -47,7 +47,7 @@
 
         $(document).ready(function() {
             var curUrl = window.location.href;
-            console.log(curUrl);
+            //console.log(curUrl);
             if(curUrl.indexOf("/rs") != -1 || 
             curUrl.indexOf("?page=1") != -1 ||
             curUrl == "jae0.com" ||
@@ -67,8 +67,7 @@
                 active = "#page-portfolio";
             }
         });
-
-        console.log("restart index.html");
+        //console.log("restart index.html");
     </script>
 
 </head>
