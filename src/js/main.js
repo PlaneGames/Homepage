@@ -11,18 +11,6 @@ var loading_per = 0;
 var loadcomplete = 0;
 var state = { 'active': active };
 
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty("--vh", `${vh}px`);
-
-window.addEventListener("resize", () => {
-    vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-});
-
-$('html').scrollTop(0);
-
-console.log(vh);
-
 var galleryButtonClick = function() {
     $('.gal-con').on('click', function(){
 
@@ -47,10 +35,6 @@ var galleryButtonClick = function() {
             $(active + " .lo-con")
                 .css('opacity','1')
                 .css('transition','1s');
-
-            vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty("--vh", `${vh}px`);
-            console.log(vh);
 
         }, 600);
         
