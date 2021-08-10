@@ -19,6 +19,8 @@ window.addEventListener("resize", () => {
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 });
 
+$('html').scrollTop(0);
+
 console.log(vh);
 
 var galleryButtonClick = function() {
@@ -49,7 +51,7 @@ var galleryButtonClick = function() {
             vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty("--vh", `${vh}px`);
             console.log(vh);
-            
+
         }, 600);
         
     });
