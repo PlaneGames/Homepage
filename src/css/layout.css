@@ -271,13 +271,12 @@ header {
         justify-content: center;
         align-items: center;
     
-        height: 80vh;
-        max-height: 80vh;
+        height: 70vh;
+        max-height: 70vh;
     
         transition: .4s;
         /*margin-left: 42vw;*/
         vertical-align: center;
-        
     }
     .port-img {
         width: 440px;
