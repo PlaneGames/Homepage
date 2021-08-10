@@ -34,10 +34,16 @@
     <script src="../src/js/include-html.min.js"></script>
 
     <script>
-        history.pushState({page: 1}, "title 1", "?page=1");
-        window.history.replaceState({page: 1}, "title 1", "/rs");
+        history.pushState({page: 1}, "title 1", "/path/state1");
         window.onpopstate = function(event) {
-            alert(`location: ${document.location}, state: ${JSON.stringify(event.state)}`)
+            //alert(`location: ${document.location}, state: ${JSON.stringify(event.state.page)},`)
+            if (event.state.page == 1) {
+                active = "#page-resume";
+                showPage();
+            } else {
+                active = "#page-portfolio";
+                showPage();
+            }
         }
     </script>
 
