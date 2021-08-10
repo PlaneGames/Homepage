@@ -287,8 +287,9 @@ header {
     }
     .lo-gallery-header {
         position: relative;
-        height: 10%;
-        padding-bottom: 0px;
+        height: 100%;
+        padding-top: 1%;
+        padding-bottom: 5%;
     }
 }
 
@@ -302,8 +303,8 @@ header {
     }
     .lo-gallery-header {
         position: relative;
-        height: 10%;
-        padding-bottom: 25px;
+        height: 100%;
+        padding-bottom: 35px;
     }
 }
 
