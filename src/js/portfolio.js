@@ -5,6 +5,33 @@ var scrollReady     = 0;
 var scrollMode      = 0;
 var switching_spd   = 1.5;
 
+var book = document.querySelector(".book");
+var bookcover = document.querySelector(".book-cover");
+
+console.log(book);
+
+book.addEventListener("click", () => {
+  book.classList.toggle("flip");
+  console.log(123455);
+});
+
+bookcover.addEventListener("mouseenter", () => {
+  book.classList.add("rotateRight");
+  console.log(123455);
+});
+
+bookcover.addEventListener("mouseout", () => {
+  book.classList.remove("rotateRight");
+});
+/*
+secondHalf.addEventListener("mouseenter", () => {
+  book.classList.add("rotateRight");
+});
+
+secondHalf.addEventListener("mouseout", () => {
+  book.classList.remove("rotateRight");
+});
+*/
 (function ($) {
 
     var timeout;
@@ -21,7 +48,8 @@ var switching_spd   = 1.5;
     ];
 
     var cur_subpage = 0;
-
+    $('.book-con').hide();
+    
     $(document).ready(function() {
 
         var openProjectPopup = function(index) {
@@ -61,9 +89,7 @@ var switching_spd   = 1.5;
             timeout = setTimeout(function() {
                 $('.lo-gallery-header').hide();
                 $('.port-img').hide();
-                $('.port-img:'+img_index)
-                    .show()
-                    .css('opacity','1');
+                $('.book-con').show();
             }, 1000);
         
         }
