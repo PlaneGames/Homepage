@@ -9,7 +9,6 @@ var maxpage = 2;
 var loadpage = 0;
 var loading_per = 0;
 var loadcomplete = 0;
-var state = { 'active': active };
 
 var galleryButtonClick = function() {
     $('.gal-con').on('click', function(){
@@ -121,15 +120,3 @@ var loadpageChecker = () => {
     }
     showLoading();
 }
-
-window.addEventListener('popstate', function () {
-
-});
-
-(function ($) {
-
-    $(document).ready(function() {
-
-    });
-    
-})(jQuery);

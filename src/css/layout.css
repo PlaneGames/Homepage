@@ -157,42 +157,49 @@ header {
 .lo-gallery-header {
     position: relative;
     height: 10%;
+    padding-bottom: 4%;
 }
 
 .port-imgcon {
     position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    vertical-align: center;
 
     height: 20vw;
     max-height: 320px;
 
     transition: .4s;
-    /*margin-left: 42vw;*/
-    vertical-align: center;
+    
 }
 
 .port-img {
     position: relative;
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 
     width: 10vw;
     max-width: 160px;
-
     height: 20vw;
     max-height: 320px;
-    
-    transition: 0.8s;
 
     filter: grayscale(90%);
     opacity: 0.8;
 
     margin: 0.5%;
     transition: .4s;
+}
+
+.port-img:hover {
+    height: 25vw;
+    max-height: 380px;
+    opacity: 1;
+    filter: grayscale(0%);
 }
 
 @media all and (max-width: 800px) {
@@ -251,7 +258,7 @@ header {
     }
     .lo-iconlink h1 {
         margin-left: 0px;
-        opacity: 0;
+        display: none;
     }
     .lo-iconlink a {
         margin-left: 28px;
@@ -260,59 +267,26 @@ header {
         margin-left: 28px;
     }
     .sbar {
-        opacity: 0;
-        visibility: hidden;
+        display: none;
     }
     .port-imgcon {
         flex-direction: column;
-
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    
         height: 70vh;
         max-height: 70vh;
-    
-        transition: .4s;
-        /*margin-left: 42vw;*/
-        vertical-align: center;
     }
     .port-img {
         width: 440px;
         max-width: 80%;
-    
         height: 100px;
         max-height: 20vh;
-
         margin: .3vh;
-        transition: .4s;
     }
     .port-img:hover {
         opacity: 1;
-        transition: .5s;
         filter: grayscale(0%);
         width: 90%;
         max-width: 90%;
-    }
-    .lo-gallery-header {
-        position: relative;
-        height: 100%;
-        padding-bottom: 4%;
-    }
-}
-
-@media all and (min-width: 701px) {
-    .port-img:hover {
-        opacity: 1;
-        transition: .4s;
-        filter: grayscale(0%);
-        height: 25vw;
-        max-height: 380px;
-    }
-    .lo-gallery-header {
-        position: relative;
-        padding-bottom: 2%;
+        height: 100px;
     }
 }
 
