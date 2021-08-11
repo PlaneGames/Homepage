@@ -11,14 +11,17 @@ var loading_per = 0;
 var loadcomplete = 0;
 
 $(window).on("orientationchange",function(){
+    alert("Rotate!");
+    /*
     if(window.orientation == 0) // Portrait
-       {
-          $('.port-img').css('transition','0s');
-       }
+        {
+            $('.port-img').css('transition','0s');
+        }
     else // Landscape
-       {
-        $('.port-img').css('transition','.4s');
-       }
+        {
+            $('.port-img').css('transition','.4s');
+        }
+    */
 });
 
 var galleryButtonClick = function() {
