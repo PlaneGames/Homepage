@@ -2,6 +2,7 @@
 ---- 2021.08.08
 ---- Kwon Jaeyoung
 */
+'use strict'; // Show Error Message With Console
 
 var active = "#page-resume";
 var timeout;
