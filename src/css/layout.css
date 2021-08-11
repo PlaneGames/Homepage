@@ -189,6 +189,7 @@ header {
     opacity: 0.3;
 
     margin: 0.5%;
+    transition: .4s;
 }
 
 .port-img:hover {

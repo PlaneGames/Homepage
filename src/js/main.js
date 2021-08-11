@@ -10,6 +10,17 @@ var loadpage = 0;
 var loading_per = 0;
 var loadcomplete = 0;
 
+$(window).on("orientationchange",function(){
+    if(window.orientation == 0) // Portrait
+       {
+          $('.port-img').css('transition','0s');
+       }
+    else // Landscape
+       {
+        $('.port-img').css('transition','.4s');
+       }
+});
+
 var galleryButtonClick = function() {
     $('.gal-con').on('click', function(){
 
