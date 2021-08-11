@@ -14,7 +14,7 @@ $(window).on("orientationchange",function(){
 
     $('.port-img').css('transition','0s');
     timeout = setTimeout(function() {
-        $('.port-img').css('transition','.4s');
+        //$('.port-img').css('transition','.4s');
     }, 10);
 
 });
