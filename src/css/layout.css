@@ -186,7 +186,7 @@ header {
     max-height: 320px;
 
     filter: grayscale(90%);
-    opacity: 0.3;
+    opacity: 0.7;
 
     margin: 0.5%;
     transition: .4s;

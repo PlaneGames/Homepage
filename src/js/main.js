@@ -10,12 +10,12 @@ var loadpage = 0;
 var loading_per = 0;
 var loadcomplete = 0;
 
-$(window).on("orientationchange",function(){
+$(window).on('orientationchange', function() {
 
     $('.port-img').css('transition','0s');
-    timeout = setTimeout(function() {
-        //$('.port-img').css('transition','.4s');
-    }, 10);
+    $(window).one('resize', function() {
+        $('.port-img').css('transition','.4s');
+    });
 
 });
 
