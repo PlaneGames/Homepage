@@ -188,8 +188,8 @@ header {
     height: 20vw;
     max-height: 320px;
 
-    filter: grayscale(90%);
-    opacity: 0.8;
+    /*filter: grayscale(90%);*/
+    opacity: 0.3;
 
     margin: 0.5%;
     transition: .4s;
@@ -199,7 +199,7 @@ header {
     height: 25vw;
     max-height: 380px;
     opacity: 1;
-    filter: grayscale(0%);
+    /*filter: grayscale(0%);*/
 }
 
 @media all and (max-width: 800px) {
@@ -219,7 +219,6 @@ header {
     }
 }
 
-/*
 @media all and (max-width: 700px) {
     header {
         margin-top: 32px;
@@ -244,7 +243,6 @@ header {
     .gal-con {
         align-items: center;
         flex-direction: column;
-        
     }
     .gal-imgl {
         padding-left: 20px;
@@ -283,14 +281,11 @@ header {
         margin: .3vh;
     }
     .port-img:hover {
-        opacity: 1;
-        filter: grayscale(0%);
         width: 90%;
         max-width: 90%;
         height: 100px;
     }
 }
-*/
 
 .lo-center-h {
     position: absolute;
