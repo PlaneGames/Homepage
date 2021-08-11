@@ -185,7 +185,7 @@ header {
     height: 20vw;
     max-height: 320px;
 
-    /*filter: grayscale(90%);*/
+    filter: grayscale(90%);
     opacity: 0.3;
 
     margin: 0.5%;
@@ -195,7 +195,7 @@ header {
     height: 25vw;
     max-height: 380px;
     opacity: 1;
-    /*filter: grayscale(0%);*/
+    filter: grayscale(0%);
 }
 
 @media all and (max-width: 800px) {
