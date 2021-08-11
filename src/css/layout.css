@@ -243,7 +243,7 @@ header {
     .gal-con {
         align-items: center;
         flex-direction: column;
-        transition: .4s;
+        
     }
     .gal-imgl {
         padding-left: 20px;
