@@ -219,6 +219,7 @@ header {
     }
 }
 
+/*
 @media all and (max-width: 700px) {
     header {
         margin-top: 32px;
@@ -289,6 +290,7 @@ header {
         height: 100px;
     }
 }
+*/
 
 .lo-center-h {
     position: absolute;
