@@ -213,45 +213,9 @@
     height: 48%;
 }
 
-.po-con-qr {
-    z-index: 1;
-    transform-origin: top center;
-    justify-content: center;
-    width: 35%;
-    height: 10%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.po-con-qr .po-qr {
-    width: 40%;
-    max-width: 150px;
-    height: auto;
-    transition: .3s;
-    transform-origin: top center;
-}
-
-.po-con-qr:hover .po-qr {
-    width: 10vh; 
-    max-width: 150px;
-    height: auto;
-    transition: .3s;
-    transform-origin: top center;
-}
-
 .overlay {
     position: absolute;
     opacity: 0.1;
-}
-
-@media all and (orientation: landscape) {
-    .po-con-qr:hover .po-qr {
-        width: 10vw; 
-        max-width: 150px;
-        height: auto;
-        transition: .3s;
-        transform-origin: top center;
-    }
 }
 
 .po-box {
