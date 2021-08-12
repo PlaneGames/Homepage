@@ -36,8 +36,8 @@ $(window).on('orientationchange', function() {
 
 var book_img = [
     ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
-    ["bookDr2Title", "DungeonRpg2", "bookDr2Side", "bookDr3Backcover"],
-    ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
+    ["bookDr2Title", "DungeonRpg2", "bookDr2Side", "bookDr2Backcover"],
+    ["bookDr3Title", "TUDCutscene", "bookTUDSide", "bookDr3Backcover"],
     ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
     ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
     ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
