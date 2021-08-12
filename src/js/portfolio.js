@@ -45,7 +45,7 @@ $(window).on('orientationchange', function() {
 });
 
 (function ($) {
-
+    
     var timeout;
     
     var page_info = [
@@ -71,8 +71,9 @@ $(window).on('orientationchange', function() {
             $('.port-img').not('.port-img:'+img_index)
                 .css('opacity','.0')
                 .css('width','0%')
-                .css('-webkit-animation-timing-function','ease-in-out')
-                .css('-webkit-animation-duration','300ms !important');
+                .css('transition','0s')
+                .css('animation-name','closeGallery')
+                .css('animation-duration','3s');
 
             $('.port-img:'+img_index)
                 .css('left','0')

@@ -317,10 +317,14 @@ header {
     font-weight: bolder;
 }
 
-#spot {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 0;
-    background: red;
+@keyframes closeGallery {
+    from {
+        width: 10vw;
+        max-width: 160px;
+    }
+  
+    to {
+        width: 0px;
+        max-width: 0px;
+    }
 }
