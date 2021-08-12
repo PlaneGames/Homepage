@@ -158,6 +158,7 @@ header {
     position: relative;
     height: 10%;
     padding-bottom: 4%;
+    animation-fill-mode: both;
 }
 
 .port-imgcon {
@@ -320,21 +321,23 @@ header {
 }
 
 @keyframes closeGallery {
-    from {
-        filter: grayscale(90%);
-        opacity: 0.7;
-        margin: 0.5%;
-        transition: .4s;
-        width: 10vw;
-        max-width: 160px;
-    }
-  
     to {
-        filter: grayscale(0%);
+        height: 0px;
         opacity: 0;
-        margin: 0%;
+        padding: 0;
+        margin: 0px;
         transition: 0s;
         width: 0px;
         max-width: 0px;
+    }
+}
+
+@keyframes closeGalleryHeader {
+    to {
+        opacity: 0;
+        height: 0px;
+        padding: 0px;
+        margin: 0px;
+        transition: 0s;
     }
 }

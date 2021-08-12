@@ -69,7 +69,20 @@ $(window).on('orientationchange', function() {
 
             $('.port-img').not('.port-img:'+img_index)
                 .css('animation-name','closeGallery')
-                .css('animation-duration','3s');
+                .css('animation-duration','2s');
+
+                $('.lo-gallery-header')
+                .css('opacity','0')
+                //.css('width','0px')
+                //.css('height','0px')
+                .css('padding','0px')
+                .css('margin','0px')
+                .css('transition','1s');
+            $('.lo-gallery-header h1')
+                .css('height','0px')
+                .css('padding','0px')
+                .css('margin','0px')
+                .css('transition','1s');
 
             $('.port-img:'+img_index)
                 .css('left','0')
