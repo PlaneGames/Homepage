@@ -113,6 +113,11 @@ $(window).on('orientationchange', function() {
                 $('.book-con')
                     .css('display','flex');
             }, 2000);
+            timeout = setTimeout(function() {
+                $('.book-title')
+                    .css('transition','1s')
+                    .css('opacity','1');
+            }, 2100);
 
         }
 
