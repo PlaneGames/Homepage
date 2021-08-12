@@ -54,32 +54,34 @@ $(window).on('orientationchange', function() {
     $(document).ready(function() {
 
         var openProjectPopup = function(index) {
+
             var img_index   = "nth-of-type("+(index+1)+")";
+
             $('.port-img').not('.port-img:'+img_index)
                 .css('transition','.5s')
                 .css('opacity','0');
+
             $('.lo-gallery-header')
-                .css('opacity','0')
-                .css('width','0px')
-                .css('height','0px')
-                .css('padding','0px')
-                .css('margin','0px')
-                .css('transition','.5s');
+                .css('opacity','0');
             $('.lo-gallery-header h1')
-                .css('height','0px')
-                .css('padding','0px')
-                .css('margin','0px')
-                .css('transition','.5s');
+                .css('opacity','0');
 
             timeout = setTimeout(function() {
+
+                $('.lo-gallery-header')
+                    .css('visibility','hidden')
+                    .css('animation-name','closeGalleryHeader')
+                    .css('animation-duration','.5s');
+
+                $('.lo-gallery-header h1')
+                    .css('visibility','hidden')
+                    .css('animation-name','closeGalleryHeader')
+                    .css('animation-duration','.5s');
 
                 $('.port-img').not('.port-img:'+img_index)
                     .css('visibility','hidden')
                     .css('animation-name','closeGallery')
                     .css('animation-duration','1s');
-
-                $('.port-img')
-                    .css('transition','0s');
 
                     //$('.lo-gallery-header').hide();
             }, 500);
