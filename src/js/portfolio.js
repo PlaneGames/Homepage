@@ -34,6 +34,16 @@ secondHalf.addEventListener("mouseout", () => {
   book.classList.remove("rotateRight");
 });
 */
+
+$(window).on('orientationchange', function() {
+
+    $('.port-img').css('transition','0s');
+    $(window).one('resize', function() {
+        $('.port-img').css('transition','.4s');
+    });
+
+});
+
 (function ($) {
 
     var timeout;
@@ -58,11 +68,15 @@ secondHalf.addEventListener("mouseout", () => {
 
             var img_index   = "nth-of-type("+(index+1)+")";
 
-            $('.port-imgcon')
+            $('.port-img').not('.port-img:'+img_index)
                 .css('opacity','.0')
-                .css('transition','1s')
-                .css('height','0%')
-                .css('margin','0%');
+                .css('width','0%')
+                .css('-webkit-animation-timing-function','ease-in-out')
+                .css('-webkit-animation-duration','300ms !important');
+
+            $('.port-img:'+img_index)
+                .css('left','0')
+                .css('transition','1s');
 
             timeout = setTimeout(function() {
                 $('.lo-gallery-header').hide();

@@ -11,15 +11,6 @@ var loadpage = 0;
 var loading_per = 0;
 var loadcomplete = 0;
 
-$(window).on('orientationchange', function() {
-
-    $('.port-img').css('transition','0s');
-    $(window).one('resize', function() {
-        $('.port-img').css('transition','.4s');
-    });
-
-});
-
 var galleryButtonClick = function() {
     $('.gal-con').on('click', function(){
 
