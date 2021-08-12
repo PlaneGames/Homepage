@@ -89,7 +89,7 @@ secondHalf.addEventListener("mouseout", () => {
             timeout = setTimeout(function() {
                 $('.lo-gallery-header').hide();
                 $('.port-img').hide();
-                $('.book-con').show();
+                //$('.book-con').show();
             }, 1000);
         
         }
