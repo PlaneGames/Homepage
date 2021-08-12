@@ -58,6 +58,16 @@ secondHalf.addEventListener("mouseout", () => {
 
             var img_index   = "nth-of-type("+(index+1)+")";
 
+            $('.port-img:'+img_index)
+            .css('opacity','.0')
+            .css('transition','.2s')
+            //.css('height','0px')
+            .css('width','0px');
+            //.css('margin','0px');
+
+
+            /*
+
             //clearTimeout(timeout);
 
             $('.lo-gallery-header')
@@ -102,7 +112,7 @@ secondHalf.addEventListener("mouseout", () => {
                 $('.port-img').not('.port-img:'+img_index).hide();
                 //$('.book-con').show();
             }, 1750);
-        
+        */
         }
 
         var galleryButton = function(index) {
