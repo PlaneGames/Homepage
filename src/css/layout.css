@@ -280,11 +280,13 @@ header {
         max-height: 20vh;
         margin: .3vh;
     }
+    /*
     .port-img:hover {
         width: 90%;
         max-width: 90%;
         height: 100px;
     }
+    */
 }
 
 .lo-center-h {
