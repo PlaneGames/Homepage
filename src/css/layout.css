@@ -338,3 +338,14 @@ header {
         transition: 0s;
     }
 }
+
+@keyframes scaleBook {
+    to {
+        min-width: 160px;
+        max-width: 20vw;
+        width: 320px;
+        min-height: 240px;
+        height: 30vw;
+        max-height: 480px;
+    }
+}

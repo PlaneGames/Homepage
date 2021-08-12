@@ -60,7 +60,7 @@ $(window).on('orientationchange', function() {
             $('.port-img').not('.port-img:'+img_index)
                 .css('transition','.5s')
                 .css('opacity','0');
-
+                
             $('.lo-gallery-header')
                 .css('animation-name','closeGalleryHeader')
                 .css('animation-duration','.5s');
@@ -75,6 +75,10 @@ $(window).on('orientationchange', function() {
                 $('.port-img').not('.port-img:'+img_index)
                     .css('visibility','hidden')
                     .css('animation-name','closeGallery')
+                    .css('animation-duration','.5s');
+
+                $('.port-img:'+img_index)
+                    .css('animation-name','scaleBook')
                     .css('animation-duration','.5s');
 
             }, 500);
