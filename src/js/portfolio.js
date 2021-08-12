@@ -56,19 +56,23 @@ $(window).on('orientationchange', function() {
         /* --- Book Side Cover Sizing --- */
 
         var bookWidth = clamp(160, $('.book-cover').width(), 320);
-        console.log(bookWidth);
-
-        window.addEventListener('resize', function () {
+        
+        var bookResizing = function() {
             bookWidth = clamp(160, $('.book-cover').width(), 320);
-            console.log(bookWidth);
             $('.back-cover')
                 .css('transform','rotateY(180deg) translateZ('+bookWidth/5+'px)')
+        }
+
+        window.addEventListener('resize', function () {
+            bookResizing();
         });
         
         /* --- Gallery Button Selecting --- */
 
         var openProjectPopup = function(index) {
 
+            bookResizing();
+            
             var img_index   = "nth-of-type("+(index+1)+")";
 
             $('.port-img').not('.port-img:'+img_index)
