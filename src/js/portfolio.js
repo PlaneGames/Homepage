@@ -67,7 +67,7 @@ $(window).on('orientationchange', function() {
         var openProjectPopup = function(index) {
             var img_index   = "nth-of-type("+(index+1)+")";
 
-            $('.port-img').not('.port-img:'+img_index)
+            $('.port-img').not('#project1')
                 .css('animation-name','closeGallery')
                 .css('animation-duration','2s');
 
@@ -84,7 +84,7 @@ $(window).on('orientationchange', function() {
                 .css('margin','0px')
                 .css('transition','1s');
 
-            $('.port-img:'+img_index)
+            $('#project1')
                 .css('left','0')
                 .css('transition','1s');
 
@@ -141,7 +141,7 @@ $(window).on('orientationchange', function() {
         */
         }
 
-        $(".port-img:nth-of-type(1)").one('click', function(){
+        $("#project1").one('click', function(){
             openProjectPopup(0);
         });
 
