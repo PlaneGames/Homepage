@@ -58,12 +58,11 @@ secondHalf.addEventListener("mouseout", () => {
 
             var img_index   = "nth-of-type("+(index+1)+")";
 
-            $('.port-img:'+img_index)
-            .css('opacity','.0')
-            .css('transition','.2s')
-            //.css('height','0px')
-            .css('width','0px');
-            //.css('margin','0px');
+            $('.port-img').not('.port-img:'+img_index)
+                .css('opacity','.0')
+                .css('transition','2s');
+                //.css('height','0px')
+                //.css('margin','0px');
 
 
             /*
