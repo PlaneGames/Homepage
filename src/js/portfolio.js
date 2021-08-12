@@ -65,24 +65,13 @@ $(window).on('orientationchange', function() {
     $(document).ready(function() {
 
         var openProjectPopup = function(index) {
-            var img_index   = "nth-of-type("+(index+1)+")";
+            //var img_index   = "nth-of-type("+(index+1)+")";
 
             $('.port-img').not('#project1')
                 .css('animation-name','closeGallery')
                 .css('animation-duration','2s');
 
-                $('.lo-gallery-header')
-                .css('opacity','0')
-                //.css('width','0px')
-                //.css('height','0px')
-                .css('padding','0px')
-                .css('margin','0px')
-                .css('transition','1s');
-            $('.lo-gallery-header h1')
-                .css('height','0px')
-                .css('padding','0px')
-                .css('margin','0px')
-                .css('transition','1s');
+            
 
             $('#project1')
                 .css('left','0')
