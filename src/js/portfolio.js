@@ -4,7 +4,7 @@ var subpage = 0;
 var scrollReady     = 0;
 var scrollMode      = 0;
 var switching_spd   = 1.5;
-
+const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
 var book = document.querySelector(".book");
 var bookcover = document.querySelector(".book-cover");
@@ -50,8 +50,22 @@ $(window).on('orientationchange', function() {
 
     var cur_subpage = 0;
     //$('.book-con').hide();
-    
+
     $(document).ready(function() {
+
+        /* --- Book Side Cover Sizing --- */
+
+        var bookWidth = clamp(160, $('.book-cover').width(), 320);
+        console.log(bookWidth);
+
+        window.addEventListener('resize', function () {
+            bookWidth = clamp(160, $('.book-cover').width(), 320);
+            console.log(bookWidth);
+            $('.back-cover')
+                .css('transform','rotateY(180deg) translateZ('+bookWidth/5+'px)')
+        });
+        
+        /* --- Gallery Button Selecting --- */
 
         var openProjectPopup = function(index) {
 
@@ -91,53 +105,6 @@ $(window).on('orientationchange', function() {
                     .css('display','flex');
             }, 2000);
 
-            /*
-
-            //clearTimeout(timeout);
-
-            $('.lo-gallery-header')
-                .css('opacity','0')
-                //.css('width','0px')
-                //.css('height','0px')
-                .css('padding','0px')
-                .css('margin','0px')
-                .css('transition','1s');
-            $('.lo-gallery-header h1')
-                .css('height','0px')
-                .css('padding','0px')
-                .css('margin','0px')
-                .css('transition','1s');
-            var j = 0;
-            var a = 0;
-            var b = 0;
-            do {
-                j += 1;
-                a = 150 * (j + 1);
-                    setTimeout(function() {
-                        $('.port-img:'+"nth-of-type("+(b++)+")")
-                            .css('opacity','.0')
-                            .css('transition','.2s')
-                            //.css('height','0px')
-                            .css('width','0px');
-                            //.css('margin','0px');
-                    }, a);
-                console.log(a);
-            } while (j < 8);
-
-            //$('.port-img:'+img_index)
-                //.css('min-width','160px')
-                //.css('max-width','20vw')
-                //.css('width','320px')
-                //.css('min-height','240px')
-                //.css('height','30vw')
-                //.css('max-height','480px');
-
-            timeout = setTimeout(function() {
-                $('.lo-gallery-header').hide();
-                $('.port-img').not('.port-img:'+img_index).hide();
-                //$('.book-con').show();
-            }, 1750);
-        */
         }
 
         var galleryButton = function(index) {
