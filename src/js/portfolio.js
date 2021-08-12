@@ -76,20 +76,20 @@ $(window).on('orientationchange', function() {
                     .css('visibility','hidden')
                     .css('animation-name','closeGallery')
                     .css('animation-duration','1s');
+            }, 500);
 
+            timeout = setTimeout(function() {
                 $('.port-img:'+img_index)
                     .css('animation-name','scaleBook')
                     .css('animation-duration','1s')
                     .css('opacity','1')
                     .css('filter','grayscale(40%)');
-
-            }, 500);
-
+            }, 1000);
             timeout = setTimeout(function() {
                 $('.port-img').hide();
                 $('.book-con')
                     .css('display','flex');
-            }, 1500);
+            }, 2000);
 
             /*
 
