@@ -58,25 +58,14 @@ secondHalf.addEventListener("mouseout", () => {
 
             var img_index   = "nth-of-type("+(index+1)+")";
 
-            $('.port-img').not('.port-img:'+img_index)
+            $('.port-imgcon')
                 .css('opacity','.0')
-                .css('transition','1s');
-                //.css('height','0px')
-                //.css('margin','0px');
+                .css('transition','1s')
+                .css('height','0%')
+                .css('margin','0%');
 
             timeout = setTimeout(function() {
-                $('.lo-gallery-header')
-                    .css('opacity','0')
-                    .css('width','0px')
-                    .css('height','0px')
-                    .css('padding','0px')
-                    .css('margin','0px')
-                    .css('transition','1s');
-                $('.lo-gallery-header h1')
-                    .css('height','0px')
-                    .css('padding','0px')
-                    .css('margin','0px')
-                    .css('transition','1s');
+                $('.lo-gallery-header').hide();
             }, 1000);
 
             /*
