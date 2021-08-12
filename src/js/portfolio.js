@@ -38,11 +38,11 @@ var book_img = [
     ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
     ["bookDr2Title", "DungeonRpg2", "bookDr2Side", "bookDr2Backcover"],
     ["bookDr3Title", "TUDCutscene", "bookTUDSide", "bookDr3Backcover"],
-    ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
-    ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
-    ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
-    ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
-    ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
+    ["bookDr3Title", "MicroCastle", "bookDr3Side", "bookDr3Backcover"],
+    ["bookDr3Title", "WayBackHome2", "bookDr3Side", "bookDr3Backcover"],
+    ["bookDr3Title", "WayBackHome", "bookDr3Side", "bookDr3Backcover"],
+    ["bookDr3Title", "VendingMachine", "bookDr3Side", "bookDr3Backcover"],
+    ["bookDr3Title", "TypingOfLegend", "bookDr3Side", "bookDr3Backcover"],
 ];
 
 (function ($) {
