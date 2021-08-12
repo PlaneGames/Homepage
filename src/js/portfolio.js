@@ -75,11 +75,11 @@ $(window).on('orientationchange', function() {
                 $('.port-img').not('.port-img:'+img_index)
                     .css('visibility','hidden')
                     .css('animation-name','closeGallery')
-                    .css('animation-duration','.5s');
+                    .css('animation-duration','1s');
 
                 $('.port-img:'+img_index)
                     .css('animation-name','scaleBook')
-                    .css('animation-duration','.5s');
+                    .css('animation-duration','1s');
 
             }, 500);
 
