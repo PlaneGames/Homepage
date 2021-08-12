@@ -65,7 +65,6 @@ $(window).on('orientationchange', function() {
     $(document).ready(function() {
 
         var openProjectPopup = function(index) {
-
             var img_index   = "nth-of-type("+(index+1)+")";
 
             $('.port-img').not('.port-img:'+img_index)
@@ -132,15 +131,23 @@ $(window).on('orientationchange', function() {
         */
         }
 
+        $(".port-img:nth-of-type(1)").on('click', function(){
+            openProjectPopup(1);
+            console.log(1);
+        });
+
+        /*
         var galleryButton = function(index) {
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
                 openProjectPopup(index);
+                alert(1);
             });
         }
 
         for(var i = 0; i < 8; i ++) {
             galleryButton(i);
         }
+        */
 
     });
 
