@@ -72,13 +72,22 @@ secondHalf.addEventListener("mouseout", () => {
                 .css('padding','0px')
                 .css('margin','0px')
                 .css('transition','1s');
-
-            $('.port-img').not('.port-img:'+img_index)
-                .css('opacity','.0')
-                .css('transition','1s')
-                //.css('height','0px')
-                .css('width','0px');
-                //.css('margin','0px');
+            var j = 0;
+            var a = 0;
+            var b = 0;
+            do {
+                j += 1;
+                a = 150 * (j + 1);
+                    setTimeout(function() {
+                        $('.port-img:'+"nth-of-type("+(b++)+")")
+                            .css('opacity','.0')
+                            .css('transition','.2s')
+                            //.css('height','0px')
+                            .css('width','0px');
+                            //.css('margin','0px');
+                    }, a);
+                console.log(a);
+            } while (j < 8);
 
             //$('.port-img:'+img_index)
                 //.css('min-width','160px')
@@ -92,7 +101,7 @@ secondHalf.addEventListener("mouseout", () => {
                 $('.lo-gallery-header').hide();
                 $('.port-img').not('.port-img:'+img_index).hide();
                 //$('.book-con').show();
-            }, 1000);
+            }, 1750);
         
         }
 
