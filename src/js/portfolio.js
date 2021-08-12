@@ -56,9 +56,14 @@ $(window).on('orientationchange', function() {
         /* --- Book Side Cover Sizing --- */
 
         var bookWidth = clamp(160, $('.book-cover').width(), 320);
-        
+
+        function vw(v) {
+            var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            return (v * w) / 100;
+        }
+
         var bookResizing = function() {
-            bookWidth = clamp(160, $('.book-cover').width(), 320);
+            bookWidth = clamp(160, vw(20), 320);
             $('.back-cover')
                 .css('transform','rotateY(180deg) translateZ('+bookWidth/5+'px)')
         }
@@ -72,7 +77,7 @@ $(window).on('orientationchange', function() {
         var openProjectPopup = function(index) {
 
             bookResizing();
-            
+
             var img_index   = "nth-of-type("+(index+1)+")";
 
             $('.port-img').not('.port-img:'+img_index)

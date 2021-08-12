@@ -48,12 +48,7 @@
     max-height: 480px;
 
     filter: grayscale(40%);
-  
-    background-image: url("../images/DungeonRpg3.png");
-}
-
-.second-half {
-    left: 50%;
+    transition: 1s;
     background-image: url("../images/DungeonRpg3.png");
 }
 
@@ -66,11 +61,13 @@
     min-width: 32px;
     width: 4vw;
     max-width: 64px;
-
+    
     height: 100%;
     background-size: 100% 100%;
     transform-origin: left;
     transform: rotateY(90deg);
+
+    transition: 1s;
 }
 
 .front-cover:after {
@@ -96,6 +93,6 @@
     max-height: 480px;
 
     filter: grayscale(40%);
-
+    transition: 1s;
     background-image: url("../images/bookDr3Backcover.png");
 }
