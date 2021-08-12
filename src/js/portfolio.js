@@ -5,7 +5,7 @@ var scrollReady     = 0;
 var scrollMode      = 0;
 var switching_spd   = 1.5;
 
-/*
+
 var book = document.querySelector(".book");
 var bookcover = document.querySelector(".book-cover");
 
@@ -24,7 +24,7 @@ bookcover.addEventListener("mouseenter", () => {
 bookcover.addEventListener("mouseout", () => {
   book.classList.remove("rotateRight");
 });
-*/
+
 /*
 secondHalf.addEventListener("mouseenter", () => {
   book.classList.add("rotateRight");
@@ -79,9 +79,17 @@ $(window).on('orientationchange', function() {
 
                 $('.port-img:'+img_index)
                     .css('animation-name','scaleBook')
-                    .css('animation-duration','1s');
+                    .css('animation-duration','1s')
+                    .css('opacity','1')
+                    .css('filter','grayscale(40%)');
 
             }, 500);
+
+            timeout = setTimeout(function() {
+                $('.port-img').hide();
+                $('.book-con')
+                    .css('display','flex');
+            }, 1500);
 
             /*
 

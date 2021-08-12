@@ -1,6 +1,6 @@
 .book-con {
     margin: 0;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
