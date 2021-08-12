@@ -55,9 +55,13 @@ $(window).on('orientationchange', function() {
 
         var openProjectPopup = function(index) {
             //var img_index   = "nth-of-type("+(index+1)+")";
-            
+            $('.port-imgcon')
+                .css('transition','1s')
+                .css('opacity','0');
             timeout = setTimeout(function() {
+
                 $('.port-imgcon')
+                    .css('visibility','hidden')
                     .css('animation-name','closeGallery')
                     .css('animation-duration','2s');
 
