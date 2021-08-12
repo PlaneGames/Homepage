@@ -62,8 +62,8 @@ secondHalf.addEventListener("mouseout", () => {
 
             $('.lo-gallery-header')
                 .css('opacity','0')
-                .css('width','0px')
-                .css('height','0px')
+                //.css('width','0px')
+                //.css('height','0px')
                 .css('padding','0px')
                 .css('margin','0px')
                 .css('transition','1s');
@@ -76,8 +76,8 @@ secondHalf.addEventListener("mouseout", () => {
             $('.port-img').not('.port-img:'+img_index)
                 .css('opacity','.0')
                 .css('transition','1s')
-                .css('height','0px')
-                .css('width','0px')
+                //.css('height','0px')
+                //.css('width','0px')
                 .css('margin','0px');
 
             $('.port-img:'+img_index)
@@ -90,7 +90,7 @@ secondHalf.addEventListener("mouseout", () => {
 
             timeout = setTimeout(function() {
                 $('.lo-gallery-header').hide();
-                $('.port-img').hide();
+                $('.port-img').not('.port-img:'+img_index).hide();
                 //$('.book-con').show();
             }, 1000);
         
