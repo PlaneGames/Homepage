@@ -60,10 +60,24 @@ secondHalf.addEventListener("mouseout", () => {
 
             $('.port-img').not('.port-img:'+img_index)
                 .css('opacity','.0')
-                .css('transition','2s');
+                .css('transition','1s');
                 //.css('height','0px')
                 //.css('margin','0px');
 
+            timeout = setTimeout(function() {
+                $('.lo-gallery-header')
+                    .css('opacity','0')
+                    .css('width','0px')
+                    .css('height','0px')
+                    .css('padding','0px')
+                    .css('margin','0px')
+                    .css('transition','1s');
+                $('.lo-gallery-header h1')
+                    .css('height','0px')
+                    .css('padding','0px')
+                    .css('margin','0px')
+                    .css('transition','1s');
+            }, 1000);
 
             /*
 
