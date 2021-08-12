@@ -66,19 +66,16 @@ $(window).on('orientationchange', function() {
 
         var openProjectPopup = function(index) {
             //var img_index   = "nth-of-type("+(index+1)+")";
-
-            $('.port-img').not('#project1')
-                .css('animation-name','closeGallery')
-                .css('animation-duration','2s');
-
             
-
-            $('#project1')
-                .css('left','0')
-                .css('transition','1s');
-
             timeout = setTimeout(function() {
-                $('.lo-gallery-header').hide();
+                $('.port-img').not('#project1')
+                    .css('animation-name','closeGallery')
+                    .css('animation-duration','2s');
+
+                $('.port-img')
+                    .css('transition','0s');
+
+                    //$('.lo-gallery-header').hide();
             }, 1000);
 
             /*
