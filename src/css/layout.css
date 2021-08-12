@@ -194,14 +194,12 @@ header {
 
     animation-fill-mode: both;
 }
-/*
 .port-img:hover {
     height: 25vw;
     max-height: 380px;
     opacity: 1;
     filter: grayscale(0%);
 }
-*/
 @media all and (max-width: 800px) {
     header {
         margin-top: 80px;
@@ -240,6 +238,7 @@ header {
         margin-right: 10px;
         margin-top: -16px;
     }
+    /*
     .gal-con {
         align-items: center;
         flex-direction: column;
@@ -280,7 +279,6 @@ header {
         max-height: 20vh;
         margin: .3vh;
     }
-    /*
     .port-img:hover {
         width: 90%;
         max-width: 90%;

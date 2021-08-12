@@ -47,17 +47,6 @@ $(window).on('orientationchange', function() {
 (function ($) {
     
     var timeout;
-    
-    var page_info = [
-        ["#dr3", "#dr3-gameplay", "#dr3-gamedesign", "#dr3-development"],
-        ["#dr2-pamphlet", "#dr2-gameplay"],
-        ["#dr2-pamphlet", "#dr2-gameplay"],
-        ["#dr2-pamphlet", "#dr2-gameplay"],
-        ["#dr2-pamphlet", "#dr2-gameplay"],
-        ["#dr2-pamphlet", "#dr2-gameplay"],
-        ["#dr2-pamphlet", "#dr2-gameplay"],
-        ["#dr2-pamphlet", "#dr2-gameplay"],
-    ];
 
     var cur_subpage = 0;
     //$('.book-con').hide();
