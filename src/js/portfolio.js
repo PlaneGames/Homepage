@@ -57,7 +57,7 @@ $(window).on('orientationchange', function() {
             //var img_index   = "nth-of-type("+(index+1)+")";
             
             timeout = setTimeout(function() {
-                $('.port-img').not('#project1')
+                $('.port-imgcon')
                     .css('animation-name','closeGallery')
                     .css('animation-duration','2s');
 
