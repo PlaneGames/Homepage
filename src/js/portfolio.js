@@ -77,8 +77,8 @@ secondHalf.addEventListener("mouseout", () => {
                 .css('opacity','.0')
                 .css('transition','1s')
                 //.css('height','0px')
-                //.css('width','0px')
-                .css('margin','0px');
+                .css('width','0px');
+                //.css('margin','0px');
 
             //$('.port-img:'+img_index)
                 //.css('min-width','160px')
