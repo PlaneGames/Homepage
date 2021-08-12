@@ -62,28 +62,21 @@ $(window).on('orientationchange', function() {
                 .css('opacity','0');
 
             $('.lo-gallery-header')
-                .css('opacity','0');
+                .css('animation-name','closeGalleryHeader')
+                .css('animation-duration','.5s');
+
             $('.lo-gallery-header h1')
-                .css('opacity','0');
+                .css('animation-name','closeGalleryHeader')
+                .css('animation-duration','.5s');
 
             timeout = setTimeout(function() {
-
-                $('.lo-gallery-header')
-                    .css('visibility','hidden')
-                    .css('animation-name','closeGalleryHeader')
-                    .css('animation-duration','.5s');
-
-                $('.lo-gallery-header h1')
-                    .css('visibility','hidden')
-                    .css('animation-name','closeGalleryHeader')
-                    .css('animation-duration','.5s');
+                $('.lo-gallery-header').hide();
 
                 $('.port-img').not('.port-img:'+img_index)
                     .css('visibility','hidden')
                     .css('animation-name','closeGallery')
-                    .css('animation-duration','1s');
+                    .css('animation-duration','.5s');
 
-                    //$('.lo-gallery-header').hide();
             }, 500);
 
             /*
