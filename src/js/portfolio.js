@@ -81,12 +81,12 @@ secondHalf.addEventListener("mouseout", () => {
                 .css('margin','0px');
 
             $('.port-img:'+img_index)
-                .css('min-width','160px')
-                .css('max-width','20vw')
-                .css('width','320px')
-                .css('min-height','240px')
-                .css('height','30vw')
-                .css('max-height','480px');
+                //.css('min-width','160px')
+                //.css('max-width','20vw')
+                //.css('width','320px')
+                //.css('min-height','240px')
+                //.css('height','30vw')
+                //.css('max-height','480px');
 
             timeout = setTimeout(function() {
                 $('.lo-gallery-header').hide();
