@@ -25,16 +25,6 @@ bookcover.addEventListener("mouseout", () => {
   book.classList.remove("rotateRight");
 });
 
-/*
-secondHalf.addEventListener("mouseenter", () => {
-  book.classList.add("rotateRight");
-});
-
-secondHalf.addEventListener("mouseout", () => {
-  book.classList.remove("rotateRight");
-});
-*/
-
 $(window).on('orientationchange', function() {
 
     $('.port-img').css('transition','0s');
@@ -43,6 +33,17 @@ $(window).on('orientationchange', function() {
     });
 
 });
+
+var book_img = [
+    ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
+    ["bookDr2Title", "DungeonRpg2", "bookDr2Side", "bookDr3Backcover"],
+    ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
+    ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
+    ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
+    ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
+    ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
+    ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
+];
 
 (function ($) {
     
@@ -65,7 +66,7 @@ $(window).on('orientationchange', function() {
         var bookResizing = function() {
             bookWidth = clamp(160, vw(20), 320);
             $('.back-cover')
-                .css('transform','rotateY(180deg) translateZ('+bookWidth/5+'px)')
+                .css('transform','rotateY(180deg) translateZ('+bookWidth/5+'px)');
         }
 
         window.addEventListener('resize', function () {
@@ -77,6 +78,17 @@ $(window).on('orientationchange', function() {
         var openProjectPopup = function(index) {
 
             bookResizing();
+
+            $('.book-title')
+                .css('background-image','url("../src/images/'+book_img[index][0]+'.png")');
+            $('.book-cover')
+                .css('background-image','url("../src/images/'+book_img[index][1]+'.png")');
+            $('.front-lcover')
+                .css('background-image','url("../src/images/'+book_img[index][2]+'.png")');
+            $('.back-cover')
+                .css('background-image','url("../src/images/'+book_img[index][3]+'.png")');
+
+            console.log(book_img[index]);
 
             var img_index   = "nth-of-type("+(index+1)+")";
 
