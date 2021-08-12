@@ -58,7 +58,7 @@ secondHalf.addEventListener("mouseout", () => {
 
             var img_index   = "nth-of-type("+(index+1)+")";
 
-            clearTimeout(timeout);
+            //clearTimeout(timeout);
 
             $('.lo-gallery-header')
                 .css('opacity','0')
@@ -80,7 +80,7 @@ secondHalf.addEventListener("mouseout", () => {
                 //.css('width','0px')
                 .css('margin','0px');
 
-            $('.port-img:'+img_index)
+            //$('.port-img:'+img_index)
                 //.css('min-width','160px')
                 //.css('max-width','20vw')
                 //.css('width','320px')
@@ -99,7 +99,6 @@ secondHalf.addEventListener("mouseout", () => {
         var galleryButton = function(index) {
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
                 openProjectPopup(index);
-                console.log(index);
             });
         }
 
