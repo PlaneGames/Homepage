@@ -194,14 +194,14 @@ header {
 
     animation-fill-mode: both;
 }
-
+/*
 .port-img:hover {
     height: 25vw;
     max-height: 380px;
     opacity: 1;
     filter: grayscale(0%);
 }
-
+*/
 @media all and (max-width: 800px) {
     header {
         margin-top: 80px;
