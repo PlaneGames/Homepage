@@ -5,6 +5,7 @@ var scrollReady     = 0;
 var scrollMode      = 0;
 var switching_spd   = 1.5;
 
+/*
 var book = document.querySelector(".book");
 var bookcover = document.querySelector(".book-cover");
 
@@ -23,6 +24,7 @@ bookcover.addEventListener("mouseenter", () => {
 bookcover.addEventListener("mouseout", () => {
   book.classList.remove("rotateRight");
 });
+*/
 /*
 secondHalf.addEventListener("mouseenter", () => {
   book.classList.add("rotateRight");
@@ -48,7 +50,7 @@ secondHalf.addEventListener("mouseout", () => {
     ];
 
     var cur_subpage = 0;
-    $('.book-con').hide();
+    //$('.book-con').hide();
     
     $(document).ready(function() {
 
