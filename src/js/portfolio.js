@@ -54,25 +54,35 @@ $(window).on('orientationchange', function() {
     $(document).ready(function() {
 
         var openProjectPopup = function(index) {
-            //var img_index   = "nth-of-type("+(index+1)+")";
-            $('.port-img').not('#project1')
-                .css('transition','1s')
+            var img_index   = "nth-of-type("+(index+1)+")";
+            $('.port-img').not('.port-img:'+img_index)
+                .css('transition','.5s')
                 .css('opacity','0');
             $('.lo-gallery-header')
-                .css('transition','1s')
-                .css('opacity','0');
+                .css('opacity','0')
+                .css('width','0px')
+                .css('height','0px')
+                .css('padding','0px')
+                .css('margin','0px')
+                .css('transition','.5s');
+            $('.lo-gallery-header h1')
+                .css('height','0px')
+                .css('padding','0px')
+                .css('margin','0px')
+                .css('transition','.5s');
+
             timeout = setTimeout(function() {
 
-                $('.port-img').not('#project1')
+                $('.port-img').not('.port-img:'+img_index)
                     .css('visibility','hidden')
                     .css('animation-name','closeGallery')
-                    .css('animation-duration','2s');
+                    .css('animation-duration','1s');
 
                 $('.port-img')
                     .css('transition','0s');
 
                     //$('.lo-gallery-header').hide();
-            }, 1000);
+            }, 500);
 
             /*
 
@@ -123,23 +133,15 @@ $(window).on('orientationchange', function() {
         */
         }
 
-        $("#project1").one('click', function(){
-            openProjectPopup(0);
-        });
-
-        /*
         var galleryButton = function(index) {
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
                 openProjectPopup(index);
-                console.log(1);
             });
         }
 
         for(var i = 0; i < 8; i ++) {
             galleryButton(i);
-            console.log(0);
         }
-        */
 
     });
 
