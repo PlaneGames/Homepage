@@ -1,37 +1,35 @@
-var i = 0;
-var subpage = 0;
+var i               = 0;
+var subpage         = 0;
 
 var scrollReady     = 0;
 var scrollMode      = 0;
 var switching_spd   = 1.5;
-const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
-var book = document.querySelector(".book");
-var bookcover = document.querySelector(".book-cover");
+var galleryMode     = 0;
+var book            = document.querySelector(".book");
+var bookcover       = document.querySelector(".book-cover");
 
-console.log(book);
+const clamp         = (num, min, max) => Math.min(Math.max(num, min), max);
 
 book.addEventListener("click", () => {
-  book.classList.toggle("flip");
-  console.log(123455);
+    book.classList.toggle("flip");
+    console.log(123455);
 });
 
 bookcover.addEventListener("mouseenter", () => {
-  book.classList.add("rotateRight");
-  console.log(123455);
+    book.classList.add("rotateRight");
+    console.log(123455);
 });
 
 bookcover.addEventListener("mouseout", () => {
-  book.classList.remove("rotateRight");
+    book.classList.remove("rotateRight");
 });
 
 $(window).on('orientationchange', function() {
-
     $('.port-img').css('transition','0s');
     $(window).one('resize', function() {
         $('.port-img').css('transition','.4s');
     });
-
 });
 
 var book_img = [
@@ -48,13 +46,11 @@ var book_img = [
 (function ($) {
     
     var timeout;
-
     var cur_subpage = 0;
-    //$('.book-con').hide();
 
     $(document).ready(function() {
 
-        /* --- Book Side Cover Sizing --- */
+        //#region --- Book Side Cover Sizing ---
 
         var bookWidth = clamp(160, $('.book-cover').width(), 320);
 
@@ -69,14 +65,55 @@ var book_img = [
                 .css('transform','rotateY(180deg) translateZ('+bookWidth/5+'px)');
         }
 
-        window.addEventListener('resize', function () {
-            bookResizing();
-        });
+        //#endregion
+
+        //#region  --- Gallery Button Selecting ---
+
+        var galleryHover = function(n) {
+            var index = "nth-of-type("+(n+1)+")";
+            if (galleryMode == 0) {
+                if (window.innerWidth >= 700) {
+                    $('.port-img:'+index)
+                        .css('height','25vw')
+                        .css('max-height','380px')
+                        .css('opacity','1')
+                        .css('filter','grayscale(0%)');
+                } else {
+                    $('.port-img:'+index)
+                        .css('width','90%')
+                        .css('max-width','90%')
+                        .css('height','100px');
+                }
+            }
+        }
+
+        var galleryResize = function() {
+            if (galleryMode == 0) {
+                if (window.innerWidth >= 700) {
+                    $('.port-img')
+                        .css('width','10vw')
+                        .css('height','20vw')
+                        .css('max-width','160px')
+                        .css('max-height','320px')
+                        .css('margin','.5%')
+                        .css('opacity','0.7')
+                        .css('filter','grayscale(90%)');
+                } else {
+                    $('.port-img')
+                        .css('width','440px')
+                        .css('height','100px')
+                        .css('max-width','80%')
+                        .css('max-height','20vh')
+                        .css('margin','.3vh');
+                }
+            }
+        }
         
-        /* --- Gallery Button Selecting --- */
+        galleryResize();
 
         var openProjectPopup = function(index) {
 
+            galleryMode = 1;
             bookResizing();
 
             $('.book-title')
@@ -112,7 +149,6 @@ var book_img = [
                     .css('animation-name','closeGallery')
                     .css('animation-duration','1s');
             }, 500);
-
             timeout = setTimeout(function() {
                 $('.port-img:'+img_index)
                     .css('animation-name','scaleBook')
@@ -137,11 +173,24 @@ var book_img = [
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
                 openProjectPopup(index);
             });
+            $(".port-img:nth-of-type("+(index+1)+")").on('mouseenter', function(){
+                galleryHover(index);
+            });
+            $(".port-img:nth-of-type("+(index+1)+")").on('mouseout', function(){
+                galleryResize();
+            });
         }
 
         for(var i = 0; i < 8; i ++) {
             galleryButton(i);
         }
+
+        //#endregion
+
+        window.addEventListener('resize', function () {
+            bookResizing();
+            galleryResize();
+        });
 
     });
 
