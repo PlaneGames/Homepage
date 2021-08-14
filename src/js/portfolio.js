@@ -114,7 +114,7 @@ var book_img = [
             bookResizing();
             clearTimeout(timeout);
             history.pushState({page: 2, data: 1}, "", "/pf/DungeonRpg3");
-            
+
             $('.book-title')
                 .css('background-image','url("../src/images/'+book_img[index][0]+'.png")');
             $('.book-cover')
@@ -217,7 +217,7 @@ var book_img = [
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
                 openProjectPopup(index);
                 galleryMode = 1;
-                history.pushState({page: 2, data: index}, "title 1", "/pf/"+book_img[index][1]);
+                //history.pushState({page: 2, data: index}, "title 1", "/pf/"+book_img[index][1]);
             });
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseenter', function(){
                 galleryHover(index);
@@ -234,7 +234,7 @@ var book_img = [
         if (activeGallery >= 1) {
             openProjectPopup(activeGallery-1);
             galleryMode = 1;
-            history.pushState({page: 2, data: 1}, "title 1", "/pf/"+book_img[activeGallery-1][1]);
+            //history.pushState({page: 2, data: 1}, "title 1", "/pf/"+book_img[activeGallery-1][1]);
         }
 
         //#endregion
