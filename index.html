@@ -37,9 +37,8 @@
     <script src="../src/js/include-html.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-
-            window.onpopstate = function(event) {
+        
+        window.onpopstate = function(event) {
                 if (event.state.page == 1) {
                     active = "#page-resume";
                     showPage();
@@ -50,6 +49,8 @@
                 }
                 console.log(event.state);
             }
+
+        $(document).ready(function() {
 
             var curUrl = window.location.href;
             if(curUrl.indexOf("/rs") != -1 || 
