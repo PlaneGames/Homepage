@@ -112,6 +112,7 @@ var book_img = [
         var openProjectPopup = function(index) {
 
             bookResizing();
+            clearTimeout(timeout);
 
             $('.book-title')
                 .css('background-image','url("../src/images/'+book_img[index][0]+'.png")');
@@ -164,6 +165,51 @@ var book_img = [
                     .css('opacity','1');
             }, 2100);
 
+        }
+
+        var closeProjectPopup = function(index) {
+            var img_index   = "nth-of-type("+(index+1)+")";
+
+            clearTimeout(timeout);
+
+            $('.book-title')
+                .css('transition','.5s')
+                .css('opacity','0');
+            timeout = setTimeout(function() {
+                $('.book-title')
+                    .css('transition','1s')
+                    .css('opacity','0');
+            }, 500);
+            timeout = setTimeout(function() {
+                $('.port-img').show();
+                $('.book-con')
+                    .css('display','none');
+                $('.port-img:'+img_index)
+                    .css('animation-name','scaleGallery')
+                    .css('animation-duration','1s')
+                    .css('opacity','1')
+                    .css('filter','grayscale(90%)');
+            }, 1500);
+            timeout = setTimeout(function() {
+                $('.lo-gallery-header').show();
+
+                $('.port-img').not('.port-img:'+img_index)
+                    .css('visibility','visible')
+                    .css('animation-name','openGallery')
+                    .css('animation-duration','1s');
+            }, 2500);
+
+            $('.port-img').not('.port-img:'+img_index)
+                .css('transition','.5s')
+                .css('opacity','1');
+                
+            $('.lo-gallery-header')
+                .css('animation-name','openGalleryHeader')
+                .css('animation-duration','.5s');
+
+            $('.lo-gallery-header h1')
+                .css('animation-name','openGalleryHeader')
+                .css('animation-duration','.5s');
         }
 
         var galleryButton = function(index) {

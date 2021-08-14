@@ -193,7 +193,7 @@ header {
     opacity: 0.7;
     
     margin: 0.5%;
-    transition: .4s;
+    transition: .5s;
 
     animation-fill-mode: both;
 }
@@ -333,5 +333,34 @@ header {
         min-height: 240px;
         height: 30vw;
         max-height: 480px;
+    }
+}
+
+@keyframes openGallery {
+    to {
+        width: 10vw;
+        height: 20vw;
+        opacity: 1;
+        margin: 0.5%;
+        transition: .5s;
+    }
+}
+
+@keyframes openGalleryHeader {
+    to {
+        opacity: 1;
+        height: 10%;
+        padding-bottom: 4%;
+    }
+}
+
+@keyframes scaleGallery {
+    to {
+        min-width: 0px;
+        width: 10vw;
+        max-width: 160px;
+        min-height: 0px;
+        height: 20vw;
+        max-height: 320px;
     }
 }
