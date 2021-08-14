@@ -184,13 +184,13 @@ var book_img = [
                 .css('opacity','0');
             timeout = setTimeout(function() {
                 $('.port-img').show();
-                $('.book-con')
-                    .css('display','none');
-                $('.port-img:'+img_index)
-                    .css('animation-name','scaleGallery')
-                    .css('animation-duration','1s')
-                    .css('opacity','1')
-                    .css('filter','grayscale(90%)');
+                //$('.book-con')
+                //    .css('display','none');
+                //$('.port-img:'+img_index)
+                //    .css('animation-name','scaleGallery')
+                //    .css('animation-duration','1s')
+                //    .css('opacity','1')
+                //    .css('filter','grayscale(90%)');
             }, 500);
             /*
             timeout = setTimeout(function() {
