@@ -37,17 +37,20 @@
     <script src="../src/js/include-html.min.js"></script>
 
     <script>
-        window.onpopstate = function(event) {
-            if (event.state.page == 1) {
-                active = "#page-resume";
-                showPage();
-            } else {
-                active = "#page-portfolio";
-                showPage();
-            }
-            console.log(event.state);
-        }
         $(document).ready(function() {
+
+            window.onpopstate = function(event) {
+                if (event.state.page == 1) {
+                    active = "#page-resume";
+                    showPage();
+                } else {
+                    active = "#page-portfolio";
+                    showPage();
+                    closeProjectPopup(0);
+                }
+                console.log(event.state);
+            }
+
             var curUrl = window.location.href;
             if(curUrl.indexOf("/rs") != -1 || 
             curUrl.indexOf("?page=1") != -1 ||
