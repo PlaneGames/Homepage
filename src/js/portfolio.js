@@ -40,6 +40,8 @@ var book_img = [
     ["bookVMTitle", "VendingMachine", "bookVMSide", "bookVMBackcover"],
     ["bookTOLTitle", "TypingOfLegend", "bookTOLSide", "bookTOLBackcover"],
 ];
+var openProjectPopupVar;
+var closeProjectPopupVar;
 
 (function ($) {
     
