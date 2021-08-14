@@ -242,6 +242,12 @@ var book_img = [
             //history.pushState({page: 2, data: 1}, "title 1", "/pf/"+book_img[activeGallery-1][1]);
         }
 
+        window.onpopstate = function(event) {
+            if (event.state.page == 1 && event.state.data == 1) {
+                closeProjectPopup(0);
+            }
+        }
+
         //#endregion
 
         window.addEventListener('resize', function () {
