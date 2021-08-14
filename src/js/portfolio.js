@@ -41,11 +41,120 @@ var book_img = [
     ["bookTOLTitle", "TypingOfLegend", "bookTOLSide", "bookTOLBackcover"],
 ];
 
+var timeout;
+var cur_subpage = 0;
+
+var openProjectPopup = function(index) {
+
+    console.log("Open Gallery Popup");
+
+    bookResizing();
+    clearTimeout(timeout);
+    history.pushState({page: 2, data: 1}, "", "/pf/DungeonRpg3");
+
+    $('.book-title')
+        .css('background-image','url("../src/images/'+book_img[index][0]+'.png")');
+    $('.book-cover')
+        .css('background-image','url("../src/images/'+book_img[index][1]+'.png")');
+    $('.front-lcover')
+        .css('background-image','url("../src/images/'+book_img[index][2]+'.png")');
+    $('.back-cover')
+        .css('background-image','url("../src/images/'+book_img[index][3]+'.png")');
+
+    console.log(book_img[index]);
+
+    var img_index   = "nth-of-type("+(index+1)+")";
+
+    $('.port-img').not('.port-img:'+img_index)
+        .css('transition','.5s')
+        .css('opacity','0');
+        
+    $('.lo-gallery-header')
+        .css('animation-name','closeGalleryHeader')
+        .css('animation-duration','.5s');
+
+    $('.lo-gallery-header h1')
+        .css('animation-name','closeGalleryHeader')
+        .css('animation-duration','.5s');
+
+    timeout = setTimeout(function() {
+        $('.lo-gallery-header').hide();
+
+        $('.port-img').not('.port-img:'+img_index)
+            .css('visibility','hidden')
+            .css('animation-name','closeGallery')
+            .css('animation-duration','1s');
+    }, 500);
+    timeout = setTimeout(function() {
+        $('.port-img:'+img_index)
+            .css('animation-name','scaleBook')
+            .css('animation-duration','1s')
+            .css('opacity','1')
+            .css('filter','grayscale(40%)');
+    }, 1000);
+    timeout = setTimeout(function() {
+        $('.port-img').hide();
+        $('.book-con')
+            .css('display','flex');
+    }, 2000);
+    timeout = setTimeout(function() {
+        $('.book-title')
+            .css('transition','1s')
+            .css('opacity','1');
+    }, 2100);
+
+}
+
+var closeProjectPopup = function(index) {
+
+    console.log("Close Gallery Popup");
+
+    var img_index   = "nth-of-type("+(index+1)+")";
+
+    clearTimeout(timeout);
+
+    $('.book-title')
+        .css('transition','.5s')
+        .css('opacity','0');
+    timeout = setTimeout(function() {
+        $('.book-title')
+            .css('transition','1s')
+            .css('opacity','0');
+    }, 500);
+    timeout = setTimeout(function() {
+        $('.port-img').show();
+        $('.book-con')
+            .css('display','none');
+        $('.port-img:'+img_index)
+            .css('animation-name','scaleGallery')
+            .css('animation-duration','1s')
+            .css('opacity','1')
+            .css('filter','grayscale(90%)');
+    }, 1500);
+    timeout = setTimeout(function() {
+        $('.lo-gallery-header').show();
+
+        $('.port-img').not('.port-img:'+img_index)
+            .css('visibility','visible')
+            .css('animation-name','openGallery')
+            .css('animation-duration','1s');
+    }, 2500);
+
+    $('.port-img').not('.port-img:'+img_index)
+        .css('transition','.5s')
+        .css('opacity','1');
+        
+    $('.lo-gallery-header')
+        .css('animation-name','openGalleryHeader')
+        .css('animation-duration','.5s');
+
+    $('.lo-gallery-header h1')
+        .css('animation-name','openGalleryHeader')
+        .css('animation-duration','.5s');
+}
+
 (function ($) {
     
-    var timeout;
-    var cur_subpage = 0;
-
     $(document).ready(function() {
 
         //#region --- Book Side Cover Sizing ---
@@ -108,115 +217,6 @@ var book_img = [
         }
         
         galleryResize();
-
-        var openProjectPopup = function(index) {
-
-            console.log("Open Gallery Popup");
-
-            bookResizing();
-            clearTimeout(timeout);
-            history.pushState({page: 2, data: 1}, "", "/pf/DungeonRpg3");
-
-            $('.book-title')
-                .css('background-image','url("../src/images/'+book_img[index][0]+'.png")');
-            $('.book-cover')
-                .css('background-image','url("../src/images/'+book_img[index][1]+'.png")');
-            $('.front-lcover')
-                .css('background-image','url("../src/images/'+book_img[index][2]+'.png")');
-            $('.back-cover')
-                .css('background-image','url("../src/images/'+book_img[index][3]+'.png")');
-
-            console.log(book_img[index]);
-
-            var img_index   = "nth-of-type("+(index+1)+")";
-
-            $('.port-img').not('.port-img:'+img_index)
-                .css('transition','.5s')
-                .css('opacity','0');
-                
-            $('.lo-gallery-header')
-                .css('animation-name','closeGalleryHeader')
-                .css('animation-duration','.5s');
-
-            $('.lo-gallery-header h1')
-                .css('animation-name','closeGalleryHeader')
-                .css('animation-duration','.5s');
-
-            timeout = setTimeout(function() {
-                $('.lo-gallery-header').hide();
-
-                $('.port-img').not('.port-img:'+img_index)
-                    .css('visibility','hidden')
-                    .css('animation-name','closeGallery')
-                    .css('animation-duration','1s');
-            }, 500);
-            timeout = setTimeout(function() {
-                $('.port-img:'+img_index)
-                    .css('animation-name','scaleBook')
-                    .css('animation-duration','1s')
-                    .css('opacity','1')
-                    .css('filter','grayscale(40%)');
-            }, 1000);
-            timeout = setTimeout(function() {
-                $('.port-img').hide();
-                $('.book-con')
-                    .css('display','flex');
-            }, 2000);
-            timeout = setTimeout(function() {
-                $('.book-title')
-                    .css('transition','1s')
-                    .css('opacity','1');
-            }, 2100);
-
-        }
-
-        var closeProjectPopup = function(index) {
-
-            console.log("Close Gallery Popup");
-
-            var img_index   = "nth-of-type("+(index+1)+")";
-
-            clearTimeout(timeout);
-
-            $('.book-title')
-                .css('transition','.5s')
-                .css('opacity','0');
-            timeout = setTimeout(function() {
-                $('.book-title')
-                    .css('transition','1s')
-                    .css('opacity','0');
-            }, 500);
-            timeout = setTimeout(function() {
-                $('.port-img').show();
-                $('.book-con')
-                    .css('display','none');
-                $('.port-img:'+img_index)
-                    .css('animation-name','scaleGallery')
-                    .css('animation-duration','1s')
-                    .css('opacity','1')
-                    .css('filter','grayscale(90%)');
-            }, 1500);
-            timeout = setTimeout(function() {
-                $('.lo-gallery-header').show();
-
-                $('.port-img').not('.port-img:'+img_index)
-                    .css('visibility','visible')
-                    .css('animation-name','openGallery')
-                    .css('animation-duration','1s');
-            }, 2500);
-
-            $('.port-img').not('.port-img:'+img_index)
-                .css('transition','.5s')
-                .css('opacity','1');
-                
-            $('.lo-gallery-header')
-                .css('animation-name','openGalleryHeader')
-                .css('animation-duration','.5s');
-
-            $('.lo-gallery-header h1')
-                .css('animation-name','openGalleryHeader')
-                .css('animation-duration','.5s');
-        }
 
         var galleryButton = function(index) {
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
