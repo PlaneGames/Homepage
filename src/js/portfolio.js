@@ -111,6 +111,8 @@ var book_img = [
 
         var openProjectPopup = function(index) {
 
+            console.log("Open Gallery Popup");
+
             bookResizing();
             clearTimeout(timeout);
             history.pushState({page: 2, data: 1}, "", "/pf/DungeonRpg3");
@@ -169,6 +171,9 @@ var book_img = [
         }
 
         var closeProjectPopup = function(index) {
+
+            console.log("Close Gallery Popup");
+
             var img_index   = "nth-of-type("+(index+1)+")";
 
             clearTimeout(timeout);
