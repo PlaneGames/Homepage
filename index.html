@@ -46,7 +46,9 @@
                 } else {
                     active = "#page-portfolio";
                     showPage();
-                    closeProjectPopup(0);
+                    (function ($) {
+                        closeProjectPopup(0);
+                    });
                 }
                 console.log(event.state);
             }
