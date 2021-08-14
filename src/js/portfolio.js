@@ -261,4 +261,5 @@ var openProjectPopupFunc = function(index) {
 }
 var closeProjectPopupFunc = function(index) {
     closeProjectPopupVar();
+    console.log("closeProjectPopupFunc");
 }
