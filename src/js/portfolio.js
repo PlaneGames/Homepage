@@ -111,6 +111,7 @@ var book_img = [
 
         var openProjectPopup = function(index) {
 
+            activeGallery = 1;
             console.log("Open Gallery Popup");
 
             bookResizing();
@@ -237,12 +238,6 @@ var book_img = [
 
         for(var i = 0; i < 8; i ++) {
             galleryButton(i);
-        }
-
-        if (activeGallery >= 1) {
-            openProjectPopup(activeGallery-1);
-            galleryMode = 1;
-            //history.pushState({page: 2, data: 1}, "title 1", "/pf/"+book_img[activeGallery-1][1]);
         }
 
         //#endregion
