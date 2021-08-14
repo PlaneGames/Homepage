@@ -40,8 +40,6 @@ var book_img = [
     ["bookVMTitle", "VendingMachine", "bookVMSide", "bookVMBackcover"],
     ["bookTOLTitle", "TypingOfLegend", "bookTOLSide", "bookTOLBackcover"],
 ];
-var openProjectPopupVar;
-var closeProjectPopupVar;
 
 (function ($) {
     
@@ -185,11 +183,6 @@ var closeProjectPopupVar;
                 .css('transition','.5s')
                 .css('opacity','0');
             timeout = setTimeout(function() {
-                $('.book-title')
-                    .css('transition','1s')
-                    .css('opacity','0');
-            }, 500);
-            timeout = setTimeout(function() {
                 $('.port-img').show();
                 $('.book-con')
                     .css('display','none');
@@ -198,7 +191,7 @@ var closeProjectPopupVar;
                     .css('animation-duration','1s')
                     .css('opacity','1')
                     .css('filter','grayscale(90%)');
-            }, 1500);
+            }, 500);
             timeout = setTimeout(function() {
                 $('.lo-gallery-header').show();
 
@@ -206,23 +199,22 @@ var closeProjectPopupVar;
                     .css('visibility','visible')
                     .css('animation-name','openGallery')
                     .css('animation-duration','1s');
-            }, 2500);
-
-            $('.port-img').not('.port-img:'+img_index)
+            }, 1500);
+            timeout = setTimeout(function() {
+                $('.port-img').not('.port-img:'+img_index)
                 .css('transition','.5s')
                 .css('opacity','1');
                 
-            $('.lo-gallery-header')
-                .css('animation-name','openGalleryHeader')
-                .css('animation-duration','.5s');
+                $('.lo-gallery-header')
+                    .css('animation-name','openGalleryHeader')
+                    .css('animation-duration','.5s');
 
-            $('.lo-gallery-header h1')
-                .css('animation-name','openGalleryHeader')
-                .css('animation-duration','.5s');
+                $('.lo-gallery-header h1')
+                    .css('animation-name','openGalleryHeader')
+                    .css('animation-duration','.5s');
+            }, 2500);
+ 
         }
-
-        openProjectPopupVar = openProjectPopup;
-        closeProjectPopupVar = closeProjectPopup;
 
         var galleryButton = function(index) {
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
@@ -249,37 +241,20 @@ var closeProjectPopupVar;
             galleryResize();
         });
 
-        var updatePopup = function(index) {
-            closeProjectPopup(index);
+        window.onpopstate = function(event) {
+            if (event.state.page == 1) {
+                active = "#page-resume";
+                showPage();
+            } else {
+                active = "#page-portfolio";
+                if (activeGallery == 0)
+                    showPage();
+                else {
+                    closeProjectPopup(0);
+                }
+            }
         }
-        updatePopupVar = updatePopup();
 
     });
 
 })(jQuery);
-
-window.onpopstate = function(event) {
-    if (event.state.page == 1) {
-        active = "#page-resume";
-        showPage();
-    } else {
-        active = "#page-portfolio";
-        if (activeGallery == 0)
-            showPage();
-        else {
-            closeProjectPopupVar(0);
-        }
-    }
-}
-
-var openProjectPopupFunc = function(index) {
-    openProjectPopupVar();
-}
-var closeProjectPopupFunc = function(index) {
-    closeProjectPopupVar();
-    console.log("closeProjectPopupFunc");
-}
-var updatePopupFunc = function() {
-    closeProjectPopupFunc(0);
-    console.log(12345678);
-}
