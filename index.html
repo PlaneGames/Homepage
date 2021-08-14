@@ -37,20 +37,22 @@
     <script src="../src/js/include-html.min.js"></script>
 
     <script>
-        window.onpopstate = function(event) {
-            if (event.state.page == 1) {
-                active = "#page-resume";
-                showPage();
-            } else {
-                active = "#page-portfolio";
-                showPage();
-                if (activeGallery >= 1) {
-                    closeProjectPopupFunc(0);
-                    console.log(12345678);
+        (function ($) {
+            window.onpopstate = function(event) {
+                if (event.state.page == 1) {
+                    active = "#page-resume";
+                    showPage();
+                } else {
+                    active = "#page-portfolio";
+                    showPage();
+                    if (activeGallery >= 1) {
+                        closeProjectPopupFunc(0);
+                        console.log(12345678);
+                    }
+                    console.log(1234);
                 }
-                console.log(1234);
             }
-        }
+        })(jQuery);
         $(document).ready(function() {
             var curUrl = window.location.href;
             if(curUrl.indexOf("/rs") != -1 || 
