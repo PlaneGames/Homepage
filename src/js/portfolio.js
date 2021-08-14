@@ -170,6 +170,7 @@ var book_img = [
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
                 openProjectPopup(index);
                 galleryMode = 1;
+                history.pushState({page: 2, data: index}, "title 1", "/pf/"+book_img[index][1]);
             });
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseenter', function(){
                 galleryHover(index);
