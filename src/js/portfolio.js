@@ -250,11 +250,16 @@ var book_img = [
     });
 
 })(jQuery);
-
 var openProjectPopupFunc = function(index) {
     openProjectPopupVar();
 }
 var closeProjectPopupFunc = function(index) {
     closeProjectPopupVar();
     console.log("closeProjectPopupFunc");
+}
+var updatePopupFunc = function() {
+    if (activeGallery >= 1) {
+        closeProjectPopupFunc(0);
+        console.log(12345678);
+    }
 }
