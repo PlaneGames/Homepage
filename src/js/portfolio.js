@@ -48,6 +48,12 @@ var book_img = [
 
     $(document).ready(function() {
 
+        if (activeGallery >= 1) {
+            openProjectPopup(activeGallery-1);
+            galleryMode = 1;
+            history.pushState({page: 2, data: 1}, "title 1", "/pf/"+book_img[activeGallery-1][1]);
+        }
+
         //#region --- Book Side Cover Sizing ---
 
         var bookWidth = clamp(160, $('.book-cover').width(), 320);
