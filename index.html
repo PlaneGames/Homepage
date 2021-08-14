@@ -38,6 +38,9 @@
 
     <script>
         (function ($) {
+            
+        })(jQuery);
+        $(document).ready(function() {
             window.onpopstate = function(event) {
                 if (event.state.page == 1) {
                     active = "#page-resume";
@@ -52,8 +55,6 @@
                     console.log(1234);
                 }
             }
-        })(jQuery);
-        $(document).ready(function() {
             var curUrl = window.location.href;
             if(curUrl.indexOf("/rs") != -1 || 
             curUrl.indexOf("?page=1") != -1 ||
