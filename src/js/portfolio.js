@@ -45,6 +45,19 @@ var timeout;
 var cur_subpage = 0;
 
 (function ($) {
+    
+    var bookWidth = clamp(160, $('.book-cover').width(), 320);
+
+    function vw(v) {
+        var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        return (v * w) / 100;
+    }
+
+    var bookResizing = function() {
+        bookWidth = clamp(160, vw(20), 320);
+        $('.back-cover')
+            .css('transform','rotateY(180deg) translateZ('+bookWidth/5+'px)');
+    }
 
     var openProjectPopup = function(index) {
 
@@ -158,19 +171,6 @@ var cur_subpage = 0;
     $(document).ready(function() {
 
         //#region --- Book Side Cover Sizing ---
-
-        var bookWidth = clamp(160, $('.book-cover').width(), 320);
-
-        function vw(v) {
-            var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-            return (v * w) / 100;
-        }
-
-        var bookResizing = function() {
-            bookWidth = clamp(160, vw(20), 320);
-            $('.back-cover')
-                .css('transform','rotateY(180deg) translateZ('+bookWidth/5+'px)');
-        }
 
         //#endregion
 
