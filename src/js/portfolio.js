@@ -13,12 +13,10 @@ const clamp         = (num, min, max) => Math.min(Math.max(num, min), max);
 
 book.addEventListener("click", () => {
     book.classList.toggle("flip");
-    console.log(123455);
 });
 
 bookcover.addEventListener("mouseenter", () => {
     book.classList.add("rotateRight");
-    console.log(123455);
 });
 
 bookcover.addEventListener("mouseout", () => {
@@ -36,9 +34,9 @@ var book_img = [
     ["bookDr3Title", "DungeonRpg3", "bookDr3Side", "bookDr3Backcover"],
     ["bookDr2Title", "DungeonRpg2", "bookDr2Side", "bookDr2Backcover"],
     ["bookTUDTitle", "TUDCutscene", "bookTUDSide", "bookTUDBackcover"],
-    ["bookMKTitle", "MicroCastle", "bookDr3Side", "bookDr3Backcover"],
-    ["bookWBH2Title", "WayBackHome2", "bookDr3Side", "bookDr3Backcover"],
-    ["bookWBHTitle", "WayBackHome", "bookDr3Side", "bookDr3Backcover"],
+    ["bookMKTitle", "MicroCastle", "bookMKSide", "bookMKBackcover"],
+    ["bookWBH2Title", "WayBackHome2", "bookWBH2Side", "bookWBH2Backcover"],
+    ["bookWBHTitle", "WayBackHome", "bookWBHSide", "bookWBHBackcover"],
     ["bookVMTitle", "VendingMachine", "bookDr3Side", "bookDr3Backcover"],
     ["bookTOLTitle", "TypingOfLegend", "bookDr3Side", "bookDr3Backcover"],
 ];
@@ -113,7 +111,6 @@ var book_img = [
 
         var openProjectPopup = function(index) {
 
-            galleryMode = 1;
             bookResizing();
 
             $('.book-title')
@@ -172,6 +169,7 @@ var book_img = [
         var galleryButton = function(index) {
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
                 openProjectPopup(index);
+                galleryMode = 1;
             });
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseenter', function(){
                 galleryHover(index);
