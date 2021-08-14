@@ -43,8 +43,10 @@
                 showPage();
             } else {
                 active = "#page-portfolio";
-                showPage();
-                updatePopupFunc();
+                if (activeGallery == 0)
+                    showPage();
+                else
+                    updatePopupFunc();
             }
         }
         $(document).ready(function() {
