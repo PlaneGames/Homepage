@@ -192,6 +192,7 @@ var book_img = [
                     .css('opacity','1')
                     .css('filter','grayscale(90%)');
             }, 500);
+            /*
             timeout = setTimeout(function() {
                 $('.lo-gallery-header').show();
 
@@ -213,6 +214,7 @@ var book_img = [
                     .css('animation-name','openGalleryHeader')
                     .css('animation-duration','.5s');
             }, 2500);
+            */
  
         }
 
