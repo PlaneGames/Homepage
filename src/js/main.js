@@ -16,6 +16,7 @@ var galleryButtonClick = function() {
     $('.gal-con').on('click', function(){
 
         history.pushState({page: 2}, "title 2", "/pf");
+        console.log(history.state);
         active = "#page-portfolio";
         
         $('.lo-con')

@@ -37,18 +37,18 @@
     <script src="../src/js/include-html.min.js"></script>
 
     <script>
-        
+
         window.onpopstate = function(event) {
-                if (event.state.page == 1) {
-                    active = "#page-resume";
-                    showPage();
-                } else {
-                    active = "#page-portfolio";
-                    showPage();
-                    closeProjectPopupFunc(0);
-                }
-                console.log(event.state);
+            if (event.state.page == 1) {
+                active = "#page-resume";
+                showPage();
+            } else {
+                active = "#page-portfolio";
+                showPage();
+                //closeProjectPopupFunc(0);
             }
+            console.log(event.state);
+        }
 
         $(document).ready(function() {
 
@@ -66,8 +66,8 @@
                 history.pushState({page: 1}, "title 1", "/rs");
                 history.replaceState({page: 1}, "title 1", "/rs");
                 active = "#page-resume";
+                console.log(history.state);
             } else if(curUrl.indexOf("/pf") != -1 || curUrl.indexOf("?page=2") != -1) {
-                console.log("/pf");
                 if (curUrl.indexOf("?data=1") != -1 | curUrl.indexOf("/DungeonRpg3") != -1) {
                     //history.replaceState({page: 2, data: 1}, "", "/pf/DungeonRpg3");
                     active = "#page-portfolio";
@@ -77,7 +77,7 @@
                     history.pushState({page: 2}, "title 1", "/pf");
                     history.replaceState({page: 2}, "title 1", "/pf");
                     active = "#page-portfolio";
-                    console.log("/pf/None");
+                    console.log(history.state);
                 }
             }
             
