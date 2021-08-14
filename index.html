@@ -62,9 +62,18 @@
                 history.replaceState({page: 1}, "title 1", "/rs");
                 active = "#page-resume";
             } else if(curUrl.indexOf("/pf") != -1 || curUrl.indexOf("?page=2") != -1) {
-                history.pushState({page: 2}, "title 1", "/pf");
-                history.replaceState({page: 2}, "title 1", "/pf");
-                active = "#page-portfolio";
+                if (curUrl.indexOf("?data=1") != -1) {
+                    history.pushState({page: 2, data: 1}, "", "/pf/DungeonRpg3");
+                    history.replaceState({page: 2, data: 1}, "", "/pf/DungeonRpg3");
+                    active = "#page-portfolio";
+                    openProjectPopup(0);
+                    galleryMode = 1;
+                    history.pushState({page: 2, data: 1}, "title 1", "/pf/"+book_img[0][1]);
+                } else {
+                    history.pushState({page: 2}, "title 1", "/pf");
+                    history.replaceState({page: 2}, "title 1", "/pf");
+                    active = "#page-portfolio";
+                }
             }
         });
     </script>

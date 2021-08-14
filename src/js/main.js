@@ -5,6 +5,7 @@
 'use strict'; // Show Error Message With Console
 
 var active = "#page-resume";
+var activeGallery = 0;
 var timeout;
 var maxpage = 2;
 var loadpage = 0;
