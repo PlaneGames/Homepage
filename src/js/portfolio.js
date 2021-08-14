@@ -247,6 +247,20 @@ var book_img = [
             galleryResize();
         });
 
+        window.onpopstate = function(event) {
+            if (event.state.page == 1) {
+                active = "#page-resume";
+                showPage();
+            } else {
+                active = "#page-portfolio";
+                if (activeGallery == 0)
+                    showPage();
+                else {
+                    closeProjectPopup(0);
+                }
+            }
+        }
+
     });
 
 })(jQuery);
