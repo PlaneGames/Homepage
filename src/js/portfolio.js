@@ -113,7 +113,8 @@ var book_img = [
 
             bookResizing();
             clearTimeout(timeout);
-
+            history.pushState({page: 2, data: 1}, "", "/pf/DungeonRpg3");
+            
             $('.book-title')
                 .css('background-image','url("../src/images/'+book_img[index][0]+'.png")');
             $('.book-cover')
