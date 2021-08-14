@@ -37,8 +37,8 @@ var book_img = [
     ["bookMKTitle", "MicroCastle", "bookMKSide", "bookMKBackcover"],
     ["bookWBH2Title", "WayBackHome2", "bookWBH2Side", "bookWBH2Backcover"],
     ["bookWBHTitle", "WayBackHome", "bookWBHSide", "bookWBHBackcover"],
-    ["bookVMTitle", "VendingMachine", "bookDr3Side", "bookDr3Backcover"],
-    ["bookTOLTitle", "TypingOfLegend", "bookDr3Side", "bookDr3Backcover"],
+    ["bookVMTitle", "VendingMachine", "bookVMSide", "bookVMBackcover"],
+    ["bookTOLTitle", "TypingOfLegend", "bookTOLSide", "bookTOLBackcover"],
 ];
 
 (function ($) {
