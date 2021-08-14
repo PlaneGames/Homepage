@@ -247,23 +247,28 @@ var book_img = [
             galleryResize();
         });
 
-        window.onpopstate = function(event) {
-            if (event.state.page == 1) {
-                active = "#page-resume";
-                showPage();
-            } else {
-                active = "#page-portfolio";
-                if (activeGallery == 0)
-                    showPage();
-                else {
-                    closeProjectPopup(0);
-                }
-            }
+        var updatePopup = function(index) {
+            closeProjectPopup(index);
         }
+        updatePopupVar = updatePopup();
 
     });
 
 })(jQuery);
+
+window.onpopstate = function(event) {
+    if (event.state.page == 1) {
+        active = "#page-resume";
+        showPage();
+    } else {
+        active = "#page-portfolio";
+        if (activeGallery == 0)
+            showPage();
+        else {
+            closeProjectPopupVar(0);
+        }
+    }
+}
 
 var openProjectPopupFunc = function(index) {
     openProjectPopupVar();
