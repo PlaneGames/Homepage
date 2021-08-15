@@ -337,6 +337,14 @@ header {
 }
 
 @keyframes openGallery {
+    from {
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+        padding: 0;
+        margin: 0px;
+        transition: 0s;
+    }
     to {
         width: 10vw;
         height: 20vw;
@@ -347,6 +355,11 @@ header {
 }
 
 @keyframes openGalleryHeader {
+    from {
+        opacity: 0;
+        height: 0px;
+        padding: 0px;
+    }
     to {
         opacity: 1;
         height: 10%;
@@ -354,7 +367,34 @@ header {
     }
 }
 
-@keyframes scaleGallery {
+@keyframes scaleGalleryW {
+    from {
+        min-width: 160px;
+        width: 20vw;
+        max-width: 320px;
+        min-height: 240px;
+        height: 30vw;
+        max-height: 480px;
+    }
+    to {
+        min-width: 0px;
+        width: 10vw;
+        max-width: 160px;
+        min-height: 0px;
+        height: 20vw;
+        max-height: 320px;
+    }
+}
+
+@keyframes scaleGalleryH {
+    from {
+        min-width: 160px;
+        width: 20vw;
+        max-width: 320px;
+        min-height: 240px;
+        height: 30vw;
+        max-height: 480px;
+    }
     to {
         min-width: 0px;
         width: 10vw;

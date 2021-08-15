@@ -82,6 +82,7 @@ var book_img = [
                         .css('max-width','90%')
                         .css('height','100px');
                 }
+                console.log("Hover Gallery");
             }
         }
 
@@ -134,7 +135,7 @@ var book_img = [
             $('.port-img').not('.port-img:'+img_index)
                 .css('transition','.5s')
                 .css('opacity','0');
-                
+
             $('.lo-gallery-header')
                 .css('animation-name','closeGalleryHeader')
                 .css('animation-duration','.5s');
@@ -174,6 +175,7 @@ var book_img = [
         var closeProjectPopup = function(index) {
 
             console.log("Close Gallery Popup");
+            galleryMode = 0;
 
             var img_index   = "nth-of-type("+(index+1)+")";
 
@@ -183,39 +185,29 @@ var book_img = [
                 .css('transition','.5s')
                 .css('opacity','0');
             timeout = setTimeout(function() {
-                $('.port-img').show();
-                //$('.book-con')
-                //    .css('display','none');
-                $('.port-img:'+img_index)
-                    .css('animation-name','scaleGallery')
-                    .css('animation-duration','1s')
-                    .css('opacity','1')
-                    .css('filter','grayscale(90%)');
+                $('.book-con')
+                    .css('transition','.5s')
+                    .css('opacity','0')
             }, 500);
-            /*
             timeout = setTimeout(function() {
-                $('.lo-gallery-header').show();
-
-                $('.port-img').not('.port-img:'+img_index)
+                $('.book-con')
+                    .css('opacity','1')
+                    .css('display','none');
+            }, 1000);
+            timeout = setTimeout(function() {
+                $('.port-img').show()
                     .css('visibility','visible')
-                    .css('animation-name','openGallery')
-                    .css('animation-duration','1s');
-            }, 1500);
+                    .css('animation-name','none')
+                    .css('transition','0s')
+                    .css('opacity','0');
+            }, 1000);
             timeout = setTimeout(function() {
-                $('.port-img').not('.port-img:'+img_index)
-                .css('transition','.5s')
-                .css('opacity','1');
-                
-                $('.lo-gallery-header')
-                    .css('animation-name','openGalleryHeader')
-                    .css('animation-duration','.5s');
+                $('.port-img')
+                    .css('transition','1s')
+                    .css('opacity','1');
+                galleryResize();
+            }, 1050);
 
-                $('.lo-gallery-header h1')
-                    .css('animation-name','openGalleryHeader')
-                    .css('animation-duration','.5s');
-            }, 2500);
-            */
- 
         }
 
         var galleryButton = function(index) {
