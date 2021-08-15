@@ -276,7 +276,7 @@ var book_img = [
                     $('.po-box')
                         .css('width','100%')
                         .css('height','50%');
-
+                        
                     $('.po-pr1').css('order','1')
                     $('.po-pr2').css('order','2')
                     $('.po-pr3').css('order','3')
