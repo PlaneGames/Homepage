@@ -61,6 +61,8 @@ var book_img = [
             bookWidth = clamp(160, vw(20), 320);
             $('.back-cover')
                 .css('transform','rotateY(180deg) translateZ('+bookWidth/5+'px)');
+            $('.front-lcover')
+                .css('transform','rotateY(-90deg) translateX(-'+bookWidth/5+'px)');
         }
 
         //#endregion
@@ -80,7 +82,9 @@ var book_img = [
                     $('.port-img:'+index)
                         .css('width','90%')
                         .css('max-width','90%')
-                        .css('height','100px');
+                        .css('height','100px')
+                        .css('opacity','1')
+                        .css('filter','grayscale(0%)');
                 }
                 console.log("Hover Gallery");
             }
@@ -103,7 +107,9 @@ var book_img = [
                         .css('height','100px')
                         .css('max-width','80%')
                         .css('max-height','20vh')
-                        .css('margin','.3vh');
+                        .css('margin','.3vh')
+                        .css('opacity','0.7')
+                        .css('filter','grayscale(90%)');
                 }
             }
         }
@@ -166,9 +172,38 @@ var book_img = [
             }, 2000);
             timeout = setTimeout(function() {
                 $('.book-title')
-                    .css('transition','3s')
+                    .css('transition','1s')
                     .css('opacity','1');
             }, 2100);
+
+            timeout = setTimeout(function() {
+                $('.po-main').show();
+                $('.po-con').show();
+                $('.po-contitle').show();
+                $('.po-con')
+                    .css('opacity','1')
+                    .css('transform','translate(-50%, 0%)')
+                    .css('transition', '.5s');
+                $('.po-contitle')
+                    .css('opacity','1')
+                    .css('transform','translate(-50%, 0%)')
+                    .css('transition', '.5s');
+                $('.po-con-line').show();
+                $('.po-con-line')
+                    .css('opacity','1');
+
+                $(".ft-main-title").fitText(1.5);
+                $(".ft-main-lore").fitText(4);
+                $(".ft-main-lore2").fitText(3.6);
+
+            }, 2500);
+            timeout = setTimeout(function() {
+                text_ani(page);
+                $('.po-con')
+                    .css('transition','0s');
+                $('.po-contitle')
+                    .css('transition','0s');
+            }, 3000);
 
         }
 

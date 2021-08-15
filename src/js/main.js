@@ -7,7 +7,7 @@
 var active = "#page-resume";
 var activeGallery = 0;
 var timeout;
-var maxpage = 2;
+var maxpage = 3;
 var loadpage = 0;
 var loading_per = 0;
 var loadcomplete = 0;
@@ -103,7 +103,7 @@ var showPage = function() {
 
 var loadpageChecker = () => {
 
-    if (loadpage < 2) {
+    if (loadpage < maxpage) {
         // lo-con Hide
         $('.lo-con').css('opacity','0');
         $('.lo-con').hide();
@@ -119,7 +119,7 @@ var loadpageChecker = () => {
             showPage();
             $(".loader").html("<p>" + loading_per + "%</p>");
         });
-
+        $('.po-main').hide();
     }
     showLoading();
 }
