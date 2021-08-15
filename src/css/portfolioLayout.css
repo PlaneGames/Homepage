@@ -1,0 +1,31 @@
+.po-box {
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: calc(100% - 120px);
+    max-width: 1000px;
+    height: 500px;
+
+    margin-right: 60px;
+
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    transition: .3s;
+}
+
+.po-subbox {
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+
+    width: 33.3333%;
+    height: 33.3333%;
+    transition: .3s;
+
+    background-color: antiquewhite;
+}

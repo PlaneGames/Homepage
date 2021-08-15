@@ -168,42 +168,24 @@ var book_img = [
             timeout = setTimeout(function() {
                 $('.port-img').hide();
                 $('.book-con')
-                    .css('display','flex');
+                    .css('display','flex')
+                    .css('opacity','1');
             }, 2000);
             timeout = setTimeout(function() {
                 $('.book-title')
                     .css('transition','1s')
                     .css('opacity','1');
             }, 2100);
+            timeout = setTimeout(function() {
+                $('.book-con')
+                    .css('transition','1s')
+                    .css('opacity','0');
+            }, 3100);
 
             timeout = setTimeout(function() {
-                $('.po-main').show();
-                $('.po-con').show();
-                $('.po-contitle').show();
-                $('.po-con')
-                    .css('opacity','1')
-                    .css('transform','translate(-50%, 0%)')
-                    .css('transition', '.5s');
-                $('.po-contitle')
-                    .css('opacity','1')
-                    .css('transform','translate(-50%, 0%)')
-                    .css('transition', '.5s');
-                $('.po-con-line').show();
-                $('.po-con-line')
-                    .css('opacity','1');
-
-                $(".ft-main-title").fitText(1.5);
-                $(".ft-main-lore").fitText(4);
-                $(".ft-main-lore2").fitText(3.6);
-
-            }, 2500);
-            timeout = setTimeout(function() {
-                text_ani(page);
-                $('.po-con')
-                    .css('transition','0s');
-                $('.po-contitle')
-                    .css('transition','0s');
-            }, 3000);
+                active = "#page-dr3";
+                showPage();
+            }, 4100);
 
         }
 
