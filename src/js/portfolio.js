@@ -166,7 +166,7 @@ var book_img = [
             }, 2000);
             timeout = setTimeout(function() {
                 $('.book-title')
-                    .css('transition','1s')
+                    .css('transition','3s')
                     .css('opacity','1');
             }, 2100);
 
@@ -176,8 +176,7 @@ var book_img = [
 
             console.log("Close Gallery Popup");
             galleryMode = 0;
-
-            var img_index   = "nth-of-type("+(index+1)+")";
+            //var img_index   = "nth-of-type("+(index+1)+")";
 
             clearTimeout(timeout);
 
@@ -199,7 +198,8 @@ var book_img = [
                     .css('visibility','visible')
                     .css('animation-name','none')
                     .css('transition','0s')
-                    .css('opacity','0');
+                    .css('opacity','0')
+                    .css('filter','grayscale(90%)');
             }, 1000);
             timeout = setTimeout(function() {
                 $('.port-img')
