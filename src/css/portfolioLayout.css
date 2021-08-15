@@ -1,7 +1,12 @@
 .po-con {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-wrap: wrap;
+
     overflow: hidden;
     position: relative;
-    justify-content: center;
 
     left: 50%;
     transform: translateX(-50%);
@@ -25,6 +30,19 @@
     width: 50%;
     height: 100%;
     transition: .3s;
+}
+
+.po-pr1 {
+    order: 0;
+}
+.po-pr2 {
+    order: 0;
+}
+.po-pr3 {
+    order: 0;
+}
+.po-pr4 {
+    order: 0;
 }
 
 .po-subbox {
