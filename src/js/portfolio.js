@@ -185,6 +185,7 @@ var book_img = [
             timeout = setTimeout(function() {
                 active = "#page-dr3";
                 showPage();
+                projectResizing();
             }, 4100);
 
         }
@@ -253,6 +254,8 @@ var book_img = [
             if (galleryMode >= 1) {
                 if (window.innerWidth >= 700) {
                     $('.po-con')
+                        .css('width','80vw')
+                        .css('max-width','1000px')
                         .css('height','40vw')
                         .css('max-height','500px')
                         .css('flex-direction','row');
@@ -266,8 +269,9 @@ var book_img = [
                     $('.po-pr4').css('order','0')
                 } else {
                     $('.po-con')
-                        .css('height','80vw')
-                        .css('max-height','1000px')
+                        .css('width','90vw')
+                        .css('height','160vw')
+                        .css('max-height','2000px')
                         .css('flex-direction','column');
                     $('.po-box')
                         .css('width','100%')
