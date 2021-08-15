@@ -48,7 +48,7 @@ var book_img = [
 
     $(document).ready(function() {
 
-        //#region --- Book Side Cover Sizing ---
+        //#region  --- Book Side Cover Sizing ---
 
         var bookWidth = clamp(160, $('.book-cover').width(), 320);
 
@@ -247,9 +247,38 @@ var book_img = [
 
         //#endregion
 
+        //#region  --- Project Setting ---
+
+        var projectResizing = function() {
+            if (galleryMode >= 1) {
+                if (window.innerWidth >= 700) {
+                    $('.port-img')
+                        .css('width','10vw')
+                        .css('height','20vw')
+                        .css('max-width','160px')
+                        .css('max-height','320px')
+                        .css('margin','.5%')
+                        .css('opacity','0.7')
+                        .css('filter','grayscale(90%)');
+                } else {
+                    $('.port-img')
+                        .css('width','440px')
+                        .css('height','100px')
+                        .css('max-width','80%')
+                        .css('max-height','20vh')
+                        .css('margin','.3vh')
+                        .css('opacity','0.7')
+                        .css('filter','grayscale(90%)');
+                }
+            }
+        }
+
+        //#endregion
+
         window.addEventListener('resize', function () {
             bookResizing();
             galleryResize();
+            projectResizing();
         });
 
         window.onpopstate = function(event) {

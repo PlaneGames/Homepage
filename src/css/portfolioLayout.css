@@ -1,4 +1,4 @@
-.po-box {
+.po-con {
     overflow: hidden;
     position: relative;
     justify-content: center;
@@ -6,15 +6,24 @@
     left: 50%;
     transform: translateX(-50%);
     
-    width: calc(100% - 120px);
+    /*width: calc(100% - 120px);*/
+    width: 80vw;
     max-width: 1000px;
-    height: 500px;
+    height: 40vw;
+    max-height: 500px;
 
     margin-right: 60px;
 
-    padding-top: 24px;
-    padding-bottom: 24px;
+    transition: .3s;
+}
 
+.po-box {
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+
+    width: 50%;
+    height: 100%;
     transition: .3s;
 }
 
@@ -22,10 +31,53 @@
     overflow: hidden;
     position: relative;
     justify-content: center;
-
-    width: 33.3333%;
-    height: 33.3333%;
+    
+    width: 49%;
+    height: 49%;
     transition: .3s;
+}
 
-    background-color: antiquewhite;
+.po-subbox p {
+    font-size: 12px;
+    letter-spacing: .1em;
+    line-height: 1.5em;
+}
+
+.po-drawbox {
+    position: relative;
+    width: 33%;
+    height: 33%;
+    margin: 0px;
+    padding: 0px;
+
+    justify-content: center; vertical-align: middle;
+}
+
+.po-sbwide {
+    width: 99%;
+}
+
+.po-flexmode {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+
+.po-img {
+    position: relative;
+
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.po-grayscale {
+    filter: grayscale(50%);
+    opacity: 0.6;
 }
