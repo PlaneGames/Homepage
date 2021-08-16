@@ -274,8 +274,7 @@ var book_img = [
                         .css('max-height','500px')
                         .css('flex-direction','row');
                     $('.po-box')
-                        .css('width','50%')
-                        .css('height','100%');
+                        .css('width','50%');
                     $('.po-subbox h3')
                         .css('margin','0px');
                     $('.po-subbox p')
@@ -295,8 +294,7 @@ var book_img = [
                         .css('max-height','2000px')
                         .css('flex-direction','column');
                     $('.po-box')
-                        .css('width','100%')
-                        .css('height','50%');
+                        .css('width','100%');
                     $('.po-subbox h3')
                         .css('margin-bottom','32px')
                         .css('margin-top','32px');
