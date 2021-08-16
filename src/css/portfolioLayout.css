@@ -16,8 +16,6 @@
     max-width: 1000px;
     height: 40vw;
     max-height: 500px;
-
-    transition: .3s;
 }
 
 .po-box {
@@ -27,7 +25,6 @@
 
     width: 50%;
     height: 100%;
-    transition: .3s;
 }
 
 .po-pr1 {
@@ -45,14 +42,26 @@
 .po-prh-auto {
 }
 
+.po-h49 {
+    height: 49%;
+}
+.po-h100 {
+    height: 100%;
+}
+.po-pr-h49-auto {
+    height: auto;
+}
+.po-pr-h100-auto {
+    height: auto;
+}
+
 .po-subbox {
     overflow: hidden;
     position: relative;
     justify-content: center;
     
     width: 49%;
-    height: 49%;
-    transition: .3s;
+    /*height: 49%;*/
 }
 
 .po-subbox p {

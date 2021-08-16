@@ -249,10 +249,24 @@ var book_img = [
         //#endregion
 
         //#region  --- Project Setting ---
-
+        
+        /*
+        .po-h49 {
+            height: 49%;
+        }
+        .po-h50 {
+            height: 50%;
+        }
+        .po-pr-h49-auto {
+            height: auto;
+        }
+        .po-pr-h50-auto {
+            height: auto;
+        }
+        */
         var projectResizing = function() {
             if (galleryMode >= 1) {
-                if (window.innerWidth >= 700) {
+                if (window.innerWidth >= 960) {
                     $('.po-con')
                         .css('width','80vw')
                         .css('max-width','1000px')
@@ -262,11 +276,18 @@ var book_img = [
                     $('.po-box')
                         .css('width','50%')
                         .css('height','100%');
+                    $('.po-subbox h3')
+                        .css('margin','0px');
+                    $('.po-subbox p')
+                        .css('margin','16px');
 
-                    $('.po-pr1').css('order','0')
-                    $('.po-pr2').css('order','0')
-                    $('.po-pr3').css('order','0')
-                    $('.po-pr4').css('order','0')
+                    $('.po-pr1').css('order','0');
+                    $('.po-pr2').css('order','0');
+                    $('.po-pr3').css('order','0');
+                    $('.po-pr4').css('order','0');
+
+                    $('.po-pr-h49-auto').css('height','49%');
+                    $('.po-pr-h100-auto').css('height','100%');
                 } else {
                     $('.po-con')
                         .css('width','90vw')
@@ -276,11 +297,20 @@ var book_img = [
                     $('.po-box')
                         .css('width','100%')
                         .css('height','50%');
+                    $('.po-subbox h3')
+                        .css('margin-bottom','32px')
+                        .css('margin-top','32px');
+                    $('.po-subbox p')
+                        .css('margin-bottom','32px')
+                        .css('margin-top','32px');
                         
                     $('.po-pr1').css('order','1')
                     $('.po-pr2').css('order','2')
                     $('.po-pr3').css('order','3')
                     $('.po-pr4').css('order','4')
+
+                    $('.po-pr-h49-auto').css('height','auto');
+                    $('.po-pr-h100-auto').css('height','auto');
                 }
             }
         }
