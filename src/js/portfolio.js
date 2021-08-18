@@ -249,21 +249,6 @@ var book_img = [
         //#endregion
 
         //#region  --- Project Setting ---
-        
-        /*
-        .po-h49 {
-            height: 49%;
-        }
-        .po-h50 {
-            height: 50%;
-        }
-        .po-pr-h49-auto {
-            height: auto;
-        }
-        .po-pr-h50-auto {
-            height: auto;
-        }
-        */
         var projectResizing = function() {
             if (galleryMode >= 1) {
                 if (window.innerWidth >= 700) {
@@ -307,7 +292,6 @@ var book_img = [
                     $('.po-pr2').css('order','2')
                     $('.po-pr3').css('order','3')
                     $('.po-pr4').css('order','4')
-                    
 
                     $('.po-pr-h100-h50').css('height','50%');
                     $('.po-pr-h49-auto').css('height','auto');
