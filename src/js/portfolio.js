@@ -293,7 +293,7 @@ var book_img = [
                     $('.po-pr3').css('order','3')
                     $('.po-pr4').css('order','4')
 
-                    $('.po-pr-h100-h50').css('height','50%');
+                    $('.po-pr-h100-h50').css('height','50vw');
                     $('.po-pr-h49-auto').css('height','auto');
                     $('.po-pr-h100-auto').css('height','auto');
                 }

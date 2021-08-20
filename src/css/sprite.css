@@ -11,8 +11,7 @@
    height: calc(var(--imgcon-size) * var(--pixel-scale));
 
    overflow: hidden;
-   margin-left: auto;
-   margin-right: auto;
+   margin: auto;
  }
  
 .draw-img-spritesheet {
@@ -35,6 +34,12 @@
     .draw-img {
         --imgcon-size: var(--pixel-size);
     }
+}
+
+@media all and (max-width: 700px) {
+   .draw-img {
+       --imgcon-size: calc(8vw);
+   }
 }
 
  @keyframes moveSpritesheet {
