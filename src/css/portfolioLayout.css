@@ -9,8 +9,7 @@
     left: 50%;
     transform: translateX(-50%);
     
-    /*width: calc(100% - 120px);*/
-    width: 80vw;
+    width: calc(100% - 16px);
     max-width: 1000px;
     height: auto;
     max-height: 500px;
