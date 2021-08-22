@@ -251,7 +251,7 @@ var book_img = [
         //#region  --- Project Setting ---
         var projectResizing = function() {
             if (galleryMode >= 1) {
-                if (window.innerWidth >= 700) {
+                if (window.innerWidth >= 760) {
                     $('.po-con')
                         .css('width','80vw')
                         .css('max-width','1000px')
