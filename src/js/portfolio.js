@@ -285,6 +285,7 @@ var book_img = [
                         .css('margin-bottom','32px')
                         .css('margin-top','48px');
                     $('.po-subbox p')
+                        .css('margin','0px')
                         .css('margin-bottom','32px')
                         .css('margin-top','32px');
                         
