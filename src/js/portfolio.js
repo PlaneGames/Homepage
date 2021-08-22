@@ -249,19 +249,24 @@ var book_img = [
         //#endregion
 
         //#region  --- Project Setting ---
+        var poConResizing = function(w, h, maxw, maxh, dire) {
+            $('.po-con')
+                .css('width',w)
+                .css('max-width',maxw)
+                .css('height',h)
+                .css('max-height',maxh)
+                .css('flex-direction',dire);
+        }
+
         var projectResizing = function() {
             if (galleryMode >= 1) {
                 if (window.innerWidth >= 760) {
-                    $('.po-con')
-                        .css('width','80vw')
-                        .css('max-width','1000px')
-                        .css('height','40vw')
-                        .css('max-height','500px')
-                        .css('flex-direction','row');
+                    poConResizing(vw(100)-16+'px', vw(50)-8+'px', '1000px', '500px', 'row');
                     $('.po-box')
                         .css('width','50%');
                     $('.po-subbox h3')
-                        .css('margin','0px');
+                        .css('margin-bottom','32px')
+                        .css('margin-top','32px');
 
                     if (window.innerWidth <= 880) {
                         $('.po-subbox p')
@@ -278,16 +283,12 @@ var book_img = [
                     $('.po-pr3').css('order','0');
                     $('.po-pr4').css('order','0');
 
-                    $('.po-h50').css('height','20vw');
+                    $('.po-h50').css('height',vw(25)-4+'px');
                     $('.po-pr-h100-h50').css('height','100%');
                     $('.po-pr-h49-auto').css('height','49%');
                     $('.po-pr-h100-auto').css('height','100%');
                 } else {
-                    $('.po-con')
-                        .css('width','90vw')
-                        .css('height','auto')
-                        .css('max-height','2000px')
-                        .css('flex-direction','column');
+                    poConResizing(vw(100)-16+'px', 'auto', '1000px', '2000px', 'column');
                     $('.po-box')
                         .css('width','100%');
                     $('.po-subbox h3')
