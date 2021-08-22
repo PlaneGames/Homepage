@@ -283,7 +283,7 @@ var book_img = [
                         .css('width','100%');
                     $('.po-subbox h3')
                         .css('margin-bottom','32px')
-                        .css('margin-top','32px');
+                        .css('margin-top','48px');
                     $('.po-subbox p')
                         .css('margin-bottom','32px')
                         .css('margin-top','32px');
