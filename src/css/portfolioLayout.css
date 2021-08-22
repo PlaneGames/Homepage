@@ -42,6 +42,10 @@
 .po-h49 {
     height: 49%;
 }
+.po-h50 {
+    height: 20vw;
+    max-height: 250px;
+}
 .po-h100 {
     height: 20vw;
 }
