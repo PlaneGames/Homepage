@@ -90,10 +90,20 @@
     display: block;
 }
 
+.po-box h3 {
+    text-align: center;
+    font-weight: bolder;
+    color:rgb(54, 54, 54);
+    font-size: 20px;
+    letter-spacing: .1em;
+    line-height: 1.5em;
+}
+
 .po-box h2 {
     text-align: center;
-    font-weight: lighter;
-    font-size: 16px;
+    font-weight: bolder;
+    color:rgb(54, 54, 54);
+    font-size: 14px;
     letter-spacing: .1em;
     line-height: 1.5em;
 }
@@ -184,8 +194,21 @@
     transition: .3s;
 }
 
+.po-box .po-button p2 {
+    font-weight: bolder;
+    font-size: 11px;
+    letter-spacing: .1em;
+    line-height: 2em;
+    color: rgb(54, 54, 54);
+}
+
 .po-button:hover {
     background-color: black;
+    transition: .3s;
+    transform: scale(0.9, 0.9);
+}
+
+.po-button:hover p2 {
     color: white;
     transition: .3s;
     transform: scale(0.9, 0.9);
