@@ -259,9 +259,11 @@ var book_img = [
         }
 
         var projectResizing = function() {
+            var margin_w = 32;
+            var margin_h = 16;
             if (galleryMode >= 1) {
                 if (window.innerWidth >= 760) {
-                    poConResizing(vw(100)-16+'px', vw(50)-8+'px', '1000px', '500px', 'row');
+                    poConResizing(vw(100)-margin_w+'px', vw(50)-margin_h+'px', '1000px', '500px', 'row');
                     $('.po-box')
                         .css('width','50%');
                     $('.po-subbox h3')
@@ -283,13 +285,13 @@ var book_img = [
                     $('.po-pr3').css('order','0');
                     $('.po-pr4').css('order','0');
                     $('.po-h50')
-                        .css('height',vw(25)-4+'px')
+                        .css('height',vw(25)-margin_h/2+'px')
                         .css('max-height','250px');
                     $('.po-pr-h100-h50').css('height','100%');
                     $('.po-pr-h49-auto').css('height','49%');
                     $('.po-pr-h100-auto').css('height','100%');
                 } else {
-                    poConResizing(vw(100)-16+'px', 'auto', '1000px', '2000px', 'column');
+                    poConResizing(vw(100)-margin_w/2+'px', 'auto', '1000px', '2000px', 'column');
                     $('.po-box')
                         .css('width','100%');
                     $('.po-subbox h3')
@@ -307,9 +309,9 @@ var book_img = [
                     $('.po-pr4').css('order','4')
 
                     $('.po-h50')
-                        .css('height',vw(50)-8+'px')
-                        .css('max-height',vw(50)-8+'px');
-                    $('.po-pr-h100-h50').css('height',vw(50)-8+'px');
+                        .css('height',vw(50)-margin_h/2+'px')
+                        .css('max-height',vw(50)-margin_h/2+'px');
+                    $('.po-pr-h100-h50').css('height',vw(50)-margin_h/2+'px');
                     $('.po-pr-h49-auto').css('height','auto');
                     $('.po-pr-h100-auto').css('height','auto');
                 }
