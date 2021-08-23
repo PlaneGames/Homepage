@@ -118,11 +118,21 @@
     font-size: 12px;
     letter-spacing: .1em;
     line-height: 1.5em;
+
     color:rgb(26, 28, 36);
 
-    padding-bottom: 2px;
-    box-shadow: 0px 2px 0px 0px rgba(26, 28, 36, 0.75);
-    /*border-bottom: 1.5px solid rgba(26, 28, 36, 0.75);*/
+    background-image: linear-gradient(rgba(26, 28, 36, 0.75), rgba(26, 28, 36, 0.75));
+    background-position: bottom center;
+    background-size: 50% 1.5px;
+    background-repeat: no-repeat;
+    padding-bottom: 4px;
+    transition: .2s;
+}
+
+.po-subbox p strong:hover, .po-subbox p strong:active {
+    color:rgb(15, 16, 20);
+    background-size: 100% 1.5px;
+    transition: .2s;
 }
 
 .po-drawbox {
