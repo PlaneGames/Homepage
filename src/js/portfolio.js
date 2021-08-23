@@ -264,8 +264,7 @@ var book_img = [
             if (galleryMode >= 1) {
                 if (window.innerWidth >= 760) {
                     poConResizing(vw(100)-margin_w+'px', vw(50)-margin_h+'px', '1000px', '500px', 'row');
-                    $('.po-box')
-                        .css('width','50%');
+
                     $('.po-subbox h3')
                         .css('margin-bottom','32px')
                         .css('margin-top','32px');
@@ -295,8 +294,7 @@ var book_img = [
                     $('.po-pr-show-hide').css('display','block');
                 } else {
                     poConResizing(vw(100)-margin_w/2+'px', 'auto', '1000px', '2000px', 'column');
-                    $('.po-box')
-                        .css('width','100%');
+
                     $('.po-subbox h3')
                         .css('margin-bottom','32px')
                         .css('margin-top','48px');

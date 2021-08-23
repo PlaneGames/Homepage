@@ -24,8 +24,8 @@
     left: 50%;
     transform: translate(-50%, 0%);
 
-    padding-top: 24px;
-    margin-top: 24px;
+    padding-top: 32px;
+    margin-top: 32px;
 
     border-top: 1px solid rgba(20, 20, 20, 0.2);
 }
@@ -68,6 +68,9 @@
 .po-h100 {
     height: 20vw;
 }
+.po-w100 {
+    width: 100%;
+}
 .po-pr-w92-w100 {
     width: 100%;
 }
@@ -106,7 +109,20 @@
 .po-subbox p {
     font-size: 12px;
     letter-spacing: .1em;
+    line-height: 2em;
+    color:rgb(54, 54, 54);
+}
+
+.po-subbox p strong {
+    font-weight: bolder;
+    font-size: 12px;
+    letter-spacing: .1em;
     line-height: 1.5em;
+    color:rgb(26, 28, 36);
+
+    padding-bottom: 2px;
+    box-shadow: 0px 2px 0px 0px rgba(26, 28, 36, 0.75);
+    /*border-bottom: 1.5px solid rgba(26, 28, 36, 0.75);*/
 }
 
 .po-drawbox {
@@ -144,8 +160,8 @@
 }
 
 .po-grayscale {
-    filter: grayscale(50%);
-    opacity: 0.6;
+    filter: grayscale(0%);
+    opacity: 1;
 }
 
 .po-box .po-button {
