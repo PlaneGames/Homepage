@@ -58,6 +58,14 @@
     height: auto;
 }
 
+.po-box h2 {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 16px;
+    letter-spacing: .1em;
+    line-height: 1.5em;
+}
+
 .po-subbox {
     position: relative;
     justify-content: center;
@@ -109,4 +117,21 @@
 .po-grayscale {
     filter: grayscale(50%);
     opacity: 0.6;
+}
+
+.po-box .po-button {
+    height: 1.5em;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1.5px solid black;
+    border-radius: 32px;
+    transition: .3s;
+}
+
+.po-button:hover {
+    background-color: black;
+    color: white;
+    transition: .3s;
+    transform: scale(0.9, 0.9);
 }
