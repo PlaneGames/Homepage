@@ -287,10 +287,12 @@ var book_img = [
                     $('.po-h50')
                         .css('height',vw(25)-margin_h/2+'px')
                         .css('max-height','250px');
+                    $('.po-pr-w50-w100').css('width','50%');
                     $('.po-pr-w92-w100').css('width','92%');
                     $('.po-pr-h100-h50').css('height','100%');
                     $('.po-pr-h49-auto').css('height','49%');
                     $('.po-pr-h100-auto').css('height','100%');
+                    $('.po-pr-show-hide').css('display','block');
                 } else {
                     poConResizing(vw(100)-margin_w/2+'px', 'auto', '1000px', '2000px', 'column');
                     $('.po-box')
@@ -312,10 +314,12 @@ var book_img = [
                     $('.po-h50')
                         .css('height',vw(50)-margin_h/2+'px')
                         .css('max-height',vw(50)-margin_h/2+'px');
+                    $('.po-pr-w50-w100').css('width','100%');
                     $('.po-pr-w92-w100').css('width','100%');
                     $('.po-pr-h100-h50').css('height',vw(50)-margin_h/2+'px');
                     $('.po-pr-h49-auto').css('height','auto');
                     $('.po-pr-h100-auto').css('height','auto');
+                    $('.po-pr-show-hide').css('display','none');
                 }
             }
         }

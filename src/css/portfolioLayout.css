@@ -71,6 +71,9 @@
 .po-pr-w92-w100 {
     width: 100%;
 }
+.po-pr-w50-w100 {
+    width: 50%;
+}
 .po-pr-h100-h50 {
     height: 100%;
 }
@@ -79,6 +82,9 @@
 }
 .po-pr-h100-auto {
     height: auto;
+}
+.po-pr-show-hide {
+    display: block;
 }
 
 .po-box h2 {
