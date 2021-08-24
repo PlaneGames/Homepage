@@ -194,7 +194,7 @@
     transition: .3s;
 }
 
-.po-box .po-button p2 {
+.po-box p2 {
     font-weight: bolder;
     font-size: 11px;
     letter-spacing: .1em;
