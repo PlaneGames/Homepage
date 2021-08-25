@@ -74,7 +74,7 @@ var book_img = [
 
         //#region  --- Gallery Button Selecting ---
 
-        var gallerySelect = 0;
+        var gallerySelect = -1;
 
         var galleryHover = function(n) {
             var index = "nth-of-type("+(n+1)+")";
@@ -136,42 +136,44 @@ var book_img = [
 
         var galleryCentering = function(index) {
 
-            var mIndex = index - 4,
-                imgSize = Math.min(vw(10), 160),
-                mType = '',
-                Mside = vw(2),
-                margin = 0;
+            if (galleryMode == 0 && index != -1) {
+                var mIndex = index - 4,
+                    imgSize = Math.min(vw(10), 160),
+                    mType = '',
+                    Mside = vw(2),
+                    margin = 0;
 
-            if (window.innerWidth >= 700) {
+                if (window.innerWidth >= 700) {
 
-                imgSize = Math.min(vw(10), 160);
-                Mside = vw(2);
-                if (mIndex < 0) {
-                    mType = 'margin-right';
-                    margin = (imgSize * 2 + Mside) * mIndex + (imgSize + Mside/2);
+                    imgSize = Math.min(vw(10), 160);
+                    Mside = vw(2);
+                    if (mIndex < 0) {
+                        mType = 'margin-right';
+                        margin = (imgSize * 2 + Mside) * mIndex + (imgSize + Mside/2);
+                    } else {
+                        mType = 'margin-left';
+                        margin = -((imgSize * 2 + Mside) * mIndex) - (imgSize + Mside/2);
+                    }
+
                 } else {
-                    mType = 'margin-left';
-                    margin = -((imgSize * 2 + Mside) * mIndex) - (imgSize + Mside/2);
+
+                    imgSize = vh(8);
+                    Mside = vh(1.2);
+                    if (mIndex < 0) {
+                        mType = 'margin-bottom';
+                        margin = (imgSize * 2 + Mside) * mIndex + (imgSize + Mside/2);
+                    } else {
+                        mType = 'margin-top';
+                        margin = -((imgSize * 2 + Mside) * mIndex) - (imgSize + Mside/2);
+                    }
+
                 }
 
-            } else {
+                console.log(imgSize);
 
-                imgSize = vh(8);
-                Mside = vh(1.2);
-                if (mIndex < 0) {
-                    mType = 'margin-bottom';
-                    margin = (imgSize * 2 + Mside) * mIndex + (imgSize + Mside/2);
-                } else {
-                    mType = 'margin-top';
-                    margin = -((imgSize * 2 + Mside) * mIndex) - (imgSize + Mside/2);
-                }
-
+                $('.port-imgcon').css('margin','0px');
+                $('.port-imgcon').css(mType,''+margin+'px');
             }
-
-            console.log(imgSize);
-
-            $('.port-imgcon').css('margin','0px');
-            $('.port-imgcon').css(mType,''+margin+'px');
 
         }
         
@@ -309,7 +311,8 @@ var book_img = [
             galleryButton(i);
         }
         galleryCentering(7);
-        
+        galleryCentering(3.5);
+
         //#endregion
 
         //#region  --- Project Setting ---
