@@ -39,12 +39,6 @@ var galleryButtonClick = function() {
                 .css('transition','1s');
 
         }, 600);
-
-        timeout = setTimeout(function() {
-
-            galleryRefresh(3.5);
-
-        }, 2600);
         
     });
 }

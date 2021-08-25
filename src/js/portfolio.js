@@ -310,6 +310,13 @@ var galleryRefresh;
             galleryButton(i);
         }
         galleryCentering(7);
+        
+        timeout = setTimeout(function() {
+
+            galleryRefresh(3.5);
+
+        }, 500);
+
         //#endregion
 
         //#region  --- Project Setting ---
