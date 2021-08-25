@@ -41,6 +41,12 @@ var galleryButtonClick = function() {
             galleryRefresh(3.5);
 
         }, 600);
+
+        timeout = setTimeout(function() {
+
+            galleryRefresh(3.5);
+
+        }, 1600);
         
     });
 }

@@ -304,18 +304,11 @@ var galleryRefresh;
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseout', function(){
                 galleryResize();
             });
-            $(".port-img:nth-of-type("+(index+1)+")").click();
         }
 
         for(var i = 0; i < 8; i ++) {
             galleryButton(i);
         }
-
-        $('.port-imgcon')
-            .css('margin-left','100%')
-            .css('margin-right','100%')
-            .css('margin-up','100%')
-            .css('margin-down','100%');
 
         //#endregion
 
