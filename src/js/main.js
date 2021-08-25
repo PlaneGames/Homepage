@@ -37,6 +37,8 @@ var galleryButtonClick = function() {
             $(active + " .lo-con")
                 .css('opacity','1')
                 .css('transition','1s');
+            
+            galleryRefresh(3.5);
 
         }, 600);
         

@@ -41,6 +41,8 @@ var book_img = [
     ["bookTOLTitle", "TypingOfLegend", "bookTOLSide", "bookTOLBackcover"],
 ];
 
+var galleryRefresh;
+
 (function ($) {
     
     var timeout;
@@ -176,7 +178,9 @@ var book_img = [
             }
 
         }
-        
+
+        galleryRefresh = galleryCentering  ;
+
         galleryResize();
 
         var openProjectPopup = function(index) {
@@ -427,10 +431,6 @@ var book_img = [
                 }
             }
         }
-
-        var galleryRefresh = setTimeout(function() {
-            galleryCentering(3.5);
-        }, 500);
 
     });
 
