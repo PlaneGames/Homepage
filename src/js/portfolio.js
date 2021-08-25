@@ -98,10 +98,6 @@ var galleryRefresh;
                 console.log("Hover Gallery");
             }
         }
-        /*
-        height: 25vw; 
-        max-height: 380px;
-        */
 
         var galleryResize = function() {
             if (galleryMode == 0) {
@@ -179,8 +175,7 @@ var galleryRefresh;
 
         }
 
-        galleryRefresh = galleryCentering  ;
-
+        galleryRefresh = galleryCentering;
         galleryResize();
 
         var openProjectPopup = function(index) {
@@ -309,11 +304,11 @@ var galleryRefresh;
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseout', function(){
                 galleryResize();
             });
+            $(".port-img:nth-of-type("+(index+1)+")").click();
         }
 
         for(var i = 0; i < 8; i ++) {
             galleryButton(i);
-            galleryCentering(i);
         }
 
         //#endregion
