@@ -304,6 +304,7 @@ var book_img = [
                     $('.po-pr-w92-w100').css('width','92%');
                     $('.po-pr-h100-h50').css('height','100%');
                     $('.po-pr-h49-auto').css('height','49%');
+                    $('.po-pr-h49-h48').css('height','49%');
                     $('.po-pr-h100-auto').css('height','100%');
                     $('.po-pr-show-hide').css('display','block');
                 } else {
@@ -329,6 +330,7 @@ var book_img = [
                     $('.po-pr-w50-w100').css('width','100%');
                     $('.po-pr-w92-w100').css('width','100%');
                     $('.po-pr-h100-h50').css('height',vw(50)-margin_h/2+'px');
+                    $('.po-pr-h49-h48').css('height','48%');
                     $('.po-pr-h49-auto').css('height','auto');
                     $('.po-pr-h100-auto').css('height','auto');
 
