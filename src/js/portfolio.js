@@ -311,8 +311,6 @@ var book_img = [
             galleryButton(i);
             galleryCentering(i);
         }
-        
-        galleryCentering(3.5);
 
         //#endregion
 
@@ -429,6 +427,8 @@ var book_img = [
                 }
             }
         }
+
+        galleryCentering(3.5);
 
     });
 
