@@ -311,6 +311,15 @@ var galleryRefresh;
             galleryButton(i);
         }
 
+        $('.port-imgcon')
+            .css('margin-left','100%')
+            .css('margin-right','100%')
+            .css('margin-up','100%')
+            .css('margin-down','100%');
+
+        $('.port-imgcon')
+            .css('margin','0px');
+
         //#endregion
 
         //#region  --- Project Setting ---
