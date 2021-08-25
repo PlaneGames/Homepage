@@ -304,7 +304,7 @@ var book_img = [
                 galleryResize();
             });
         }
-
+        galleryButton(7);
         for(var i = 0; i < 8; i ++) {
             galleryButton(i);
         }
