@@ -428,7 +428,9 @@ var book_img = [
             }
         }
 
-        galleryCentering(3.5);
+        var galleryRefresh = setTimeout(function() {
+            galleryCentering(3.5);
+        }, 500);
 
     });
 
