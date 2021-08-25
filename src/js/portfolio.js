@@ -308,6 +308,7 @@ var galleryRefresh;
 
         for(var i = 0; i < 8; i ++) {
             galleryButton(i);
+            galleryCentering(i);
             $(".port-img:nth-of-type("+(i+1)+")").click();
         }
         
