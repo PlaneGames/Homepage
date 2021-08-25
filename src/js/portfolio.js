@@ -89,7 +89,7 @@ var book_img = [
                     $('.port-img:'+index)
                         .css('width','90%')
                         .css('max-width','90%')
-                        .css('height','100px')
+                        .css('height','8vh')
                         .css('opacity','1')
                         .css('filter','grayscale(0%)');
                 }
@@ -123,9 +123,10 @@ var book_img = [
 
                     $('.port-img')
                         .css('width','440px')
-                        .css('height','100px')
+                        .css('height','8vh')
                         .css('max-width','80%')
-                        .css('max-height','20vh')
+                        .css('min-height','8vh')
+                        .css('max-height','8vh')
                         .css('margin','.3vh')
                         .css('opacity','0.7')
                         .css('filter','grayscale(90%)');
@@ -155,17 +156,19 @@ var book_img = [
 
             } else {
 
-                imgSize = Math.min(vw(10), 160);
-                Mside = vw(2);
+                imgSize = vh(8);
+                Mside = vh(1.2);
                 if (mIndex < 0) {
-                    mType = 'margin-right';
+                    mType = 'margin-bottom';
                     margin = (imgSize * 2 + Mside) * mIndex + (imgSize + Mside/2);
                 } else {
-                    mType = 'margin-left';
+                    mType = 'margin-top';
                     margin = -((imgSize * 2 + Mside) * mIndex) - (imgSize + Mside/2);
                 }
 
             }
+
+            console.log(imgSize);
 
             $('.port-imgcon').css('margin','0px');
             $('.port-imgcon').css(mType,''+margin+'px');

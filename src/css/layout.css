@@ -166,7 +166,7 @@ header {
     flex-direction: column;
     justify-content: center;
     
-    overflow: hidden; 
+    overflow: hidden;
 
     height: 25vw; 
     max-height: 380px;
