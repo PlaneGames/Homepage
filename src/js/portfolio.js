@@ -290,30 +290,14 @@ var galleryRefresh;
 
         }
 
-        $(".port-img:nth-of-type(1)").on('click', function(){
-            //openProjectPopup(index);
-            //galleryMode = 1;
-            galleryCentering(0);
-            gallerySelect = 0;
-            //history.pushState({page: 2, data: index}, "title 1", "/pf/"+book_img[index][1]);
-        });
-        $(".port-img:nth-of-type(5)").on('click', function(){
-            //openProjectPopup(index);
-            //galleryMode = 1;
-            galleryCentering(4);
-            gallerySelect = 4;
-            //history.pushState({page: 2, data: index}, "title 1", "/pf/"+book_img[index][1]);
-        });
-        $(".port-img:nth-of-type(8)").on('click', function(){
-            //openProjectPopup(index);
-            //galleryMode = 1;
-            galleryCentering(7);
-            gallerySelect = 7;
-            //history.pushState({page: 2, data: index}, "title 1", "/pf/"+book_img[index][1]);
-        });
-
         var galleryButton = function(index) {
-            
+            $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
+                //openProjectPopup(index);
+                //galleryMode = 1;
+                galleryCentering(index);
+                gallerySelect = index;
+                //history.pushState({page: 2, data: index}, "title 1", "/pf/"+book_img[index][1]);
+            });
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseenter', function(){
                 galleryHover(index);
             });
@@ -324,15 +308,38 @@ var galleryRefresh;
 
         for(var i = 0; i < 8; i ++) {
             galleryButton(i);
-            galleryCentering(i);
-            $(".port-img:nth-of-type("+(i+1)+")").click();
         }
+
+        timeout = setTimeout(function() {
+            galleryCentering(0);
+        }, 100);
+        timeout = setTimeout(function() {
+            galleryCentering(1);
+        }, 200);
+        timeout = setTimeout(function() {
+            galleryCentering(2);
+        }, 300);
+        timeout = setTimeout(function() {
+            galleryCentering(3);
+        }, 400);
+        timeout = setTimeout(function() {
+            galleryCentering(4);
+        }, 500);
+        timeout = setTimeout(function() {
+            galleryCentering(5);
+        }, 600);
+        timeout = setTimeout(function() {
+            galleryCentering(6);
+        }, 700);
+        timeout = setTimeout(function() {
+            galleryCentering(7);
+        }, 800);
         
         timeout = setTimeout(function() {
 
             galleryRefresh(3.5);
 
-        }, 2500);
+        }, 1000);
 
         //#endregion
 
