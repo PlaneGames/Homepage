@@ -312,7 +312,7 @@ var book_img = [
             galleryCentering(i);
         }
         
-        //galleryCentering(3.5);
+        galleryCentering(3.5);
 
         //#endregion
 
