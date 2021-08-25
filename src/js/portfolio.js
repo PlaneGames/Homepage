@@ -315,11 +315,11 @@ var galleryRefresh;
             galleryCentering(7);
             galleryHover(7);
             galleryResize();
-        }, 500);
+        }, 1500);
         setTimeout(function() {
             galleryCentering(3.5);
             galleryResize();
-        }, 2000);
+        }, 2500);
 
 
         //#endregion
