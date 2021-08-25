@@ -315,7 +315,7 @@ var galleryRefresh;
 
             galleryRefresh(3.5);
 
-        }, 500);
+        }, 2500);
 
         //#endregion
 
