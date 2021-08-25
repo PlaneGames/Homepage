@@ -293,15 +293,15 @@ var galleryRefresh;
         $(".port-img:nth-of-type(1)").on('click', function(){
             //openProjectPopup(index);
             //galleryMode = 1;
-            galleryCentering(index);
-            gallerySelect = index;
+            galleryCentering(0);
+            gallerySelect = 0;
             //history.pushState({page: 2, data: index}, "title 1", "/pf/"+book_img[index][1]);
         });
         $(".port-img:nth-of-type(8)").on('click', function(){
             //openProjectPopup(index);
             //galleryMode = 1;
-            galleryCentering(index);
-            gallerySelect = index;
+            galleryCentering(7);
+            gallerySelect = 7;
             //history.pushState({page: 2, data: index}, "title 1", "/pf/"+book_img[index][1]);
         });
 
