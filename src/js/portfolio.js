@@ -311,6 +311,7 @@ var galleryRefresh;
         }
 
         timeout = setTimeout(function() {
+            $('.port-imgcon').css('transition','.0s');
             galleryCentering(0);
         }, 100);
         timeout = setTimeout(function() {
@@ -338,7 +339,7 @@ var galleryRefresh;
         timeout = setTimeout(function() {
 
             galleryRefresh(3.5);
-
+            $('.port-imgcon').css('transition','.3s');
         }, 1000);
 
         //#endregion
