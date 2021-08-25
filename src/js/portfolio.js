@@ -314,11 +314,11 @@ var galleryRefresh;
         setTimeout(function() {
             galleryCentering(7);
             galleryHover(7);
-        }, 500);
+        }, 1000);
         setTimeout(function() {
             galleryCentering(3.5);
             galleryResize();
-        }, 1000);
+        }, 2000);
 
 
         //#endregion
