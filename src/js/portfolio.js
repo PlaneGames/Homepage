@@ -269,7 +269,11 @@ var book_img = [
                         .css('margin-bottom','32px')
                         .css('margin-top','32px');
 
-                    if (window.innerWidth <= 880) {
+                    if (window.innerWidth <= 800) {
+                         $('.po-subbox p')
+                            .css('margin','0px')
+                            .css('font-size','11px');
+                    } else if (window.innerWidth <= 880) {
                         $('.po-subbox p')
                             .css('margin','8px')
                             .css('font-size','11px');
