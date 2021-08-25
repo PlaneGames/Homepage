@@ -309,8 +309,9 @@ var book_img = [
 
         for(var i = 0; i < 8; i ++) {
             galleryButton(i);
+            galleryCentering(i);
         }
-        galleryCentering(7);
+        
         //galleryCentering(3.5);
 
         //#endregion
