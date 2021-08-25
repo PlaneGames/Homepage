@@ -57,6 +57,11 @@ var book_img = [
             return (v * w) / 100;
         }
 
+        function vh(v) {
+            var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+            return (v * h) / 100;
+        }
+
         var bookResizing = function() {
             bookWidth = clamp(160, vw(20), 320);
             $('.back-cover')
@@ -68,6 +73,8 @@ var book_img = [
         //#endregion
 
         //#region  --- Gallery Button Selecting ---
+
+        var gallerySelect = 0;
 
         var galleryHover = function(n) {
             var index = "nth-of-type("+(n+1)+")";
@@ -89,19 +96,31 @@ var book_img = [
                 console.log("Hover Gallery");
             }
         }
+        /*
+        height: 25vw; 
+        max-height: 380px;
+        */
 
         var galleryResize = function() {
             if (galleryMode == 0) {
                 if (window.innerWidth >= 700) {
+                    $('.lo-gallerybox')
+                        .css('height','25vw')
+                        .css('max-height','380px');
+
                     $('.port-img')
                         .css('width','10vw')
                         .css('height','20vw')
                         .css('max-width','160px')
                         .css('max-height','320px')
-                        .css('margin','.5%')
+                        .css('margin','.5vw')
                         .css('opacity','0.7')
                         .css('filter','grayscale(90%)');
                 } else {
+                    $('.lo-gallerybox')
+                        .css('height','100%')
+                        .css('max-height','100%');
+
                     $('.port-img')
                         .css('width','440px')
                         .css('height','100px')
@@ -112,6 +131,45 @@ var book_img = [
                         .css('filter','grayscale(90%)');
                 }
             }
+        }
+
+        var galleryCentering = function(index) {
+
+            var mIndex = index - 4,
+                imgSize = Math.min(vw(10), 160),
+                mType = '',
+                Mside = vw(2),
+                margin = 0;
+
+            if (window.innerWidth >= 700) {
+
+                imgSize = Math.min(vw(10), 160);
+                Mside = vw(2);
+                if (mIndex < 0) {
+                    mType = 'margin-right';
+                    margin = (imgSize * 2 + Mside) * mIndex + (imgSize + Mside/2);
+                } else {
+                    mType = 'margin-left';
+                    margin = -((imgSize * 2 + Mside) * mIndex) - (imgSize + Mside/2);
+                }
+
+            } else {
+
+                imgSize = Math.min(vw(10), 160);
+                Mside = vw(2);
+                if (mIndex < 0) {
+                    mType = 'margin-right';
+                    margin = (imgSize * 2 + Mside) * mIndex + (imgSize + Mside/2);
+                } else {
+                    mType = 'margin-left';
+                    margin = -((imgSize * 2 + Mside) * mIndex) - (imgSize + Mside/2);
+                }
+
+            }
+
+            $('.port-imgcon').css('margin','0px');
+            $('.port-imgcon').css(mType,''+margin+'px');
+
         }
         
         galleryResize();
@@ -230,8 +288,10 @@ var book_img = [
 
         var galleryButton = function(index) {
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
-                openProjectPopup(index);
-                galleryMode = 1;
+                //openProjectPopup(index);
+                //galleryMode = 1;
+                galleryCentering(index);
+                gallerySelect = index;
                 //history.pushState({page: 2, data: index}, "title 1", "/pf/"+book_img[index][1]);
             });
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseenter', function(){
@@ -291,7 +351,6 @@ var book_img = [
                             .css('border-right','16px solid rgba(0, 0, 0, 0.2)');
                     }
                     
-
                     $('.po-pr1').css('order','0');
                     $('.po-pr2').css('order','0');
                     $('.po-pr3').css('order','0');
@@ -346,6 +405,7 @@ var book_img = [
             bookResizing();
             galleryResize();
             projectResizing();
+            galleryCentering(gallerySelect);
         });
 
         window.onpopstate = function(event) {

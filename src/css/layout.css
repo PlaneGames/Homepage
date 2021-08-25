@@ -161,6 +161,17 @@ header {
     animation-fill-mode: both;
 }
 
+.lo-gallerybox {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    
+    overflow: hidden; 
+
+    height: 25vw; 
+    max-height: 380px;
+}
+
 .port-imgcon {
     position: relative;
 
@@ -172,6 +183,8 @@ header {
 
     height: 20vw;
     max-height: 320px;
+
+    transition: .5s;
 }
 
 .port-img {
@@ -192,7 +205,7 @@ header {
     filter: grayscale(90%);
     opacity: 0.7;
     
-    margin: 0.5%;
+    margin: 0.5vw;
     transition: .5s;
 
     animation-fill-mode: both;
