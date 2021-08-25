@@ -310,33 +310,33 @@ var galleryRefresh;
             galleryButton(i);
         }
 
-        timeout = setTimeout(function() {
-            $('.port-imgcon').css('transition','.3s');
+        var timeout1 = setTimeout(function() {
+            $('.port-imgcon').css('transition','.1s');
             galleryCentering(0);
         }, 100);
-        timeout = setTimeout(function() {
+        var timeout2 = setTimeout(function() {
             galleryCentering(1);
         }, 400);
-        timeout = setTimeout(function() {
+        var timeout3 = setTimeout(function() {
             galleryCentering(2);
         }, 700);
-        timeout = setTimeout(function() {
+        var timeout4 = setTimeout(function() {
             galleryCentering(3);
         }, 1000);
-        timeout = setTimeout(function() {
+        var timeout5 = setTimeout(function() {
             galleryCentering(4);
         }, 1300);
-        timeout = setTimeout(function() {
+        var timeout6 = setTimeout(function() {
             galleryCentering(5);
         }, 1600);
-        timeout = setTimeout(function() {
+        var timeout7 = setTimeout(function() {
             galleryCentering(6);
         }, 1900);
-        timeout = setTimeout(function() {
+        var timeout8 = setTimeout(function() {
             galleryCentering(7);
         }, 2100);
         
-        timeout = setTimeout(function() {
+        var timeout9 = setTimeout(function() {
 
             galleryRefresh(3.5);
             $('.port-imgcon').css('transition','.3s');
