@@ -311,36 +311,36 @@ var galleryRefresh;
         }
 
         timeout = setTimeout(function() {
-            $('.port-imgcon').css('transition','.0s');
+            $('.port-imgcon').css('transition','.3s');
             galleryCentering(0);
         }, 100);
         timeout = setTimeout(function() {
             galleryCentering(1);
-        }, 200);
-        timeout = setTimeout(function() {
-            galleryCentering(2);
-        }, 300);
-        timeout = setTimeout(function() {
-            galleryCentering(3);
         }, 400);
         timeout = setTimeout(function() {
-            galleryCentering(4);
-        }, 500);
-        timeout = setTimeout(function() {
-            galleryCentering(5);
-        }, 600);
-        timeout = setTimeout(function() {
-            galleryCentering(6);
+            galleryCentering(2);
         }, 700);
         timeout = setTimeout(function() {
+            galleryCentering(3);
+        }, 1000);
+        timeout = setTimeout(function() {
+            galleryCentering(4);
+        }, 1300);
+        timeout = setTimeout(function() {
+            galleryCentering(5);
+        }, 1600);
+        timeout = setTimeout(function() {
+            galleryCentering(6);
+        }, 1900);
+        timeout = setTimeout(function() {
             galleryCentering(7);
-        }, 800);
+        }, 2100);
         
         timeout = setTimeout(function() {
 
             galleryRefresh(3.5);
             $('.port-imgcon').css('transition','.3s');
-        }, 1000);
+        }, 2500);
 
         //#endregion
 
