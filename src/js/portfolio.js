@@ -317,9 +317,6 @@ var galleryRefresh;
             .css('margin-up','100%')
             .css('margin-down','100%');
 
-        $('.port-imgcon')
-            .css('margin','0px');
-
         //#endregion
 
         //#region  --- Project Setting ---
