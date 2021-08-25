@@ -291,7 +291,8 @@ var galleryRefresh;
         }
 
         var galleryButton = function(index) {
-            $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
+            console.log(".port"+(index+1)+"");
+            $(".port"+(index+1)+"").on('click', function(){
                 //openProjectPopup(index);
                 //galleryMode = 1;
                 galleryCentering(index);
