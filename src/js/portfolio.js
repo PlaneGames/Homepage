@@ -297,6 +297,13 @@ var galleryRefresh;
             gallerySelect = 0;
             //history.pushState({page: 2, data: index}, "title 1", "/pf/"+book_img[index][1]);
         });
+        $(".port-img:nth-of-type(5)").on('click', function(){
+            //openProjectPopup(index);
+            //galleryMode = 1;
+            galleryCentering(4);
+            gallerySelect = 4;
+            //history.pushState({page: 2, data: index}, "title 1", "/pf/"+book_img[index][1]);
+        });
         $(".port-img:nth-of-type(8)").on('click', function(){
             //openProjectPopup(index);
             //galleryMode = 1;
