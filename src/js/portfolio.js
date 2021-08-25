@@ -290,14 +290,23 @@ var galleryRefresh;
 
         }
 
+        $(".port-img:nth-of-type(1)").on('click', function(){
+            //openProjectPopup(index);
+            //galleryMode = 1;
+            galleryCentering(index);
+            gallerySelect = index;
+            //history.pushState({page: 2, data: index}, "title 1", "/pf/"+book_img[index][1]);
+        });
+        $(".port-img:nth-of-type(8)").on('click', function(){
+            //openProjectPopup(index);
+            //galleryMode = 1;
+            galleryCentering(index);
+            gallerySelect = index;
+            //history.pushState({page: 2, data: index}, "title 1", "/pf/"+book_img[index][1]);
+        });
+
         var galleryButton = function(index) {
-            $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
-                //openProjectPopup(index);
-                //galleryMode = 1;
-                galleryCentering(index);
-                gallerySelect = index;
-                //history.pushState({page: 2, data: index}, "title 1", "/pf/"+book_img[index][1]);
-            });
+            
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseenter', function(){
                 galleryHover(index);
             });
