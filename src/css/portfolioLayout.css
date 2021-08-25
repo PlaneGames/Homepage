@@ -68,6 +68,9 @@
 .po-h100 {
     height: 20vw;
 }
+.po-w99 {
+    width: 99%;
+}
 .po-w100 {
     width: 100%;
 }
@@ -212,4 +215,9 @@
     color: white;
     transition: .3s;
     transform: scale(0.9, 0.9);
+}
+
+.po-titlesidebar {
+    border-left: 16px solid rgba(0, 0, 0, 0.2);
+    border-right: 16px solid rgba(0, 0, 0, 0.2);
 }
