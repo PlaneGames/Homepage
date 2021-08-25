@@ -311,7 +311,7 @@ var book_img = [
             galleryButton(i);
         }
         galleryCentering(7);
-        galleryCentering(3.5);
+        //galleryCentering(3.5);
 
         //#endregion
 
