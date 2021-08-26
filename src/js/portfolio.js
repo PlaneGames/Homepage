@@ -194,11 +194,18 @@ var book_img = [
 
         var galleryHeaderSetting = function() {
             $('.lo-gallery-header')
-            .css('animation-name','closeGalleryHeader')
-            .css('animation-duration','.5s');
+                .css('opacity','0')
+                .css('margin','0px')
+                .css('padding','0px')
+                .css('height','0px')
+                .css('transition','.5s');
+
             $('.lo-gallery-header h1')
-                .css('animation-name','closeGalleryHeader')
-                .css('animation-duration','.5s');
+                .css('opacity','0')
+                .css('margin','0px')
+                .css('padding','0px')
+                .css('height','0px')
+                .css('transition','.5s');
         }
 
         var galleryBoxSetting = function() {
@@ -256,6 +263,7 @@ var book_img = [
         var openProjectPopup = function(index) {
 
             activeGallery = 1;
+            clearTimeout(timeout);
 
             bookSetting(index);
             galleryHeaderSetting();
