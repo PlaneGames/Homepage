@@ -240,9 +240,10 @@ var book_img = [
         }
 
         var bookOpenSetting = function() {
+            $('.book-con')
+                .css('display','flex');
             timeout = setTimeout(function() {
                 $('.book-con')
-                    .css('display','flex')
                     .css('opacity','1');
                 $('.book-title')
                     .css('transition','1s')

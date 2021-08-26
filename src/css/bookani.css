@@ -7,6 +7,8 @@
     height: 100vh;
     perspective: 1000px;
     z-index: 100;
+
+    opacity: 0;
 }
 
 .book {
