@@ -231,13 +231,25 @@ var book_img = [
                 .css('max-height','480px');
             */
 
+            $('.lo-gallerybox')
+                .css('min-height','240px')
+                .css('height','30vw')
+                .css('max-height','480px');
+
             timeout = setTimeout(function() {
 
+                /*
+                min-width: 160px;
+                width: 20vw;
+                max-width: 320px;
+                min-height: 240px;
+                height: 30vw;
+                max-height: 480px;
+*/
+
                 $('.port-img:'+img_index)
-                    .css('animation-name','scaleBook')
-                    .css('animation-duration','1s')
-                    .css('opacity','1')
-                    .css('filter','grayscale(40%)');
+                    .css('min-width','160px')
+                    .css('min-height','240px');
 
             }, 100);
 
