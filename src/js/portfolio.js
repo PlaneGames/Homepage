@@ -316,6 +316,7 @@ var book_img = [
             var refreshTime = setTimeout(function() {
                 galleryCentering(3.5);
                 galleryResize();
+                console.log("refresh");
             }, 500);
         }
 
