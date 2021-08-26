@@ -101,7 +101,7 @@ var showPage = function() {
     }, 100);
 
     if (active == "#page-portfolio") {
-        galleryRefresh();
+        //galleryRefresh();
     }
 }
 
