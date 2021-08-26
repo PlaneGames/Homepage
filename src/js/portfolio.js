@@ -184,7 +184,7 @@ var book_img = [
           }
           
           requestAnimationFrame(animate);
-          
+
         var openProjectPopup = function(index) {
 
             activeGallery = 1;
@@ -241,6 +241,7 @@ var book_img = [
 
             }, 100);
 
+            /*
             timeout = setTimeout(function() {
                 $('.lo-gallery-header').hide();
             }, 500);
@@ -265,7 +266,7 @@ var book_img = [
                 showPage();
                 projectResizing();
             }, 3000);
-
+            */
         }
 
         var closeProjectPopup = function(index) {
