@@ -254,14 +254,7 @@ var book_img = [
                     $('.port-imgcon').css('transform','translate(0px, 0px');
                     $('.port-imgcon').css('transition','0s');
                     $('.port-img').not('.port-img:'+img_index).hide();
-                    /*
-                    min-width: 160px;
-                    width: 20vw;
-                    max-width: 320px;
-                    min-height: 240px;
-                    height: 30vw;
-                    max-height: 480px;
-                    */
+        
                     $('.port-img:'+img_index)
                         .css('min-width','160px')
                         .css('min-height','240px')
@@ -323,6 +316,14 @@ var book_img = [
                     .css('opacity','0')
                     .css('display','none');
             }
+            var pageChangeSetting = function() {
+                
+                timeout = setTimeout(function() {
+                    active = "#page-portfolio";
+                    showPage();
+                }, 1000);
+            
+            }
 
             clearTimeout(timeout);
             galleryMode = 0;
@@ -331,9 +332,8 @@ var book_img = [
             galleryHeaderSetting();
             galleryBoxSetting();
             bookCloseSetting();
-
-            active = "#page-portfolio";
-            showPage();
+            pageChangeSetting();
+            
         }
 
         var clickEvent = (function() {
