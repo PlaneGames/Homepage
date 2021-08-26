@@ -285,6 +285,8 @@ var book_img = [
         }
 
         var closeProjectPopup = function(index) {
+            $('.port-imgcon').hide();
+            $('.port-img').hide();
 
             galleryMode = 0;
             clearTimeout(timeout);
@@ -292,9 +294,6 @@ var book_img = [
             active = "#page-portfolio";
             showPage();
 
-            $('.port-imgcon').hide();
-            $('.port-img').hide();
-            
             $('.port-imgcon').show();
             $('.port-img').show();
 
