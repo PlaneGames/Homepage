@@ -41,8 +41,6 @@ var book_img = [
     ["bookTOLTitle", "TypingOfLegend", "bookTOLSide", "bookTOLBackcover"],
 ];
 
-var galleryRefresh;
-
 (function ($) {
     
     var timeout;
@@ -320,7 +318,6 @@ var galleryRefresh;
                 galleryResize();
             }, 500);
         }
-        _galleryRefresh();
 
         galleryRefresh = _galleryRefresh;
 

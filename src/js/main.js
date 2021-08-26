@@ -4,6 +4,7 @@
 */
 'use strict'; // Show Error Message With Console
 
+var galleryRefresh;
 var active = "#page-resume";
 var activeGallery = 0;
 var timeout;
@@ -30,7 +31,7 @@ var galleryButtonClick = function() {
             
             $(active + " .lo-con").show();
             galleryRefresh();
-            
+
         }, 500);
 
         timeout = setTimeout(function() {
@@ -39,7 +40,7 @@ var galleryButtonClick = function() {
                 .css('opacity','1')
                 .css('transition','1s');
 
-        }, 600);
+        }, 1000);
         
     });
 }
