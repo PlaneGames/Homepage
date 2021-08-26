@@ -305,11 +305,9 @@ var book_img = [
                     .css('display','none');
             }
             var pageChangeSetting = function() {
-                
-                timeout = setTimeout(function() {
-                    active = "#page-portfolio";
-                    showPage();
-                }, 1200);
+            
+                active = "#page-portfolio";
+                showPage();
             
             }
 
