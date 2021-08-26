@@ -141,14 +141,14 @@ var book_img = [
                     yy;
 
                 if (window.innerWidth >= 700) {
-                    imgSize = Math.min(vw(10), 160);
                     Mside = vw(1);
-                    margin = -((imgSize + Mside) * mIndex) - (imgSize + Mside/2);
+                    imgSize = Math.min(vw(10), 160) + Mside;
+                    margin = -(imgSize * mIndex) - (imgSize/2);
                     xx = margin, yy = 0;
                 } else {
-                    imgSize = vh(8);
                     Mside = vh(.6);
-                    margin = -((imgSize + Mside) * mIndex) - (imgSize + Mside/2);
+                    imgSize = vh(8) + Mside;
+                    margin = -(imgSize * mIndex) - (imgSize/2);
                     xx = 0, yy = margin;
                 }
 
@@ -269,16 +269,6 @@ var book_img = [
 
         var galleryButton = function(index) {
 
-            /*
-            var clickEvent = (function() {
-                if ('ontouchstart' in document.documentElement === true) {
-                    return 'touchstart';
-                } else {
-                    return 'click';
-                }
-            })();
-            */
-
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
                 galleryCentering(index);
                 gallerySelect = index;
@@ -295,11 +285,7 @@ var book_img = [
 
         for(var i = 0; i < 8; i ++) {
             galleryButton(i);
-            galleryHover(i);
-            galleryCentering(i);
         }
-
-        galleryResize();
 
         var _galleryRefresh = function() {
             galleryHover(7);
