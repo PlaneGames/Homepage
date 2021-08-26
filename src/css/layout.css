@@ -183,8 +183,7 @@ header {
 
     height: 20vw;
     max-height: 320px;
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-duration: 350ms !important;
+    -webkit-transition: .5s;
     
     margin: 0px;
 }
