@@ -8,6 +8,8 @@ var switching_spd   = 1.5;
 var book            = document.querySelector(".book");
 var bookcover       = document.querySelector(".book-cover");
 
+var gallerySelect = -1;
+
 const clamp         = (num, min, max) => Math.min(Math.max(num, min), max);
 
 book.addEventListener("click", () => {
@@ -72,8 +74,6 @@ var book_img = [
         //#endregion
 
         //#region  --- Gallery Button Selecting ---
-
-        var gallerySelect = -1;
 
         var galleryHover = function(n) {
             var index = "nth-of-type("+(n+1)+")";
