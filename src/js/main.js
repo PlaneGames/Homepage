@@ -102,6 +102,7 @@ var showPage = function() {
             galleryMode = 1;
             _openProjectPopup(0);
             gallerySelect = 0;
+            subpageDirect = 0;
         }, 2000);
     }
 
