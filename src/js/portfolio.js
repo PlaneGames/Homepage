@@ -318,6 +318,7 @@ var galleryRefresh;
         }, 700);
         setTimeout(function() {
             galleryCentering(3.5);
+            galleryResize();
         }, 1200);
 
 
