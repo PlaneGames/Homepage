@@ -97,15 +97,14 @@ var showPage = function() {
         active = "#page-portfolio";
         subpageDirect = 0;
         timeout = setTimeout(function() {
-            galleryCentering(index);
+            galleryCentering(0);
             galleryMode = 1;
-            openProjectPopup(index);
+            openProjectPopup(0);
             gallerySelect = index;
         }, 2000);
         
     }
-    alert(active);
-    alert(galleryMode);
+
     $(active + " .lo-con").show();
 
     timeout = setTimeout(function() {
