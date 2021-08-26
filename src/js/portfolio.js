@@ -123,6 +123,8 @@ var book_img = [
                         .css('max-height','380px');
 
                     $('.port-img')
+                        .css('min-width','10vw')
+                        .css('min-height','20vw')
                         .css('width','10vw')
                         .css('height','20vw')
                         .css('max-width','160px')
@@ -136,6 +138,8 @@ var book_img = [
                         .css('max-height','100%');
 
                     $('.port-img')
+                        .css('min-width','440px')
+                        .css('min-height','8vh')
                         .css('width','440px')
                         .css('height','8vh')
                         .css('max-width','80%')
@@ -215,7 +219,6 @@ var book_img = [
                     .css('min-height','240px')
                     .css('height','30vw')
                     .css('max-height','480px');
-                console.log("galleryBoxSetting Fin!");
             }
 
             var bookOpenSetting = function() {
@@ -285,41 +288,60 @@ var book_img = [
         }
 
         var closeProjectPopup = function(index) {
-            $('.port-imgcon').hide();
-            $('.port-img').hide();
 
-            galleryMode = 0;
-            clearTimeout(timeout);
-
-            active = "#page-portfolio";
-            showPage();
-
-            $('.port-imgcon').show();
-            $('.port-img').show();
-
-            /*
-            $('.book-title')
-                .css('transition','.5s')
-                .css('opacity','0');
-            timeout = setTimeout(function() {
+            var galleryHeaderSetting = function() {
+                $('.lo-gallery-header')
+                    .css('opacity','1')
+                    .css('padding-bottom','4%')
+                    .css('height','10%')
+                    .css('transition','.5s');
+                $('.lo-gallery-header h1')
+                    .css('opacity','1')
+                    .css('padding-bottom','4%')
+                    .css('height','10%')
+                    .css('transition','.5s');
+            }
+            var galleryBoxSetting = function() {
+                $('.lo-gallerybox')
+                    .css('min-height','25vw')
+                    .css('height','25vw')
+                    .css('max-height','380px');
+            }
+            var galleryBoxSetting = function() {
+                $('.lo-gallerybox')
+                    .css('min-height','25vw')
+                    .css('height','25vw')
+                    .css('max-height','380px');
+            }
+            var bookCloseSetting = function() {
+                $('.port-img').show();
+                $('.book-title')
+                    .css('transition','.5s')
+                    .css('opacity','0');
                 $('.book-con')
                     .css('transition','.5s')
                     .css('opacity','0')
-            }, 500);
-            timeout = setTimeout(function() {
-                $('.book-con')
-                    .css('opacity','1')
                     .css('display','none');
-                $('.port-img').show()
-                    .css('opacity','0')
-                    //.css('filter','grayscale(90%)');
-            }, 1000);
-            timeout = setTimeout(function() {
+            }
+            var gallerySetting = function() {
                 $('.port-img')
+                    .css('transition','.3s')
                     .css('opacity','1');
-                galleryResize();
-            }, 1050);
-            */
+                timeout = setTimeout(function() {
+                    galleryResize();
+                }, 700);
+            }
+
+            clearTimeout(timeout);
+            galleryMode = 0;
+
+            galleryHeaderSetting();
+            galleryBoxSetting();
+            bookCloseSetting();
+            gallerySetting();
+
+            active = "#page-portfolio";
+            showPage();
 
             alert("closeProjectPopup");
 
