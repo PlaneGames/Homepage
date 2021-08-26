@@ -170,6 +170,8 @@ header {
 
     height: 25vw; 
     max-height: 380px;
+
+    transition: .5s;
 }
 
 .port-imgcon {

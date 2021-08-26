@@ -164,7 +164,7 @@ var book_img = [
 
                 }
 
-                $('.port-imgcon')
+                $('.lo-gallerybox')
                     .css('margin','0px')
                     .css(mType,''+margin+'px');
             }
