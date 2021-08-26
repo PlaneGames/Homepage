@@ -109,7 +109,7 @@ var book_img = [
                         .css('max-width','160px')
                         .css('max-height','320px')
                         .css('margin','.5vw')
-                        .css('opacity','0.7')
+                        .css('opacity','0.4')
                         //.css('filter','grayscale(90%)');
                 } else {
                     $('.lo-gallerybox')
@@ -123,7 +123,7 @@ var book_img = [
                         .css('min-height','8vh')
                         .css('max-height','8vh')
                         .css('margin','.3vh')
-                        .css('opacity','0.7')
+                        .css('opacity','0.4')
                         //.css('filter','grayscale(90%)');
                 }
             }
