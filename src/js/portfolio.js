@@ -132,6 +132,13 @@ var book_img = [
         var galleryCentering = function(index) {
 
             if (galleryMode == 0 && index != -1) {
+
+                $('.lo-gallerybox')
+                    .css('margin-left','0px')
+                    .css('margin-right','0px')
+                    .css('margin-up','0px')
+                    .css('margin-down','0px');
+
                 var mIndex = index - 4,
                     imgSize = Math.min(vw(10), 160),
                     mType = '',
