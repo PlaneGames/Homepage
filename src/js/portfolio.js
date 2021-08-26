@@ -190,6 +190,14 @@ var book_img = [
 
             activeGallery = 1;
             var img_index   = "nth-of-type("+(index+1)+")";
+            $('.book-title')
+                .css('background-image','url("../src/images/'+book_img[index][0]+'.png")');
+            $('.book-cover')
+                .css('background-image','url("../src/images/'+book_img[index][1]+'.png")');
+            $('.front-lcover')
+                .css('background-image','url("../src/images/'+book_img[index][2]+'.png")');
+            $('.back-cover')
+                .css('background-image','url("../src/images/'+book_img[index][3]+'.png")');
 
             /*
             bookResizing();
@@ -239,6 +247,8 @@ var book_img = [
                 .css('max-height','480px');
 
             timeout = setTimeout(function() {
+                $('.port-imgcon').css('transform','translate(0px, 0px');
+                $('.port-imgcon').css('transition','0s');
                 $('.port-img').not('.port-img:'+img_index).hide();
                 /*
                 min-width: 160px;
@@ -247,8 +257,7 @@ var book_img = [
                 min-height: 240px;
                 height: 30vw;
                 max-height: 480px;
-*/
-
+                */
                 $('.port-img:'+img_index)
                     .css('min-width','160px')
                     .css('min-height','240px');
