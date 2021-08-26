@@ -438,6 +438,7 @@ var book_img = [
                     closeProjectPopup(0);
                 }
             }
+            alert("11");
         }
 
     });
