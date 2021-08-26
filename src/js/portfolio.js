@@ -256,7 +256,6 @@ var book_img = [
                     $('.port-imgcon').css('transform','translate(0px, 0px');
                     $('.port-imgcon').css('transition','0s');
                     $('.port-img').not('.port-img:'+img_index).hide();
-                    $('.port-imgcon').css('transition','.5s');
 
                     $('.port-img:'+img_index)
                         .css('transition','.5s')
@@ -299,6 +298,7 @@ var book_img = [
                     .css('transition','.5s');
             }
             var bookCloseSetting = function() {
+                $('.port-imgcon').css('transition','.5s');
                 $('.book-title')
                     .css('transition','.5s')
                     .css('opacity','0');
