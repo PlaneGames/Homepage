@@ -191,6 +191,10 @@ header {
 .port-img {
     position: relative;
 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
     min-width: 0px;
     min-height: 0px;
 
@@ -203,6 +207,7 @@ header {
     
     margin: 0.5vw;
     transition: .5s;
+
 }
 
 .lo-titleborder {
