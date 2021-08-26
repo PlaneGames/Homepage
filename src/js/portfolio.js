@@ -310,17 +310,20 @@ var book_img = [
             galleryHover(i);
             galleryCentering(i);
         }
-        
+
         galleryResize();
 
         var _galleryRefresh = function() {
+            $('.port-imgcon')
+                .css('transition','.2s');
             galleryHover(7);
             galleryCentering(7);
-
             var refreshTime = setTimeout(function() {
                 galleryCentering(3.5);
                 galleryResize();
                 console.log("refresh");
+                $('.port-imgcon')
+                    .css('transition','.5s');
             }, 700);
         }
 

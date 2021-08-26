@@ -183,7 +183,7 @@ header {
 
     height: 20vw;
     max-height: 320px;
-    -webkit-transition: .5s;
+    transition: .5s;
     
     margin: 0px;
 }
