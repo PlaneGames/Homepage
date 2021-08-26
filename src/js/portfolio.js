@@ -174,7 +174,6 @@ var galleryRefresh;
 
         }
 
-        galleryRefresh = galleryCentering;
         galleryResize();
 
         var openProjectPopup = function(index) {
@@ -312,14 +311,18 @@ var galleryRefresh;
             galleryResize();
         }
 
-        setTimeout(function() {
-            galleryCentering(7);
-        }, 700);
-        setTimeout(function() {
-            galleryCentering(3.5);
-            galleryResize();
-        }, 1200);
-
+        var _galleryRefresh = function() {
+            setTimeout(function() {
+                galleryCentering(7);
+            }, 700);
+            setTimeout(function() {
+                galleryCentering(3.5);
+                galleryResize();
+            }, 1200);
+        }
+        _galleryRefresh();
+        
+        galleryRefresh = _galleryRefresh;
 
         //#endregion
 

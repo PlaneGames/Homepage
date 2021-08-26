@@ -29,7 +29,8 @@ var galleryButtonClick = function() {
             $('.lo-con').css('transition','0s');
             
             $(active + " .lo-con").show();
-
+            galleryRefresh();
+            
         }, 500);
 
         timeout = setTimeout(function() {
