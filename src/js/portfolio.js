@@ -84,14 +84,14 @@ var book_img = [
                         .css('height','25vw')
                         .css('max-height','380px')
                         .css('opacity','1')
-                        .css('filter','grayscale(0%)');
+                        //.css('filter','grayscale(0%)');
                 } else {
                     $('.port-img:'+index)
                         .css('width','90%')
                         .css('max-width','90%')
                         .css('height','8vh')
                         .css('opacity','1')
-                        .css('filter','grayscale(0%)');
+                        //.css('filter','grayscale(0%)');
                 }
             }
         }
@@ -110,7 +110,7 @@ var book_img = [
                         .css('max-height','320px')
                         .css('margin','.5vw')
                         .css('opacity','0.7')
-                        .css('filter','grayscale(90%)');
+                        //.css('filter','grayscale(90%)');
                 } else {
                     $('.lo-gallerybox')
                         .css('height','100%')
@@ -124,7 +124,7 @@ var book_img = [
                         .css('max-height','8vh')
                         .css('margin','.3vh')
                         .css('opacity','0.7')
-                        .css('filter','grayscale(90%)');
+                        //.css('filter','grayscale(90%)');
                 }
             }
         }
@@ -269,7 +269,7 @@ var book_img = [
                     .css('display','none');
                 $('.port-img').show()
                     .css('opacity','0')
-                    .css('filter','grayscale(90%)');
+                    //.css('filter','grayscale(90%)');
             }, 1000);
             timeout = setTimeout(function() {
                 $('.port-img')
