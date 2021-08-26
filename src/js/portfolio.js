@@ -240,6 +240,7 @@ var book_img = [
                     .css('height','30vw')
                     .css('max-width','320px')
                     .css('max-height','480px')
+                    .css('opacity','1')
                     .css('filter','grayscale(40%)');
                 bookOpenSetting();
                 console.log("selectedGallerySetting Fin!");
