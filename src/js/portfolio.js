@@ -5,7 +5,6 @@ var scrollReady     = 0;
 var scrollMode      = 0;
 var switching_spd   = 1.5;
 
-var galleryMode     = 0;
 var book            = document.querySelector(".book");
 var bookcover       = document.querySelector(".book-cover");
 

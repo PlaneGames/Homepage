@@ -12,6 +12,7 @@ var maxpage = 3;
 var loadpage = 0;
 var loading_per = 0;
 var loadcomplete = 0;
+var galleryMode     = 0;
 
 var galleryButtonClick = function() {
 
