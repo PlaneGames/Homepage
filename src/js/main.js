@@ -98,7 +98,7 @@ var showPage = function() {
             .css('opacity','1')
             .css('transition','1s');
 
-    }, 1000);
+    }, 100);
 
     if (active == "#page-portfolio") {
         galleryRefresh();

@@ -317,7 +317,7 @@ var book_img = [
                 galleryCentering(3.5);
                 galleryResize();
                 console.log("refresh");
-            }, 500);
+            }, 700);
         }
 
         galleryRefresh = _galleryRefresh;
