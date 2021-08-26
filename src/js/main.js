@@ -97,9 +97,9 @@ var showPage = function() {
             openProjectPopup(galleryMode - 1);
             projectResizing();
         }, 1000);
-        alert("dr3")
+        
     }
-
+    alert(active);
     $(active + " .lo-con").show();
 
     timeout = setTimeout(function() {
