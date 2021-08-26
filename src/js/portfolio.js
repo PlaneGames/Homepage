@@ -180,8 +180,6 @@ var book_img = [
 
         galleryResize();
 
-
-
         var openProjectPopup = function(index) {
 
             var bookSetting = function(index) {
@@ -219,7 +217,31 @@ var book_img = [
                     .css('max-height','480px');
                 console.log("galleryBoxSetting Fin!");
             }
-    
+
+            var bookOpenSetting = function() {
+                $('.book-con')
+                    .css('display','flex');
+                timeout = setTimeout(function() {
+                    $('.book-con')
+                        .css('opacity','1');
+                    $('.book-title')
+                        .css('transition','.5s')
+                        .css('opacity','1');
+                
+                    $('.port-img').hide();
+                }, 500);
+                timeout = setTimeout(function() {
+                    $('.book-con')
+                        .css('transition','.5s')
+                        .css('opacity','0');
+                }, 1500);
+                timeout = setTimeout(function() {
+                    active = "#page-dr3";
+                    showPage();
+                    projectResizing();
+                }, 2000);
+            }
+
             var selectedGallerySetting = function(index) {
                 var img_index   = "nth-of-type("+(index+1)+")";
                 $('.port-img').not('.port-img:'+img_index)
@@ -250,30 +272,6 @@ var book_img = [
                     console.log("selectedGallerySetting Fin!");
                 }, 700);
             }
-    
-            var bookOpenSetting = function() {
-                $('.book-con')
-                    .css('display','flex');
-                timeout = setTimeout(function() {
-                    $('.book-con')
-                        .css('opacity','1');
-                    $('.book-title')
-                        .css('transition','.5s')
-                        .css('opacity','1');
-                
-                    $('.port-img').hide();
-                }, 500);
-                timeout = setTimeout(function() {
-                    $('.book-con')
-                        .css('transition','.5s')
-                        .css('opacity','0');
-                }, 1500);
-                timeout = setTimeout(function() {
-                    active = "#page-dr3";
-                    showPage();
-                    projectResizing();
-                }, 2000);
-            }
 
             history.pushState({page: 2, data: 1}, "", "/pf/DungeonRpg3");
             activeGallery = 1;
@@ -288,11 +286,11 @@ var book_img = [
 
         var closeProjectPopup = function(index) {
 
-            console.log("Close Gallery Popup");
             galleryMode = 0;
-            //var img_index   = "nth-of-type("+(index+1)+")";
-
             clearTimeout(timeout);
+
+            active = "#page-portfolio";
+            showPage();
 
             $('.book-title')
                 .css('transition','.5s')
