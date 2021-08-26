@@ -320,6 +320,7 @@ var book_img = [
                 galleryCentering(3.5);
                 galleryResize();
             }, 500);
+            alert("refresh");
         }
 
         galleryRefresh = _galleryRefresh;

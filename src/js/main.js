@@ -92,6 +92,10 @@ var showPage = function() {
 
     $(active + " .lo-con").show();
 
+    if (active == "#page-portfolio") {
+        galleryRefresh();
+    }
+
     timeout = setTimeout(function() {
 
         $(active + " .lo-con")
