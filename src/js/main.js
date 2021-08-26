@@ -100,6 +100,7 @@ var showPage = function() {
         
     }
     alert(active);
+    alert(galleryMode);
     $(active + " .lo-con").show();
 
     timeout = setTimeout(function() {
