@@ -323,28 +323,17 @@ var book_img = [
                     .css('opacity','0')
                     .css('display','none');
             }
-            var gallerySetting = function() {
-                $('.port-img')
-                    .css('transition','.3s')
-                    .css('opacity','1');
-                timeout = setTimeout(function() {
-                    galleryResize();
-                }, 700);
-            }
 
             clearTimeout(timeout);
             galleryMode = 0;
 
+            galleryResize();
             galleryHeaderSetting();
             galleryBoxSetting();
             bookCloseSetting();
-            gallerySetting();
 
             active = "#page-portfolio";
             showPage();
-
-            alert("closeProjectPopup");
-
         }
 
         var clickEvent = (function() {
