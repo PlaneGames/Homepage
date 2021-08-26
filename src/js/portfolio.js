@@ -292,6 +292,13 @@ var book_img = [
             active = "#page-portfolio";
             showPage();
 
+            $('.port-imgcon').hide();
+            $('.port-img').hide();
+            
+            $('.port-imgcon').show();
+            $('.port-img').show();
+
+            /*
             $('.book-title')
                 .css('transition','.5s')
                 .css('opacity','0');
@@ -313,6 +320,8 @@ var book_img = [
                     .css('opacity','1');
                 galleryResize();
             }, 1050);
+            */
+
             alert("closeProjectPopup");
 
         }
