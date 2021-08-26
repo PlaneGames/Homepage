@@ -178,7 +178,13 @@ var book_img = [
         }
 
         galleryResize();
-
+        function animate() {
+            // 애니메이션 처리 프레임 코드
+            requestAnimationFrame(animate);
+          }
+          
+          requestAnimationFrame(animate);
+          
         var openProjectPopup = function(index) {
 
             activeGallery = 1;
