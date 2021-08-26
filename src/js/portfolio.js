@@ -257,6 +257,7 @@ var book_img = [
                     $('.port-img').not('.port-img:'+img_index).hide();
         
                     $('.port-img:'+img_index)
+                        .css('transition','.5s')
                         .css('min-width','160px')
                         .css('min-height','240px')
                         .css('width','20vw')
