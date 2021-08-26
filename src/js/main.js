@@ -14,6 +14,8 @@ var loading_per = 0;
 var loadcomplete = 0;
 var galleryMode     = 0;
 var subpageDirect = 0;
+var _openProjectPopup;
+var _galleryCentering;
 
 var galleryButtonClick = function() {
 

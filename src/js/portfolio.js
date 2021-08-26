@@ -8,9 +8,6 @@ var switching_spd   = 1.5;
 var book            = document.querySelector(".book");
 var bookcover       = document.querySelector(".book-cover");
 
-var _openProjectPopup;
-var _galleryCentering;
-
 const clamp         = (num, min, max) => Math.min(Math.max(num, min), max);
 
 book.addEventListener("click", () => {
