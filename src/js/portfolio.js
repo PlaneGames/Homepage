@@ -276,7 +276,7 @@ var book_img = [
                     .css('opacity','1');
                 galleryResize();
             }, 1050);
-//
+
         }
 
         var galleryButton = function(index) {
