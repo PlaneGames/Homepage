@@ -291,7 +291,7 @@ var galleryRefresh;
         }
 
         var galleryButton = function(index) {
-            console.log(".port"+(index+1)+"");
+            galleryResize();
             $(".port"+(index+1)+"").on('click', function(){
                 //openProjectPopup(index);
                 //galleryMode = 1;
