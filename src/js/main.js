@@ -97,12 +97,11 @@ var showPage = function() {
         active = "#page-portfolio";
         subpageDirect = 0;
         timeout = setTimeout(function() {
-            galleryCentering(0);
+            _galleryCentering(0);
             galleryMode = 1;
-            openProjectPopup(0);
+            _openProjectPopup(0);
             gallerySelect = index;
         }, 2000);
-        
     }
 
     $(active + " .lo-con").show();
