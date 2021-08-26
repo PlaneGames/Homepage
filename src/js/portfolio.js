@@ -164,10 +164,9 @@ var book_img = [
 
                 }
 
-                console.log(imgSize);
-
-                $('.port-imgcon').css('margin','0px');
-                $('.port-imgcon').css(mType,''+margin+'px');
+                $('.port-imgcon')
+                    .css('margin','0px')
+                    .css(mType,''+margin+'px');
             }
 
         }
@@ -282,7 +281,7 @@ var book_img = [
             }, 1050);
 
         }
-        var t = document.getElementById('.port-img');
+
         var galleryButton = function(index) {
 
             var clickEvent = (function() {
