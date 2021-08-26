@@ -333,7 +333,7 @@ var book_img = [
 
         var galleryButton = function(index) {
 
-            $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
+            $(".port-img:nth-of-type("+(index+1)+")").on(clickEvent, function(){
                 galleryCentering(index);
                 galleryMode = 1;
                 openProjectPopup(index);
