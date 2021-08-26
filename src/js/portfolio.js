@@ -271,7 +271,8 @@ var book_img = [
                 }, 700);
             }
 
-            history.pushState({page: 2, data: 1}, "", "/pf/DungeonRpg3");
+
+            history.pushState({page: 2, data: (index+1)}, "", portfolioUrl[index]);
             activeGallery = 1;
             clearTimeout(timeout);
 

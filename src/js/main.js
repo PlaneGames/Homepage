@@ -16,6 +16,18 @@ var galleryMode     = 0;
 var subpageDirect = 0;
 var _openProjectPopup;
 var _galleryCentering;
+var portfolioUrl;
+
+portfolioUrl = [
+    "/pf/DungeonRpg3",
+    "/pf/DungeonRpg2",
+    "/pf/TheUnknownDungeon",
+    "/pf/MicroCastle",
+    "/pf/WayBackHome2",
+    "/pf/WayBackHome",
+    "/pf/VendingMachine",
+    "/pf/TypingOfLegend"
+];
 
 var galleryButtonClick = function() {
 
@@ -98,10 +110,10 @@ var showPage = function() {
     if (active == "#page-dr3" && subpageDirect >= 1) {
         active = "#page-portfolio";
         timeout = setTimeout(function() {
-            _galleryCentering(0);
+            _galleryCentering(subpageDirect-1);
             galleryMode = 1;
-            _openProjectPopup(0);
-            gallerySelect = 0;
+            _openProjectPopup(subpageDirect-1);
+            gallerySelect = subpageDirect-1;
             subpageDirect = 0;
         }, 2000);
     }
