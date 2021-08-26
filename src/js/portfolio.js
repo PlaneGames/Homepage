@@ -284,15 +284,22 @@ var book_img = [
             }, 1050);
 
         }
-
+        var t = document.getElementById('.port-img');
         var galleryButton = function(index) {
-            $(".port"+(index+1)+"").on('click', function(){
-                //openProjectPopup(index);
-                //galleryMode = 1;
+
+            var clickEvent = (function() {
+                if ('ontouchstart' in document.documentElement === true) {
+                    return 'touchstart';
+                } else {
+                    return 'click';
+                }
+            })();
+            
+            $(".port-img:nth-of-type("+(index+1)+")").on(clickEvent, function(){
                 galleryCentering(index);
                 gallerySelect = index;
-                //history.pushState({page: 2, data: index}, "title 1", "/pf/"+book_img[index][1]);
             });
+
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseenter', function(){
                 galleryHover(index);
             });
