@@ -307,6 +307,9 @@ var galleryRefresh;
 
         for(var i = 0; i < 8; i ++) {
             galleryButton(i);
+            galleryCentering(i);
+            galleryHover(i);
+            galleryResize();
         }
 
         setTimeout(function() {
