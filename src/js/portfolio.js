@@ -226,6 +226,7 @@ var book_img = [
                     .css('display','flex');
                 timeout = setTimeout(function() {
                     $('.book-con')
+                        .css('transition','.0s')
                         .css('opacity','1');
                     $('.book-title')
                         .css('transition','.5s')
@@ -296,15 +297,11 @@ var book_img = [
             }
             var galleryBoxSetting = function() {
                 $('.lo-gallerybox')
+                    .css('transition','.0s')
                     .css('min-height','25vw')
                     .css('height','25vw')
-                    .css('max-height','380px');
-            }
-            var galleryBoxSetting = function() {
-                $('.lo-gallerybox')
-                    .css('min-height','25vw')
-                    .css('height','25vw')
-                    .css('max-height','380px');
+                    .css('max-height','380px')
+                    .css('transition','.5s');
             }
             var bookCloseSetting = function() {
                 $('.book-title')
