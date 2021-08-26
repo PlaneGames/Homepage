@@ -84,14 +84,32 @@ var book_img = [
                         .css('height','25vw')
                         .css('max-height','380px')
                         .css('opacity','1')
-                        //.css('filter','grayscale(0%)');
+                        .css('filter','grayscale(0%)');
                 } else {
                     $('.port-img:'+index)
                         .css('width','90%')
                         .css('max-width','90%')
-                        .css('height','8vh')
                         .css('opacity','1')
-                        //.css('filter','grayscale(0%)');
+                        .css('filter','grayscale(0%)');
+                }
+            }
+        }
+
+        var galleryUnHover = function(n) {
+            var index = "nth-of-type("+(n+1)+")";
+            if (galleryMode == 0) {
+                if (window.innerWidth >= 700) {
+                    $('.port-img:'+index)
+                        .css('height','20vw')
+                        .css('max-height','320px')
+                        .css('opacity','.6')
+                        .css('filter','grayscale(90%)');
+                } else {
+                    $('.port-img:'+index)
+                        .css('width','440px')
+                        .css('max-width','80%')
+                        .css('opacity','.6')
+                        .css('filter','grayscale(90%)');
                 }
             }
         }
@@ -109,8 +127,8 @@ var book_img = [
                         .css('max-width','160px')
                         .css('max-height','320px')
                         .css('margin','.5vw')
-                        .css('opacity','0.4')
-                        //.css('filter','grayscale(90%)');
+                        .css('opacity','0.6')
+                        .css('filter','grayscale(90%)');
                 } else {
                     $('.lo-gallerybox')
                         .css('height','100%')
@@ -123,8 +141,8 @@ var book_img = [
                         .css('min-height','8vh')
                         .css('max-height','8vh')
                         .css('margin','.3vh')
-                        .css('opacity','0.4')
-                        //.css('filter','grayscale(90%)');
+                        .css('opacity','0.6')
+                        .css('filter','grayscale(90%)');
                 }
             }
         }
@@ -278,7 +296,7 @@ var book_img = [
                 galleryHover(index);
             });
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseout', function(){
-                galleryResize();
+                galleryUnHover(index)
             });
 
         }
