@@ -313,14 +313,13 @@ var galleryRefresh;
 
         var _galleryRefresh = function() {
             galleryHover(7);
-            setTimeout(function() {
-                galleryCentering(7);
-                galleryResize();
-            }, 700);
+            galleryCentering(7);
+            galleryResize();
+
             setTimeout(function() {
                 galleryCentering(3.5);
                 galleryResize();
-            }, 1200);
+            }, 500);
         }
         _galleryRefresh();
 
