@@ -308,10 +308,13 @@ var book_img = [
                     .css('display','none');
             }
             var pageChangeSetting = function() {
-            
-                active = "#page-portfolio";
-                showPage();
-            
+                $('.lo-con')
+                    .css('opacity','0')
+                    .css('transition','.5s');
+                timeout = setTimeout(function() {
+                    active = "#page-portfolio";
+                    showPage();
+                }, 500);
             }
 
             clearTimeout(timeout);
