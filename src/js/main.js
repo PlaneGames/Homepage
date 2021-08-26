@@ -101,7 +101,7 @@ var showPage = function() {
             _galleryCentering(0);
             galleryMode = 1;
             _openProjectPopup(0);
-            gallerySelect = index;
+            gallerySelect = 0;
         }, 2000);
     }
 
