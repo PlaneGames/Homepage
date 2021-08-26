@@ -291,7 +291,6 @@ var galleryRefresh;
         }
 
         var galleryButton = function(index) {
-            galleryResize();
             $(".port"+(index+1)+"").on('click', function(){
                 //openProjectPopup(index);
                 //galleryMode = 1;
@@ -312,13 +311,13 @@ var galleryRefresh;
         }
 
         setTimeout(function() {
-            //galleryCentering(7);
+            galleryCentering(7);
             galleryHover(7);
-        }, 1000);
+        }, 700);
         setTimeout(function() {
-            //galleryCentering(3.5);
+            galleryCentering(3.5);
             galleryResize();
-        }, 2000);
+        }, 1200);
 
 
         //#endregion
