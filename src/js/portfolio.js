@@ -315,6 +315,14 @@ var book_img = [
 
         }
 
+        var clickEvent = (function() {
+            if ('ontouchstart' in document.documentElement === true) {
+                return 'touchstart';
+            } else {
+                return 'click';
+            }
+        })();
+
         var galleryButton = function(index) {
 
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
@@ -325,7 +333,8 @@ var book_img = [
             });
             
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseenter', function(){
-                galleryHover(index);
+                if (clickEvent != 'touchstart')
+                    galleryHover(index);
             });
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseout', function(){
                 galleryUnHover(index)
