@@ -254,11 +254,21 @@ var book_img = [
                 $('.book-con')
                     .css('opacity','1');
                 $('.book-title')
-                    .css('transition','1s')
+                    .css('transition','.5s')
                     .css('opacity','1');
             
                 $('.port-img').hide();
             }, 500);
+            timeout = setTimeout(function() {
+                $('.book-con')
+                    .css('transition','.5s')
+                    .css('opacity','0');
+            }, 1500);
+            timeout = setTimeout(function() {
+                active = "#page-dr3";
+                showPage();
+                projectResizing();
+            }, 2000);
         }
 
         var openProjectPopup = function(index) {
