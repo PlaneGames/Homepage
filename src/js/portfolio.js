@@ -24,9 +24,9 @@ bookcover.addEventListener("mouseout", () => {
 });
 
 $(window).on('orientationchange', function() {
-    $('.port-img').css('transition','0s');
+    //$('.port-img').css('transition','0s');
     $(window).one('resize', function() {
-        $('.port-img').css('transition','.4s');
+        //$('.port-img').css('transition','.4s');
     });
 });
 
@@ -197,7 +197,7 @@ var book_img = [
             var img_index   = "nth-of-type("+(index+1)+")";
 
             $('.port-img').not('.port-img:'+img_index)
-                .css('transition','.5s')
+                .css('-webkit-transition','.5s')
                 .css('opacity','0');
 
             $('.lo-gallery-header')
@@ -272,14 +272,13 @@ var book_img = [
             timeout = setTimeout(function() {
                 $('.port-img').show()
                     .css('visibility','visible')
-                    .css('animation-name','none')
-                    .css('transition','0s')
+                    .css('-webkit-transition','0s')
                     .css('opacity','0')
                     .css('filter','grayscale(90%)');
             }, 1000);
             timeout = setTimeout(function() {
                 $('.port-img')
-                    .css('transition','1s')
+                    .css('-webkit-transition','.5s')
                     .css('opacity','1');
                 galleryResize();
             }, 1050);
