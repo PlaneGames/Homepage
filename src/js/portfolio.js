@@ -141,24 +141,20 @@ var book_img = [
                     yy;
 
                 if (window.innerWidth >= 700) {
-
                     imgSize = Math.min(vw(10), 160);
                     Mside = vw(1);
-                    margin = -((imgSize * 2 + Mside) * mIndex) - (imgSize + Mside/2);
+                    margin = -((imgSize + Mside) * mIndex) - (imgSize + Mside/2);
                     xx = margin, yy = 0;
-
                 } else {
-
                     imgSize = vh(8);
                     Mside = vh(.6);
-                    margin = -((imgSize * 2 + Mside) * mIndex) - (imgSize + Mside/2);
+                    margin = -((imgSize + Mside) * mIndex) - (imgSize + Mside/2);
                     xx = 0, yy = margin;
-
                 }
 
                  $('.port-imgcon')
                     .css('transform','translate('+xx+'px,'+yy+'px');
-                    
+
             }
 
         }
@@ -306,16 +302,11 @@ var book_img = [
         galleryResize();
 
         var _galleryRefresh = function() {
-            $('.port-imgcon')
-                .css('transition','.2s');
             galleryHover(7);
             galleryCentering(7);
             var refreshTime = setTimeout(function() {
                 galleryCentering(3.5);
                 galleryResize();
-                console.log("refresh");
-                $('.port-imgcon')
-                    .css('transition','.5s');
             }, 700);
         }
 
