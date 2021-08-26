@@ -251,7 +251,7 @@ var book_img = [
                 $('.port-img:'+img_index)
                     .css('min-width','160px');
 
-            }, 100);
+            }, 500);
 
             /*
             timeout = setTimeout(function() {
