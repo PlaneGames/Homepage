@@ -272,13 +272,11 @@ var book_img = [
             timeout = setTimeout(function() {
                 $('.port-img').show()
                     .css('visibility','visible')
-                    .css('-webkit-transition','0s')
                     .css('opacity','0')
                     .css('filter','grayscale(90%)');
             }, 1000);
             timeout = setTimeout(function() {
                 $('.port-img')
-                    .css('-webkit-transition','.5s')
                     .css('opacity','1');
                 galleryResize();
             }, 1050);
