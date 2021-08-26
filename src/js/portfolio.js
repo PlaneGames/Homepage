@@ -223,11 +223,15 @@ var book_img = [
                 .css('height','30vw')
                 .css('max-height','480px');
 
-            $('.port-img:'+img_index)
-                .css('animation-name','scaleBook')
-                .css('animation-duration','1s')
-                .css('opacity','1')
-                .css('filter','grayscale(40%)');
+            timeout = setTimeout(function() {
+
+                $('.port-img:'+img_index)
+                    .css('animation-name','scaleBook')
+                    .css('animation-duration','1s')
+                    .css('opacity','1')
+                    .css('filter','grayscale(40%)');
+
+            }, 100);
 
             timeout = setTimeout(function() {
                 $('.lo-gallery-header').hide();
