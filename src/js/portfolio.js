@@ -313,8 +313,13 @@ var galleryRefresh;
         }
 
         setTimeout(function() {
+            galleryCentering(7);
+            galleryHover(7);
+        }, 700);
+        setTimeout(function() {
             galleryCentering(3.5);
-        }, 1000);
+        }, 1200);
+
 
         //#endregion
 
