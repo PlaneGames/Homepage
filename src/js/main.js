@@ -98,10 +98,10 @@ var showPage = function() {
             .css('opacity','1')
             .css('transition','1s');
 
-    }, 100);
+    }, 700);
 
     if (active == "#page-portfolio") {
-        //galleryRefresh();
+        galleryRefresh();
     }
 }
 
