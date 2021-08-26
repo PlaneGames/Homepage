@@ -342,18 +342,24 @@ var book_img = [
         var galleryButton = function(index) {
 
             $(".port-img:nth-of-type("+(index+1)+")").on(clickEvent, function(){
-                galleryCentering(index);
-                galleryMode = 1;
-                openProjectPopup(index);
-                gallerySelect = index;
+                if (subpageDirect >= 1) {
+                    galleryCentering(index);
+                    galleryMode = 1;
+                    openProjectPopup(index);
+                    gallerySelect = index;
+                }
             });
             
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseenter', function(){
-                if (clickEvent != 'touchstart')
-                    galleryHover(index);
+                if (subpageDirect >= 1) {
+                    if (clickEvent != 'touchstart')
+                        galleryHover(index);
+                }
             });
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseout', function(){
-                galleryUnHover(index)
+                if (subpageDirect >= 1) {
+                    galleryUnHover(index)
+                }
             });
 
         }
