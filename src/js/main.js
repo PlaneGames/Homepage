@@ -14,6 +14,7 @@ var loading_per = 0;
 var loadcomplete = 0;
 
 var galleryButtonClick = function() {
+
     $('.gal-con').on('click', function(){
 
         history.pushState({page: 2}, "title 2", "/pf");
@@ -89,6 +90,14 @@ var showPage = function() {
     // lo-con Hide
     $('.lo-con').css('opacity','0');
     $('.lo-con').hide();
+
+    if (active == "#page-dr3" && galleryMode >= 1) {
+        active = "#page-portfolio";
+        timeout = setTimeout(function() {
+            openProjectPopup(galleryMode - 1);
+            projectResizing();
+        }, 1000);
+    }
 
     $(active + " .lo-con").show();
 
