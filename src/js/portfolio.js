@@ -307,7 +307,6 @@ var book_img = [
                     .css('max-height','380px');
             }
             var bookCloseSetting = function() {
-                $('.port-img').show();
                 $('.book-title')
                     .css('transition','.5s')
                     .css('opacity','0');
@@ -321,13 +320,14 @@ var book_img = [
                 timeout = setTimeout(function() {
                     active = "#page-portfolio";
                     showPage();
-                }, 1000);
+                }, 1200);
             
             }
 
             clearTimeout(timeout);
             galleryMode = 0;
 
+            $('.port-img').show();
             galleryResize();
             galleryHeaderSetting();
             galleryBoxSetting();
