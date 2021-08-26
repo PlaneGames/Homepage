@@ -309,22 +309,7 @@ var book_img = [
 
         for(var i = 0; i < 8; i ++) {
             galleryButton(i);
-            galleryCentering(i);
-            galleryHover(i);
-            galleryResize();
         }
-
-        var _galleryRefresh = function() {
-            galleryHover(7);
-            galleryCentering(7);
-
-            setTimeout(function() {
-                galleryCentering(3.5);
-                galleryResize();
-            }, 500);
-        }
-
-        galleryRefresh = _galleryRefresh;
 
         //#endregion
 
