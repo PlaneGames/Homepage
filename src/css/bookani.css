@@ -32,6 +32,7 @@
 .rotateRight {
     transform: rotateY(-45deg);
 }
+
 .book-title {
     position: absolute;
 

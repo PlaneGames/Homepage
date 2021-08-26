@@ -202,54 +202,61 @@ var book_img = [
             var img_index   = "nth-of-type("+(index+1)+")";
 
             $('.port-img').not('.port-img:'+img_index)
-                .css('-webkit-transition','.5s')
+                .css('transition','.5s')
                 .css('opacity','0');
 
             $('.lo-gallery-header')
-                .css('animation-name','closeGalleryHeader')
-                .css('animation-duration','.5s');
+                .css('margin','0px')
+                .css('padding','0px')
+                .css('height','0px')
+                .css('transition','.5s');
 
             $('.lo-gallery-header h1')
-                .css('animation-name','closeGalleryHeader')
-                .css('animation-duration','.5s');
+                .css('margin','0px')
+                .css('padding','0px')
+                .css('height','0px')
+                .css('transition','.5s');
+
+            $('.lo-gallerybox')
+                .css('min-height','240px')
+                .css('height','30vw')
+                .css('max-height','480px');
+
+            $('.port-imgcon')
+                .css('min-height','240px')
+                .css('height','30vw')
+                .css('max-height','480px');
+
+            $('.port-img:'+img_index)
+                .css('animation-name','scaleBook')
+                .css('animation-duration','1s')
+                .css('opacity','1')
+                .css('filter','grayscale(40%)');
 
             timeout = setTimeout(function() {
                 $('.lo-gallery-header').hide();
-
-                $('.port-img').not('.port-img:'+img_index)
-                    .css('visibility','hidden')
-                    .css('animation-name','closeGallery')
-                    .css('animation-duration','1s');
             }, 500);
             timeout = setTimeout(function() {
-                $('.port-img:'+img_index)
-                    .css('animation-name','scaleBook')
-                    .css('animation-duration','1s')
-                    .css('opacity','1')
-                    .css('filter','grayscale(40%)');
-            }, 1000);
-            timeout = setTimeout(function() {
-                $('.port-img').hide();
                 $('.book-con')
                     .css('display','flex')
                     .css('opacity','1');
-            }, 2000);
-            timeout = setTimeout(function() {
                 $('.book-title')
                     .css('transition','1s')
                     .css('opacity','1');
-            }, 2100);
+            }, 1000);
+            timeout = setTimeout(function() {
+                $('.port-img').hide();
+            }, 1100);
             timeout = setTimeout(function() {
                 $('.book-con')
                     .css('transition','1s')
                     .css('opacity','0');
-            }, 3100);
-
+            }, 2000);
             timeout = setTimeout(function() {
                 active = "#page-dr3";
                 showPage();
                 projectResizing();
-            }, 4100);
+            }, 3000);
 
         }
 
@@ -289,6 +296,8 @@ var book_img = [
 
             $(".port-img:nth-of-type("+(index+1)+")").on('click', function(){
                 galleryCentering(index);
+                galleryMode = 1;
+                openProjectPopup(index);
                 gallerySelect = index;
             });
 
