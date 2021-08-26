@@ -298,14 +298,13 @@ var book_img = [
                 gallerySelect = index;
             });
 
-            /*
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseenter', function(){
                 galleryHover(index);
             });
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseout', function(){
                 galleryResize();
             });
-            */
+
         }
 
         for(var i = 0; i < 8; i ++) {
