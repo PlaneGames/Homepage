@@ -92,8 +92,7 @@ var book_img = [
                         .css('opacity','1')
                         .css('filter','grayscale(0%)');
                 }
-                console.log("Hover!");
-                alert("Hover!");
+                console.log("Gallery Hover!");
             }
         }
 
@@ -250,8 +249,7 @@ var book_img = [
 */
 
                 $('.port-img:'+img_index)
-                    .css('min-width','160px')
-                    .css('min-height','240px');
+                    .css('min-width','160px');
 
             }, 100);
 
