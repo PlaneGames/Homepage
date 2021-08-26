@@ -272,7 +272,7 @@ var book_img = [
         }
 
         var openProjectPopup = function(index) {
-            
+
             history.pushState({page: 2, data: 1}, "", "/pf/DungeonRpg3");
             activeGallery = 1;
             clearTimeout(timeout);
@@ -371,6 +371,7 @@ var book_img = [
                     .css('opacity','1');
                 galleryResize();
             }, 1050);
+            alert("closeProjectPopup");
 
         }
 
