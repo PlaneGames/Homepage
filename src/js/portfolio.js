@@ -319,6 +319,7 @@ var book_img = [
             galleryResize();
             galleryHeaderSetting();
             bookCloseSetting();
+            _galleryRefresh();
             pageChangeSetting();
             
         }
