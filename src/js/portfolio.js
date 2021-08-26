@@ -312,8 +312,10 @@ var galleryRefresh;
         }
 
         var _galleryRefresh = function() {
+            galleryHover(7);
             setTimeout(function() {
                 galleryCentering(7);
+                galleryResize();
             }, 700);
             setTimeout(function() {
                 galleryCentering(3.5);
@@ -321,7 +323,7 @@ var galleryRefresh;
             }, 1200);
         }
         _galleryRefresh();
-        
+
         galleryRefresh = _galleryRefresh;
 
         //#endregion
