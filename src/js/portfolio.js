@@ -206,16 +206,12 @@ var book_img = [
                 .css('opacity','0');
 
             $('.lo-gallery-header')
-                .css('margin','0px')
-                .css('padding','0px')
-                .css('height','0px')
-                .css('transition','.5s');
+                .css('animation-name','closeGalleryHeader')
+                .css('animation-duration','.5s');
 
             $('.lo-gallery-header h1')
-                .css('margin','0px')
-                .css('padding','0px')
-                .css('height','0px')
-                .css('transition','.5s');
+                .css('animation-name','closeGalleryHeader')
+                .css('animation-duration','.5s');
 
             $('.lo-gallerybox')
                 .css('min-height','240px')
