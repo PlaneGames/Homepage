@@ -307,7 +307,11 @@ var book_img = [
 
         for(var i = 0; i < 8; i ++) {
             galleryButton(i);
+            galleryHover(i);
+            galleryCentering(i);
         }
+        
+        galleryResize();
 
         var _galleryRefresh = function() {
             galleryHover(7);
