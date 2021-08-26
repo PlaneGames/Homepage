@@ -190,6 +190,10 @@ var book_img = [
 
             activeGallery = 1;
             var img_index   = "nth-of-type("+(index+1)+")";
+            $('.port-img').not('.port-img:'+img_index)
+                .css('transition','.3s')
+                .css('opacity','0');
+
             $('.book-title')
                 .css('background-image','url("../src/images/'+book_img[index][0]+'.png")');
             $('.book-cover')
@@ -214,13 +218,8 @@ var book_img = [
                 .css('background-image','url("../src/images/'+book_img[index][3]+'.png")');
 
             console.log(book_img[index]);
-
-            
             */
-            $('.port-img').not('.port-img:'+img_index)
-                .css('transition','.5s')
-                .css('opacity','0');
-
+            
             /*
             $('.lo-gallery-header')
                 .css('animation-name','closeGalleryHeader')
