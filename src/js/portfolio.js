@@ -134,47 +134,31 @@ var book_img = [
             if (galleryMode == 0 && index != -1) {
 
                 var mIndex = index - 4,
-                    imgSize = Math.min(vw(10), 160),
-                    mType = '',
-                    Mside = vw(2),
-                    margin = 0;
+                    imgSize,
+                    Mside,
+                    margin,
+                    xx,
+                    yy;
 
-                /*
                 if (window.innerWidth >= 700) {
 
                     imgSize = Math.min(vw(10), 160);
-                    Mside = vw(2);
-                    if (mIndex < 0) {
-                        mType = 'margin-right';
-                        margin = (imgSize * 2 + Mside) * mIndex + (imgSize + Mside/2);
-                    } else {
-                        mType = 'margin-left';
-                        margin = -((imgSize * 2 + Mside) * mIndex) - (imgSize + Mside/2);
-                    }
+                    Mside = vw(1);
+                    margin = -((imgSize * 2 + Mside) * mIndex) - (imgSize + Mside/2);
+                    xx = margin, yy = 0;
 
                 } else {
 
                     imgSize = vh(8);
-                    Mside = vh(1.2);
-                    if (mIndex < 0) {
-                        mType = 'margin-bottom';
-                        margin = (imgSize * 2 + Mside) * mIndex + (imgSize + Mside/2);
-                    } else {
-                        mType = 'margin-top';
-                        margin = -((imgSize * 2 + Mside) * mIndex) - (imgSize + Mside/2);
-                    }
+                    Mside = vh(.6);
+                    margin = -((imgSize * 2 + Mside) * mIndex) - (imgSize + Mside/2);
+                    xx = 0, yy = margin;
 
-                }*/
-                margin = -((imgSize + Mside) * mIndex) - (imgSize + Mside/2);
-                var xx = margin, yy = 0;
-
-                //transform: translate()
-                //$('.port-imgcon')
-                //    .css('margin','0px')
-                //    .css(mType,''+margin+'px');
+                }
 
                  $('.port-imgcon')
                     .css('transform','translate('+xx+'px,'+yy+'px');
+                    
             }
 
         }
