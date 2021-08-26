@@ -95,7 +95,6 @@ var galleryRefresh;
                         .css('opacity','1')
                         .css('filter','grayscale(0%)');
                 }
-                console.log("Hover Gallery");
             }
         }
 
@@ -294,7 +293,6 @@ var galleryRefresh;
             $(".port"+(index+1)+"").on('click', function(){
                 //openProjectPopup(index);
                 //galleryMode = 1;
-                galleryResize();
                 galleryCentering(index);
                 gallerySelect = index;
                 //history.pushState({page: 2, data: index}, "title 1", "/pf/"+book_img[index][1]);
