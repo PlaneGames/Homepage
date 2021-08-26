@@ -92,6 +92,8 @@ var book_img = [
                         .css('opacity','1')
                         .css('filter','grayscale(0%)');
                 }
+                console.log("Hover!");
+                alert("Hover!");
             }
         }
 
@@ -321,7 +323,7 @@ var book_img = [
                 openProjectPopup(index);
                 gallerySelect = index;
             });
-
+            
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseenter', function(){
                 galleryHover(index);
             });
