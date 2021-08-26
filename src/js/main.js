@@ -107,7 +107,7 @@ var showPage = function() {
     $('.lo-con').css('opacity','0');
     $('.lo-con').hide();
 
-    if (active == "#page-dr3" && subpageDirect >= 1) {
+    if (subpageDirect >= 1) {
         active = "#page-portfolio";
         timeout = setTimeout(function() {
             _galleryCentering(subpageDirect-1);
