@@ -192,6 +192,15 @@ var book_img = [
             console.log("bookSetting Fin!");
         }
 
+        var galleryHeaderSetting = function() {
+            $('.lo-gallery-header')
+            .css('animation-name','closeGalleryHeader')
+            .css('animation-duration','.5s');
+            $('.lo-gallery-header h1')
+                .css('animation-name','closeGalleryHeader')
+                .css('animation-duration','.5s');
+        }
+
         var galleryBoxSetting = function() {
             $('.lo-gallerybox')
                 .css('min-height','240px')
@@ -219,9 +228,28 @@ var book_img = [
                 */
                 $('.port-img:'+img_index)
                     .css('min-width','160px')
-                    .css('min-height','240px');
+                    .css('min-height','240px')
+                    .css('width','20vw')
+                    .css('height','30vw')
+                    .css('max-width','320px')
+                    .css('max-height','480px')
+                    .css('filter','grayscale(40%)');
+                bookOpenSetting();
                 console.log("selectedGallerySetting Fin!");
             }, 700);
+        }
+
+        var bookOpenSetting = function() {
+            timeout = setTimeout(function() {
+                $('.book-con')
+                    .css('display','flex')
+                    .css('opacity','1');
+                $('.book-title')
+                    .css('transition','1s')
+                    .css('opacity','1');
+            
+                $('.port-img').hide();
+            }, 500);
         }
 
         var openProjectPopup = function(index) {
@@ -229,9 +257,10 @@ var book_img = [
             activeGallery = 1;
 
             bookSetting(index);
+            galleryHeaderSetting();
             galleryBoxSetting();
             selectedGallerySetting(index);
-
+            bookResizing();
             /*
             bookResizing();
             clearTimeout(timeout);
@@ -250,13 +279,7 @@ var book_img = [
             */
             
             /*
-            $('.lo-gallery-header')
-                .css('animation-name','closeGalleryHeader')
-                .css('animation-duration','.5s');
-
-            $('.lo-gallery-header h1')
-                .css('animation-name','closeGalleryHeader')
-                .css('animation-duration','.5s');
+            
 
             $('.lo-gallerybox')
                 .css('min-height','240px')
