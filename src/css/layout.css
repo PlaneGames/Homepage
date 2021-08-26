@@ -183,7 +183,8 @@ header {
 
     height: 20vw;
     max-height: 320px;
-    -webkit-transition: .5s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 350ms !important;
     
     margin: 0px;
 }
@@ -207,7 +208,7 @@ header {
     opacity: 0.7;
     
     margin: 0.5vw;
-    -webkit-transition: .5s;
+    transition: .5s;
 
     animation-fill-mode: both;
 }
