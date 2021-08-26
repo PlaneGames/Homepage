@@ -239,7 +239,7 @@ var book_img = [
                 .css('max-height','480px');
 
             timeout = setTimeout(function() {
-
+                $('.port-img').not('.port-img:'+img_index).hide();
                 /*
                 min-width: 160px;
                 width: 20vw;
