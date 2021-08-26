@@ -179,21 +179,8 @@ var book_img = [
         }
 
         galleryResize();
-        function animate() {
-            // 애니메이션 처리 프레임 코드
-            requestAnimationFrame(animate);
-          }
-          
-          requestAnimationFrame(animate);
 
-        var openProjectPopup = function(index) {
-
-            activeGallery = 1;
-            var img_index   = "nth-of-type("+(index+1)+")";
-            $('.port-img').not('.port-img:'+img_index)
-                .css('transition','.3s')
-                .css('opacity','0');
-
+        var bookSetting = function(index) {
             $('.book-title')
                 .css('background-image','url("../src/images/'+book_img[index][0]+'.png")');
             $('.book-cover')
@@ -202,6 +189,48 @@ var book_img = [
                 .css('background-image','url("../src/images/'+book_img[index][2]+'.png")');
             $('.back-cover')
                 .css('background-image','url("../src/images/'+book_img[index][3]+'.png")');
+            console.log("bookSetting Fin!");
+        }
+
+        var galleryBoxSetting = function() {
+            $('.lo-gallerybox')
+                .css('min-height','240px')
+                .css('height','30vw')
+                .css('max-height','480px');
+            console.log("galleryBoxSetting Fin!");
+        }
+
+        var selectedGallerySetting = function(index) {
+            var img_index   = "nth-of-type("+(index+1)+")";
+            $('.port-img').not('.port-img:'+img_index)
+                .css('transition','.3s')
+                .css('opacity','0');
+            timeout = setTimeout(function() {
+                $('.port-imgcon').css('transform','translate(0px, 0px');
+                $('.port-imgcon').css('transition','0s');
+                $('.port-img').not('.port-img:'+img_index).hide();
+                /*
+                min-width: 160px;
+                width: 20vw;
+                max-width: 320px;
+                min-height: 240px;
+                height: 30vw;
+                max-height: 480px;
+                */
+                $('.port-img:'+img_index)
+                    .css('min-width','160px')
+                    .css('min-height','240px');
+                console.log("selectedGallerySetting Fin!");
+            }, 700);
+        }
+
+        var openProjectPopup = function(index) {
+
+            activeGallery = 1;
+
+            bookSetting(index);
+            galleryBoxSetting();
+            selectedGallerySetting(index);
 
             /*
             bookResizing();
@@ -240,28 +269,6 @@ var book_img = [
                 .css('max-height','480px');
             */
 
-            $('.lo-gallerybox')
-                .css('min-height','240px')
-                .css('height','30vw')
-                .css('max-height','480px');
-
-            timeout = setTimeout(function() {
-                $('.port-imgcon').css('transform','translate(0px, 0px');
-                $('.port-imgcon').css('transition','0s');
-                $('.port-img').not('.port-img:'+img_index).hide();
-                /*
-                min-width: 160px;
-                width: 20vw;
-                max-width: 320px;
-                min-height: 240px;
-                height: 30vw;
-                max-height: 480px;
-                */
-                $('.port-img:'+img_index)
-                    .css('min-width','160px')
-                    .css('min-height','240px');
-
-            }, 500);
 
             /*
             timeout = setTimeout(function() {
