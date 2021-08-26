@@ -205,6 +205,7 @@ var book_img = [
                 .css('transition','.5s')
                 .css('opacity','0');
 
+            /*
             $('.lo-gallery-header')
                 .css('animation-name','closeGalleryHeader')
                 .css('animation-duration','.5s');
@@ -213,7 +214,6 @@ var book_img = [
                 .css('animation-name','closeGalleryHeader')
                 .css('animation-duration','.5s');
 
-            /*
             $('.lo-gallerybox')
                 .css('min-height','240px')
                 .css('height','30vw')
