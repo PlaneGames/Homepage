@@ -13,6 +13,7 @@ var loadpage = 0;
 var loading_per = 0;
 var loadcomplete = 0;
 var galleryMode     = 0;
+var subpageDirect = 0;
 
 var galleryButtonClick = function() {
 
@@ -92,12 +93,15 @@ var showPage = function() {
     $('.lo-con').css('opacity','0');
     $('.lo-con').hide();
 
-    if (active == "#page-dr3" && galleryMode >= 1) {
+    if (active == "#page-dr3" && subpageDirect == 1) {
         active = "#page-portfolio";
+        subpageDirect = 0;
         timeout = setTimeout(function() {
-            openProjectPopup(galleryMode - 1);
-            projectResizing();
-        }, 1000);
+            galleryCentering(index);
+            galleryMode = 1;
+            openProjectPopup(index);
+            gallerySelect = index;
+        }, 2000);
         
     }
     alert(active);
