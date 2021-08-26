@@ -314,7 +314,6 @@ var galleryRefresh;
         var _galleryRefresh = function() {
             galleryHover(7);
             galleryCentering(7);
-            galleryResize();
 
             setTimeout(function() {
                 galleryCentering(3.5);
