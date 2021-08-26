@@ -298,6 +298,7 @@ var book_img = [
             $(".port-img:nth-of-type("+(index+1)+")").on(clickEvent, function(){
                 galleryCentering(index);
                 gallerySelect = index;
+                alert(clickEvent);
             });
 
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseenter', function(){
