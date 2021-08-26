@@ -41,7 +41,6 @@ var galleryButtonClick = function() {
                 .css('transition','1s');
 
         }, 1000);
-        alert("galleryButtonClick");
         
     });
 }
@@ -100,8 +99,6 @@ var showPage = function() {
             .css('transition','1s');
 
     }, 100);
-    
-    alert(active);
 
     if (active == "#page-portfolio") {
         galleryRefresh();
