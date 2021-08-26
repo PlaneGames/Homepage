@@ -99,7 +99,7 @@ var showPage = function() {
             .css('transition','1s');
 
     }, 100);
-    //console.log(active);
+    alert(active);
 
 }
 
@@ -115,13 +115,13 @@ var loadpageChecker = () => {
         $('.lo-con').hide();
         loadcomplete = 1;
         galleryButtonClick();
+        $('.po-main').hide();
         $("img").on('load', function() {
             loading_per = 100;
             hideLoading();
-            showPage();
             $(".loader").html("<p>" + loading_per + "%</p>");
-        });
-        $('.po-main').hide();
+        }); 
+        showPage();
     }
     showLoading();
 }
