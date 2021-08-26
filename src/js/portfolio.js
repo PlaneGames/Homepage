@@ -216,6 +216,7 @@ var book_img = [
     
             var galleryBoxSetting = function() {
                 $('.lo-gallerybox')
+                    .css('transition','.5s')
                     .css('min-height','240px')
                     .css('height','30vw')
                     .css('max-height','480px');
@@ -255,7 +256,8 @@ var book_img = [
                     $('.port-imgcon').css('transform','translate(0px, 0px');
                     $('.port-imgcon').css('transition','0s');
                     $('.port-img').not('.port-img:'+img_index).hide();
-        
+                    $('.port-imgcon').css('transition','.5s');
+
                     $('.port-img:'+img_index)
                         .css('transition','.5s')
                         .css('min-width','160px')
