@@ -213,6 +213,7 @@ var book_img = [
                 .css('animation-name','closeGalleryHeader')
                 .css('animation-duration','.5s');
 
+            /*
             $('.lo-gallerybox')
                 .css('min-height','240px')
                 .css('height','30vw')
@@ -222,6 +223,7 @@ var book_img = [
                 .css('min-height','240px')
                 .css('height','30vw')
                 .css('max-height','480px');
+            */
 
             timeout = setTimeout(function() {
 
