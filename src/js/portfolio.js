@@ -360,6 +360,7 @@ var book_img = [
             }
             console.log(timeout);
             clearTimeout(timeout);
+            activeGallery = 0;
             galleryMode = 0;
             $('.port-img').show();
             $('.port-img')
@@ -530,6 +531,7 @@ var book_img = [
                 active = "#page-resume";
                 showPage();
             } else {
+                console.log(activeGallery);
                 if (activeGallery == 0)
                     showPage();
                 else {
