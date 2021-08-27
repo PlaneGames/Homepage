@@ -116,6 +116,7 @@ var showPage = function() {
             gallerySelect = subpageDirect-1;
             subpageDirect = 0;
         }, 2000);
+        console.log("subpageDirect");
     }
 
     $(active + " .lo-con").show();

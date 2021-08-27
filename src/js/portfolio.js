@@ -527,15 +527,22 @@ var book_img = [
         });
 
         window.onpopstate = function(event) {
+            var curUrl = window.location.href;
             if (event.state.page == 1) {
                 active = "#page-resume";
                 showPage();
             } else {
-                console.log(activeGallery);
-                if (activeGallery == 0)
+                if (curUrl.indexOf("?data=") != -1) {
+                    var index = parseInt(curUrl[curUrl.length-1]);
+                    active = "#page-dr3";
+                    subpageDirect = index;
                     showPage();
-                else {
-                    closeProjectPopup(gallerySelect);
+                } else {
+                    if (activeGallery == 0)
+                        showPage();
+                    else {
+                        closeProjectPopup(gallerySelect);
+                    }
                 }
             }
         }
