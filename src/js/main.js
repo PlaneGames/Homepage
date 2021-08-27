@@ -16,6 +16,7 @@ var galleryMode     = 0;
 var subpageDirect   = 0;
 var _openProjectPopup;
 var _galleryCentering;
+var galleryButtonClick;
 var portfolioUrl;
 
 portfolioUrl        = [
@@ -28,7 +29,7 @@ portfolioUrl        = [
     "/pf/VendingMachine",
     "/pf/TypingOfLegend"
 ];
-
+/*
 var galleryButtonClick = function() {
 
     $('.gal-con').on('click', function(){
@@ -61,6 +62,7 @@ var galleryButtonClick = function() {
         
     });
 }
+*/
 
 $('.lo-con').hide();
 $('.lo-con').css('transition','0s');
@@ -146,7 +148,9 @@ var loadpageChecker = () => {
         $('.lo-con').css('opacity','0');
         $('.lo-con').hide();
         loadcomplete = 1;
-        galleryButtonClick();
+        for(var i = 0; i < 8; i ++) {
+            galleryButtonClick(i);
+        }
         $('.po-main').hide();
         $("img").on('load', function() {
             loading_per = 100;
@@ -158,3 +162,30 @@ var loadpageChecker = () => {
     showLoading();
 }
 
+(function ($) {
+
+    $(document).ready(function() {
+
+        var _galleryButtonClick = function(index) {
+            $(".gal-con:nth-of-type("+(index+1)+")").on('click', function(){
+                active = "#page-dr3";
+                subpageDirect = index + 1;
+                
+                $('.lo-con')
+                    .css('opacity','0')
+                    .css('transition','.5s');
+
+                timeout = setTimeout(function() {
+
+                    showPage();
+
+                }, 500);
+                
+            });
+        }
+
+        galleryButtonClick = _galleryButtonClick;
+        
+    });
+
+})(jQuery);
