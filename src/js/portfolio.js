@@ -12,6 +12,7 @@ var gallerySelect = -1;
 
 const clamp         = (num, min, max) => Math.min(Math.max(num, min), max);
 
+/*
 book.addEventListener("click", () => {
     book.classList.toggle("flip");
 });
@@ -23,6 +24,7 @@ bookcover.addEventListener("mouseenter", () => {
 bookcover.addEventListener("mouseout", () => {
     book.classList.remove("rotateRight");
 });
+*/
 
 $(window).on('orientationchange', function() {
     //$('.port-img').css('transition','0s');
@@ -122,8 +124,8 @@ var book_img = [
                         .css('max-height','380px');
 
                     $('.port-img')
-                        .css('min-width','10vw')
-                        .css('min-height','20vw')
+                        .css('min-width','0px')
+                        .css('min-height','0px')
                         .css('width','10vw')
                         .css('height','20vw')
                         .css('max-width','160px')
@@ -137,8 +139,8 @@ var book_img = [
                         .css('max-height','100%');
 
                     $('.port-img')
-                        .css('min-width','440px')
-                        .css('min-height','8vh')
+                        .css('min-width','0px')
+                        .css('min-height','0px')
                         .css('width','440px')
                         .css('height','8vh')
                         .css('max-width','80%')
@@ -194,7 +196,6 @@ var book_img = [
                     .css('background-image','url("../src/images/'+book_img[index][2]+'.png")');
                 $('.back-cover')
                     .css('background-image','url("../src/images/'+book_img[index][3]+'.png")');
-                console.log("bookSetting Fin!");
             }
     
             var galleryHeaderSetting = function() {
@@ -224,26 +225,49 @@ var book_img = [
             var bookOpenSetting = function() {
                 $('.book-con')
                     .css('display','flex');
+                book.classList.remove("rotateRight");
+                book.classList.remove("flip");
                 timeout = setTimeout(function() {
-                    $('.book-con')
-                        .css('transition','.0s')
-                        .css('opacity','1');
-                    $('.book-title')
-                        .css('transition','.5s')
-                        .css('opacity','1');
-                
-                    $('.port-img').hide();
+                    if (galleryMode != 0) {
+                        $('.book-con')
+                            .css('transition','.0s')
+                            .css('opacity','1');
+                        $('.book-title')
+                            .css('transition','.5s')
+                            .css('opacity','1');
+                        book.classList.add("rotateRight");
+                        $('.port-img').hide();
+                        console.log(" $('.port-img').hide();");
+                    } else {
+                        return;
+                    }
                 }, 500);
                 timeout = setTimeout(function() {
-                    $('.book-con')
-                        .css('transition','.5s')
-                        .css('opacity','0');
+                    if (galleryMode != 0) {
+                        book.classList.remove("rotateRight");
+                        book.classList.toggle("flip");
+                    } else {
+                        return;
+                    }
                 }, 1500);
                 timeout = setTimeout(function() {
-                    active = "#page-dr3";
-                    showPage();
-                    projectResizing();
+                    if (galleryMode != 0) {
+                        $('.book-con')
+                            .css('transition','.5s')
+                            .css('opacity','0');
+                    } else {
+                        return;
+                    }
                 }, 2000);
+                timeout = setTimeout(function() {
+                    if (galleryMode != 0) {
+                        active = "#page-dr3";
+                        showPage();
+                        projectResizing();
+                    } else {
+                        return;
+                    }
+                }, 2300);
             }
 
             var selectedGallerySetting = function(index) {
@@ -252,25 +276,28 @@ var book_img = [
                     .css('transition','.3s')
                     .css('opacity','0');
                 timeout = setTimeout(function() {
-                    $('.port-imgcon').css('transform','translate(0px, 0px');
-                    $('.port-imgcon').css('transition','0s');
-                    $('.port-img').not('.port-img:'+img_index).hide();
+                    if (galleryMode != 0) {
+                        $('.port-imgcon').css('transform','translate(0px, 0px)');
+                        $('.port-imgcon').css('transition','0s');
+                        $('.port-img').not('.port-img:'+img_index).hide();
 
-                    $('.port-img:'+img_index)
-                        .css('transition','.5s')
-                        .css('min-width','160px')
-                        .css('min-height','240px')
-                        .css('width','20vw')
-                        .css('height','30vw')
-                        .css('max-width','320px')
-                        .css('max-height','480px')
-                        .css('opacity','1')
-                        .css('filter','grayscale(40%)');
-                    bookOpenSetting();
-                    console.log("selectedGallerySetting Fin!");
+                        $('.port-img:'+img_index)
+                            .css('transition','.5s')
+                            .css('min-width','160px')
+                            .css('min-height','240px')
+                            .css('width','20vw')
+                            .css('height','30vw')
+                            .css('max-width','320px')
+                            .css('max-height','480px')
+                            .css('opacity','1')
+                            .css('filter','grayscale(40%)');
+                        bookOpenSetting();
+                        console.log("selectedGallerySetting Fin!");
+                    } else {
+                        return;
+                    }
                 }, 700);
             }
-
 
             history.pushState({page: 2, data: (index+1)}, "", portfolioUrl[index]);
             activeGallery = 1;
@@ -284,7 +311,7 @@ var book_img = [
         }
 
         var closeProjectPopup = function(index) {
-
+            
             var galleryHeaderSetting = function() {
                 $('.lo-gallery-header')
                     .css('opacity','1')
@@ -300,31 +327,39 @@ var book_img = [
             var bookCloseSetting = function() {
                 $('.port-imgcon').css('transition','.5s');
                 $('.book-title')
-                    .css('transition','.5s')
+                    .css('transition','.0s')
                     .css('opacity','0');
                 $('.book-con')
-                    .css('transition','.5s')
+                    .css('transition','.0s')
                     .css('opacity','0')
                     .css('display','none');
             }
             var pageChangeSetting = function() {
-                $('.lo-con')
-                    .css('opacity','0')
-                    .css('transition','.5s');
-                timeout = setTimeout(function() {
-                    active = "#page-portfolio";
-                    showPage();
-                }, 500);
+                if (active != "#page-portfolio") {
+                    $('.lo-con')
+                        .css('opacity','0')
+                        .css('transition','.5s');
+                    timeout = setTimeout(function() {
+                        active = "#page-portfolio";
+                        showPage();
+                        galleryResize();
+                        _galleryRefresh();
+                    }, 500);
+                } else {
+                    $('.port-imgcon').css('transition','.5s');
+                    galleryResize();
+                    galleryCentering(3.5);
+                }
             }
-
+            console.log(timeout);
             clearTimeout(timeout);
             galleryMode = 0;
-
             $('.port-img').show();
-            galleryResize();
+            $('.port-img')
+                .css('transition','.5s');
+            
             galleryHeaderSetting();
             bookCloseSetting();
-            _galleryRefresh();
             pageChangeSetting();
             
         }
