@@ -399,6 +399,7 @@ var book_img = [
         var galleryButton = function(index) {
             var checkAble = subpageDirect <= 0 && galleryMode == 0 && gallerySelect == -1;
             $(".port-img:nth-of-type("+(index+1)+")").on(clickEvent, function(){
+                checkAble = subpageDirect <= 0 && galleryMode == 0 && gallerySelect == -1;
                 if (checkAble) {
                     galleryCentering(index);
                     galleryMode = 1;
@@ -409,12 +410,14 @@ var book_img = [
             });
             
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseenter', function(){
+                checkAble = subpageDirect <= 0 && galleryMode == 0 && gallerySelect == -1;
                 if (checkAble) {
                     if (clickEvent != 'touchstart')
                         galleryHover(index);
                 }
             });
             $(".port-img:nth-of-type("+(index+1)+")").on('mouseout', function(){
+                checkAble = subpageDirect <= 0 && galleryMode == 0 && gallerySelect == -1;
                 if (checkAble) {
                     galleryUnHover(index)
                 }
