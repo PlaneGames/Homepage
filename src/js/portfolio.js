@@ -301,6 +301,7 @@ var book_img = [
             }
 
             history.pushState({page: 2, data: (index+1)}, "", portfolioUrl[index]);
+            console.log(history.state.data);
             activeGallery = 1;
             clearTimeout(timeout);
 
@@ -527,11 +528,19 @@ var book_img = [
                 active = "#page-resume";
                 showPage();
             } else {
-                console.log(activeGallery);
-                if (activeGallery == 0)
-                    showPage();
-                else {
-                    closeProjectPopup(gallerySelect);
+                var _data = history.state.data;
+                console.log(_data);
+                if (_data > 0) {
+                    galleryCentering(_data-1);
+                    galleryMode = 1;
+                    openProjectPopup(_data-1);
+                    gallerySelect = _data-1;
+                } else {
+                    if (activeGallery == 0)
+                        showPage();
+                    else {
+                        closeProjectPopup(gallerySelect);
+                    }
                 }
             }
         }
