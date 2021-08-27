@@ -535,6 +535,7 @@ var book_img = [
                 } else {
                     if (activeGallery == 0) {
                         console.log("showPage");
+                        active = "#page-portfolio";
                         showPage();
                     } else {
                         closeProjectPopup(gallerySelect);
