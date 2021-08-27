@@ -403,6 +403,7 @@ var book_img = [
                 if (checkAble) {
                     galleryCentering(index);
                     galleryMode = 1;
+                    jQuery('html > head > title').text('PLANE | Portfolio ' + portfolioUrl[index]);
                     history.pushState({page: 2, data: (index+1)}, "", portfolioUrl[index]);
                     openProjectPopup(index);
                     gallerySelect = index;

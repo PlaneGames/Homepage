@@ -29,40 +29,6 @@ portfolioUrl        = [
     "/pf/VendingMachine",
     "/pf/TypingOfLegend"
 ];
-/*
-var galleryButtonClick = function() {
-
-    $('.gal-con').on('click', function(){
-
-        history.pushState({page: 2, data: 0}, "title 2", "/pf");
-        console.log(history.state);
-        active = "#page-portfolio";
-        
-        $('.lo-con')
-            .css('opacity','0')
-            .css('transition','.5s');
-
-        timeout = setTimeout(function() {
-
-            $('.lo-con').hide();
-            $('.lo-con').css('transition','0s');
-            
-            $(active + " .lo-con").show();
-            galleryRefresh();
-
-        }, 500);
-
-        timeout = setTimeout(function() {
-
-            $(active + " .lo-con")
-                .css('opacity','1')
-                .css('transition','1s');
-
-        }, 1000);
-        
-    });
-}
-*/
 
 $('.lo-con').hide();
 $('.lo-con').css('transition','0s');
@@ -114,6 +80,7 @@ var showPage = function() {
         timeout = setTimeout(function() {
             _galleryCentering(subpageDirect-1);
             galleryMode = 1;
+            jQuery('html > head > title').text('PLANE | Portfolio ' + portfolioUrl[subpageDirect-1]);
             history.pushState({page: 2, data: (subpageDirect)}, "", portfolioUrl[subpageDirect-1]);
             _openProjectPopup(subpageDirect-1);
             gallerySelect = subpageDirect-1;
@@ -169,6 +136,7 @@ var loadpageChecker = () => {
         var _galleryButtonClick = function(index) {
             $(".gal-con:nth-of-type("+(index+1)+")").on('click', function(){
                 // Resume -> Portfolio -> Subpage
+                jQuery('html > head > title').text('PLANE | Portfolio');
                 history.pushState({page: 2, data: 0}, "title 2", "/pf");
 
                 active = "#page-dr3";
