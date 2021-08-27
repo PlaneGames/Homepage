@@ -36,14 +36,14 @@ portfolioUrl        = [
 ];
 
 portfolioSubTitle       = [
-    "Dungeon Rpg 3 ",
-    "Dungeon Rpg 2 ",
-    "The Unknown Dungeon ",
-    "Micro Castle ",
-    "Way Back Home 2 ",
-    "Way Back Home ",
-    "Vending Machine ",
-    "Typing Of Legend "
+    "- Dungeon Rpg 3 ",
+    "- Dungeon Rpg 2 ",
+    "- The Unknown Dungeon ",
+    "- Micro Castle ",
+    "- Way Back Home 2 ",
+    "- Way Back Home ",
+    "- Vending Machine ",
+    "- Typing Of Legend "
 ];
 
 $('.lo-con').hide();
