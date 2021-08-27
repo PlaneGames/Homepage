@@ -353,6 +353,7 @@ var book_img = [
                         showPage();
                         galleryResize();
                         _galleryRefresh();
+                        gallerySelect = -1;
                     }, 500);
                 } else {
                     var img_index   = "nth-of-type("+(index+1)+")";
