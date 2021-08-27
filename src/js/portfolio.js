@@ -264,6 +264,7 @@ var book_img = [
                         active = "#page-dr3";
                         showPage();
                         projectResizing();
+                        console.log(active);
                     } else {
                         return;
                     }
@@ -366,6 +367,9 @@ var book_img = [
             galleryHeaderSetting();
             bookCloseSetting();
             pageChangeSetting();
+
+            console.log(active);
+            console.log("closeProjectPopup");
             
         }
 
@@ -526,7 +530,6 @@ var book_img = [
                 active = "#page-resume";
                 showPage();
             } else {
-                active = "#page-portfolio";
                 if (activeGallery == 0)
                     showPage();
                 else {
