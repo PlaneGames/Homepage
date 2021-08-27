@@ -524,12 +524,13 @@ var book_img = [
         });
 
         window.onpopstate = function(event) {
+            console.log(event.state);
             if (event.state.page == 1) {
                 active = "#page-resume";
                 showPage();
             } else {
                 var _data = history.state.data;
-                console.log(_data);
+                
                 if (_data > 0) {
                     galleryCentering(_data-1);
                     galleryMode = 1;
