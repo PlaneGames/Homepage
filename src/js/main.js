@@ -112,6 +112,7 @@ var showPage = function() {
         timeout = setTimeout(function() {
             _galleryCentering(subpageDirect-1);
             galleryMode = 1;
+            history.pushState({page: 2, data: (subpageDirect)}, "", portfolioUrl[subpageDirect-1]);
             _openProjectPopup(subpageDirect-1);
             gallerySelect = subpageDirect-1;
             subpageDirect = 0;

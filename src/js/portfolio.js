@@ -237,7 +237,6 @@ var book_img = [
                             .css('opacity','1');
                         book.classList.add("rotateRight");
                         $('.port-img').hide();
-                        console.log(" $('.port-img').hide();");
                     } else {
                         return;
                     }
@@ -264,7 +263,6 @@ var book_img = [
                         active = "#page-dr3";
                         showPage();
                         projectResizing();
-                        console.log(active);
                     } else {
                         return;
                     }
@@ -293,14 +291,12 @@ var book_img = [
                             .css('opacity','1')
                             .css('filter','grayscale(40%)');
                         bookOpenSetting();
-                        console.log("selectedGallerySetting Fin!");
                     } else {
                         return;
                     }
                 }, 700);
             }
 
-            history.pushState({page: 2, data: (index+1)}, "", portfolioUrl[index]);
             activeGallery = 1;
             clearTimeout(timeout);
 
@@ -384,6 +380,7 @@ var book_img = [
                 if (subpageDirect <= 0) {
                     galleryCentering(index);
                     galleryMode = 1;
+                    history.pushState({page: 2, data: (index+1)}, "", portfolioUrl[index]);
                     openProjectPopup(index);
                     gallerySelect = index;
                 }
@@ -529,7 +526,7 @@ var book_img = [
                 showPage();
             } else {
                 var _data = history.state.data;
-                
+                console.log(activeGallery);
                 if (_data > 0) {
                     galleryCentering(_data-1);
                     galleryMode = 1;
