@@ -533,9 +533,10 @@ var book_img = [
                     openProjectPopup(_data-1);
                     gallerySelect = _data-1;
                 } else {
-                    if (activeGallery == 0)
+                    if (activeGallery == 0) {
+                        console.log("showPage");
                         showPage();
-                    else {
+                    } else {
                         closeProjectPopup(gallerySelect);
                     }
                 }
