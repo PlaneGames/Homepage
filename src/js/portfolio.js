@@ -325,12 +325,13 @@ var book_img = [
                     .css('transition','.5s');
             }
             var bookCloseSetting = function() {
-                $('.port-imgcon').css('transition','.5s');
+                book.classList.remove("rotateRight");
+                book.classList.remove("flip");
                 $('.book-title')
-                    .css('transition','.0s')
+                    .css('transition','.5s')
                     .css('opacity','0');
                 $('.book-con')
-                    .css('transition','.0s')
+                    .css('transition','.5s')
                     .css('opacity','0')
                     .css('display','none');
             }
@@ -346,9 +347,14 @@ var book_img = [
                         _galleryRefresh();
                     }, 500);
                 } else {
-                    $('.port-imgcon').css('transition','.5s');
-                    galleryResize();
-                    galleryCentering(3.5);
+                    $('.port-imgcon').css('transition','.0s');
+                    galleryCentering(index);
+
+                    timeout = setTimeout(function() {
+                        $('.port-imgcon').css('transition','.5s');
+                        galleryCentering(3.5);
+                        galleryResize();
+                    }, 500);
                 }
             }
             console.log(timeout);
@@ -357,7 +363,6 @@ var book_img = [
             $('.port-img').show();
             $('.port-img')
                 .css('transition','.5s');
-            
             galleryHeaderSetting();
             bookCloseSetting();
             pageChangeSetting();
@@ -525,7 +530,7 @@ var book_img = [
                 if (activeGallery == 0)
                     showPage();
                 else {
-                    closeProjectPopup(0);
+                    closeProjectPopup(gallerySelect);
                 }
             }
         }
