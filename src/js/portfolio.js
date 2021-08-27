@@ -49,6 +49,12 @@ var book_img = [
     
     var timeout;
     var cur_subpage = 0;
+    var clearTimeoutAll = function() {
+        var highestTimeoutId = setTimeout(";");
+            for (var i = 0 ; i < highestTimeoutId ; i++) {
+            clearTimeout(i);
+        }
+    }
 
     $(document).ready(function() {
 
@@ -120,6 +126,10 @@ var book_img = [
         var galleryResize = function() {
             if (galleryMode == 0) {
                 if (window.innerWidth >= 700) {
+                    $('.lo-gallery-header')
+                        .css('height','40vw')
+                        .css('max-height','640px');
+
                     $('.lo-gallerybox')
                         .css('height','25vw')
                         .css('max-height','380px');
@@ -135,6 +145,10 @@ var book_img = [
                         .css('opacity','0.6')
                         .css('filter','grayscale(90%)');
                 } else {
+                    $('.lo-gallery-header')
+                        .css('height','100%')
+                        .css('max-height','100%');
+
                     $('.lo-gallerybox')
                         .css('height','100%')
                         .css('max-height','100%');
@@ -228,10 +242,10 @@ var book_img = [
                         $('.book-title')
                             .css('transition','.5s')
                             .css('opacity','1');
-                        book.classList.add("rotateRight");
                         $('.port-img:'+img_index)
                             .css('transition','.0s')
                             .css('opacity','0');
+                        book.classList.toggle("rotateRight");
                     } else {
                         return;
                     }
@@ -265,6 +279,7 @@ var book_img = [
                         return;
                     }
                 }, 2300);
+                console.log(timeout);
             }
 
             var selectedGallerySetting = function(index) {
@@ -295,18 +310,20 @@ var book_img = [
                 }, 700);
             }
 
+            clearTimeoutAll();
+            galleryResize();
             activeGallery = 1;
-            clearTimeout(timeout);
 
             bookSetting(index);
             galleryHeaderSetting();
             galleryBoxSetting();
             selectedGallerySetting(index);
             bookResizing();
+
         }
 
         var closeProjectPopup = function(index) {
-            
+
             var galleryHeaderSetting = function() {
                 $('.lo-gallery-header')
                     .css('opacity','1')
@@ -360,16 +377,14 @@ var book_img = [
                     }, 500);
                 }
             }
-            clearTimeout(timeout);
+
+            clearTimeoutAll();
             activeGallery = 0;
             galleryMode = 0;
             
             galleryHeaderSetting();
             bookCloseSetting();
             pageChangeSetting();
-
-            console.log(active);
-            console.log("closeProjectPopup");
             
         }
 
@@ -412,7 +427,7 @@ var book_img = [
         }
 
         var _galleryRefresh = function() {
-            galleryHover(7);
+            //galleryHover(7);
             galleryCentering(7);
             var refreshTime = setTimeout(function() {
                 galleryCentering(3.5);
