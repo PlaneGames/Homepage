@@ -403,7 +403,7 @@ var book_img = [
                 if (checkAble) {
                     galleryCentering(index);
                     galleryMode = 1;
-                    jQuery('html > head > title').text('PLANE | Portfolio ' + portfolioUrl[index]);
+                    jQuery('html > head > title').text('PLANE | Portfolio ' + portfolioTitle[index]);
                     history.pushState({page: 2, data: (index+1)}, "", portfolioUrl[index]);
                     openProjectPopup(index);
                     gallerySelect = index;
@@ -552,15 +552,18 @@ var book_img = [
             console.log(event.state);
             if (event.state.page == 1) {
                 active = "#page-resume";
+                jQuery('html > head > title').text(mainTitle + resumeTitle);
                 showPage();
             } else {
                 var _data = history.state.data;
                 if (_data > 0) {
+                    jQuery('html > head > title').text(mainTitle + portfolioTitle + portfolioSubTitle[_data-1]);
                     galleryCentering(_data-1);
                     galleryMode = 1;
                     openProjectPopup(_data-1);
                     gallerySelect = _data-1;
                 } else {
+                    jQuery('html > head > title').text(mainTitle + portfolioTitle);
                     if (activeGallery == 0) {
                         active = "#page-portfolio";
                         showPage();

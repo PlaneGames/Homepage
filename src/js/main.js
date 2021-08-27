@@ -17,7 +17,12 @@ var subpageDirect   = 0;
 var _openProjectPopup;
 var _galleryCentering;
 var galleryButtonClick;
+
+var mainTitle       = "PLANE | ";
+var resumeTitle     = "Game Developer ";
+var portfolioTitle  = "Portfolio "
 var portfolioUrl;
+var portfolioSubTitle;
 
 portfolioUrl        = [
     "/pf/DungeonRpg3",
@@ -28,6 +33,17 @@ portfolioUrl        = [
     "/pf/WayBackHome",
     "/pf/VendingMachine",
     "/pf/TypingOfLegend"
+];
+
+portfolioSubTitle       = [
+    "Dungeon Rpg 3 ",
+    "Dungeon Rpg 2 ",
+    "The Unknown Dungeon ",
+    "Micro Castle ",
+    "Way Back Home 2 ",
+    "Way Back Home ",
+    "Vending Machine ",
+    "Typing Of Legend "
 ];
 
 $('.lo-con').hide();
@@ -80,7 +96,7 @@ var showPage = function() {
         timeout = setTimeout(function() {
             _galleryCentering(subpageDirect-1);
             galleryMode = 1;
-            jQuery('html > head > title').text('PLANE | Portfolio ' + portfolioUrl[subpageDirect-1]);
+            jQuery('html > head > title').text(mainTitle + portfolioTitle + portfolioSubTitle[subpageDirect-1]);
             history.pushState({page: 2, data: (subpageDirect)}, "", portfolioUrl[subpageDirect-1]);
             _openProjectPopup(subpageDirect-1);
             gallerySelect = subpageDirect-1;
@@ -136,7 +152,7 @@ var loadpageChecker = () => {
         var _galleryButtonClick = function(index) {
             $(".gal-con:nth-of-type("+(index+1)+")").on('click', function(){
                 // Resume -> Portfolio -> Subpage
-                jQuery('html > head > title').text('PLANE | Portfolio');
+                jQuery('html > head > title').text(mainTitle + portfolioTitle);
                 history.pushState({page: 2, data: 0}, "title 2", "/pf");
 
                 active = "#page-dr3";
