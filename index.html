@@ -65,7 +65,7 @@
                     if (index > 0) {
                         jQuery('html > head > title').text(mainTitle + portfolioTitle);
                         history.pushState({page: 2, data: 0}, "title 2", "/pf");
-
+                        history.replaceState({page: 2, data: 0}, "title 1", "/pf");
                         active = "#page-dr3";
                         subpageDirect = index + 1;
                     } else {
