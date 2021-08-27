@@ -168,6 +168,9 @@ var loadpageChecker = () => {
 
         var _galleryButtonClick = function(index) {
             $(".gal-con:nth-of-type("+(index+1)+")").on('click', function(){
+                // Resume -> Portfolio -> Subpage
+                history.pushState({page: 2, data: 0}, "title 2", "/pf");
+
                 active = "#page-dr3";
                 subpageDirect = index + 1;
                 
