@@ -301,7 +301,6 @@ var book_img = [
             }
 
             history.pushState({page: 2, data: (index+1)}, "", portfolioUrl[index]);
-            console.log(history.state.data);
             activeGallery = 1;
             clearTimeout(timeout);
 
@@ -549,3 +548,5 @@ var book_img = [
     });
 
 })(jQuery);
+
+console.log("portfolio.js Loaded!");
