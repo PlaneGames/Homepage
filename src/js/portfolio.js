@@ -348,17 +348,13 @@ var book_img = [
                         _galleryRefresh();
                     }, 500);
                 } else {
-                    $('.port-imgcon').css('transition','.0s');
-                    galleryCentering(index);
 
-                    timeout = setTimeout(function() {
-                        $('.port-imgcon').css('transition','.5s');
-                        galleryCentering(3.5);
-                        galleryResize();
-                    }, 500);
+                    $('.port-imgcon').css('transition','.5s');
+                    galleryCentering(3.5);
+                    galleryResize();
                 }
             }
-            console.log(timeout);
+
             clearTimeout(timeout);
             activeGallery = 0;
             galleryMode = 0;
