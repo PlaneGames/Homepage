@@ -5,20 +5,20 @@
 'use strict'; // Show Error Message With Console
 
 var galleryRefresh;
-var active = "#page-resume";
-var activeGallery = 0;
+var active          = "#page-resume";
+var activeGallery   = 0;
 var timeout;
-var maxpage = 3;
-var loadpage = 0;
-var loading_per = 0;
-var loadcomplete = 0;
+var maxpage         = 3;
+var loadpage        = 0;
+var loading_per     = 0;
+var loadcomplete    = 0;
 var galleryMode     = 0;
-var subpageDirect = 0;
+var subpageDirect   = 0;
 var _openProjectPopup;
 var _galleryCentering;
 var portfolioUrl;
 
-portfolioUrl = [
+portfolioUrl        = [
     "/pf/DungeonRpg3",
     "/pf/DungeonRpg2",
     "/pf/TheUnknownDungeon",
