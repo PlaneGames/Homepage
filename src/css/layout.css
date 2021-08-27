@@ -155,10 +155,13 @@ header {
 }
 
 .lo-gallery-header {
-    position: relative;
-    height: 10%;
-    padding-bottom: 4%;
-    animation-fill-mode: both;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    margin: 0px;
+    font-size: 8px;  
+    text-align: center;
 }
 
 .lo-gallerybox {
