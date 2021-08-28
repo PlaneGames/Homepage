@@ -362,17 +362,17 @@ var book_img = [
                         .css('opacity','1')
                         .css('transition','.5s');
                     galleryResize();
-                    galleryCentering(index);
+                    //galleryCentering(index);
                     $('.port-imgcon').css('transition','.0s');
+                    $('.port-img').show();
+                    $('.port-img').not('.port-img:'+img_index)
+                        .css('opacity','0')
+                        .css('transition','.0s');
+                    $('.port-imgcon').css('transition','.5s');
                     timeout = setTimeout(function() {
-                        $('.port-img').show();
-                        $('.port-img').not('.port-img:'+img_index)
-                            .css('opacity','0')
-                            .css('transition','.0s');
                         $('.port-img')
                             .css('transition','.5s');
-                        $('.port-imgcon').css('transition','.5s');
-                        galleryResize();
+                        //galleryResize();
                         galleryCentering(3.5);
                         gallerySelect = -1;
                     }, 600);
