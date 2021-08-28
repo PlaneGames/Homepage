@@ -362,7 +362,7 @@ var book_img = [
                         .css('opacity','1')
                         .css('transition','.5s');
                     galleryResize();
-                    //galleryCentering(index);
+                    galleryCentering(index);
                     $('.port-imgcon').css('transition','.0s');
                     $('.port-img').show();
                     $('.port-img').not('.port-img:'+img_index)
