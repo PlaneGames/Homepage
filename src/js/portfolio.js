@@ -375,7 +375,7 @@ var book_img = [
                         galleryResize();
                         galleryCentering(3.5);
                         gallerySelect = -1;
-                    }, 500);
+                    }, 600);
                 }
             }
 
