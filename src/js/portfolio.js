@@ -371,6 +371,7 @@ var book_img = [
                     $('.port-imgcon').css('transition','.5s');
                     timeout = setTimeout(function() {
                         $('.port-img')
+                            .css('opacity','0.6')
                             .css('transition','.5s');
                         //galleryResize();
                         galleryCentering(3.5);
