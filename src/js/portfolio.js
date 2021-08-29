@@ -287,8 +287,8 @@ var book_img = [
                     .css('opacity','0');
                 timeout = setTimeout(function() {
                     if (galleryMode != 0) {
-                        $('.port-imgcon').css('transform','translate(0px, 0px)');
                         $('.port-imgcon').css('transition','0s');
+                        $('.port-imgcon').css('transform','translate(0px, 0px)');
                         $('.port-img').not('.port-img:'+img_index).hide();
 
                         $('.port-img:'+img_index)
@@ -302,6 +302,7 @@ var book_img = [
                             .css('opacity','1')
                             .css('filter','grayscale(40%)');
                         bookOpenSetting();
+                        $('.port-imgcon').css('transition','.5s');
                     } else {
                         return;
                     }
@@ -309,7 +310,7 @@ var book_img = [
             }
 
             clearTimeoutAll();
-            
+
             projectResizing();
             galleryResize();
             activeGallery = 1;
