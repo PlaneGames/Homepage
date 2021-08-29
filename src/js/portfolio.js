@@ -309,7 +309,8 @@ var book_img = [
             }
 
             clearTimeoutAll();
-
+            
+            projectResizing();
             galleryResize();
             activeGallery = 1;
 
