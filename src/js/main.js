@@ -23,6 +23,7 @@ var resumeTitle     = "Game Developer ";
 var portfolioTitle  = "Portfolio "
 var portfolioUrl;
 var portfolioSubTitle;
+var portfolioSubVideo;
 
 portfolioUrl        = [
     "/pf/DungeonRpg3",
@@ -45,6 +46,17 @@ portfolioSubTitle       = [
     "- Vending Machine ",
     "- Typing Of Legend "
 ];
+
+portfolioSubVideo       = [
+    ["#video-dr3inst", "#video-dr3creator"],
+    [""],
+    [""],
+    [""],
+    [""],
+    [""],
+    [""],
+    [""],
+]
 
 $('.lo-con').hide();
 $('.lo-con').css('transition','0s');
@@ -113,8 +125,8 @@ var showPage = function() {
 
     timeout = setTimeout(function() {
 
-	    $('.video:nth-of-type(1)').append(video1);
-        $('.video:nth-of-type(2)').append(video2);
+	    $('.video:eq(0)').append(video1);
+        $('.video:eq(1)').append(video2);
 
         $(active + " .lo-con")
             .css('opacity','1')
