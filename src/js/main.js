@@ -21,11 +21,15 @@ var galleryButtonClick;
 var mainTitle       = "PLANE | ";
 var resumeTitle     = "Game Developer ";
 var portfolioTitle  = "Portfolio "
+
+var portfolioVideoIndex;
 var portfolioUrl;
 var portfolioSubTitle;
 var portfolioSubVideo;
 
-portfolioUrl        = [
+portfolioVideoIndex     = [];
+
+portfolioUrl            = [
     "/pf/DungeonRpg3",
     "/pf/DungeonRpg2",
     "/pf/TheUnknownDungeon",
@@ -97,15 +101,29 @@ var hideLoading = function() {
         .css('transition','.2s');
 }
 
+var pfVideoSet = function(index) {
+    var maxIndex    = portfolioSubVideo[index].length;
+    var videoIndex  = [maxIndex];
+    for (var i = 0; i < maxIndex; i ++) {
+        videoIndex[i] = $(portfolioSubVideo[index][i]);
+    }
+    console.log("pfVideoSet");
+    return videoIndex;
+}
+
+var pfVideoShow = function(videoIndex) {
+    var maxIndex    = videoIndex.length;
+    for (var i = 0; i < maxIndex; i ++) {
+        $('.video:eq('+(i)+')').append(videoIndex[i]);
+    }
+    console.log("pfVideoShow : " + videoIndex + "/ maxIndex : " + maxIndex);
+}
+
 var showPage = function() {
 
     // lo-con Hide
     $('.lo-con').css('opacity','0');
     $('.lo-con').hide();
-    var video1 = $('#video-dr3inst');
-    var video2 = $('#video-dr3creator');
-
-    $('.video').empty();
 
     if (subpageDirect >= 1) {
         active = "#page-portfolio";
@@ -118,15 +136,14 @@ var showPage = function() {
             gallerySelect = subpageDirect-1;
             subpageDirect = 0;
         }, 2000);
-        console.log("subpageDirect");
+        //console.log("subpageDirect");
     }
 
     $(active + " .lo-con").show();
 
     timeout = setTimeout(function() {
 
-	    $('.video:eq(0)').append(video1);
-        $('.video:eq(1)').append(video2);
+	    //pfVideoShow(videoIndex);
 
         $(active + " .lo-con")
             .css('opacity','1')

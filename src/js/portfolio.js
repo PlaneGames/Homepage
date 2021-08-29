@@ -9,7 +9,7 @@ var book            = document.querySelector(".book");
 var bookcover       = document.querySelector(".book-cover");
 var bookopen        = 0;
 
-var gallerySelect = -1;
+var gallerySelect   = -1;
 
 const clamp         = (num, min, max) => Math.min(Math.max(num, min), max);
 
@@ -274,7 +274,10 @@ var book_img = [
                     if (galleryMode != 0) {
                         active = "#page-dr3";
                         showPage();
+                        portfolioVideoIndex = pfVideoSet(index);
+                        $('.video').empty();
                         projectResizing();
+                        pfVideoShow(portfolioVideoIndex);
                     } else {
                         return;
                     }
@@ -311,6 +314,7 @@ var book_img = [
             }
 
             clearTimeoutAll();
+
             galleryResize();
             activeGallery = 1;
 
@@ -351,6 +355,7 @@ var book_img = [
                     timeout = setTimeout(function() {
                         active = "#page-portfolio";
                         showPage();
+                        $('.video').empty();
                         galleryResize();
                         _galleryRefresh();
                         gallerySelect = -1;
