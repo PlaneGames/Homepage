@@ -500,6 +500,7 @@ var book_img = [
                         .css('max-height','250px');
                         
                     $('.po-pr-w50-w100').css('width','50%');
+                    $('.po-pr-w70-w100').css('width','70%');
                     $('.po-pr-w92-w100').css('width','92%');
                     $('.po-pr-h100-h50').css('height','100%');
                     $('.po-pr-h49-auto').css('height','49%');
@@ -527,6 +528,7 @@ var book_img = [
                         .css('height',vw(50)-margin_h/2+'px')
                         .css('max-height',vw(50)-margin_h/2+'px');
                     $('.po-pr-w50-w100').css('width','100%');
+                    $('.po-pr-w70-w100').css('width','100%');
                     $('.po-pr-w92-w100').css('width','100%');
                     $('.po-pr-h100-h50').css('height',vw(50)-margin_h/2+'px');
                     $('.po-pr-h49-h48').css('height','48%');
