@@ -100,7 +100,6 @@ var book_img = [
                         .css('opacity','1')
                         .css('filter','grayscale(0%)');
                 }
-                console.log("Gallery Hover!");
             }
         }
 
@@ -279,7 +278,6 @@ var book_img = [
                         return;
                     }
                 }, 2300);
-                console.log(timeout);
             }
 
             var selectedGallerySetting = function(index) {
@@ -552,7 +550,6 @@ var book_img = [
         });
 
         window.onpopstate = function(event) {
-            console.log(event.state);
             if (event.state.page == 1) {
                 active = "#page-resume";
                 jQuery('html > head > title').text(mainTitle + resumeTitle);
@@ -580,5 +577,3 @@ var book_img = [
     });
 
 })(jQuery);
-
-console.log("portfolio.js Loaded!");

@@ -107,7 +107,6 @@ var pfVideoSet = function(index) {
     for (var i = 0; i < maxIndex; i ++) {
         videoIndex[i] = $(portfolioSubVideo[index][i]);
     }
-    console.log("pfVideoSet");
     return videoIndex;
 }
 
@@ -116,7 +115,6 @@ var pfVideoShow = function(videoIndex) {
     for (var i = 0; i < maxIndex; i ++) {
         $('.video:eq('+(i)+')').append(videoIndex[i]);
     }
-    console.log("pfVideoShow : " + videoIndex + "/ maxIndex : " + maxIndex);
 }
 
 var pfVideoReset = function(index) {
@@ -144,14 +142,11 @@ var showPage = function() {
             gallerySelect = subpageDirect-1;
             subpageDirect = 0;
         }, 2000);
-        //console.log("subpageDirect");
     }
 
     $(active + " .lo-con").show();
 
     timeout = setTimeout(function() {
-
-	    //pfVideoShow(videoIndex);
 
         $(active + " .lo-con")
             .css('opacity','1')
@@ -163,7 +158,6 @@ var showPage = function() {
         galleryRefresh();
     }
 
-    console.log("ShowPage");
 }
 
 var loadpageChecker = () => {
