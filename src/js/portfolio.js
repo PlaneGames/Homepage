@@ -355,7 +355,9 @@ var book_img = [
                     timeout = setTimeout(function() {
                         active = "#page-portfolio";
                         showPage();
+                        portfolioVideoIndex = pfVideoSet(index);
                         $('.video').empty();
+                        pfVideoShow(portfolioVideoIndex);
                         galleryResize();
                         _galleryRefresh();
                         gallerySelect = -1;
