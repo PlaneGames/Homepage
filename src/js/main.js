@@ -90,6 +90,10 @@ var showPage = function() {
     // lo-con Hide
     $('.lo-con').css('opacity','0');
     $('.lo-con').hide();
+    var video1 = $('#video-dr3inst');
+    var video2 = $('#video-dr3creator');
+
+    $('.video').empty();
 
     if (subpageDirect >= 1) {
         active = "#page-portfolio";
@@ -109,6 +113,9 @@ var showPage = function() {
 
     timeout = setTimeout(function() {
 
+	    $('.video:nth-of-type(1)').append(video1);
+        $('.video:nth-of-type(2)').append(video2);
+
         $(active + " .lo-con")
             .css('opacity','1')
             .css('transition','1s');
@@ -118,6 +125,8 @@ var showPage = function() {
     if (active == "#page-portfolio") {
         galleryRefresh();
     }
+
+    console.log("ShowPage");
 }
 
 var loadpageChecker = () => {
