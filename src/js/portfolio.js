@@ -274,10 +274,7 @@ var book_img = [
                     if (galleryMode != 0) {
                         active = "#page-dr3";
                         showPage();
-                        portfolioVideoIndex = pfVideoSet(index);
-                        $('.video').empty();
-                        projectResizing();
-                        pfVideoShow(portfolioVideoIndex);
+                        pfVideoReset(index);
                     } else {
                         return;
                     }
@@ -355,9 +352,7 @@ var book_img = [
                     timeout = setTimeout(function() {
                         active = "#page-portfolio";
                         showPage();
-                        portfolioVideoIndex = pfVideoSet(index);
-                        $('.video').empty();
-                        pfVideoShow(portfolioVideoIndex);
+                        pfVideoReset(index);
                         galleryResize();
                         _galleryRefresh();
                         gallerySelect = -1;

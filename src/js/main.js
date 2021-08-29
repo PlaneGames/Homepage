@@ -119,6 +119,14 @@ var pfVideoShow = function(videoIndex) {
     console.log("pfVideoShow : " + videoIndex + "/ maxIndex : " + maxIndex);
 }
 
+var pfVideoReset = function(index) {
+    if (portfolioSubVideo[index][0] != "") {
+        portfolioVideoIndex = pfVideoSet(index);
+        $('.video').empty();
+        pfVideoShow(portfolioVideoIndex);
+    }
+}
+
 var showPage = function() {
 
     // lo-con Hide
