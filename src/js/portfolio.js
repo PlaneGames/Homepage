@@ -363,7 +363,7 @@ var book_img = [
                     $('.port-img:'+img_index)
                         .css('opacity','1')
                         .css('transition','.5s');
-                    galleryResize();
+                    galleryResize();    // 이 구간에서 레이아웃 업데이트 단계 실행으로 인한 성능 저하 발생.
                     galleryCentering(index);
                     $('.port-imgcon').css('transition','.0s');
                     $('.port-img').show();
@@ -371,11 +371,10 @@ var book_img = [
                         .css('opacity','0')
                         .css('transition','.0s');
                     $('.port-imgcon').css('transition','.5s');
+                    $('.port-img')
+                        .css('opacity','0.6')
+                        .css('transition','.5s');
                     timeout = setTimeout(function() {
-                        $('.port-img')
-                            .css('opacity','0.6')
-                            .css('transition','.5s');
-                        //galleryResize();
                         galleryCentering(3.5);
                         gallerySelect = -1;
                     }, 600);
