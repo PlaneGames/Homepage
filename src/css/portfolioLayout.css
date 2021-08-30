@@ -62,11 +62,18 @@
     height: 49%;
 }
 .po-h50 {
-    height: 20vw;
+    height: 25vw;
     max-height: 250px;
+}
+.po-h70 {
+    height: 35vw;
+    max-height: 350px;
 }
 .po-h100 {
     height: 20vw;
+}
+.po-w70 {
+    width: 70%;
 }
 .po-w99 {
     width: 99%;
