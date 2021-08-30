@@ -459,7 +459,7 @@ var book_img = [
         }
 
         var poFTResizing = function(size) {
-            $(':root').css("--loreImageSizeUp", size);
+            $(':root').css("--loreImageSizeUp", ""+size+"");
 
             var ftTitleMarginTB = Math.min(vw(6), 60);
             var ftLoreMarginT   = Math.min(vw(2), 20);

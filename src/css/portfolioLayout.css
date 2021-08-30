@@ -72,9 +72,9 @@
 .po-loreimagebox {
     position: relative;
     justify-content: center;
-    
-    width: calc((var(--loreImageW) * 1vw) * var(--loreImageSizeUp) - 16px);
-    height: calc((var(--loreImageH) * 1vw) * var(--loreImageSizeUp) - 16px);
+
+    width: calc((var(--loreImageW) * 1vw) * var(--loreImageSizeUp));
+    height: calc((var(--loreImageH) * 1vw) * var(--loreImageSizeUp));
     max-width: calc((var(--loreImageW) * 10px) * var(--loreImageSizeUp));
     max-height: calc((var(--loreImageH) * 10px) * var(--loreImageSizeUp));
 }
