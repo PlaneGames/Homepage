@@ -15,6 +15,32 @@
     max-height: 500px;
 }
 
+.po-freecon {
+    display: flex;
+    flex-direction: row;
+    
+    flex-wrap: wrap;
+
+    position: relative;
+
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: calc(100% - 16px);
+    max-width: 1000px;
+    height: auto;
+}
+
+.po-freetext-title {
+    margin-top: 6vw;
+    margin-bottom: 6vw;
+}
+
+.po-freetext-lore {
+    margin-top: 2vw;
+    margin-bottom: 5vw;
+}
+
 .po-line {
     position: relative;
 
@@ -90,10 +116,24 @@
 .po-pr-w50-w100 {
     width: 50%;
 }
+.po-pr-h50-h70 {
+    height: 25vw;
+    max-height: 250px;
+}
+.po-pr-h70-h100 {
+    height: 30vw;
+    max-height: 350px;
+}
 .po-pr-h100-h50 {
     height: 100%;
 }
 .po-pr-h49-auto {
+    height: auto;
+}
+.po-pr-h50-auto {
+    height: auto;
+}
+.po-pr-h70-auto {
     height: auto;
 }
 .po-pr-h49-h48 {

@@ -451,11 +451,24 @@ var book_img = [
         //#region  --- Project Setting ---
         var poConResizing = function(w, h, maxw, maxh, dire) {
             $('.po-con')
-                .css('width',w)
-                .css('max-width',maxw)
-                .css('height',h)
-                .css('max-height',maxh)
-                .css('flex-direction',dire);
+                .css('width', w)
+                .css('max-width', maxw)
+                .css('height', h)
+                .css('max-height', maxh)
+                .css('flex-direction', dire);
+        }
+
+        var poFTResizing = function() {
+            var ftTitleMarginTB = Math.min(vw(6), 60);
+            var ftLoreMarginT   = Math.min(vw(2), 20);
+            var ftLoreMarginB   = Math.min(vw(5), 50);
+
+            $('.po-freetext-title')
+                .css('margin-top', ftTitleMarginTB + 'px')
+                .css('margin-bottom', ftTitleMarginTB + 'px');
+            $('.po-freetext-lore')
+                .css('margin-top', ftLoreMarginT + 'px')
+                .css('margin-bottom', ftLoreMarginB + 'px');
         }
 
         var projectResizing = function() {
@@ -501,15 +514,26 @@ var book_img = [
                     $('.po-h70')
                         .css('height',vw(35)-margin_h/2+'px')
                         .css('max-height','350px');
-
                     $('.po-pr-w50-w100').css('width','50%');
                     $('.po-pr-w70-w100').css('width','70%');
                     $('.po-pr-w92-w100').css('width','92%');
+                    $('.po-pr-h50-h70')
+                        .css('height',vw(25)-margin_h/2+'px')
+                        .css('max-height','250px');
+                    $('.po-pr-h70-h100')
+                        .css('height',vw(30)-margin_h/2+'px')
+                        .css('max-height','350px');
                     $('.po-pr-h100-h50').css('height','100%');
                     $('.po-pr-h49-auto').css('height','49%');
+                    $('.po-pr-h50-auto').css('height','50%');
+                    $('.po-pr-h70-auto')
+                        .css('height',vw(35)-margin_h/2+'px')
+                        .css('max-height','350px');
                     $('.po-pr-h49-h48').css('height','49%');
                     $('.po-pr-h100-auto').css('height','100%');
                     $('.po-pr-show-hide').css('display','block');
+                    poFTResizing();
+
                 } else {
                     poConResizing(vw(100)-margin_w/2+'px', 'auto', '1000px', '2000px', 'column');
 
@@ -533,17 +557,25 @@ var book_img = [
                     $('.po-h70')
                         .css('height',vw(70)-margin_h/2+'px')
                         .css('max-height',vw(70)-margin_h/2+'px');
-
                     $('.po-pr-w50-w100').css('width','100%');
                     $('.po-pr-w70-w100').css('width','100%');
                     $('.po-pr-w92-w100').css('width','100%');
+                    $('.po-pr-h50-h70')
+                        .css('height',vw(35)-margin_h/2+'px')
+                        .css('max-height','350px');
+                    $('.po-pr-h70-h100')
+                        .css('height',vw(50)-margin_h/2+'px')
+                        .css('max-height','500px');
                     $('.po-pr-h100-h50').css('height',vw(50)-margin_h/2+'px');
                     $('.po-pr-h49-h48').css('height','48%');
                     $('.po-pr-h49-auto').css('height','auto');
+                    $('.po-pr-h50-auto').css('height','auto');
+                    $('.po-pr-h70-auto').css('height','auto');
                     $('.po-pr-h100-auto').css('height','auto');
 
                     $('.po-titlesidebar')
                         .css('border','none');
+                    poFTResizing();
                 }
             }
         }
