@@ -1,5 +1,7 @@
 :root {
-    --loreImageSizeUp: 1;
+    --loreImageSizeUp: 0.7;
+    --loreImageW: 0;
+    --loreImageH: 0;
 }
 
 .po-con {
@@ -65,6 +67,16 @@
     justify-content: center;
 
     width: 40vw;
+}
+
+.po-loreimagebox {
+    position: relative;
+    justify-content: center;
+    
+    width: calc((var(--loreImageW) * 1vw) * var(--loreImageSizeUp) - 16px);
+    height: calc((var(--loreImageH) * 1vw) * var(--loreImageSizeUp) - 16px);
+    max-width: calc((var(--loreImageW) * 10px) * var(--loreImageSizeUp));
+    max-height: calc((var(--loreImageH) * 10px) * var(--loreImageSizeUp));
 }
 
 .po-pr1 {

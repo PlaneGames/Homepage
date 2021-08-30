@@ -458,7 +458,9 @@ var book_img = [
                 .css('flex-direction', dire);
         }
 
-        var poFTResizing = function() {
+        var poFTResizing = function(size) {
+            $(':root').css("--loreImageSizeUp", size);
+
             var ftTitleMarginTB = Math.min(vw(6), 60);
             var ftLoreMarginT   = Math.min(vw(2), 20);
             var ftLoreMarginB   = Math.min(vw(5), 50);
@@ -532,7 +534,7 @@ var book_img = [
                     $('.po-pr-h49-h48').css('height','49%');
                     $('.po-pr-h100-auto').css('height','100%');
                     $('.po-pr-show-hide').css('display','block');
-                    poFTResizing();
+                    poFTResizing(0.7);
 
                 } else {
                     poConResizing(vw(100)-margin_w/2+'px', 'auto', '1000px', '2000px', 'column');
@@ -575,7 +577,7 @@ var book_img = [
 
                     $('.po-titlesidebar')
                         .css('border','none');
-                    poFTResizing();
+                    poFTResizing(1);
                 }
             }
         }
