@@ -1,3 +1,7 @@
+:root {
+    --loreImageSizeUp: 1;
+}
+
 .po-con {
     display: flex;
     flex-direction: row;
