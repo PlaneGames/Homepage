@@ -190,7 +190,7 @@ var loadpageChecker = () => {
     $(document).ready(function() {
 
         var _galleryButtonClick = function(index) {
-            $(".gal-con:nth-of-type("+(index+1)+")").on('click', function(){
+            $(".gal-con:nth-of-type("+(index+1)+")").on('click', function() {
                 // Resume -> Portfolio -> Subpage
                 jQuery('html > head > title').text(mainTitle + portfolioTitle);
                 history.pushState({page: 2, data: 0}, "title 2", "/pf");
