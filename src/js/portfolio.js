@@ -461,20 +461,20 @@ var book_img = [
         var poFTResizing = function(size) {
             $(':root').css("--loreImageSizeUp", ""+size+"");
 
-            var ftTitleMarginTB = Math.min(vw(6), 60);
-            var ftLoreMarginTB   = Math.min(vw(1), 10);
-            var fiLoreMarginT   = Math.min(vw(7), 70);
-            var fiLoreMarginB   = Math.min(vw(1), 10);
+            var ftTitleMarginTB = clamp(vw(6), 10, 60);
+            var ftLoreMarginTB  = clamp(vw(1), 10, 20);
+            var fiLoreMarginT   = clamp(vw(5), 70, 90);
+            var fiLoreMarginB   = clamp(vw(1), 5, 10);
 
             $('.po-freetext-title')
-                .css('margin-top', ftTitleMarginTB + 'px')
-                .css('margin-bottom', ftTitleMarginTB + 'px');
-            $('.po-freetext-lore')
+                .css('padding-top', ftTitleMarginTB + 'px')
+                .css('padding-bottom', ftTitleMarginTB + 'px');
+            $('.po-freetext-lore p')
                 .css('margin-top', ftLoreMarginTB + 'px')
                 .css('margin-bottom', ftLoreMarginTB + 'px');
             $('.po-loreimagebox')
-                .css('margin-top', fiLoreMarginT + 'px')
-                .css('margin-bottom', fiLoreMarginB + 'px');
+                .css('padding-top', fiLoreMarginT + 'px')
+                .css('padding-bottom', fiLoreMarginB + 'px');
         }
 
         var projectResizing = function() {

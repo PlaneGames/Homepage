@@ -38,13 +38,13 @@
 }
 
 .po-freetext-title {
-    margin-top: 6vw;
-    margin-bottom: 6vw;
+    padding: 0px;
+    margin: 0px;
 }
 
 .po-freetext-lore {
-    margin-top: 2vw;
-    margin-bottom: 5vw;
+    padding: 0px;
+    margin: 0px;
 }
 
 .po-line {
@@ -72,7 +72,6 @@
 .po-loreimagebox {
     position: relative;
     justify-content: center;
-
     width: calc((var(--loreImageW) * 1vw) * var(--loreImageSizeUp));
     height: calc((var(--loreImageH) * 1vw) * var(--loreImageSizeUp));
     max-width: calc((var(--loreImageW) * 10px) * var(--loreImageSizeUp));
