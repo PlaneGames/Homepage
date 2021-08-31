@@ -462,15 +462,19 @@ var book_img = [
             $(':root').css("--loreImageSizeUp", ""+size+"");
 
             var ftTitleMarginTB = Math.min(vw(6), 60);
-            var ftLoreMarginT   = Math.min(vw(2), 20);
-            var ftLoreMarginB   = Math.min(vw(5), 50);
+            var ftLoreMarginTB   = Math.min(vw(1), 10);
+            var fiLoreMarginT   = Math.min(vw(7), 70);
+            var fiLoreMarginB   = Math.min(vw(1), 10);
 
             $('.po-freetext-title')
                 .css('margin-top', ftTitleMarginTB + 'px')
                 .css('margin-bottom', ftTitleMarginTB + 'px');
             $('.po-freetext-lore')
-                .css('margin-top', ftLoreMarginT + 'px')
-                .css('margin-bottom', ftLoreMarginB + 'px');
+                .css('margin-top', ftLoreMarginTB + 'px')
+                .css('margin-bottom', ftLoreMarginTB + 'px');
+            $('.po-loreimagebox')
+                .css('margin-top', fiLoreMarginT + 'px')
+                .css('margin-bottom', fiLoreMarginB + 'px');
         }
 
         var projectResizing = function() {
