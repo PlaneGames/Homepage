@@ -473,8 +473,8 @@ var book_img = [
                 .css('margin-top', ftLoreMarginTB + 'px')
                 .css('margin-bottom', ftLoreMarginTB + 'px');
             $('.po-loreimagebox')
-                .css('padding-top', fiLoreMarginT + 'px')
-                .css('padding-bottom', fiLoreMarginB + 'px');
+                .css('margin-top', fiLoreMarginT + 'px')
+                .css('margin-bottom', fiLoreMarginB + 'px');
         }
 
         var projectResizing = function() {
