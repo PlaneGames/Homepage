@@ -225,14 +225,6 @@ header {
     rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-.lo-subtitleborder {
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 3px;
-    border-radius: 0px;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-}
-
 @media all and (max-width: 800px) {
     header {
         margin-top: 80px;
