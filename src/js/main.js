@@ -52,7 +52,7 @@ portfolioSubTitle       = [
 ];
 
 portfolioSubVideo       = [
-    ["#video-dr3inst", "#video-dr3creator"],
+    ["#video-dr3inst", "#video-dr3creator", "#video-dr3HM"],
     [""],
     [""],
     [""],
