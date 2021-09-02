@@ -60,7 +60,7 @@
                         history.pushState({page: 2, data: 0}, "title 2", "/pf");
                         history.replaceState({page: 2, data: 0}, "title 1", "/pf");
                         active = portfolioSubPage[index];
-                        subpageDirect = index + 1;
+                        subpageDirect = index;
                     } else {
                         jQuery('html > head > title').text(mainTitle + portfolioTitle);
                         history.pushState({page: 2, data: 0}, "title 1", "/pf");
