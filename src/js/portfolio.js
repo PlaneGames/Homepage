@@ -271,7 +271,7 @@ var book_img = [
                 }, 2000);
                 timeout = setTimeout(function() {
                     if (galleryMode != 0) {
-                        active = "#page-dr3";
+                        active = portfolioSubPage[index];
                         showPage();
                         pfVideoReset(index);
                     } else {

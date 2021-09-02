@@ -59,7 +59,7 @@
                         jQuery('html > head > title').text(mainTitle + portfolioTitle);
                         history.pushState({page: 2, data: 0}, "title 2", "/pf");
                         history.replaceState({page: 2, data: 0}, "title 1", "/pf");
-                        active = "#page-dr3";
+                        active = portfolioSubPage[index];
                         subpageDirect = index + 1;
                     } else {
                         jQuery('html > head > title').text(mainTitle + portfolioTitle);
@@ -87,6 +87,7 @@
     <div include-html="../portfolio.html" id="page-portfolio"></div>
 
     <div include-html="../pages/dr3.html" id="page-dr3"></div>
+    <div include-html="../pages/dr2.html" id="page-dr2"></div>
 
     <script src="../src/js/main.js"></script>
 

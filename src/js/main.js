@@ -22,10 +22,22 @@ var mainTitle       = "PLANE | ";
 var resumeTitle     = "Game Developer ";
 var portfolioTitle  = "Portfolio "
 
+var portfolioSubPage;
 var portfolioVideoIndex;
 var portfolioUrl;
 var portfolioSubTitle;
 var portfolioSubVideo;
+
+portfolioSubPage        = [
+    "#page-dr3",
+    "#page-dr2",
+    "#page-dr3",
+    "#page-dr3",
+    "#page-dr3",
+    "#page-dr3",
+    "#page-dr3",
+    "#page-dr3"
+];
 
 portfolioVideoIndex     = [];
 
@@ -195,7 +207,7 @@ var loadpageChecker = () => {
                 jQuery('html > head > title').text(mainTitle + portfolioTitle);
                 history.pushState({page: 2, data: 0}, "title 2", "/pf");
 
-                active = "#page-dr3";
+                active = portfolioSubPage[index];
                 subpageDirect = index + 1;
                 
                 $('.lo-con')
