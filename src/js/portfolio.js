@@ -599,6 +599,7 @@ var book_img = [
         });
 
         window.onpopstate = function(event) {
+            window.scrollTo(0, 0);
             if (event.state.page == 1) {
                 active = "#page-resume";
                 jQuery('html > head > title').text(mainTitle + resumeTitle);
