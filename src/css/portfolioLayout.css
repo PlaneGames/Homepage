@@ -269,7 +269,9 @@
 
 .po-box .po-button {
     height: 1.5em;
-    width: 50%;
+    width: auto;
+    padding-left: .5em;
+    padding-right: .5em;
     margin-left: auto;
     margin-right: auto;
     border: 1.5px solid black;
