@@ -473,8 +473,9 @@ var book_img = [
                 .css('margin-top', ftLoreMarginTB + 'px')
                 .css('margin-bottom', ftLoreMarginTB + 'px');
             $('.po-loreimagebox')
-                .css('margin-top', fiLoreMarginT + 'px')
                 .css('margin-bottom', fiLoreMarginB + 'px');
+            $('.po-boxspacetop')
+                .css('margin-top', fiLoreMarginT + 'px')
         }
 
         var projectResizing = function() {

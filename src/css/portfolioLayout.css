@@ -90,6 +90,10 @@
     max-height: calc((var(--loreImageH) * 10px) * var(--loreImageSizeUp));
 }
 
+.po-boxspacetop {
+    margin-top: 10px;
+}
+
 .po-pr1 {
     order: 0;
 }
