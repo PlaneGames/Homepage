@@ -163,7 +163,8 @@ var showPage = function() {
         $(active + " .lo-con")
             .css('opacity','1')
             .css('transition','1s');
-
+        window.scrollTo(0, 0);
+        
     }, 700);
 
     if (active == "#page-portfolio") {
