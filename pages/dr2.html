@@ -69,28 +69,58 @@
         </div>
 
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
                     &nbsp상점을 열람하는 과정은 굉장히 직관적이며 단순합니다. 상점이 열렸는지 확인하는 변수가 참일경우, 상점에 관련된 UI 및 오브젝트들을 생성하는 구조로 되어있습니다.
                     개발 당시에는 만들어진 아이템과 카테고리가 적고, 상점의 UI가 단순하기에 어느정도 구현이 가능했을 것입니다.
-                    하지만 이러한 점들이 게임의 업데이트와 존속을 방해했다고 해도 무방했습니다.
+                    하지만 이러한 점들이 <strong>게임의 업데이트와 존속을 방해</strong>했다고 해도 무방했습니다.
                     Dungeon Rpg 3 : Hero를 제작하기에 앞서 Dungeon Rpg 2의 리소스를 사용하지 않게 된 계기가 되기도 했습니다.
                 </p>
             </div>
         </div>
 
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 45; --loreImageH: 61;">
+                <div class="po-img" style="height: 100%; width: 100%; background-image: url('../src/images/dr2HMShopCode.png');">
+                </div>
+            </div>
+        </div>
+
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="color: rgba(0, 0, 0, 0.5); font-weight: bolder;">
+                    - NPC를 통해 상점 변수가 활성화 되면, 해당 상점에 필요한 오브젝트들을 생성한다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
                     &nbsp아이템을 중점으로한 수집형 RPG게임의 형태는 아니었기 때문에, 당장 개발에는 큰 타격이 없었으나 몬스터는 아니었습니다.
                     게임의 플레이 타임과 난이도를 위해서는 많은 종류의 몬스터가 필요했습니다. 하지만 몬스터 시스템도 똑같은 문제점을 가지고 있었습니다.
                 </p>
             </div>
         </div>
 
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 100; --loreImageH: 42.6;">
+                <div class="po-img" style="height: 100%; width: 100%; background-image: url('../src/images/dr2HMMobCode.png');">
+                </div>
+            </div>
+        </div>
+
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="color: rgba(0, 0, 0, 0.5); font-weight: bolder;">
+                    - 각 몬스터 오브젝트의 기능에 대한 리소스는 모두 각 오브젝트에서 구현되고 있다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
                     &nbsp관리하고 양산하기 좋은 몬스터 시스템과는 거리가 먼 설계 방식이었습니다. 상위 오브젝트를 통하지 않고 각자 구현된 시스템은,
                     관리에 있어서 많이 비효율적이었습니다. 몬스터를 만들 때 마다 일일이 기능들을 특성에 맞게 수정해야 했고, 이렇게 수정된 기능들은 직관적이지도 않아
                     버그가 발생했을 경우 판단하기가 쉽지 않았습니다. <strong>관리의 용이성이 생산성에 미치는 영향</strong>에 대해 고민해볼 수 있는 기회였습니다.
