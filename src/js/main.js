@@ -31,7 +31,7 @@ var portfolioSubVideo;
 portfolioSubPage        = [
     "#page-dr3",
     "#page-dr2",
-    "#page-dr3",
+    "#page-tud",
     "#page-dr3",
     "#page-dr3",
     "#page-dr3",
