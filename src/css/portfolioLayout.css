@@ -210,6 +210,15 @@
     color:rgb(54, 54, 54);
 }
 
+.po-subbox p lstrong {
+    font-weight: bolder;
+    font-size: 12px;
+    letter-spacing: .1em;
+    line-height: 1.5em;
+
+    color:rgb(46, 53, 61);
+}
+
 .po-subbox p strong {
     font-weight: bolder;
     font-size: 12px;
