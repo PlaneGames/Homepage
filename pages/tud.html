@@ -246,9 +246,6 @@
                     &nbsp이 트리거를 이용하는 방법은 간단합니다. 열거형으로 보기좋게 나열된 기능들을 골라 사용하는 것입니다.
                     trig_info 변수에 사용할 기능들을 위와 같이 선언하는 것입니다. 위의 트리거는 <lstrong>'objPlayer 엔티티가 x, y좌표에 있을 때, 0번 컷씬을 실행한다.'</lstrong>라는 기능을 가지고 있습니다.
                     물론 여기에는 사용하는 기능에 따라 구문이 달라질 수는 있습니다. 그러나 항상 위와같은 패턴으로 이루어져 다루기가 쉽습니다.
-                    <br><br>
-                    &nbsp이러한 방식도 조건과 상황이 많아질 수록 구문의 형태를 외우기가 복잡해진다는 단점이 있으므로, 일종의 사용 메뉴얼이 필요할 수 있겠다는 생각이 듭니다.
-                    사용 메뉴얼만 잘 숙지한다면, 게임을 모딩하는 듯한 편리함을 느낄 수 있을 것입니다.
                 </p>
             </div>
         </div>
@@ -257,6 +254,28 @@
             <div class="po-loreimagebox po-boxspacetop" style="--loreImageW: 62; --loreImageH: 66;">
                 <div class="po-img lo-loreimageborder" style="height: 100%; width: 100%; background-image: url('../src/images/tudHMTriggerCode2.png');">
                 </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp트리거의 발동 조건이 <lstrong>ENTITY_AT_POS</lstrong> 일 경우 아래와 같은 문장들이 실행됩니다.
+                    3번 인자는 인스턴스 id 값을 참조하며, 이 인스턴스가 메모리 상에 존재해야 첫 번째 조건이 성립됩니다.
+                    두 번째 조건은 해당 인스턴스가 4, 5번 인자인 x, y좌표에 있는지를 묻습니다.
+                    다음으로 컷씬을 실행시킬 것인지, 이벤트씬을 실행시킬 것인지를 묻습니다.
+                    컷씬을 실행시키는 경우, id값이 2번 인자값인 컷씬의 cutscene_is_ing 변수에 true 값을 대입하는 것으로
+                    해당 컷씬이 활성화 되게 됩니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp이러한 방식도 <lstrong>조건과 상황이 많아질 수록 구문의 형태를 외우기가 복잡해진다</lstrong>는 단점이 있으므로, 일종의 사용 메뉴얼이 필요할 수 있겠다는 생각이 듭니다.
+                    사용 메뉴얼만 잘 숙지한다면, 게임을 모딩하는 듯한 편리함을 느낄 수 있을 것입니다.
+                </p>
             </div>
         </div>
 
