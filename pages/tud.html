@@ -167,10 +167,10 @@
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p>
                     &nbspNPC가 맵에 생성되었을 때 함수를 간단하게 호출하는 것으로써 다이얼로그 이벤트를 발생시켰습니다.
-                    이 시스템에는 NPC가 몇초간 어느 방향으로 움직일지, 몇초 후에 대화를 발생시킬지, 이 대화는 넘길 수 있거나
+                    이 시스템에는 NPC가 몇 초간 어느 방향으로 움직일지, 몇 초 후에 대화를 발생시킬지, 이 대화는 넘길 수 있거나
                     딜레이 후 자동으로 넘어갈 수 있는지 등 세부적인 설계에 따라 만들어졌습니다.<br><br>
                     &nbsp하지만 이 설계는 <lstrong>구현 자체가 복잡</lstrong>하며, 모든 이벤트가 NPC를 통해서만 발생하는 것이 아니므로 효율적이라고 할 수 없었습니다.
-                    그래서 조금 다른방식으로 새롭게 설계해보았습니다. 
+                    그래서 조금 다른 방식으로 새롭게 설계해보았습니다. 
                 </p>
             </div>
         </div>
@@ -185,7 +185,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="color: rgba(0, 0, 0, 0.5); font-weight: bolder;">
-                    - 개발이 용이하도록 테스트시 트리거가 어느 컷씬에 연결되어있는지 보이도록 점선 효과를 구현해 시각화하였습니다.
+                    - 개발이 용이하도록, 테스트 시에 트리거가 어느 컷씬에 연결되어 있는지 점선 효과를 구현해 시각화하였습니다.
                 </p>
             </div>
         </div>
@@ -193,7 +193,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p>
-                    &nbsp위의 상황에서는 플레이어가 트리거를 밟으면 카메라가 컷씬의 위치를 보게되고, 몇초 뒤에 화면이 FadeIn과 동시에 PLANE STUDIO 문구가 나타납니다.
+                    &nbsp위의 상황에서는 플레이어가 트리거를 밟으면 카메라가 컷씬의 위치를 보게 되고, 몇 초 뒤에 화면이 FadeIn과 동시에 PLANE STUDIO 문구가 나타납니다.
                     이 과정을 구현하기 위해서는 <strong>트리거</strong> 오브젝트와 <strong>컷씬</strong> 오브젝트가 필요합니다. 트리거는 컷씬 이벤트의 발동을, 컷씬은 이벤트 효과 구현의 기능을 담당합니다.
                     <br><br>
                 </p>
@@ -227,7 +227,7 @@
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p>
                     &nbsp트리거는 컷씬을 발동시키는 매개체이므로, 발동 조건 또한 가지고 있습니다.
-                    룸에 배치되었을 경우, 특정 오브젝트와 닿았을 경우, 특정 오브젝트가 사거리 안에 들어왔을 경우 등 여러가지 상황들이 존재합니다.<br>
+                    룸에 배치되었을 경우, 특정 오브젝트와 닿았을 경우, 특정 오브젝트가 사거리 안에 들어왔을 경우 등 여러 가지 상황들이 존재합니다.<br>
                     이러한 모든 상황들이 <lstrong>조건을 만족할 경우 특정 컷씬을 발동시키는 것</lstrong>입니다.
                 </p>
             </div>
@@ -243,9 +243,9 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p>
-                    &nbsp이 트리거를 이용하는 방법은 간단합니다. 열거형으로 보기좋게 나열된 기능들을 골라 사용하는 것입니다.
+                    &nbsp이 트리거를 이용하는 방법은 간단합니다. 열거형으로 보기 좋게 나열된 기능들을 골라 사용하는 것입니다.
                     trig_info 변수에 사용할 기능들을 위와 같이 선언하는 것입니다. 위의 트리거는 <lstrong>'objPlayer 엔티티가 x, y좌표에 있을 때, 0번 컷씬을 실행한다.'</lstrong>라는 기능을 가지고 있습니다.
-                    물론 여기에는 사용하는 기능에 따라 구문이 달라질 수는 있습니다. 그러나 항상 위와같은 패턴으로 이루어져 다루기가 쉽습니다.
+                    물론 여기에는 사용하는 기능에 따라 구문이 달라질 수는 있습니다. 그러나 항상 위와 같은 패턴으로 이루어져 다루기가 쉽습니다.
                 </p>
             </div>
         </div>
@@ -265,7 +265,7 @@
                     두 번째 조건은 해당 인스턴스가 4, 5번 인자인 x, y좌표에 있는지를 묻습니다.
                     다음으로 컷씬을 실행시킬 것인지, 이벤트씬을 실행시킬 것인지를 묻습니다.
                     컷씬을 실행시키는 경우, id값이 2번 인자값인 컷씬의 cutscene_is_ing 변수에 true 값을 대입하는 것으로
-                    해당 컷씬이 활성화 되게 됩니다.
+                    해당 컷씬을 활성화 시킵니다.
                 </p>
             </div>
         </div>
@@ -275,6 +275,40 @@
                 <p>
                     &nbsp이러한 방식도 <lstrong>조건과 상황이 많아질 수록 구문의 형태를 외우기가 복잡해진다</lstrong>는 단점이 있으므로, 일종의 사용 메뉴얼이 필요할 수 있겠다는 생각이 듭니다.
                     사용 메뉴얼만 잘 숙지한다면, 게임을 모딩하는 듯한 편리함을 느낄 수 있을 것입니다.
+                    <br><br><br>
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: 40%;">
+            <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
+                <h2>
+                    컷씬 시스템
+                </h2>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox" style="--loreImageW: 16; --loreImageH: 16;">
+                <div class="po-img" style="image-rendering: pixelated; height: 100%; width: 100%; background-image: url('../src/images/tudHMCsIcon.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="color: rgba(0, 0, 0, 0.5); font-weight: bolder;">
+                    - 슬레이트를 연상시키는 컷씬 아이콘.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp컷씬은 여러가지 상황을 정해진 순서에 따라 </strong>순차적</strong>으로 보여줄 수 있는 능력을 가지고 있습니다.
+                    뿐만 아니라 일종의 타임라인의 역할도 수행하여, 경우에 따라 컷씬이 진행되는 속도나 텀을 지정할 수 있습니다.
+                    컷씬 시스템은 다양한 연출을 <lstrong>보다 쉽고 간결한 방법으로 통일하여 나타내는 것</lstrong>에 의의를 두어 제작되었습니다.
                 </p>
             </div>
         </div>
