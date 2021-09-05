@@ -65,13 +65,13 @@ portfolioSubTitle       = [
 
 portfolioSubVideo       = [
     ["#video-dr3inst", "#video-dr3creator", "#video-dr3HM"],
-    [""],
-    [""],
-    [""],
-    [""],
-    [""],
-    [""],
-    [""],
+    [],
+    ["#video-tuddemo"],
+    [],
+    [],
+    [],
+    [],
+    [],
 ]
 
 $('.lo-con').hide();
@@ -113,28 +113,32 @@ var hideLoading = function() {
         .css('transition','.2s');
 }
 
-var pfVideoSet = function(index) {
-    var maxIndex    = portfolioSubVideo[index].length;
-    var videoIndex  = [maxIndex];
-    for (var i = 0; i < maxIndex; i ++) {
-        videoIndex[i] = $(portfolioSubVideo[index][i]);
-    }
+var pfVideoSet = function() {
+    var videoIndex  = [];
+    var indexnum    = 0;
+    for(var i = 0; i < 8; i ++)
+        for(var j = 0; j < portfolioSubVideo[i].length; j ++) {
+            videoIndex[indexnum] = $(portfolioSubVideo[i][j]);
+            indexnum++;
+        }
+
+    console.log(indexnum);
     return videoIndex;
 }
 
-var pfVideoShow = function(videoIndex) {
-    var maxIndex    = videoIndex.length;
-    for (var i = 0; i < maxIndex; i ++) {
-        $('.video:eq('+(i)+')').append(videoIndex[i]);
+portfolioVideoIndex = pfVideoSet();
+
+var pfVideoShow = function() {
+    console.log(portfolioVideoIndex.length);
+    for (var i = 0; i < portfolioVideoIndex.length; i ++) {
+        $('.video:eq('+(i)+')').append(portfolioVideoIndex[i]);
     }
 }
 
-var pfVideoReset = function(index) {
-    if (portfolioSubVideo[index][0] != "") {
-        portfolioVideoIndex = pfVideoSet(index);
-        $('.video').empty();
-        pfVideoShow(portfolioVideoIndex);
-    }
+var pfVideoReset = function() {
+    portfolioVideoIndex = pfVideoSet();
+    $('.video').empty();
+    pfVideoShow();
 }
 
 var showPage = function() {

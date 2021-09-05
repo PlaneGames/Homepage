@@ -273,7 +273,7 @@ var book_img = [
                     if (galleryMode != 0) {
                         active = portfolioSubPage[index];
                         showPage();
-                        pfVideoReset(index);
+                        pfVideoReset();
                     } else {
                         return;
                     }
@@ -352,7 +352,7 @@ var book_img = [
                     timeout = setTimeout(function() {
                         active = "#page-portfolio";
                         showPage();
-                        pfVideoReset(index);
+                        pfVideoReset();
                         galleryResize();
                         _galleryRefresh();
                         gallerySelect = -1;
