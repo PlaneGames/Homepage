@@ -126,8 +126,6 @@ var pfVideoSet = function() {
     return videoIndex;
 }
 
-portfolioVideoIndex = pfVideoSet();
-
 var pfVideoShow = function() {
     console.log(portfolioVideoIndex.length);
     for (var i = 0; i < portfolioVideoIndex.length; i ++) {
