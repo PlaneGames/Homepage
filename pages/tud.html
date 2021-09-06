@@ -142,13 +142,13 @@
                     HOW MADE ?
                 </h3>
                 <h2>
-                    이벤트 시스템
+                    스토리 전개를 위한 씬
                 </h2>
             </div>
         </div>
 
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
                     &nbsp기본적인 스토리 라인과, 다양한 종류의 이벤트들을 구사하기 위해서 컷씬이라는 특수한 이벤트 시스템을 설계하게 되었습니다.
                     처음 컷씬과 비슷하게 만들어진 시스템은 NPC에서 이루어지는 다이얼로그 시스템이 있었습니다.
@@ -323,11 +323,101 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p>
-                    &nbsp조금은 복잡해 보일 수 있지만, 열거형 상수로 직관적으로 기능을 파악하기 쉽고 트리거 시스템 만큼 사용하기 간편합니다.
+                    &nbsp조금은 복잡해 보일 수 있지만, 열거형 상수로 직관적으로 기능을 파악하기 쉽고 트리거 시스템 만큼 <lstrong>사용하기 간편</lstrong>합니다.
                     PAUSE는 말 그대로 중지, CAMPOINT는 카메라를 해당 지점으로 이동, ENTITY_CREATE는 엔티티 인스턴스 생성 등등.. 문장 그대로의 기능을 가지고 있습니다.
-                    컷씬은 순차적으로 정해진 시간을 가지고 진행되기 때문에, 항상 구문의 끝에는 대기 시간(1/60초 단위)을 입력해야 합니다.
+                    컷씬은 순차적으로 정해진 시간을 가지고 진행되기 때문에, 항상 <lstrong>구문의 끝에는 대기 시간(1/60초 단위)을 입력</lstrong>해야 합니다.
                     그러므로 위의 예제의 cutscene_info 변수의 구문 중에서 '[CUTSCENE.CAMPOINT, 1546, 567, 180]'에서 180은 지속 시간을 의미하게 됩니다.
+                    <lstrong>마지막으로 [-1]값을 주어 컷씬이 종료됨</lstrong>을 나타냅니다.
                     컷씬은 기능의 종류가 많기에, 주석 처리된 예제와 같은 사용 메뉴얼이 필요할 수 있습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop" style="--loreImageW: 56; --loreImageH: 26;">
+                <div class="po-img lo-loreimageborder" style="height: 100%; width: 100%; background-image: url('../src/images/tudHMCsCode2.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp컷씬의 프로세스 부분부터 구동 방식을 자세하게 살펴보겠습니다. 컷씬의 정보를 담는 <lstrong>cutscene_info</lstrong> 변수는 2차원 배열입니다.
+                    <lstrong>cutscene_scene</lstrong> 변수는 현재 진행되는 컷씬이 몇번째 컷씬인지를 나타냅니다. 초기 값을 0으로 시작해서, 각 컷씬이 끝날 때 마다 1씩 더해줍니다.
+                    <lstrong>cutscene_len</lstrong> 변수는 컷씬의 갯수에 - 1을 한 값입니다.
+                    <lstrong>cutscene_scene</lstrong> 변수의 값이 cutscene_len의 값과 같아질 경우 컷씬 오브젝트를 제거합니다.
+                    컷씬은 이와같은 처리 흐름을 가지고 있습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop" style="--loreImageW: 45; --loreImageH: 58;">
+                <div class="po-img lo-loreimageborder" style="height: 100%; width: 100%; background-image: url('../src/images/tudHMCsCode3.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp<lstrong>cutscene_is_ing의 값이 트리거로 인해 true가 되고, 컷씬 정지 상태가 아닐경우</lstrong>, 컷씬이 실행됩니다.
+                    실행되고 있는 컷씬의 첫번째 인자는 실행할 컷씬의 종류를 나타내므로, 제일 먼저 이를 switch case 문으로 판단합니다.
+                    그 후, 각 처리 방법에 맞게 컷씬이 실행됩니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: 40%;">
+            <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
+                <h2>
+                    몬스터
+                </h2>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp몬스터는 상당히 복잡한 기능들을 개별적으로 가지고 있습니다. 이동 방식, 공격 패턴, 등등..
+                    이런 수많은 패턴들을 보다 쉽게 사용할 수 있어야 하며, 성능 저하를 막기 위해 최적화도 되어 있어야 합니다.
+                    이를 잘 구현하는 것은 예전부터 지금까지의 숙제입니다. 현재까지 TUD에서 개발된 몬스터 시스템에 대해 소개해보도록 하겠습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop" style="--loreImageW: 64; --loreImageH: 36;">
+                <div class="po-img lo-loreimageborder" style="height: 100%; width: 100%; background-image: url('../src/images/tudHMMobGame.gif');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp위의 Steel Larva 몬스터는 트레이드 스킬인 구르기를 가지고 있습니다. 일정 사거리 안에 적이 들어오면 구르기를 시전하고
+                    긴 쿨타임동안 다시 사용할 수 없습니다. 이 구르기의 데미지는 아주 강합니다.<br><br>
+                    &nbspTUD에서 몬스터들은, 각자의 이동 방법에 맞게 이동하는 기능이 있습니다. 또한 개별적으로 배우고있는 스킬들을 사용할 수 있고
+                    스킬을 사용하면 일정 쿨타임동안 해당 스킬을 사용할 수 없습니다. 이때는 다른 스킬을 사용하거나 일반 공격을 할 수 있습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop" style="--loreImageW: 58; --loreImageH: 26;">
+                <div class="po-img lo-loreimageborder" style="height: 100%; width: 100%; background-image: url('../src/images/tudHMMobCode.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbspSteel Larva 몬스터의 무브먼트입니다. 지상에서 걷는 타입이며, 애벌레라 Step BY Step 스타일로 조금 조금씩 끊어서 이동합니다.
+                    이때 move_dt_num 변수의 값만큼의 텀으로 끊어서 이동합니다. move_dt_type이 0이므로 60프레임만큼의 텀을 가지고 끊어서 이동하지만,
+                    move_dt_type이 1일 경우 랜덤 한 프레임만큼 끊어서 이동합니다. 이때는 move_dt_ran_start 변수와 move_dt_ran_end 변수를 필요로 합니다.
                 </p>
             </div>
         </div>
