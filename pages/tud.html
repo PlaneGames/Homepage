@@ -381,7 +381,7 @@
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p>
                     &nbsp몬스터는 상당히 복잡한 기능들을 개별적으로 가지고 있습니다. 이동 방식, 공격 패턴, 등등..
-                    이런 수많은 패턴들을 보다 쉽게 사용할 수 있어야 하며, 성능 저하를 막기 위해 최적화도 되어 있어야 합니다.
+                    이런 수많은 패턴들을 <lstrong>보다 쉽게 사용할 수 있어야 하며, 성능 저하를 막기 위해 최적화도 되어 있어야 합니다.</lstrong>
                     이를 잘 구현하는 것은 예전부터 지금까지의 숙제입니다. 현재까지 TUD에서 개발된 몬스터 시스템에 대해 소개해보도록 하겠습니다.
                 </p>
             </div>
@@ -417,7 +417,58 @@
                 <p>
                     &nbspSteel Larva 몬스터의 무브먼트입니다. 지상에서 걷는 타입이며, 애벌레라 Step BY Step 스타일로 조금 조금씩 끊어서 이동합니다.
                     이때 move_dt_num 변수의 값만큼의 텀으로 끊어서 이동합니다. move_dt_type이 0이므로 60프레임만큼의 텀을 가지고 끊어서 이동하지만,
-                    move_dt_type이 1일 경우 랜덤 한 프레임만큼 끊어서 이동합니다. 이때는 move_dt_ran_start 변수와 move_dt_ran_end 변수를 필요로 합니다.
+                    move_dt_type이 1일 경우 핸덤한 텀으로 끊어서 이동합니다. move_aggro_time은, 대상을 향해 움직일 때의 반응속도입니다. 즉, 값이 60이면
+                    60프레임마다 대상의 위치를 확인하여 해당 위치로 이동하는 로직이 발생됩니다. 반응속도가 제각각일 때 뭔가 생동감 있는 느낌을 받았고,
+                    매 프레임마다 대상의 위치를 체크해 줄 필요가 없으니 최적화에도 도움이 되었던 것 같습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop" style="--loreImageW: 45; --loreImageH: 32;">
+                <div class="po-img lo-loreimageborder" style="height: 100%; width: 100%; background-image: url('../src/images/tudHMMobCode2.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp아직은 베타 수준에도 그치지 않지만, 이와 같이 몬스터들은 간편하게 스킬을 등록하고, 스킬의 대미지 및 레벨 등을 조정할 수 있습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop" style="--loreImageW: 44; --loreImageH: 26;">
+                <div class="po-img lo-loreimageborder" style="height: 100%; width: 100%; background-image: url('../src/images/tudHMMobCode3.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp몬스터의 공격 스킬의 흐름을 보면 <lstrong>시작, 공격, 끝</lstrong>으로 나누어져 있고 순차적으로 진행됨을 알 수 있습니다.
+                    각 스킬은 시작, 공격, 끝으로 흐름이 모두 동일하나, 그 과정에 존재하는 조건들은 구조가 다릅니다. 예를 들어 구르기 스킬은 발동 후 끝나는 조건이 벽이나 적에 닿았을 경우입니다.
+                    다른 예로 대쉬 스킬은 발동 후 끝나는 조건이 마찰력에 의해 자동으로 멈췄을 때 입니다. 두 스킬처럼 조건이 완전히 다른 경우들이 많을 것입니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop" style="--loreImageW: 46; --loreImageH: 38;">
+                <div class="po-img lo-loreimageborder" style="height: 100%; width: 100%; background-image: url('../src/images/tudHMMobCode4.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp이 부분은 0번 스킬 발동의 시작에 해당하는 부분입니다. 시작은 이 스킬이 발동 가능한지 판단하고, 가능할 경우 바로 공격 부분으로 진행되도록 설계되어있습니다.
+                    <lstrong>_found_target_is</lstrong> 변수는 상대를 발견 가능할 경우에 true 값이 됩니다.
+                    이와 동시에 스킬의 쿨타임이 돌았을 경우 공격 시작에 해당하는 기능들을 실행시킨 뒤에, 공격 부분으로 진행되게 됩니다.
                 </p>
             </div>
         </div>
