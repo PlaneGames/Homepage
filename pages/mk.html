@@ -195,7 +195,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp<lstrong>_img_dire</lstrong> 임시 변수에 각도에 따라 1부터 16까지의 숫자가 균등하게 나옵니다. 360에 22.5를 나눈 값이 16이므로, 이를 이용해 유닛의 방향에 따라 1부터 16까지의 상수가 나오도록 설계했습니다.
+                    &nbsp<lstrong>_img_dire</lstrong> 임시 변수에서 각도에 따라 1부터 16까지의 숫자가 균등하게 나옵니다. 360에 22.5를 나눈 값이 16이므로, 이를 이용해 유닛의 방향에 따라 1부터 16까지의 상수가 나오도록 설계했습니다.
                     유닛의 스프라이트 프레임이 90도 방향부터 270도 방향으로 그려져 있으므로, 유닛의 각도변수인 <lstrong>direction</lstrong>에 90을 더했습니다.
                     여기에 22.5에 2를 나눈 값인 11.25를 더해 바라보는 각도를 맞춰주었습니다. _img_dire 변수가 9보다 같거나 작을 때, 해당 프레임을 대칭시켜 총 16방향으로 보이게끔 설계하였습니다.
                 </p>
@@ -237,6 +237,44 @@
                 <p style="text-align: center;">
                     &nbsp왼쪽 코드는 근접 돌격 유닛, 오른쪽 코드는 원거리 공격 유닛으로 모두 지상 유닛입니다.
                     <lstrong>move_type</lstrong> 변수가 0일 경우 지상, 1일 경우 공중 유닛임을 뜻합니다.
+                    <lstrong>atk_type</lstrong> 변수에 열거형 상수 중 하나를 공격 타입으로 지정할 수 있습니다.
+                    atk_spd는 재공격 대기 시간으로, 값이 높을 수록 공격 속도가 느립니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 70; --loreImageH: 60;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/mkHMMobCode4.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    &nbsp위 코드는 지상 유닛 중 <lstrong>HEADBUTT(돌격)</lstrong> 유닛의 공격 타깃 체크 로직입니다. 최적화를 위해 30프레임마다 한번씩 체크하며,
+                    타깃을 지정했을 때 <lstrong>(goto_x, goto_y)</lstrong> 좌표로 이동하게 됩니다. 여기서의 핵심은 <lstrong>entity_nearest_zplace(x, y, z, ene_target);</lstrong> 입니다.
+                    근접 유닛은 공중에 날고 있는 적을 상대로 돌격하는 행위가 불가능하며, 이로 인해 공격 대상을 판단할 알고리즘이 필요했습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 95; --loreImageH: 85;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/mkHMMobCode5.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    &nbsp이 알고리즘은 <lstrong>호출한 유닛의 z축보다 낮은 선상에 있는 적 유닛들 중 가장 가까운 유닛의 인스턴스 id값을 반환</lstrong>합니다. 
+                    with문에서 입력된 적 오브젝트의 모든 인스턴스들을 일종의 반복문의 형태로 모두 순회합니다. 인스턴스들을 순회하면서, 
+                    더 낮은 z축을 가진 적들과 좌표 간의 거리를 구하고, 이 거리를 <lstrong>_nearest</lstrong> 변수에 저장하고 해당 인스턴스 id 값을 _id 변수에 저장합니다.
+                    with문이 끝날 동안 더 가까운 적을 찾으면 _nearest 값을 갱신하고 해당 인스턴스의 id 값을 _id 변수에 저장하는 것을 반복합니다.
+                    이 함수는 마지막으로 저장된 _id 변수의 값을 반환하고, 이 반환 값은 곧 <lstrong>가장 가까운 적 인스턴스의 id값을 가리킵니다.</lstrong>
                 </p>
             </div>
         </div>
