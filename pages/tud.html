@@ -417,7 +417,7 @@
                 <p>
                     &nbspSteel Larva 몬스터의 무브먼트입니다. 지상에서 걷는 타입이며, 애벌레라 Step BY Step 스타일로 조금 조금씩 끊어서 이동합니다.
                     이때 move_dt_num 변수의 값만큼의 텀으로 끊어서 이동합니다. move_dt_type이 0이므로 60프레임만큼의 텀을 가지고 끊어서 이동하지만,
-                    move_dt_type이 1일 경우 핸덤한 텀으로 끊어서 이동합니다. move_aggro_time은, 대상을 향해 움직일 때의 반응속도입니다. 즉, 값이 60이면
+                    move_dt_type이 1일 경우 랜덤한 텀으로 끊어서 이동합니다. move_aggro_time은, 대상을 향해 움직일 때의 반응속도입니다. 즉, 값이 60이면
                     60프레임마다 대상의 위치를 확인하여 해당 위치로 이동하는 로직이 발생됩니다. 반응속도가 제각각일 때 뭔가 생동감 있는 느낌을 받았고,
                     매 프레임마다 대상의 위치를 체크해 줄 필요가 없으니 최적화에도 도움이 되었던 것 같습니다.
                 </p>
@@ -434,7 +434,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p>
-                    &nbsp아직은 베타 수준에도 그치지 않지만, 이와 같이 몬스터들은 간편하게 스킬을 등록하고, 스킬의 대미지 및 레벨 등을 조정할 수 있습니다.
+                    &nbspSteel Larva 몬스터가 배우고 있는 스킬에 관한 정보를 입력한 변수 부분입니다. 아직은 베타 수준에도 그치지 않지만, 이와 같이 몬스터들은 간편하게 스킬을 등록하고, 스킬의 대미지 및 레벨 등을 조정할 수 있습니다.
                 </p>
             </div>
         </div>
@@ -470,6 +470,81 @@
                     <lstrong>_found_target_is</lstrong> 변수는 상대를 발견 가능할 경우에 true 값이 됩니다.
                     이와 동시에 스킬의 쿨타임이 돌았을 경우 공격 시작에 해당하는 기능들을 실행시킨 뒤에, 공격 부분으로 진행되게 됩니다.
                     <br><br>
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: 40%;">
+            <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
+                <h2>
+                    카메라 시스템
+                </h2>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox" style="--loreImageW: 16; --loreImageH: 16;">
+                <div class="po-img" style="image-rendering: pixelated; height: 100%; width: 100%; background-image: url('../src/images/tudHMCamIcon.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp카메라는 타겟이 바뀔 때마다 어떻게 <lstrong>자연스럽게 나타낼 수 있는가</lstrong>와 <lstrong>확장성</lstrong>을 염두하여 개발하였습니다.
+                    평상시에는 플레이어를 따라다니지만, 특정 이벤트나 컷씬 발생시 다른 지점으로 포커스 할 수 있습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop" style="--loreImageW: 71; --loreImageH: 21;">
+                <div class="po-img lo-loreimageborder" style="height: 100%; width: 100%; background-image: url('../src/images/tudHMCamCode.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp카메라 시스템은 포커스 하는 방식이 여러 가지가 있습니다. 해당 방식들을 보기 편하게 열거형 상수로 선언했습니다.
+                    현재 카메라의 기본 모드는 ENTITY 모드로 특정 엔티티를 포커스 하게 됩니다. 기본적으로는 플레이어를 타겟으로 합니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop" style="--loreImageW: 84; --loreImageH: 41;">
+                <div class="po-img lo-loreimageborder" style="height: 100%; width: 100%; background-image: url('../src/images/tudHMCamCode2.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp위 코드는 카메라 모드가 ENTITY 모드일 때 카메라가 실시간으로 수행하는 기능입니다.
+                    카메라는 매 프레임마다 <lstrong>(cam_focus_x, cam_focus_y)</lstrong> 좌표를 각각 <lstrong>(cam_focus_xspeed, cam_focus_yspeed)</lstrong> 만큼 <lstrong>lerp</lstrong> 함수를 이용해
+                    부드럽게 포커싱하도록 설계되어 있습니다. 엔티티의 <lstrong>vy 값은 점프하거나 낙하할 때의 가속도</lstrong>를 뜻합니다. 이 가속도가 3 이상일 경우,
+                    cam_focus_yspeed의 값을 더 높게 주어 포커싱 속도보다 엔티티가 움직이는 속도가 빨라 <lstrong>엔티티가 카메라 밖으로 나가는 것</lstrong>을 방지합니다.
+                </p>
+            </div>
+        </div>
+        
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop" style="--loreImageW: 81; --loreImageH: 41;">
+                <div class="po-img lo-loreimageborder" style="height: 100%; width: 100%; background-image: url('../src/images/tudHMCamCode3.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp카메라 모드 중 <lstrong>POINT</lstrong>와 <lstrong>ENTITY_FOLLOW_POINT_PEEK</lstrong>는 각각 카메라가 특정 좌표를 포커스로 할 때, 특정 엔티티와 좌표의 사이를 포커스로 할 때입니다.
+                    ENTITY_FOLLOW_POINT_PEEK는 카메라의 포커스 위치를 가리킬 엔티티와 좌표 사이를 lerp 함수를 사용해 부드럽게 가리킵니다.
+                    이와 같은 모드는 컷씬 이벤트나 가야할 길을 가리킬때 유용하게 사용됩니다.
                 </p>
             </div>
         </div>
