@@ -15,7 +15,7 @@
             <div class="po-subbox po-sbwide po-flexmode" style="height: auto; flex-direction: column; justify-content: center; align-content: center;">
                 <p style="text-align: center;">
                     전략 시뮬레이션 미니 프로젝트인 <strong>Micro Kingdom</strong> 입니다. 개미 왕국 간의 전쟁을 묘사한 게임으로, <lstrong>유닛의 인공지능</lstrong>에 초점을 두어 시험 삼아 만들어졌습니다.
-                    또 다른 전략적 요소인 <lstrong>무당벌레</lstrong>로 인해 비행이 가능한 유닛의 분류가 등장했고, 이에 따라 달라지는 유닛들의 <lstrong>공격 타겟 선정 알고리즘</lstrong>과 <lstrong>최적화</lstrong>에 대해 연구하였습니다.
+                    또 다른 전략적 요소인 <lstrong>무당벌레</lstrong>로 인해 비행이 가능한 유닛의 분류가 등장했고, 이에 따라 달라지는 유닛들의 <lstrong>공격 타깃 선정 알고리즘</lstrong>과 <lstrong>최적화</lstrong>에 대해 연구하였습니다.
                 </p>
             </div>
         </div>
@@ -165,7 +165,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: 40%;">
             <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
                 <h2>
-                    몬스터 - 기본 무브먼트 시스템 구조
+                    몬스터 - 16 방향 시스템
                 </h2>
             </div>
         </div>
@@ -174,13 +174,13 @@
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
                     &nbsp모든 유닛은 일반적으로 16방향의 모션을 지원합니다. 90도 방향의 프레임부터 오른쪽으로 270도 방향의 프레임까지 총 9프레임의 이미지를 가집니다.
-                    나머지 7프레임은 이미지 좌우 반전을 해서 총 16방향의 모션을 표현하도록 설계했습니다.
+                    나머지 7프레임은 이미지 좌우 반전을 해서 총 16방향의 모션을 표현하도록 설계했습니다. 
                 </p>
             </div>
         </div>
 
-        <div class="po-box po-pr-w70-w100 po-boxspacetop po-flexmode">
-            <div class="po-box po-w100 po-flexmode" style="align-items: center;">
+        <div class="po-box po-w100 po-boxspacetop po-flexmode">
+            <div class="po-box po-pr-w70-w100 po-flexmode" style="align-items: center;">
                 <div class="po-loreimagebox lo-loreimageborder" style="--loreImageW: 35; --loreImageH: 35;">
                     <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/mkHMMobMove.gif');">
                     </div>
@@ -192,21 +192,28 @@
             </div>
         </div>
 
-
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp360에 22.5를 나눈 값은 16입니다. 이를 이용해 유닛의 방향에 따라 1부터 16까지의 상수가 나오도록 설계했습니다.
+                    &nbsp<lstrong>_img_dire</lstrong> 임시 변수에 각도에 따라 1부터 16까지의 숫자가 균등하게 나옵니다. 360에 22.5를 나눈 값이 16이므로, 이를 이용해 유닛의 방향에 따라 1부터 16까지의 상수가 나오도록 설계했습니다.
+                    유닛의 스프라이트 프레임이 90도 방향부터 270도 방향으로 그려져 있으므로, 유닛의 각도변수인 <lstrong>direction</lstrong>에 90을 더했습니다.
+                    여기에 22.5에 2를 나눈 값인 11.25를 더해 바라보는 각도를 맞춰주었습니다. _img_dire 변수가 9보다 같거나 작을 때, 해당 프레임을 대칭시켜 총 16방향으로 보이게끔 설계하였습니다.
                 </p>
             </div>
         </div>
 
-
+        <div class="po-box po-w100 po-flexmode" style="height: 40%;">
+            <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
+                <h2>
+                    몬스터 - 공격 타깃 시스템
+                </h2>
+            </div>
+        </div>
         
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp유닛이 공격하는 방식의 종류에는 기본적으로 근접, 원거리가 있습니다. 하지만 여기에 공중 유닛이 추가됨에 따라, 근접 유닛은 공중 유닛을 공격 타겟으로 지정하는 것을 방지하는
+                    &nbsp유닛이 공격하는 방식의 종류에는 기본적으로 근접, 원거리가 있습니다. 하지만 여기에 공중 유닛이 추가됨에 따라, 근접 유닛은 공중 유닛을 공격 타깃으로 지정하는 것을 방지하는
                     로직이 필요로 해졌습니다.
                 </p>
             </div>
