@@ -234,6 +234,7 @@ header {
 }
 
 .lo-loreimageborder {
+    overflow: hidden;
     padding-left: 8px;
     padding-right: 8px;
     border-radius: 16px;

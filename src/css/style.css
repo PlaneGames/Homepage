@@ -13,6 +13,8 @@ body {
     animation-name: showItemFromRight;
     animation-duration: 1s;
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 *::-webkit-scrollbar {
