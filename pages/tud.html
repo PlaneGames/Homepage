@@ -14,7 +14,7 @@
             </div>
             <div class="po-subbox po-sbwide po-flexmode" style="height: auto; flex-direction: column; justify-content: center; align-content: center;">
                 <p style="text-align: center;">
-                    개발 중인 픽셀 플렛포머 어드벤처게임, <strong>The Unknown Dungeon</strong> 줄여서 TUD 입니다.<br>
+                    개발 중인 픽셀 플렛포머 어드벤처게임, <strong>The Unknown Dungeon</strong> 줄여서 <lstrong>TUD</lstrong> 입니다.<br>
                     몬스터들을 육성하고 전투하며 스토리를 클리어해 나아가는 게임입니다.<br>
                     Dungeon Rpg 3의 차기작으로, 같은 <strong>픽셀 액션 플렛포머</strong>라는 공통점이 있습니다.<br><br>
                     TUD는 고수준의 픽셀 아트와 광원과 같은 약간의 쉐이더 효과를 가미하여 그래픽적인 부분에 많은 투자를 하고 있습니다.<br>
@@ -542,9 +542,112 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p>
-                    &nbsp카메라 모드 중 <lstrong>POINT</lstrong>와 <lstrong>ENTITY_FOLLOW_POINT_PEEK</lstrong>는 각각 카메라가 특정 좌표를 포커스로 할 때, 특정 엔티티와 좌표의 사이를 포커스로 할 때입니다.
+                    &nbsp카메라 모드 중 <lstrong>POINT</lstrong>와 <lstrong>ENTITY_FOLLOW_POINT_PEEK</lstrong>는 각각 <lstrong>카메라가 특정 좌표를 포커스</lstrong>로 할 때, <lstrong>특정 엔티티와 좌표의 사이를 포커스</lstrong>로 할 때입니다.
                     ENTITY_FOLLOW_POINT_PEEK는 카메라의 포커스 위치를 가리킬 엔티티와 좌표 사이를 lerp 함수를 사용해 부드럽게 가리킵니다.
-                    이와 같은 모드는 컷씬 이벤트나 가야할 길을 가리킬때 유용하게 사용됩니다.
+                    이와 같은 모드는 컷씬 이벤트나 가야 할 길을 가리킬 때 유용하게 사용됩니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: 40%;">
+            <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
+                <h2>
+                    인벤토리 & 아이템
+                </h2>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop" style="--loreImageW: 64; --loreImageH: 36;">
+                <div class="po-img lo-loreimageborder" style="height: 100%; width: 100%; background-image: url('../src/images/tudHMInvenGame2.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp인벤토리는 격자 아이콘 방식을 채택하였습니다. 인벤토리의 슬롯을 2차원 배열로 표현하였고, 각 배열은 플레이어가 가지고 있는 아이템 고유의 id 값을 가질 수 있습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop" style="--loreImageW: 64; --loreImageH: 36;">
+                <div class="po-img lo-loreimageborder" style="height: 100%; width: 100%; background-image: url('../src/images/tudHMInvenGame.gif');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp장비 아이템은 정보의 양이 일반 소비아이템 보다 많습니다. 각 장비는 고유의 능력치가 있으며, 이 값은 장비를 획득했을 때
+                    정해진 범주 안에서 랜덤으로 정해집니다. 위의 GIF 파일은 장비 아이템을 획득 후 인벤토리에서 정보를 확인할 수 있는 기능을 넣은 것입니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop" style="--loreImageW: 44; --loreImageH: 38;">
+                <div class="po-img lo-loreimageborder" style="height: 100%; width: 100%; background-image: url('../src/images/tudHMInvenCode.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp아이템들의 정보는 임시로 클라이언트 내에서 구조체를 통해 관리됩니다. 위의 구조체 형식으로 각 아이템들이 정보들을 가집니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop" style="--loreImageW: 63; --loreImageH: 43;">
+                <div class="po-img lo-loreimageborder" style="height: 100%; width: 100%; background-image: url('../src/images/tudHMInvenCode2.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp사과의 경우, 위 코드와 같이 정보를 가지고 있습니다. 각 언어별로 아이템의 이름을 적어주고, 아이템의 카테고리 및 사용시 회복 능력에 대한 정보를 입력할 수 있습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop" style="--loreImageW: 75; --loreImageH: 21;">
+                <div class="po-img lo-loreimageborder" style="height: 100%; width: 100%; background-image: url('../src/images/tudHMInvenCode3.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp위 코드는 아이템을 드랍하는 시스템입니다. 몬스터나, 상자 등에서 이와 같은 로직을 사용합니다. <lstrong>drop_item_info</lstrong>변수에 위와 같이 정보를 입력하면
+                    아이템을 드랍하는 알고리즘이 위 정보대로 아이템을 드랍하는 시스템입니다. 최대 몇개까지 몇퍼센트의 확률로 드랍할지도 지정할 수 있습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: 40%;">
+            <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
+                <h2>
+                    마치며
+                </h2>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbspTUD 프로젝트는 아직까지 현재 진행형입니다. 아직까지는 혼자서 그래픽, 기획, 음원, 코딩까지 하고 있지만 같이 협업할 수 있는 팀원이 있다면 좋겠다는 생각입니다.
+                    개발을 하면서 많은 시행착오도 있었고 여러 번 그래픽이나, 시스템이 변경되기도 했습니다. 덕분에 이제는 점점 완성형에 가까워지고 있는 것 같습니다.
+                    조금의 여유가 생긴다면 차기작을 기다려주시는 분들을 위해서라도 꼭 완성하고 싶은 애증의 작품입니다.
                 </p>
             </div>
         </div>
