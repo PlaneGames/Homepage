@@ -165,16 +165,71 @@
         <div class="po-box po-w100 po-flexmode" style="height: 40%;">
             <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
                 <h2>
-                    유닛 공격 시스템
+                    몬스터 - 기본 무브먼트 시스템 구조
                 </h2>
             </div>
         </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    &nbsp모든 유닛은 일반적으로 16방향의 모션을 지원합니다. 90도 방향의 프레임부터 오른쪽으로 270도 방향의 프레임까지 총 9프레임의 이미지를 가집니다.
+                    나머지 7프레임은 이미지 좌우 반전을 해서 총 16방향의 모션을 표현하도록 설계했습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-pr-w70-w100 po-boxspacetop po-flexmode">
+            <div class="po-box po-w100 po-flexmode" style="align-items: center;">
+                <div class="po-loreimagebox lo-loreimageborder" style="--loreImageW: 35; --loreImageH: 35;">
+                    <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/mkHMMobMove.gif');">
+                    </div>
+                </div>
+                <div class="po-loreimagebox lo-loreimageborder" style="--loreImageW: 60; --loreImageH: 35;">
+                    <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/mkHMMobCode3.png');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    &nbsp360에 22.5를 나눈 값은 16입니다. 이를 이용해 유닛의 방향에 따라 1부터 16까지의 상수가 나오도록 설계했습니다.
+                </p>
+            </div>
+        </div>
+
+
         
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
                     &nbsp유닛이 공격하는 방식의 종류에는 기본적으로 근접, 원거리가 있습니다. 하지만 여기에 공중 유닛이 추가됨에 따라, 근접 유닛은 공중 유닛을 공격 타겟으로 지정하는 것을 방지하는
                     로직이 필요로 해졌습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-box po-pr-w70-w100 po-flexmode">
+                <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="--loreImageW: 36; --loreImageH: 24;">
+                    <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/mkHMMobCode.png');">
+                    </div>
+                </div>
+                <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="--loreImageW: 36; --loreImageH: 24;">
+                    <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/mkHMMobCode2.png');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    &nbsp왼쪽 코드는 근접 돌격 유닛, 오른쪽 코드는 원거리 공격 유닛으로 모두 지상 유닛입니다.
+                    <lstrong>move_type</lstrong> 변수가 0일 경우 지상, 1일 경우 공중 유닛임을 뜻합니다.
                 </p>
             </div>
         </div>
