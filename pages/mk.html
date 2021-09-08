@@ -14,7 +14,7 @@
             </div>
             <div class="po-subbox po-sbwide po-flexmode" style="height: auto; flex-direction: column; justify-content: center; align-content: center;">
                 <p style="text-align: center;">
-                    전략 시뮬레이션 미니 프로젝트인 <strong>Micro Kingdom</strong> 입니다. 개미 왕국간의 전쟁을 묘사한 게임으로, <lstrong>유닛의 인공지능</lstrong>에 초점을 두어 시험 삼아 만들어졌습니다.
+                    전략 시뮬레이션 미니 프로젝트인 <strong>Micro Kingdom</strong> 입니다. 개미 왕국 간의 전쟁을 묘사한 게임으로, <lstrong>유닛의 인공지능</lstrong>에 초점을 두어 시험 삼아 만들어졌습니다.
                     또 다른 전략적 요소인 <lstrong>무당벌레</lstrong>로 인해 비행이 가능한 유닛의 분류가 등장했고, 이에 따라 달라지는 유닛들의 <lstrong>공격 타겟 선정 알고리즘</lstrong>과 <lstrong>최적화</lstrong>에 대해 연구하였습니다.
                 </p>
             </div>
@@ -78,8 +78,8 @@
         <div class="po-box po-flexmode po-pr-w70-w100 po-pr3" style="height: 22.5%;">
             <div class="po-subbox po-flexmode" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp다양한 종류의 유닛들을 배치하여 모의 전투를 치루는 시뮬레이션 게임입니다.
-                    유닛은 근접 및 원거리 지상유닛, 비행유닛으로 나뉩니다.
+                    &nbsp다양한 종류의 유닛들을 배치하여 모의 전투를 치르는 시뮬레이션 게임입니다.
+                    유닛은 근접 및 원거리 지상 유닛, 비행 유닛으로 나뉩니다.
                 </p>
             </div>
         </div>
@@ -96,8 +96,86 @@
                     HOW MADE ?
                 </h3>
                 <h2>
-                    스토리 전개를 위한 씬
+                    타일 시스템
                 </h2>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    &nbsp각 타일의 정보들은 모두 구조체 형식의 변수에 저장됩니다. 게임이 시작하기 전 타일 정보를 구조체에 랜덤하게 저장한 후,
+                    이 데이터를 이용해 맵에 격자 구조에 맞게 설치하는 작업 순서로 이루어집니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-box po-pr-w50-w100 po-flexmode">
+                <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="--loreImageW: 18; --loreImageH: 35;">
+                    <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/mkHMTileCode.png');">
+                    </div>
+                </div>
+                <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="--loreImageW: 18; --loreImageH: 35;">
+                    <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/mkHMTileCode2.png');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    &nbsp타일의 고유 코드를 편하게 지정하기 위해 열거형 상수를 사용했고, 구조체 변수의 형식을 사용하여 타일의 이미지 정보와 행과 열의 정보를 저장합니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 50; --loreImageH: 40;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/mkHMTileCode3.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    &nbsp타일 설치 전, 타일 리스트에 정보를 순차적으로 저장합니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 45; --loreImageH: 77;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/mkHMTileCode4.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    &nbsp마지막으로 타일 리스트 정보들을 순차적으로 순회하며 타일을 해당 행렬에 맞게 설치하는 작업을 진행합니다.
+                    <br><br>
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: 40%;">
+            <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
+                <h2>
+                    유닛 공격 시스템
+                </h2>
+            </div>
+        </div>
+        
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    &nbsp유닛이 공격하는 방식의 종류에는 기본적으로 근접, 원거리가 있습니다. 하지만 여기에 공중 유닛이 추가됨에 따라, 근접 유닛은 공중 유닛을 공격 타겟으로 지정하는 것을 방지하는
+                    로직이 필요로 해졌습니다.
+                </p>
             </div>
         </div>
 
