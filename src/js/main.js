@@ -34,7 +34,7 @@ portfolioSubPage        = [
     "#page-tud",
     "#page-mk",
     "#page-wbh",
-    "#page-dr3",
+    "#page-wbh",
     "#page-dr3",
     "#page-dr3"
 ];
