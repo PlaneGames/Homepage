@@ -1,0 +1,135 @@
+<div class="lo-con">
+
+    <div class="po-line"></div>
+
+    <!-- WBH TITLE -->
+    <div class="po-con po-flexmode">
+        <div class="po-box po-flexmode po-pr1 po-w100 po-pr-h100-auto" style="flex-direction: column; justify-content: center; align-items: center;">
+            <div class="po-subbox po-sbwide po-flexmode" style="height: auto; flex-direction: column; padding-top: 20px; padding-bottom: 20px;">
+                <h3 class="lo-titleborder">WAY BACK HOME</h3>
+                <p3 style="text-align: center;">
+                    플랫폼 - PC<br>
+                    개발환경 - GMS / GML
+                </p3>
+            </div>
+            <div class="po-subbox po-sbwide po-flexmode" style="height: auto; flex-direction: column; justify-content: center; align-content: center;">
+                <p style="text-align: center;">
+                    <lstrong>블록 퍼즐</lstrong> 게임입니다. 숫자가 정확히 0이 될 때 목적지에 도달해야 클리어하는 형식의 게임으로, 지나온 길을 되돌아갈 수 없습니다.
+                    스테이지를 클리어하며 난이도가 올라갈수록 함정, 포탈, 별 획득 등 생각해야 할 요소들이 많아집니다.
+                    <br><br>
+                    고등학생 때 교내 멀티미디어 공모전 출전을 위해 만들어 1위로 입상한 작품입니다. 게임을 제작할 당시 친구들과 공책에 맵을 구상하고 결과물을 같이 공유하며 즐겼던 것이 기억에 남습니다.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="po-line"></div>
+
+    <!-- WBH GAME PLAY -->
+    <div class="po-con po-flexmode" style="flex-direction: column;">
+
+        <div class="po-box po-flexmode po-w100 po-pr1" style="height: 25%;">
+            <div class="po-subbox po-flexmode" style="width: 99%; height: 98%;">
+                <h3 style="text-align: center;">
+                    GAME PLAY
+                </h3>
+            </div>
+        </div>
+
+        <div class="po-box po-flexmode po-pr2 po-pr-w50-w100 po-h50"r>
+            <div class="po-subbox" style="width: 99%; height: 98%;">
+                <div class="po-img" style="height: 100%; width: 100%; background-image: url('../src/images/mkGameplay.gif');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-flexmode po-pr-w70-w100 po-pr3" style="height: 25;">
+            <div class="po-subbox po-flexmode" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    &nbsp다양한 종류의 유닛들을 배치하여 모의 전투를 치르는 시뮬레이션 게임입니다.
+                    유닛은 근접 및 원거리 지상 유닛, 비행 유닛으로 나뉩니다.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="po-line"></div>
+
+    <!-- WBH Charactor Design -->
+    <div class="po-con po-flexmode" style="flex-direction: column;">
+        
+        <div class="po-box po-flexmode po-w100 po-pr1" style="height: 22.5%;">
+            <div class="po-subbox po-flexmode" style="width: 99%; height: 98%;">
+                <h3 style="text-align: center;">
+                    CHARACTOR DESIGN
+                </h3>
+            </div>
+        </div>
+
+        <div class="po-box po-flexmode po-pr2 po-pr-w50-w100 po-h50">
+            <div class="po-subbox" style="width: 49%; height: 98%;">
+                <div class="po-img" style="height: 100%; width: 100%; background-image: url('../src/images/mkHMCD.gif');">
+                </div>
+            </div>
+            <div class="po-subbox" style="width: 49%; height: 98%;">
+                <div class="po-img" style="height: 100%; width: 100%; background-image: url('../src/images/mkHMCD2.gif');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-flexmode po-pr-w70-w100 po-pr3" style="height: 22.5%;">
+            <div class="po-subbox po-flexmode" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    &nbsp각 유닛들은 16방향 도트 그래픽으로 각 모션들을 지원합니다. 걷는 모션, 비행 모션, 발사 모션 등을 보다 생동감 있게 나타내어
+                    작은 도트 그래픽에 퀄리티와 아기자기함을 더했습니다.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="po-line"></div>
+
+    <!-- WBH HOW I MADE ? -->
+    <div class="po-freecon">
+
+        <div class="po-box po-w100 po-flexmode" style="height: 40%;">
+            <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
+                <h3 class="lo-titleborder3">
+                    HOW MADE ?
+                </h3>
+                <h2>
+                    타일 시스템
+                </h2>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    &nbsp각 타일의 정보들은 모두 구조체 형식의 변수에 저장됩니다. 게임이 시작하기 전 타일 정보를 구조체에 랜덤하게 저장한 후,
+                    이 데이터를 이용해 맵에 격자 구조에 맞게 설치하는 작업 순서로 이루어집니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 50; --loreImageH: 40;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/mkHMTileCode3.png');">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="lo-box" style="height: 20vw; max-height: 400px;">
+    </footer>
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        loadpage+=1;
+        loadpageChecker();
+    });
+</script>

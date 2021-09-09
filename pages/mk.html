@@ -2,7 +2,7 @@
 
     <div class="po-line"></div>
 
-    <!-- TUD TITLE -->
+    <!-- MK TITLE -->
     <div class="po-con po-flexmode">
         <div class="po-box po-flexmode po-pr1 po-w100 po-pr-h100-auto" style="flex-direction: column; justify-content: center; align-items: center;">
             <div class="po-subbox po-sbwide po-flexmode" style="height: auto; flex-direction: column; padding-top: 20px; padding-bottom: 20px;">
@@ -23,7 +23,7 @@
 
     <div class="po-line"></div>
 
-    <!-- TUD GAME PLAY -->
+    <!-- MK GAME PLAY -->
     <div class="po-con po-flexmode" style="flex-direction: column;">
 
         <div class="po-box po-flexmode po-w100 po-pr1" style="height: 25%;">
@@ -53,7 +53,7 @@
     </div>
     <div class="po-line"></div>
 
-    <!-- TUD Charactor Design -->
+    <!-- MK Charactor Design -->
     <div class="po-con po-flexmode" style="flex-direction: column;">
         
         <div class="po-box po-flexmode po-w100 po-pr1" style="height: 22.5%;">
@@ -87,7 +87,7 @@
     </div>
     <div class="po-line"></div>
 
-    <!-- DR3 HOW I MADE ? -->
+    <!-- MK HOW I MADE ? -->
     <div class="po-freecon">
 
         <div class="po-box po-w100 po-flexmode" style="height: 40%;">
@@ -294,6 +294,60 @@
                     <lstrong>instance_nearest()</lstrong> 함수의 반환 값을 대입한다는 것입니다. 위의 근접 공격 유닛은 <lstrong>entity_nearest_zplace()</lstrong> 함수를 사용했습니다. 
                     instance_nearest() 함수는 GML 언어에서 제공하는 함수로, <lstrong>x, y 좌표를 기준으로 가장 가까운 적 유닛의 id 값을 반환</lstrong>합니다. 원거리 유닛은 근접 유닛과는 달리 비행 중인 유닛을 타겟으로 선정할 수 있으므로
                     instance_nearest() 함수를 사용했습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: 40%;">
+            <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
+                <h2>
+                    비행 유닛
+                </h2>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    &nbsp비행 유닛인 무당벌레가 비행하는 무브먼트를 설계할 때, 비행 레벨을 만들어 차등화 시키면 어떨까? 싶은 마음이 들었습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 21; --loreImageH: 19;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/mkHMLadybugCode.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    &nbsp열거형 상수인 <lstrong>TURNING_8</lstrong>과 <lstrong>ACROBATIC_8</lstrong>은 각각 8자 선회 비행과, 8자 곡예 비행을 뜻합니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-box po-pr-w70-w100 po-flexmode">
+                <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="--loreImageW: 32; --loreImageH: 32;">
+                    <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/mkHMLadybugGame.gif');">
+                    </div>
+                </div>
+                <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="--loreImageW: 32; --loreImageH: 32;">
+                    <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/mkHMLadybugGame2.gif');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    &nbsp왼쪽은 <lstrong>8자 선회</lstrong> 비행을 하는 무당벌레이고, 오른쪽은 <lstrong>8자 곡예</lstrong> 비행을 하는 무당벌레 입니다.
+                    이 외에 스텟의 차이는 전혀 없습니다. 8자 선회 비행은 일정한 속도와 고도로 8자 비행을 하지만, 8자 곡예 비행은 부분 가속과 고도를 지속적으로 변화시키며 비행합니다.
+                    이로 인해 8자 곡예 비행은 적 유닛의 투사체 공격으로부터 조금 더 회피율이 높습니다. 위 GIF 이미지의 결과와 같이 조금 더 효율이 좋은 모습을 보여줍니다.
                 </p>
             </div>
         </div>
