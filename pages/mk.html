@@ -44,8 +44,8 @@
         <div class="po-box po-flexmode po-pr-w70-w100 po-pr3" style="height: 25;">
             <div class="po-subbox po-flexmode" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp다양한 종류의 유닛들을 배치하여 모의 전투를 치루는 시뮬레이션 게임입니다.
-                    유닛은 근접 및 원거리 지상유닛, 비행유닛으로 나뉩니다.
+                    &nbsp다양한 종류의 유닛들을 배치하여 모의 전투를 치르는 시뮬레이션 게임입니다.
+                    유닛은 근접 및 원거리 지상 유닛, 비행 유닛으로 나뉩니다.
                 </p>
             </div>
         </div>
@@ -78,8 +78,8 @@
         <div class="po-box po-flexmode po-pr-w70-w100 po-pr3" style="height: 22.5%;">
             <div class="po-subbox po-flexmode" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp다양한 종류의 유닛들을 배치하여 모의 전투를 치르는 시뮬레이션 게임입니다.
-                    유닛은 근접 및 원거리 지상 유닛, 비행 유닛으로 나뉩니다.
+                    &nbsp각 유닛들은 16방향 도트 그래픽으로 각 모션들을 지원합니다. 걷는 모션, 비행 모션, 발사 모션 등을 보다 생동감 있게 나타내어
+                    작은 도트 그래픽에 퀄리티와 아기자기함을 더했습니다.
                 </p>
             </div>
         </div>
@@ -235,7 +235,8 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp왼쪽 코드는 근접 돌격 유닛, 오른쪽 코드는 원거리 공격 유닛으로 모두 지상 유닛입니다.
+                    &nbsp각 유닛 오브젝드는 공통적으로 부모 오브젝트인 엔티티 오브젝트에게 기능을 상속받고, 이렇게 간단한 변수 선언으로 유닛의 특성을 지정할 수 있습니다.
+                    왼쪽 코드는 근접 돌격 유닛, 오른쪽 코드는 원거리 공격 유닛으로 모두 지상 유닛입니다.
                     <lstrong>move_type</lstrong> 변수가 0일 경우 지상, 1일 경우 공중 유닛임을 뜻합니다.
                     <lstrong>atk_type</lstrong> 변수에 열거형 상수 중 하나를 공격 타입으로 지정할 수 있습니다.
                     atk_spd는 재공격 대기 시간으로, 값이 높을 수록 공격 속도가 느립니다.
@@ -253,7 +254,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp위 코드는 지상 유닛 중 <lstrong>HEADBUTT(돌격)</lstrong> 유닛의 공격 타깃 체크 로직입니다. 최적화를 위해 30프레임마다 한번씩 체크하며,
+                    &nbsp위 코드는 지상 유닛 중 근접 공격 <lstrong>HEADBUTT(돌격)</lstrong> 유닛의 공격 타깃 선정 로직입니다. 최적화를 위해 30프레임마다 한번씩 체크하며,
                     타깃을 지정했을 때 <lstrong>(goto_x, goto_y)</lstrong> 좌표로 이동하게 됩니다. 여기서의 핵심은 <lstrong>entity_nearest_zplace(x, y, z, ene_target);</lstrong> 입니다.
                     근접 유닛은 공중에 날고 있는 적을 상대로 돌격하는 행위가 불가능하며, 이로 인해 공격 대상을 판단할 알고리즘이 필요했습니다.
                 </p>
@@ -275,6 +276,24 @@
                     더 낮은 z축을 가진 적들과 좌표 간의 거리를 구하고, 이 거리를 <lstrong>_nearest</lstrong> 변수에 저장하고 해당 인스턴스 id 값을 _id 변수에 저장합니다.
                     with문이 끝날 동안 더 가까운 적을 찾으면 _nearest 값을 갱신하고 해당 인스턴스의 id 값을 _id 변수에 저장하는 것을 반복합니다.
                     이 함수는 마지막으로 저장된 _id 변수의 값을 반환하고, 이 반환 값은 곧 <lstrong>가장 가까운 적 인스턴스의 id값을 가리킵니다.</lstrong>
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 70; --loreImageH: 60;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/mkHMMobCode6.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    &nbsp마지막으로 지상 유닛 중 원거리 공격 <lstrong>SHOOT(발사)</lstrong> 유닛의 공격 타깃 선정 로직입니다. 모두 근접 공격 유닛과 동일한 구조이지만, 딱 한가지 다른 것은 <lstrong>_tg_id</lstrong> 변수에
+                    <lstrong>instance_nearest()</lstrong> 함수의 반환 값을 대입한다는 것입니다. 위의 근접 공격 유닛은 <lstrong>entity_nearest_zplace()</lstrong> 함수를 사용했습니다. 
+                    instance_nearest() 함수는 GML 언어에서 제공하는 함수로, <lstrong>x, y 좌표를 기준으로 가장 가까운 적 유닛의 id 값을 반환</lstrong>합니다. 원거리 유닛은 근접 유닛과는 달리 비행 중인 유닛을 타겟으로 선정할 수 있으므로
+                    instance_nearest() 함수를 사용했습니다.
                 </p>
             </div>
         </div>
