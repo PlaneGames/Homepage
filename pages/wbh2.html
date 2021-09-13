@@ -143,8 +143,8 @@
         </div>
 
         <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 64; --loreImageH: 74;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/wbhHMStageCode.png');">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 45; --loreImageH: 35;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/wbh2HMSysCode.png');">
                 </div>
             </div>
         </div>
@@ -152,7 +152,72 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p>
-                    &nbspm
+                    &nbspmain 함수에서 Game 클래스를 메모리에 할당하고, 정상적으로 처리되면 Game 클래스를 통해 무한루프가 실행됩니다.
+                    무한루프가 끝날경우 메모리를 제거합니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 47; --loreImageH: 54;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/wbh2HMSysCode2.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp<strong>Game 클래스의 구조입니다.</strong> <lstrong>Intialize</lstrong> 함수는 main 함수에서 맨 처음 딱 한번 호출됩니다.
+                    이 함수에서는 SDL 윈도우 및 랜더러를 생성하고, BGM을 불러오고, 유저 데이터가 존재하는지 등을 판단합니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 32; --loreImageH: 24;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/wbh2HMSysCode3.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp<strong>RunLoop 함수</strong>는 게임이 진행되는 동안 키가 눌리는 것을 인식하는 ProcessInput, 게임 내 오브젝트들을 프레임 단위로 업데이트하는
+                    UpdateGame, 화면에 보여주는 것을 담당하는 GenerateOutput 함수 순서로 무한루프됩니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 75; --loreImageH: 32;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/wbh2HMSysCode4.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp<strong>UpdateGame</strong> 함수에서는 기본적으로 게임의 프레임 단위의 실행을 제어합니다.<br>
+                    델타 타임을 16ms로 조절하여 프레임을 제한합니다. 이로 하여 1초에 약 60프레임 정도를 실행할 수 있습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 59; --loreImageH: 58;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/wbh2HMSysCode5.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p>
+                    &nbsp<strong>UpdateGame</strong> 함수에서 현재 룸의 Update 함수를 호출하여 룸이 Update가 가능하도록 해줍니다.<br>
+                    또, 룸을 이동할 때 나타나는 스크린 애니메이션 효과를 보여주는 오브젝트를 관리하기도 합니다.
                 </p>
             </div>
         </div>
