@@ -490,19 +490,25 @@ var book_img = [
                         .css('margin-top','32px');
 
                     if (window.innerWidth <= 800) {
+                        $('strong')
+                            .css('font-size','11px');
                         $('.po-subbox p')
                             .css('margin','0px')
                             .css('font-size','11px');
                         $('.po-titlesidebar')
                             .css('border','none');
                     } else if (window.innerWidth <= 880) {
+                        $('strong')
+                            .css('font-size','12px');
                         $('.po-subbox p')
                             .css('margin','8px')
-                            .css('font-size','11px');
+                            .css('font-size','12px');
                         $('.po-titlesidebar')
                             .css('border-left','12px solid rgba(0, 0, 0, 0.2)')
                             .css('border-right','12px solid rgba(0, 0, 0, 0.2)');
                     } else {
+                        $('strong')
+                            .css('font-size','12px');
                         $('.po-subbox p')
                             .css('margin','16px')
                             .css('font-size','12px');
@@ -551,6 +557,8 @@ var book_img = [
                         .css('margin','0px')
                         .css('margin-bottom','32px')
                         .css('margin-top','32px')
+                        .css('font-size','12px');
+                    $('strong')
                         .css('font-size','12px');
                         
                     $('.po-pr1').css('order','1')
