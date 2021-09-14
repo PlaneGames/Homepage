@@ -74,6 +74,46 @@ portfolioSubVideo       = [
     [],
 ]
 
+let imgNames = [
+    "images/bookDr2Backcover.png",
+    "images/bookDr2Side.png",
+    "images/bookDr2Title.png",
+
+    "images/bookDr3Backcover.png",
+    "images/bookDr3Side.png",
+    "images/bookDr3Title.png",
+
+    "images/bookMKBackcover.png",
+    "images/bookMKSide.png",
+    "images/bookMKTitle.png",
+
+    "images/bookTOLBackcover.png",
+    "images/bookTOLSide.png",
+    "images/bookTOLTitle.png",
+
+    "images/bookTUDBackcover.png",
+    "images/bookTUDSide.png",
+    "images/bookTUDTitle.png",
+
+    "images/bookVMBackcover.png",
+    "images/bookVMSide.png",
+    "images/bookVMTitle.png",
+
+    "images/bookWBHBackcover.png",
+    "images/bookWBHSide.png",
+    "images/bookWBHTitle.png",
+
+    "images/bookWBH2Backcover.png",
+    "images/bookWBH2Side.png",
+    "images/bookWBH2Title.png"
+]
+
+let imgFiles = new Array();
+for (let i=0; i<imgNames.length; i++) {
+    imgFiles[i] = new Image();
+    imgFiles[i].src = imgNames[i];
+}
+
 $('.lo-con').hide();
 $('.lo-con').css('transition','0s');
 
@@ -197,7 +237,6 @@ var loadpageChecker = () => {
             $(".loader").html("<p>" + loading_per + "%</p>");
         });
         showPage();
-        console.log(1234);
     }
     showLoading();
 
