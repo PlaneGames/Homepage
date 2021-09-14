@@ -8,7 +8,7 @@ var galleryRefresh;
 var active          = "#page-resume";
 var activeGallery   = 0;
 var timeout;
-var maxpage         = 3;
+var maxpage         = 8;
 var loadpage        = 0;
 var loading_per     = 0;
 var loadcomplete    = 0;
@@ -166,7 +166,7 @@ var showPage = function() {
             .css('opacity','1')
             .css('transition','1s');
         window.scrollTo(0, 0);
-        alert(active);
+        console.log(1);
 
     }, 700);
 
@@ -195,10 +195,12 @@ var loadpageChecker = () => {
             loading_per = 100;
             hideLoading();
             $(".loader").html("<p>" + loading_per + "%</p>");
-        }); 
+        });
         showPage();
+        console.log(1234);
     }
     showLoading();
+
 }
 
 (function ($) {
