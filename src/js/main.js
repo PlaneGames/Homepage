@@ -95,7 +95,7 @@ let imgNames = [
     "images/bookTUDSide.png",
     "images/bookTUDTitle.png",
 
-    "images/bookVMBackcover.png",
+    "images/bookVMBackcover.png", 
     "images/bookVMSide.png",
     "images/bookVMTitle.png",
 
