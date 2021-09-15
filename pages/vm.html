@@ -99,6 +99,7 @@
                 </div>
             </div>
         </div>
+
         <div class="po-box po-w100 po-flexmode">
             <div class="po-loreimagebox lo-loreimageborder" style="overflow: hidden; --loreImageW: 63.5; --loreImageH: 35.9;">
                 <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMGameCode4.png');">
@@ -109,7 +110,8 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    Game 클래스의 <lstrong>Run</lstrong>이 호출될 때, 초당 60프레임 마다 반복되는 루프를 작동시키도록 만들었습니다.
+                    Game 클래스의 <lstrong>Run</lstrong>이 호출될 때, 초당 60프레임으로 반복되는 루프를 작동시키도록 만들었습니다.
+                    루프가 종료된 직후 <lstrong>render</lstrong> 함수를 호출하여 화면에 그래픽 요소들을 그립니다.
                 </p>
             </div>
         </div>
@@ -126,6 +128,26 @@
                 <p style="text-align: center;">
                     루프가 반복될 때마다 현재 페이지의 <lstrong>Update</lstrong> 함수를 호출함으로써, 
                     해당 페이지도 Update 함수를 통해 매 프레임마다 반복되는 루프의 기능을 사용할 수 있습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox lo-loreimageborder" style="overflow: hidden; --loreImageW: 79.7; --loreImageH: 90.8;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMGameCode5.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    <lstrong>render</lstrong> 함수 부분에서는 <lstrong>createBufferStrategy</lstrong> 함수를 사용하여 트리플 버퍼링을 구현하여 화면의 <lstrong>깜빡임(flickering)</lstrong>을 방지하였습니다.
+                    <br><br>
+                </p>
+
+                <p style="text-align: center;">
+                    또한, 전면에 백그라운드를 그려주고 <lstrong>안티엘리어싱</lstrong>을 적용한 후, 현재 페이지의 <lstrong>Render</lstrong> 함수를 호출하여 해당 함수를 통해 그래픽 요소들을 그릴 수 있게 하였습니다.
                 </p>
             </div>
         </div>
