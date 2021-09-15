@@ -8,7 +8,7 @@ var galleryRefresh;
 var active          = "#page-resume";
 var activeGallery   = 0;
 var timeout;
-var maxpage         = 8;
+var maxpage         = 9;
 var loadpage        = 0;
 var loading_per     = 0;
 var loadcomplete    = 0;
@@ -35,7 +35,7 @@ portfolioSubPage        = [
     "#page-mk",
     "#page-wbh2",
     "#page-wbh",
-    "#page-dr3",
+    "#page-vm",
     "#page-dr3"
 ];
 
