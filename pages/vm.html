@@ -147,7 +147,31 @@
                 </p>
 
                 <p style="text-align: center;">
-                    또한, 전면에 백그라운드를 그려주고 <lstrong>안티엘리어싱</lstrong>을 적용한 후, 현재 페이지의 <lstrong>Render</lstrong> 함수를 호출하여 해당 함수를 통해 그래픽 요소들을 그릴 수 있게 하였습니다.
+                    또한, 전면에 백그라운드를 그려주고 텍스트에 <lstrong>안티엘리어싱</lstrong>을 적용해 픽셀을 부드럽게 그려줄 수 있게 하고, 현재 페이지의 <lstrong>Render</lstrong> 함수를 호출하여 해당 함수를 통해 그래픽 요소들을 그릴 수 있게 하였습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: 40%;">
+            <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
+                <h2>
+                    <br><br>화폐 시스템
+                </h2>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 80.5; --loreImageH: 25.5;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMCode.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    자판기는 잔돈을 각 동전별로 5개씩 가지고 있도록 하였습니다.<br>
+                    또한, 한번 구매시 지폐로 입력받는 돈의 상한선은 3,000원, 지폐와 동전을 포함하여 총 5,000원을 초과할 수 없도록 조건을 걸었습니다.<br>
                 </p>
             </div>
         </div>
@@ -170,133 +194,6 @@
                     <br><br>
                     <strong>removeCoinNum</strong> 함수는 입력한 값을 가진 코인을 num개 만큼 제거합니다.<br>
                     자판기가 돌려줄 거스름돈들을 반환할 때 사용합니다.
-                </p>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 47; --loreImageH: 54;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/wbh2HMSysCode2.png');">
-                </div>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
-                    &nbsp<strong>Game 클래스의 구조</strong>입니다. <lstrong>Intialize</lstrong> 함수는 main 함수에서 맨 처음 딱 한번 호출됩니다.
-                    이 함수에서는 SDL 윈도우 및 랜더러를 생성하고, BGM을 불러오고, 유저 데이터가 존재하는지 등을 판단합니다.
-                </p>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 32; --loreImageH: 24;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/wbh2HMSysCode3.png');">
-                </div>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
-                    &nbsp<strong>RunLoop 함수</strong>는 게임이 진행되는 동안 키가 눌리는 것을 인식하는 ProcessInput, 게임 내 오브젝트들을 프레임 단위로 업데이트하는
-                    UpdateGame, 화면에 보여주는 것을 담당하는 GenerateOutput 함수 순서로 무한루프됩니다.
-                </p>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 75; --loreImageH: 32;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/wbh2HMSysCode4.png');">
-                </div>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
-                    &nbsp또한 기본적으로 게임의 프레임 단위의 실행을 제어합니다.
-                    <lstrong>델타 타임을 16ms로 조절하여 프레임을 제한</lstrong>합니다. 이로 하여 1초에 약 60프레임 정도를 실행할 수 있습니다.
-                </p>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 59; --loreImageH: 58;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/wbh2HMSysCode5.png');">
-                </div>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
-                    &nbsp<strong>UpdateGame</strong> 함수에서 현재 룸의 Update 함수를 호출하여 룸이 Update가 가능하도록 해줍니다.<br>
-                    또, 룸을 이동할 때 나타나는 스크린 애니메이션 효과를 보여주는 오브젝트를 관리하기도 합니다.
-                </p>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 45; --loreImageH: 76;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/wbh2HMSysCode6.png');">
-                </div>
-            </div>
-        </div>
-        
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
-                    &nbsp<strong>GenerateOutput</strong> 함수에서는 현재 룸의 Draw 함수를 호출하여 룸의 요소들을 그려줍니다.<br>
-                </p>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode" style="height: 40%;">
-            <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
-                <h2>
-                    <br><br>룸 시스템
-                </h2>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
-                    &nbsp오브젝트들이 배치되는 구역을 나누는 시스템으로, 이 구역을 룸이라고 표현하였습니다. 각 룸 오브젝트는 해당 룸에 속해있는 오브젝트들을 할당 및 관리하고 룸에 UI를 표시하고 작동되도록 합니다.
-                </p>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 27; --loreImageH: 24;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/wbh2HMRoomCode.png');">
-                </div>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
-                    &nbsp룸들의 파일 시스템을 위와 같이 정렬하여 간편하게 관리합니다. 게임을 처음 실행하여 유저 데이터가 없는 클라이언트는
-                    Tutorial 룸이 처음 할당됩니다.
-                </p>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 54; --loreImageH: 56;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/wbh2HMRoomCode2.png');">
-                </div>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
-                    &nbsp모든 룸들은 기본적으로 인풋 함수들과 Update, Draw, Delete 함수들을 가지고 있습니다.
-                    또한, 각 룸마다 다른 기능들을 가진 변수들을 선언하고 초기화합니다.
                 </p>
             </div>
         </div>
