@@ -3,7 +3,7 @@
     <div class="po-line"></div>
 
     <!-- VM TITLE -->
-    <div class="po-freecon po-flexmode" style="flex-direction: column;">
+    <div class="po-con po-flexmode" style="flex-direction: column;">
         <div class="po-box po-flexmode po-pr1 po-w100 po-pr-h100-auto" style="flex-direction: column; justify-content: center; align-items: center;">
             <div class="po-subbox po-sbwide po-flexmode" style="height: auto; flex-direction: column; padding-top: 20px; padding-bottom: 20px;">
                 <h3 class="lo-titleborder">VENDING MACHINE</h3>
@@ -23,21 +23,61 @@
                     <br><br><br>
                 </p>
             </div>
+        </div>
+    </div>
+    <div class="po-line"></div>
 
-    
-            <div class="po-box po-pr-w70-w100 po-flexmode po-pr3" style="height: 25;">
-                <div class="po-subbox po-pr-w50-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                    <p style="text-align: center;">
-                        &nbsp대학교 재학 중, Java로 만들어진 자판기 프로그램을 제작하는 것이 목표인 과제를 받았습니다.<br>
-                        단기간이지만 기본을 탄탄하게 설계하고, 시각적으로도 짜임새 있게 만들고자 하였습니다.
-                        <br><br>
-                    </p>
+    <!-- VM BACKGROUND -->
+    <div class="po-con po-flexmode" style="flex-direction: column;">
+        <div class="po-box po-flexmode po-pr1 po-pr-w70-w100 po-pr-h100-auto" style="flex-direction: column; justify-content: center; align-items: center;">
+            <div class="po-box po-flexmode po-w100 po-pr1" style="height: 25%;">
+                <div class="po-subbox po-flexmode" style="width: 99%; height: 98%;">
+                    <h3 style="text-align: center;">
+                        개발 배경
+                    </h3>
                 </div>
             </div>
 
-
+            <div class="po-box po-pr-w70-w100 po-flexmode po-pr3">
+                <div class="po-subbox po-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                    <p style="text-align: center;">
+                        대학교 재학 중, Java로 만들어진 자판기 프로그램을 제작하는 것이 목표인 과제를 받았습니다.<br><br>
+                        단기간이지만 기본을 탄탄하게 설계하고, 시각적으로도 짜임새 있게 만들고자 하였습니다.<br><br>
+                        개발 이후, 포트폴리오를 포스팅 하며 부족한 부분들을 찾게되었고, 깃허브에 올려 오픈소스화 하였습니다.<br><br>
+                    </p>
+                    <p3 style="text-align: center;">
+                        <a href="https://github.com/PlaneGames/VendingMachine" target="_blank">
+                            <strong>Github</strong> - https://github.com/PlaneGames/VendingMachine
+                        </a>
+                    </p3>
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="po-line"></div>
 
+    <!-- VM BACKGROUND -->
+    <div class="po-con po-flexmode" style="flex-direction: column;">
+        <div class="po-box po-flexmode po-pr1 po-pr-w70-w100 po-pr-h100-auto" style="flex-direction: column; justify-content: center; align-items: center;">
+            <div class="po-box po-flexmode po-w100 po-pr1" style="height: 25%;">
+                <div class="po-subbox po-flexmode" style="width: 99%; height: 98%;">
+                    <h3 style="text-align: center;">
+                        주요 요구 사항
+                    </h3>
+                </div>
+            </div>
+
+            <div class="po-box po-pr-w70-w100 po-flexmode po-pr3">
+                <div class="po-subbox po-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                    <p style="text-align: center;">
+                        판매하는 음료는 각각 물(450원), 커피(500원), 이온음료(550원), 고급커피(700원), 탄산음료(750원)이다.<br><br>
+                        각각 음료의 재고는 기본적으로 3개, 품절시 품절 표시.<br><br>
+                        입력 가능 화폐 단위는 10원, 50원, 100원, 500원, 100원이다.<br><br>
+                        한번에 지폐로는 3000원 까지, 동전을 모두 포함하여 5000원까지만 입력이 가능하다.<br>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="po-line"></div>
 
@@ -87,7 +127,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    시스템의 구조를 설계함에 앞서, 이전부터 사용했던 <lstrong>Gamemaker</lstrong>라는 엔진에서 영감을 얻을 수 있었습니다.
+                    <lstrong>시스템의 구조를 설계함에 앞서</lstrong>, 이전부터 사용했던 <lstrong>Gamemaker</lstrong>라는 엔진에서 영감을 얻을 수 있었습니다.
                     게임메이커는 오브젝트들을 룸에 배치하여 해당 룸에 속한 오브젝트들을 보여주는 구조로 되어있습니다.
                     이 구조의 장점은 구축하기 쉽고, 관리하기도 용이하다는 점이었습니다. 이 구조를 구현해 보기로 하였습니다.<br>
                 </p>
@@ -235,12 +275,21 @@
             </div>
         </div>
 
+        <div class="po-box po-w100 po-flexmode" style="height: 40%;">
+            <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
+                <h2>
+                    <br><br>자판기 거스름돈 시스템
+                </h2>
+            </div>
+        </div>
+
         <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 50; --loreImageH: 15.625;">
+            <div class="po-loreimagebox lo-loreimageborder" style="overflow: hidden; --loreImageW: 50; --loreImageH: 15.625;">
                 <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMCode.png');">
                 </div>
             </div>
         </div>
+        
 
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
@@ -268,6 +317,47 @@
                     <br><br>
                     <strong>removeCoinNum</strong> 함수는 입력한 값을 가진 코인을 num개 만큼 제거합니다.<br>
                     자판기가 돌려줄 거스름돈들을 반환할 때 사용합니다.
+                </p>
+            </div>
+        </div>
+ 
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 75.1; --loreImageH: 33.3;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMCode4.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    거스름돈에 필요한 동전의 종류와 수를 계산하는 부분에 있어서, 어떤식으로 구현해야할지 고민되었습니다.
+                    처음에는 <lstrong>조건문으로 계산하려고 하였으나 뜻대로 되지 않았습니다.</lstrong> 
+                    이에 650원의 거스름돈으로 <lstrong>가정</lstrong>해보고 500으로 <lstrong>나누기 및 mod 연산</lstrong>을 해보았습니다.
+                    <br><br>
+                    650 / 500 = 1.3에서 정수부는 필요한 500원의 갯수, 650 % 500 = 150의 값은 500원으로 해결되지 않는 나머지 값이었습니다.
+                    나머지 값인 150을 100으로 나누고, 이 과정을 10원까지 반복해 원하는 결과를 얻게 되었습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: 40%;">
+            <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
+                <h2>
+                    <br><br>마치며
+                </h2>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    과제에서 필요한 자판기의 요구 조건들을 만족하였지만 여기에는 거슬러줄 동전이 부족할 때 발생하는 논리적 오류에 대한
+                    예외 상황이 없었습니다.
+                    <br><br>
+                    포트폴리오에 포스팅하기 위해 소스코드를 다시 살펴보았는데, 이러한 부분들에 리팩토링 및 기능 추가가 필요해 보였습니다.
+                    <br><br>
+                    이에 깃허브에 이 프로젝트를 오픈소스로 공유하기로 하였고, 아직 다 채워지지 않은 기능들을 추가해볼 생각입니다.
                 </p>
             </div>
         </div>
