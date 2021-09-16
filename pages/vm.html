@@ -87,8 +87,18 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
+                    시스템의 구조를 설계함에 앞서, 이전부터 사용했던 <lstrong>Gamemaker</lstrong>라는 엔진에서 영감을 얻을 수 있었습니다.
+                    게임메이커는 오브젝트들을 룸에 배치하여 해당 룸에 속한 오브젝트들을 보여주는 구조로 되어있습니다.
+                    이 구조의 장점은 구축하기 쉽고, 관리하기도 용이하다는 점이었습니다. 이 구조를 구현해 보기로 하였습니다.<br>
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
                     시스템의 흐름을 총괄하는 Game 클래스가 매 프레임마다 각 Page 클래스를 업데이트하고, 각 Page는 필요한 오브젝트를 생성하고,
-                    이 오브젝트들을 업데이트 시킵니다.
+                    이 오브젝트들을 업데이트합니다.
                 </p>
             </div>
         </div>
@@ -160,9 +170,43 @@
             </div>
         </div>
 
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    자판기에 돈을 넣기위해 만든 버튼들을 각각의 클래스로 구현하였고, 기능들 또한 각각 정의하였었습니다.
+                    그러나, 리소스의 낭비와 기능 수정시 일일이 모든 클래스를 수정해야 할 것 같았습니다.
+                    <br><br>
+                    이에, ObjCoinButtonPar 라는 부모 클래스를 만들어 공통된 기능들을 전부 묶고, 각 버튼 클래스들은 위치 Offset과 이미지 설정만 한 뒤,
+                    기능들을 상속받아 사용하였습니다. 덕분에 버튼들에 마우스 호버 효과 등, 애니메이션 효과들을 보다 쉽게 구현할 수 있었습니다.
+                </p>
+            </div>
+        </div>
+
         <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox lo-loreimageborder" style="overflow: hidden; --loreImageW: 39; --loreImageH: 14.625;">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 84.4; --loreImageH: 10.1;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMCode2.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    한번 구매시 자판기가 지폐로 입력받는 돈의 상한선은 3,000원, 지폐와 동전을 포함하여 총 5,000원을 초과할 수 없도록 조건을 걸었습니다.<br>
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 39; --loreImageH: 14.625;">
                 <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMGame.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox lo-loreimageborder" style="overflow: hidden; --loreImageW:64.2; --loreImageH: 12.1;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMCode3.png');">
                 </div>
             </div>
         </div>
@@ -176,15 +220,24 @@
         </div>
 
         <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 50; --loreImageH: 15.625;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMCode.png');">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW:31.7; --loreImageH: 20.7;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMFile.png');">
                 </div>
+            </div>
+        </div>
+        
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    이 동전 입력 버튼들은 <lstrong>ObjCoinButtonPar</lstrong> 클래스의 자식 클래스입니다. ObjCoinButtonPar에서 위치별 마우스 클릭 인식 범위 지정과,
+                    클릭시 자판기에 돈이 입력되는 기능 등을 정의합니다.
+                </p>
             </div>
         </div>
 
         <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox lo-loreimageborder" style="overflow: hidden; --loreImageW: 84.4; --loreImageH: 10.1;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMCode2.png');">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 50; --loreImageH: 15.625;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMCode.png');">
                 </div>
             </div>
         </div>
@@ -193,16 +246,7 @@
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
                     자판기는 기본적으로 잔돈을 각 동전별로 5개씩 가지고 있도록 하였습니다.<br>
-                    또한, 한번 구매시 지폐로 입력받는 돈의 상한선은 3,000원, 지폐와 동전을 포함하여 총 5,000원을 초과할 수 없도록 조건을 걸었습니다.<br>
                 </p>
-            </div>
-        </div>
-
-
-        <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW:64.2; --loreImageH: 12.1;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMCode3.png');">
-                </div>
             </div>
         </div>
 
