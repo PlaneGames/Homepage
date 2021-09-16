@@ -8,7 +8,7 @@ var galleryRefresh;
 var active          = "#page-resume";
 var activeGallery   = 0;
 var timeout;
-var maxpage         = 9;
+var maxpage         = 10;
 var loadpage        = 0;
 var loading_per     = 0;
 var loadcomplete    = 0;
@@ -36,7 +36,7 @@ portfolioSubPage        = [
     "#page-wbh2",
     "#page-wbh",
     "#page-vm",
-    "#page-dr3"
+    "#page-tol"
 ];
 
 portfolioVideoIndex     = [];
