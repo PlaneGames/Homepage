@@ -133,7 +133,7 @@
         </div>
 
         <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox lo-loreimageborder" style="overflow: hidden; --loreImageW: 79.7; --loreImageH: 90.8;">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 79.7; --loreImageH: 90.8;">
                 <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMGameCode5.png');">
                 </div>
             </div>
@@ -142,7 +142,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    <lstrong>render</lstrong> 함수 부분에서는 <lstrong>createBufferStrategy</lstrong> 함수를 사용하여 트리플 버퍼링을 구현하여 화면의 <lstrong>깜빡임(flickering)</lstrong>을 방지하였습니다.
+                    Game 클래스의 <lstrong>render</lstrong> 함수 부분에서는 <lstrong>createBufferStrategy</lstrong> 함수를 사용하여 트리플 버퍼링을 구현하여 화면의 <lstrong>깜빡임(flickering)</lstrong>을 방지하였습니다.
                     <br><br>
                 </p>
 
@@ -155,14 +155,14 @@
         <div class="po-box po-w100 po-flexmode" style="height: 40%;">
             <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
                 <h2>
-                    <br><br>화폐 시스템
+                    <br><br>자판기 돈 입력 시스템
                 </h2>
             </div>
         </div>
 
         <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 80.5; --loreImageH: 25.5;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMCode.png');">
+            <div class="po-loreimagebox lo-loreimageborder" style="overflow: hidden; --loreImageW: 39; --loreImageH: 14.625;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMGame.png');">
                 </div>
             </div>
         </div>
@@ -170,9 +170,39 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    자판기는 잔돈을 각 동전별로 5개씩 가지고 있도록 하였습니다.<br>
+                    자판기에 넣을 수 있는 돈에는 1000원짜리 지폐와, 동전들이 있습니다. 돈 버튼을 누를경우 해당 돈의 coin 오브젝트를 생성하고 리스트에 입력합니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 50; --loreImageH: 15.625;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMCode.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox lo-loreimageborder" style="overflow: hidden; --loreImageW: 84.4; --loreImageH: 10.1;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMCode2.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    자판기는 기본적으로 잔돈을 각 동전별로 5개씩 가지고 있도록 하였습니다.<br>
                     또한, 한번 구매시 지폐로 입력받는 돈의 상한선은 3,000원, 지폐와 동전을 포함하여 총 5,000원을 초과할 수 없도록 조건을 걸었습니다.<br>
                 </p>
+            </div>
+        </div>
+
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW:64.2; --loreImageH: 12.1;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMCode3.png');">
+                </div>
             </div>
         </div>
 
