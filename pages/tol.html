@@ -10,8 +10,8 @@
                 <p3 style="text-align: center;">
                     <br>
                     플랫폼 - PC<br>
-                    개발환경 - C Winapi<br>
-                    개발일 - 2019.9 ~ 2019.11<br>
+                    개발환경 - C Win32 api<br>
+                    개발일 - 2019.9 ~ 2019.10<br>
                     <br>
                 </p3>
             </div>
@@ -41,7 +41,7 @@
                     <p style="text-align: center;">
                         대학교 과제로, C언어로 타자연습 프로그램을 제작하는 미션을 받게 되었습니다.<br><br>
                         기존에 C언어를 배울 때 콘솔창만을 사용하는 경우가 많았는데, 프로젝트 만큼은 C언어로 깔끔한 그래픽을 구축하고 싶었습니다.<br><br>
-                        이에, winapi를 배우면서 사용해보고자 하였습니다.<br><br>
+                        이에, win32 api를 배우면서 사용해보고자 하였습니다.<br><br>
                     </p>
                 </div>
             </div>
@@ -70,7 +70,7 @@
         <div class="po-box po-flexmode po-pr-w50-w100 po-pr3" style="height: 25;">
             <div class="po-subbox po-flexmode" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    UI 디자인은 winapi의 그래픽 요소들을 사용하여 심플하게 구성하였습니다.<bt>
+                    UI 디자인은 win32 api와 GDI+ 라이브러리를 사용하여 그래픽 요소들을 심플하게 구성하였습니다.<bt>
                     대표적으로 유저 정보 창에 그래프를 색깔별로 그려 넣어보았습니다.<br>
                     테스트를 위하여 날짜별 타자 정보를 임의로 채워 넣었습니다.<br>
                 </p>
@@ -89,40 +89,14 @@
                     HOW MADE ?
                 </h3>
                 <h2>
-                    시스템의 구조
+                    타자 입력 시스템
                 </h2>
             </div>
         </div>
 
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
-                    <lstrong>시스템의 구조를 설계함에 앞서</lstrong>, 이전부터 사용했던 <lstrong>Gamemaker</lstrong>라는 엔진에서 영감을 얻을 수 있었습니다.
-                    게임메이커는 오브젝트들을 룸에 배치하여 해당 룸에 속한 오브젝트들을 보여주는 구조로 되어있습니다.
-                    이 구조의 장점은 구축하기 쉽고, 관리하기도 용이하다는 점이었습니다. 이 구조를 구현해 보기로 하였습니다.<br>
-                </p>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
-                    시스템의 흐름을 총괄하는 Game 클래스가 매 프레임마다 각 Page 클래스를 업데이트하고, 각 Page는 필요한 오브젝트를 생성하고,
-                    이 오브젝트들을 업데이트합니다.
-                </p>
-            </div>
-        </div>
-
         <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 58.3; --loreImageH: 51;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMGameCode2.png');">
-                </div>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox lo-loreimageborder" style="overflow: hidden; --loreImageW: 63.5; --loreImageH: 35.9;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMGameCode4.png');">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 100; --loreImageH: 55;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/tolVMTyping.gif');">
                 </div>
             </div>
         </div>
@@ -130,15 +104,17 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    Game 클래스의 <lstrong>Run</lstrong>이 호출될 때, 초당 60프레임으로 반복되는 루프를 작동시키도록 만들었습니다.
-                    루프가 종료된 직후 <lstrong>render</lstrong> 함수를 호출하여 화면에 그래픽 요소들을 그립니다.
+                    <lstrong>문장 타자 연습</lstrong>을 만들 때, 목표 텍스트와 입력중인 텍스트를 비교하여 정확도를 계산하고자 하였습니다.<br>
+                    처음 생각과는 달리, 목표 텍스트와 입력된 텍스트가 같은지의 여부만을 알 수 있었습니다. 또한, 틀린 글자만 빨간색으로 처리하는 부분이
+                    불가능 하였습니다.<br><br>
+                    그래서, 반복문을 이용한 <lstrong>문자 단위의 비교</lstrong> 설계의 필요성을 느끼게 되었습니다.
                 </p>
             </div>
         </div>
 
         <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 34.5; --loreImageH: 10.2;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMGameCode3.png');">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 100; --loreImageH: 6.9;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/tolVMCode.png');">
                 </div>
             </div>
         </div>
@@ -146,15 +122,15 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    루프가 반복될 때마다 현재 페이지의 <lstrong>Update</lstrong> 함수를 호출함으로써, 
-                    해당 페이지도 Update 함수를 통해 매 프레임마다 반복되는 루프의 기능을 사용할 수 있습니다.
+                    <lstrong>traslateText</lstrong>변수에는 목표 텍스트의 i번째 문자, <lstrong>traslateText2</lstrong>변수에는 입력중인 텍스트의 i번째 문자를 가집니다.<br>
+                    반복문을 이용하여 각 문자별로 비교를 진행합니다.
                 </p>
             </div>
         </div>
 
         <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 79.7; --loreImageH: 90.8;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMGameCode5.png');">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 98.4; --loreImageH: 34.0;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/tolVMCode2.png');">
                 </div>
             </div>
         </div>
@@ -162,12 +138,23 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    Game 클래스의 <lstrong>render</lstrong> 함수 부분에서는 <lstrong>createBufferStrategy</lstrong> 함수를 사용하여 트리플 버퍼링을 구현하여 화면의 <lstrong>깜빡임(flickering)</lstrong>을 방지하였습니다.
-                    <br><br>
+                    각 문자별로 출력해야 하므로, 각 문자가 정확한 위치에 그려져야 했습니다.<br>
+                    이에 현재 i번째 문자의 종류별로 다른 크기값을 구하고 xx 변수에 더하도록 하였습니다.
                 </p>
+            </div>
+        </div>
 
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 100; --loreImageH: 2.5;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/tolVMCode3.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    또한, 전면에 백그라운드를 그려주고 텍스트에 <lstrong>안티엘리어싱</lstrong>을 적용해 픽셀을 부드럽게 그려줄 수 있게 하고, 현재 페이지의 <lstrong>Render</lstrong> 함수를 호출하여 해당 함수를 통해 그래픽 요소들을 그릴 수 있게 하였습니다.
+                    최종적으로 <lstrong>DrawString</lstrong> 함수를 통해 입력중인 <lstrong>traslateText</lstrong> 문자가 해당 좌표로 그려지게 됩니다.
                 </p>
             </div>
         </div>
@@ -175,103 +162,14 @@
         <div class="po-box po-w100 po-flexmode" style="height: 40%;">
             <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
                 <h2>
-                    <br><br>자판기 돈 입력 시스템
-                </h2>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
-                    자판기에 돈을 넣기위해 만든 버튼들을 각각의 클래스로 구현하였고, 기능들 또한 각각 정의하였었습니다.
-                    그러나, 리소스의 낭비와 기능 수정시 일일이 모든 클래스를 수정해야 할 것 같았습니다.
-                    <br><br>
-                    이에, ObjCoinButtonPar 라는 부모 클래스를 만들어 공통된 기능들을 전부 묶고, 각 버튼 클래스들은 위치 Offset과 이미지 설정만 한 뒤,
-                    기능들을 상속받아 사용하였습니다. 덕분에 버튼들에 마우스 호버 효과 등, 애니메이션 효과들을 보다 쉽게 구현할 수 있었습니다.
-                </p>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 84.4; --loreImageH: 10.1;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMCode2.png');">
-                </div>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
-                    한번 구매시 자판기가 지폐로 입력받는 돈의 상한선은 3,000원, 지폐와 동전을 포함하여 총 5,000원을 초과할 수 없도록 조건을 걸었습니다.<br>
-                </p>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 39; --loreImageH: 14.625;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMGame.png');">
-                </div>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox lo-loreimageborder" style="overflow: hidden; --loreImageW:64.2; --loreImageH: 12.1;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMCode3.png');">
-                </div>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
-                    자판기에 넣을 수 있는 돈에는 1000원짜리 지폐와, 동전들이 있습니다. 돈 버튼을 누를경우 해당 돈의 coin 오브젝트를 생성하고 리스트에 입력합니다.
-                </p>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW:31.7; --loreImageH: 20.7;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMFile.png');">
-                </div>
-            </div>
-        </div>
-        
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
-                    이 동전 입력 버튼들은 <lstrong>ObjCoinButtonPar</lstrong> 클래스의 자식 클래스입니다. ObjCoinButtonPar에서 위치별 마우스 클릭 인식 범위 지정과,
-                    클릭시 자판기에 돈이 입력되는 기능 등을 정의합니다.
-                </p>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode" style="height: 40%;">
-            <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
-                <h2>
-                    <br><br>자판기 거스름돈 시스템
+                    <br><br>사용자 정보 인터페이스
                 </h2>
             </div>
         </div>
 
         <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox lo-loreimageborder" style="overflow: hidden; --loreImageW: 50; --loreImageH: 15.625;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMCode.png');">
-                </div>
-            </div>
-        </div>
-        
-
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
-                    자판기는 기본적으로 잔돈을 각 동전별로 5개씩 가지고 있도록 하였습니다.<br>
-                </p>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 99.5; --loreImageH: 88.5;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMGameCode.png');">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 100; --loreImageH: 55;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/tolUserinfoGame.gif');">
                 </div>
             </div>
         </div>
@@ -279,55 +177,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    구매자는 돈을 넣어야만 자판기의 음료들을 구매할 수 있습니다. 또한, 거스름돈도 반환받아야 합니다.
-                    이에 돈을 각 오브젝트 클래스로 만들어 조작할 수 있게 하였습니다.
-                    <br><br>
-                    <strong>coinNumber</strong>변수는 모든 화폐의 총 갯수입니다. 위의 <strong>getCoinNum</strong> 함수는 이를 이용하여
-                    모든 화폐중 인자값과 같은 값인 화폐의 갯수를 반환합니다.
-                    <br><br>
-                    <strong>removeCoinNum</strong> 함수는 입력한 값을 가진 코인을 num개 만큼 제거합니다.<br>
-                    자판기가 돌려줄 거스름돈들을 반환할 때 사용합니다.
-                </p>
-            </div>
-        </div>
- 
-        <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 75.1; --loreImageH: 33.3;">
-                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/vmHMVMCode4.png');">
-                </div>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
-                    거스름돈에 필요한 동전의 종류와 수를 계산하는 부분에 있어서, 어떤식으로 구현해야할지 고민되었습니다.
-                    처음에는 <lstrong>조건문으로 계산하려고 하였으나 뜻대로 되지 않았습니다.</lstrong> 
-                    이에 650원의 거스름돈으로 <lstrong>가정</lstrong>해보고 500으로 <lstrong>나누기 및 mod 연산</lstrong>을 해보았습니다.
-                    <br><br>
-                    650 / 500 = 1.3에서 정수부는 필요한 500원의 갯수, 650 % 500 = 150의 값은 500원으로 해결되지 않는 나머지 값이었습니다.
-                    나머지 값인 150을 100으로 나누고, 이 과정을 10원까지 반복해 원하는 결과를 얻게 되었습니다.
-                </p>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode" style="height: 40%;">
-            <div class="po-subbox po-flexmode po-freetext-title" style="flex-direction: column; width: 99%; height: 98%; justify-content: center; align-items: center;">
-                <h2>
-                    <br><br>마치며
-                </h2>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
-                    과제에서 필요한 자판기의 요구 조건들을 만족하였지만 여기에는 거슬러줄 동전이 부족할 때 발생하는 논리적 오류에 대한
-                    예외 상황이 없었습니다.
-                    <br><br>
-                    포트폴리오에 포스팅하기 위해 소스코드를 다시 살펴보았는데, 이러한 부분들에 리팩토링 및 기능 추가가 필요해 보였습니다.
-                    <br><br>
-                    이에 깃허브에 이 프로젝트를 오픈소스로 공유하기로 하였고, 아직 다 채워지지 않은 기능들을 추가해볼 생각입니다.
+                    ㅅ
                 </p>
             </div>
         </div>
