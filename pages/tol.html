@@ -60,17 +60,17 @@
             </div>
         </div>
 
-        <div class="po-box po-flexmode po-pr2 po-w100 po-h50">
-            <div class="po-subbox" style="width: 49%; height: 98%;">
+        <div class="po-box po-flexmode po-pr2 po-pr-w50-w100 po-h50">
+            <div class="po-subbox" style="width: 99%; height: 98%;">
                 <div class="po-img" style="height: 100%; width: 100%; background-image: url('../src/images/tolUserinfoGame.gif');">
                 </div>
             </div>
         </div>
 
-        <div class="po-box po-flexmode po-pr-w50-w100 po-pr3" style="height: 25;">
-            <div class="po-subbox po-flexmode" style="width: 99%; height: 98%;">
+        <div class="po-box po-flexmode po-w100 po-pr3" style="height: 25;">
+            <div class="po-subbox po-pr-w50-w100 po-flexmode" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    UI 디자인은 win32 api와 GDI+ 라이브러리를 사용하여 그래픽 요소들을 심플하게 구성하였습니다.<bt>
+                    UI 디자인은 <lstrong>win32 api와 GDI+</lstrong> 라이브러리를 사용하여 그래픽 요소들을 심플하게 구성하였습니다.<bt>
                     대표적으로 유저 정보 창에 그래프를 색깔별로 그려 넣어보았습니다.<br>
                     테스트를 위하여 날짜별 타자 정보를 임의로 채워 넣었습니다.<br>
                 </p>
@@ -95,7 +95,7 @@
         </div>
 
         <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 100; --loreImageH: 55;">
+            <div class="po-loreimagebox lo-loreimageborder" style="overflow: hidden; --loreImageW: 100; --loreImageH: 55;">
                 <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/tolVMTyping.gif');">
                 </div>
             </div>
@@ -168,7 +168,7 @@
         </div>
 
         <div class="po-box po-w100 po-flexmode">
-            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 100; --loreImageH: 55;">
+            <div class="po-loreimagebox lo-loreimageborder" style="overflow: hidden; --loreImageW: 100; --loreImageH: 55;">
                 <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/tolUserinfoGame.gif');">
                 </div>
             </div>
@@ -177,7 +177,36 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    ㅅ
+                    사용자 정보 인터페이스를 구현하기 위해 <lstrong>GDI+</lstrong> 라이브러리에 속한 함수들을 다수 사용하고자 하였습니다.
+                    <br><br>
+                    하지만, 단순히 함수들을 사용하여 구현하기에는 리소스의 양이 너무 많아질 것 같았습니다.
+                    이에 헤더파일에 그래픽 함수들을 미리 만들게 되었습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode">
+            <div class="po-loreimagebox po-boxspacetop lo-loreimageborder" style="overflow: hidden; --loreImageW: 100; --loreImageH: 54.55;">
+                <div class="po-img" style="width: 100%; height: 100%; background-image: url('../src/images/tolVMCode4.png');">
+                </div>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    대표적인 함수로 <strong>draw_text_color_rect</strong>가 있습니다.
+                    <br><br>
+                    DrawString 함수에, 정렬, 안티엘리어싱, 색조 변경의 기능을 더해 한번의 함수 호출로 사용하고 싶어서 설계하였습니다.
+                    <br><br>
+                </p>
+            </div>
+        </div>
+
+        <div class="po-box po-w100 po-flexmode" style="height: auto;">
+            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
+                <p style="text-align: center;">
+                    그래픽 라이브러리를 보다 쉽게 활용하기 위해, 위와 같은 함수를 10가지 넘게 설계하였습니다.<br>
                 </p>
             </div>
         </div>
