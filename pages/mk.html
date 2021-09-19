@@ -15,7 +15,9 @@
             </div>
             <div class="po-subbox po-sbwide po-flexmode" style="height: auto; flex-direction: column; justify-content: center; align-content: center;">
                 <p style="text-align: center;">
-                    전략 시뮬레이션 미니 프로젝트인 <strong>Micro Kingdom</strong> 입니다. 개미 왕국 간의 전쟁을 묘사한 게임으로, <lstrong>유닛의 인공지능</lstrong>에 초점을 두어 시험 삼아 만들어졌습니다.
+                    전략 시뮬레이션 미니 프로젝트인 <strong>Micro Kingdom</strong> 입니다. 
+                    개미 왕국 간의 전쟁을 묘사한 게임으로, <lstrong>유닛의 인공지능</lstrong>에 초점을 두어 시험 삼아 만들어졌습니다.
+                    <br><br><br>
                     또 다른 전략적 요소인 <lstrong>무당벌레</lstrong>로 인해 비행이 가능한 유닛의 분류가 등장했고, 이에 따라 달라지는 유닛들의 <lstrong>공격 타깃 선정 알고리즘</lstrong>과 <lstrong>최적화</lstrong>에 대해 연구하였습니다.
                 </p>
             </div>
@@ -79,7 +81,8 @@
         <div class="po-box po-flexmode po-pr-w70-w100 po-pr3" style="height: 22.5%;">
             <div class="po-subbox po-flexmode" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp각 유닛들은 16방향 도트 그래픽으로 각 모션들을 지원합니다. 걷는 모션, 비행 모션, 발사 모션 등을 보다 생동감 있게 나타내어
+                    &nbsp각 유닛들은 16방향 도트 그래픽으로 각 모션들을 지원합니다. 
+                    걷는 모션, 비행 모션, 발사 모션 등을 보다 생동감 있게 나타내어
                     작은 도트 그래픽에 퀄리티와 아기자기함을 더했습니다.
                 </p>
             </div>
@@ -196,7 +199,9 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp<lstrong>_img_dire</lstrong> 임시 변수에서 각도에 따라 1부터 16까지의 숫자가 균등하게 나옵니다. 360에 22.5를 나눈 값이 16이므로, 이를 이용해 유닛의 방향에 따라 1부터 16까지의 상수가 나오도록 설계했습니다.
+                    &nbsp<lstrong>_img_dire</lstrong> 임시 변수에서 각도에 따라 1부터 16까지의 숫자가 균등하게 나옵니다. 
+                    360에 22.5를 나눈 값이 16이므로, 이를 이용해 유닛의 방향에 따라 1부터 16까지의 상수가 나오도록 설계했습니다.
+                    <br><br><br>
                     유닛의 스프라이트 프레임이 90도 방향부터 270도 방향으로 그려져 있으므로, 유닛의 각도변수인 <lstrong>direction</lstrong>에 90을 더했습니다.
                     여기에 22.5에 2를 나눈 값인 11.25를 더해 바라보는 각도를 맞춰주었습니다. _img_dire 변수가 9보다 같거나 작을 때, 해당 프레임을 대칭시켜 총 16방향으로 보이게끔 설계하였습니다.
                 </p>
@@ -238,6 +243,7 @@
                 <p style="text-align: center;">
                     &nbsp각 유닛 오브젝드는 공통적으로 부모 오브젝트인 엔티티 오브젝트에게 기능을 상속받고, 이렇게 간단한 변수 선언으로 유닛의 특성을 지정할 수 있습니다.
                     왼쪽 코드는 근접 돌격 유닛, 오른쪽 코드는 원거리 공격 유닛으로 모두 지상 유닛입니다.
+                    <br><br><br>
                     <lstrong>move_type</lstrong> 변수가 0일 경우 지상, 1일 경우 공중 유닛임을 뜻합니다.
                     <lstrong>atk_type</lstrong> 변수에 열거형 상수 중 하나를 공격 타입으로 지정할 수 있습니다.
                     atk_spd는 재공격 대기 시간으로, 값이 높을 수록 공격 속도가 느립니다.
@@ -256,7 +262,9 @@
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
                     &nbsp위 코드는 지상 유닛 중 근접 공격 <lstrong>HEADBUTT(돌격)</lstrong> 유닛의 공격 타깃 선정 로직입니다. 최적화를 위해 30프레임마다 한번씩 체크하며,
-                    타깃을 지정했을 때 <lstrong>(goto_x, goto_y)</lstrong> 좌표로 이동하게 됩니다. 여기서의 핵심은 <lstrong>entity_nearest_zplace(x, y, z, ene_target);</lstrong> 입니다.
+                    타깃을 지정했을 때 <lstrong>(goto_x, goto_y)</lstrong> 좌표로 이동하게 됩니다. 
+                    <br><br><br>
+                    핵심은 <lstrong>entity_nearest_zplace(x, y, z, ene_target);</lstrong> 입니다.
                     근접 유닛은 공중에 날고 있는 적을 상대로 돌격하는 행위가 불가능하며, 이로 인해 공격 대상을 판단할 알고리즘이 필요했습니다.
                 </p>
             </div>
@@ -273,8 +281,10 @@
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
                     &nbsp이 알고리즘은 <lstrong>호출한 유닛의 z축보다 낮은 선상에 있는 적 유닛들 중 가장 가까운 유닛의 인스턴스 id값을 반환</lstrong>합니다. 
-                    with문에서 입력된 적 오브젝트의 모든 인스턴스들을 일종의 반복문의 형태로 모두 순회합니다. 인스턴스들을 순회하면서, 
-                    더 낮은 z축을 가진 적들과 좌표 간의 거리를 구하고, 이 거리를 <lstrong>_nearest</lstrong> 변수에 저장하고 해당 인스턴스 id 값을 _id 변수에 저장합니다.
+                    with문에서 입력된 적 오브젝트의 모든 인스턴스들을 일종의 반복문의 형태로 모두 순회합니다. 
+                    <br><br><br>
+                    인스턴스들을 순회하면서, 더 낮은 z축을 가진 적들과 좌표 간의 거리를 구하고, 이 거리를 <lstrong>_nearest</lstrong> 변수에 저장하고 해당 인스턴스 id 값을 _id 변수에 저장합니다.
+                    <br><br><br>
                     with문이 끝날 동안 더 가까운 적을 찾으면 _nearest 값을 갱신하고 해당 인스턴스의 id 값을 _id 변수에 저장하는 것을 반복합니다.
                     이 함수는 마지막으로 저장된 _id 변수의 값을 반환하고, 이 반환 값은 곧 <lstrong>가장 가까운 적 인스턴스의 id값을 가리킵니다.</lstrong>
                 </p>
@@ -292,7 +302,9 @@
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
                     &nbsp마지막으로 지상 유닛 중 원거리 공격 <lstrong>SHOOT(발사)</lstrong> 유닛의 공격 타깃 선정 로직입니다. 모두 근접 공격 유닛과 동일한 구조이지만, 딱 한가지 다른 것은 <lstrong>_tg_id</lstrong> 변수에
-                    <lstrong>instance_nearest()</lstrong> 함수의 반환 값을 대입한다는 것입니다. 위의 근접 공격 유닛은 <lstrong>entity_nearest_zplace()</lstrong> 함수를 사용했습니다. 
+                    <lstrong>instance_nearest()</lstrong> 함수의 반환 값을 대입한다는 것입니다. 
+                    <br><br><br>
+                    위의 근접 공격 유닛은 <lstrong>entity_nearest_zplace()</lstrong> 함수를 사용했습니다. 
                     instance_nearest() 함수는 GML 언어에서 제공하는 함수로, <lstrong>x, y 좌표를 기준으로 가장 가까운 적 유닛의 id 값을 반환</lstrong>합니다. 원거리 유닛은 근접 유닛과는 달리 비행 중인 유닛을 타겟으로 선정할 수 있으므로
                     instance_nearest() 함수를 사용했습니다.
                 </p>
@@ -347,7 +359,9 @@
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
                     &nbsp왼쪽은 <lstrong>8자 선회</lstrong> 비행을 하는 무당벌레이고, 오른쪽은 <lstrong>8자 곡예</lstrong> 비행을 하는 무당벌레 입니다.
-                    이 외에 스텟의 차이는 전혀 없습니다. 8자 선회 비행은 일정한 속도와 고도로 8자 비행을 하지만, 8자 곡예 비행은 부분 가속과 고도를 지속적으로 변화시키며 비행합니다.
+                    이 외에 스텟의 차이는 전혀 없습니다. 
+                    <br><br><br>
+                    8자 선회 비행은 일정한 속도와 고도로 8자 비행을 하지만, 8자 곡예 비행은 부분 가속과 고도를 지속적으로 변화시키며 비행합니다.
                     이로 인해 8자 곡예 비행은 적 유닛의 투사체 공격으로부터 조금 더 회피율이 높습니다. 위 GIF 이미지의 결과와 같이 조금 더 효율이 좋은 모습을 보여줍니다.
                 </p>
             </div>
