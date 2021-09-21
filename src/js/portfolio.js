@@ -492,6 +492,8 @@ var book_img = [
                     if (window.innerWidth <= 800) {
                         $('strong')
                             .css('font-size','11px');
+                        $('lstrong')
+                            .css('font-size','12px');
                         $('.po-subbox p')
                             .css('margin','0px')
                             .css('font-size','11px');
@@ -499,6 +501,8 @@ var book_img = [
                             .css('border','none');
                     } else if (window.innerWidth <= 880) {
                         $('strong')
+                            .css('font-size','12px');
+                        $('lstrong')
                             .css('font-size','12px');
                         $('.po-subbox p')
                             .css('margin','8px')
@@ -508,6 +512,8 @@ var book_img = [
                             .css('border-right','12px solid rgba(0, 0, 0, 0.2)');
                     } else {
                         $('strong')
+                            .css('font-size','12px');
+                        $('lstrong')
                             .css('font-size','12px');
                         $('.po-subbox p')
                             .css('margin','16px')
@@ -553,24 +559,17 @@ var book_img = [
                     $('.po-subbox h3')
                         .css('margin-bottom','32px')
                         .css('margin-top','48px');
-                    if (window.innerWidth <= 550) {
-                        $('.po-subbox p')
-                            .css('margin','0px')
-                            .css('margin-bottom','32px')
-                            .css('margin-top','32px')
-                            .css('font-size','13px');
-                        $('strong')
-                            .css('font-size','13px');
-                    } else {
-                        $('.po-subbox p')
-                            .css('margin','0px')
-                            .css('margin-bottom','32px')
-                            .css('margin-top','32px')
-                            .css('font-size','12px');
-                        $('strong')
-                            .css('font-size','12px');
-                    }
-                        
+
+                    $('.po-subbox p')
+                        .css('margin','0px')
+                        .css('margin-bottom','32px')
+                        .css('margin-top','32px')
+                        .css('font-size','12px');
+                    $('strong')
+                        .css('font-size','12px');
+                    $('lstrong')
+                        .css('font-size','12px');
+
                     $('.po-pr1').css('order','1')
                     $('.po-pr2').css('order','2')
                     $('.po-pr3').css('order','3')
