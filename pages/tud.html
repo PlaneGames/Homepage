@@ -276,13 +276,7 @@
                     다음으로 컷씬을 실행시킬 것인지, 이벤트씬을 실행시킬 것인지를 묻습니다.
                     컷씬을 실행시키는 경우, id값이 2번 인자값인 컷씬의 cutscene_is_ing 변수에 true 값을 대입하는 것으로
                     해당 컷씬을 활성화 시킵니다.
-                </p>
-            </div>
-        </div>
-
-        <div class="po-box po-w100 po-flexmode" style="height: auto;">
-            <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
-                <p style="text-align: center;">
+                    <br><br><br>
                     이러한 방식도 <lstrong>조건과 상황이 많아질 수록 구문의 형태를 외우기가 복잡해진다</lstrong>는 단점이 있으므로, 일종의 사용 메뉴얼이 필요할 수 있겠다는 생각이 듭니다.
                     사용 메뉴얼만 잘 숙지한다면, 게임을 모딩하는 듯한 편리함을 느낄 수 있을 것입니다.
                     <br><br><br>
@@ -336,8 +330,8 @@
                 <p style="text-align: center;">
                     조금은 복잡해 보일 수 있지만, 열거형 상수로 직관적으로 기능을 파악하기 쉽고 트리거 시스템 만큼 <lstrong>사용하기 간편</lstrong>합니다.
                     PAUSE는 말 그대로 중지, CAMPOINT는 카메라를 해당 지점으로 이동, ENTITY_CREATE는 엔티티 인스턴스 생성 등등.. 문장 그대로의 기능을 가지고 있습니다.
-                    컷씬은 순차적으로 정해진 시간을 가지고 진행되기 때문에, 항상 <lstrong>구문의 끝에는 대기 시간(1/60초 단위)을 입력</lstrong>해야 합니다.
                     <br><br><br>
+                    컷씬은 순차적으로 정해진 시간을 가지고 진행되기 때문에, 항상 <lstrong>구문의 끝에는 대기 시간(1/60초 단위)을 입력</lstrong>해야 합니다.
                     위의 예제의 cutscene_info 변수의 구문 중에서 '[CUTSCENE.CAMPOINT, 1546, 567, 180]'에서 180은 지속 시간을 의미하게 됩니다.
                     <lstrong>마지막으로 [-1]값을 주어 컷씬이 종료됨</lstrong>을 나타냅니다.
                     <br><br><br>
@@ -357,8 +351,10 @@
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
                     &nbsp컷씬의 프로세스 부분부터 구동 방식을 자세하게 살펴보겠습니다. 컷씬의 정보를 담는 <lstrong>cutscene_info</lstrong> 변수는 2차원 배열입니다.
-                    <lstrong>cutscene_scene</lstrong> 변수는 현재 진행되는 컷씬이 몇번째 컷씬인지를 나타냅니다. 초기 값을 0으로 시작해서, 각 컷씬이 끝날 때 마다 1씩 더해줍니다.
-                    <lstrong>cutscene_len</lstrong> 변수는 컷씬의 갯수에 - 1을 한 값입니다.
+                    <br>
+                    <lstrong>cutscene_scene</lstrong> 변수는 현재 진행되는 컷씬이 몇번째 컷씬인지를 나타냅니다. 
+                    초기 값을 0으로 시작해서, 각 컷씬이 끝날 때 마다 1씩 더해줍니다.<br><br>
+                    <lstrong>cutscene_len</lstrong> 변수는 컷씬의 갯수에 - 1을 한 값입니다.<br><br>
                     <lstrong>cutscene_scene</lstrong> 변수의 값이 cutscene_len의 값과 같아질 경우 컷씬 오브젝트를 제거합니다.
                     <br><br><br>
                     컷씬은 이와같은 처리 흐름을 가지고 있습니다.
@@ -434,7 +430,9 @@
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
                     Steel Larva 몬스터의 무브먼트입니다. 지상에서 걷는 타입이며, 애벌레라 Step BY Step 스타일로 조금 조금씩 끊어서 이동합니다.
-                    이때 move_dt_num 변수의 값만큼의 텀으로 끊어서 이동합니다. move_dt_type이 0이므로 60프레임만큼의 텀을 가지고 끊어서 이동하지만,
+                    이때 move_dt_num 변수의 값만큼의 텀으로 끊어서 이동합니다.
+                    <br><br><br>
+                    move_dt_type이 0이므로 60프레임만큼의 텀을 가지고 끊어서 이동하지만,
                     move_dt_type이 1일 경우 랜덤한 텀으로 끊어서 이동합니다. 
                     <br><br><br>
                     move_aggro_time은, 대상을 향해 움직일 때의 반응속도입니다. 즉, 값이 60이면
@@ -471,7 +469,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp몬스터의 공격 스킬의 흐름을 보면 <lstrong>시작, 공격, 끝</lstrong>으로 나누어져 있고 순차적으로 진행됨을 알 수 있습니다.
+                    몬스터의 공격 스킬의 흐름을 보면 <lstrong>시작, 공격, 끝</lstrong>으로 나누어져 있고 순차적으로 진행됨을 알 수 있습니다.
                     <br><br><br>
                     각 스킬은 시작, 공격, 끝으로 흐름이 모두 동일하나, 그 과정에 존재하는 조건들은 구조가 다릅니다. 예를 들어 구르기 스킬은 발동 후 끝나는 조건이 벽이나 적에 닿았을 경우입니다.
                     다른 예로 대쉬 스킬은 발동 후 끝나는 조건이 마찰력에 의해 자동으로 멈췄을 때 입니다. 두 스킬처럼 조건이 완전히 다른 경우들이 많을 것입니다.
@@ -489,7 +487,9 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp이 부분은 0번 스킬 발동의 시작에 해당하는 부분입니다. 시작은 이 스킬이 발동 가능한지 판단하고, 가능할 경우 바로 공격 부분으로 진행되도록 설계되어있습니다.
+                    이 부분은 0번 스킬 발동의 시작에 해당하는 부분입니다. 시작은 이 스킬이 발동 가능한지 판단하고, 
+                    가능할 경우 바로 공격 부분으로 진행되도록 설계되어있습니다.
+                    <br><br><br>
                     <lstrong>_found_target_is</lstrong> 변수는 상대를 발견 가능할 경우에 true 값이 됩니다.
                     이와 동시에 스킬의 쿨타임이 돌았을 경우 공격 시작에 해당하는 기능들을 실행시킨 뒤에, 공격 부분으로 진행되게 됩니다.
                     <br><br>
@@ -515,7 +515,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp카메라는 타깃이 바뀔 때마다 어떻게 <lstrong>자연스럽게 나타낼 수 있는가</lstrong>와 <lstrong>확장성</lstrong>을 염두하여 개발하였습니다.
+                    카메라는 타깃이 바뀔 때마다 어떻게 <lstrong>자연스럽게 나타낼 수 있는가</lstrong>와 <lstrong>확장성</lstrong>을 염두하여 개발하였습니다.
                     평상시에는 플레이어를 따라다니지만, 특정 이벤트나 컷씬 발생시 다른 지점으로 포커스 할 수 있습니다.
                 </p>
             </div>
@@ -531,7 +531,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp카메라 시스템은 포커스 하는 방식이 여러 가지가 있습니다. 해당 방식들을 보기 편하게 열거형 상수로 선언했습니다.
+                    카메라 시스템은 포커스 하는 방식이 여러 가지가 있습니다. 해당 방식들을 보기 편하게 열거형 상수로 선언했습니다.
                     현재 카메라의 기본 모드는 ENTITY 모드로 특정 엔티티를 포커스 하게 됩니다. 기본적으로는 플레이어를 타깃으로 합니다.
                 </p>
             </div>
@@ -547,7 +547,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp위 코드는 카메라 모드가 ENTITY 모드일 때 카메라가 실시간으로 수행하는 기능입니다.
+                    위 코드는 카메라 모드가 ENTITY 모드일 때 카메라가 실시간으로 수행하는 기능입니다.
                     카메라는 매 프레임마다 <lstrong>(cam_focus_x, cam_focus_y)</lstrong> 좌표를 각각 <lstrong>(cam_focus_xspeed, cam_focus_yspeed)</lstrong> 만큼 <lstrong>lerp</lstrong> 함수를 이용해
                     부드럽게 포커싱하도록 설계되어 있습니다. 
                     <br><br><br>

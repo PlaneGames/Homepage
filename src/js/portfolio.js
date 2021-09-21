@@ -553,13 +553,23 @@ var book_img = [
                     $('.po-subbox h3')
                         .css('margin-bottom','32px')
                         .css('margin-top','48px');
-                    $('.po-subbox p')
-                        .css('margin','0px')
-                        .css('margin-bottom','32px')
-                        .css('margin-top','32px')
-                        .css('font-size','12px');
-                    $('strong')
-                        .css('font-size','12px');
+                    if (window.innerWidth <= 550) {
+                        $('.po-subbox p')
+                            .css('margin','0px')
+                            .css('margin-bottom','32px')
+                            .css('margin-top','32px')
+                            .css('font-size','13px');
+                        $('strong')
+                            .css('font-size','13px');
+                    } else {
+                        $('.po-subbox p')
+                            .css('margin','0px')
+                            .css('margin-bottom','32px')
+                            .css('margin-top','32px')
+                            .css('font-size','12px');
+                        $('strong')
+                            .css('font-size','12px');
+                    }
                         
                     $('.po-pr1').css('order','1')
                     $('.po-pr2').css('order','2')
