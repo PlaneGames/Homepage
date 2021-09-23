@@ -31,6 +31,13 @@ header {
     font-size: 24px;
 }
 
+.lo-box h3 {
+    color: rgb(50, 50, 50);
+    margin-bottom: -8px;
+    font-size: 16px;
+    letter-spacing: .05em;
+}
+
 .lo-box p {
     font-size: 14px;
     letter-spacing: .075em;
@@ -63,6 +70,21 @@ header {
     width: 25%;
     max-width: 250px;
     margin-left: 50px;
+}
+
+.lo-halfmainl {
+    width: 50%;
+    max-width: 375px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.lo-halfmainr {
+    width: 50%;
+    max-width: 375px;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .lo-main {
@@ -107,9 +129,10 @@ header {
     color: rgb(48, 48, 48);
     font-size: 12px;
     /*word-break: break-all;*/
-    margin-bottom: 10px;
     transition: .25s;
     margin-left: 10px;
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
 
 .lo-iconlink h1 {
@@ -119,6 +142,7 @@ header {
     font-weight: bold;
     margin-left: 24px;
     word-break: normal;
+    letter-spacing: .05em;
 }
 
 .lo-iconlink a {
@@ -274,6 +298,19 @@ header {
     }
     .lo-side {
         margin-left: 20px;
+    }
+    .lo-pr-warp {
+        flex-wrap: wrap;
+    }
+    .lo-halfmainl {
+        width: 50%;
+        max-width: 500px;
+        margin-top: 30px;
+    }
+    .lo-halfmainr {
+        width: 50%;
+        max-width: 500px;
+        margin-top: 0px;
     }
     .lo-main {
         width: auto;
