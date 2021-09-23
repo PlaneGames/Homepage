@@ -31,6 +31,13 @@ header {
     font-size: 24px;
 }
 
+.lo-box p {
+    font-size: 14px;
+    letter-spacing: .075em;
+    line-height: 1.9em;
+    color:rgb(54, 54, 54);
+}
+
 .lo-subbox {
     height: auto;
     transition: .3s;
