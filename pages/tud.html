@@ -274,10 +274,11 @@
                     두 번째 조건은 해당 인스턴스가 4, 5번 인자인 x, y좌표에 있는지를 묻습니다.
                     <br><br><br>
                     다음으로 컷씬을 실행시킬 것인지, 이벤트씬을 실행시킬 것인지를 묻습니다.
-                    컷씬을 실행시키는 경우, id값이 2번 인자값인 컷씬의 cutscene_is_ing 변수에 true 값을 대입하는 것으로
-                    해당 컷씬을 활성화 시킵니다.
+                    컷씬을 실행시키는 경우, id값이 2번 인자 값인 컷씬의 cutscene_is_ing 변수에 true 값을 대입하는 것으로
+                    해당 컷씬을 활성화시킵니다.
                     <br><br><br>
-                    이러한 방식도 <lstrong>조건과 상황이 많아질 수록 구문의 형태를 외우기가 복잡해진다</lstrong>는 단점이 있으므로, 일종의 사용 메뉴얼이 필요할 수 있겠다는 생각이 듭니다.
+                    이러한 방식도 <lstrong>조건과 상황이 많아질수록 구문의 형태를 외우기가 복잡해진다</lstrong>는 단점이 있으므로, 
+                    일종의 사용 메뉴얼이 필요할 수 있겠다는 생각이 듭니다.
                     사용 메뉴얼만 잘 숙지한다면, 게임을 모딩하는 듯한 편리함을 느낄 수 있을 것입니다.
                     <br><br><br>
                 </p>
@@ -310,7 +311,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    컷씬은 여러가지 상황을 정해진 순서에 따라 </strong>순차적</strong>으로 보여줄 수 있는 능력을 가지고 있습니다.
+                    컷씬은 여러 가지 상황을 정해진 순서에 따라 </strong>순차적</strong>으로 보여줄 수 있는 능력을 가지고 있습니다.
                     뿐만 아니라 일종의 타임라인의 역할도 수행하여, 경우에 따라 컷씬이 진행되는 속도나 텀을 지정할 수 있습니다.
                     <br><br><br>
                     컷씬 시스템은 다양한 연출을 <lstrong>보다 쉽고 간결한 방법으로 통일하여 나타내는 것</lstrong>에 의의를 두어 제작되었습니다.
@@ -328,7 +329,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    조금은 복잡해 보일 수 있지만, 열거형 상수로 직관적으로 기능을 파악하기 쉽고 트리거 시스템 만큼 <lstrong>사용하기 간편</lstrong>합니다.
+                    조금은 복잡해 보일 수 있지만, 열거형 상수로 직관적으로 기능을 파악하기 쉽고 트리거 시스템만큼 <lstrong>사용하기 간편</lstrong>합니다.
                     PAUSE는 말 그대로 중지, CAMPOINT는 카메라를 해당 지점으로 이동, ENTITY_CREATE는 엔티티 인스턴스 생성 등등.. 문장 그대로의 기능을 가지고 있습니다.
                     <br><br><br>
                     컷씬은 순차적으로 정해진 시간을 가지고 진행되기 때문에, 항상 <lstrong>구문의 끝에는 대기 시간(1/60초 단위)을 입력</lstrong>해야 합니다.
@@ -352,8 +353,8 @@
                 <p style="text-align: center;">
                     &nbsp컷씬의 프로세스 부분부터 구동 방식을 자세하게 살펴보겠습니다. 컷씬의 정보를 담는 <lstrong>cutscene_info</lstrong> 변수는 2차원 배열입니다.
                     <br>
-                    <lstrong>cutscene_scene</lstrong> 변수는 현재 진행되는 컷씬이 몇번째 컷씬인지를 나타냅니다. 
-                    초기 값을 0으로 시작해서, 각 컷씬이 끝날 때 마다 1씩 더해줍니다.<br><br>
+                    <lstrong>cutscene_scene</lstrong> 변수는 현재 진행되는 컷씬이 몇 번째 컷씬인지를 나타냅니다. 
+                    초기 값을 0으로 시작해서, 각 컷씬이 끝날 때마다 1씩 더해줍니다.<br><br>
                     <lstrong>cutscene_len</lstrong> 변수는 컷씬의 갯수에 - 1을 한 값입니다.<br><br>
                     <lstrong>cutscene_scene</lstrong> 변수의 값이 cutscene_len의 값과 같아질 경우 컷씬 오브젝트를 제거합니다.
                     <br><br><br>
@@ -372,8 +373,8 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    <lstrong>cutscene_is_ing의 값이 트리거로 인해 true가 되고, 컷씬 정지 상태가 아닐경우</lstrong>, 컷씬이 실행됩니다.
-                    실행되고 있는 컷씬의 첫번째 인자는 실행할 컷씬의 종류를 나타내므로, 제일 먼저 이를 switch case 문으로 판단합니다.
+                    <lstrong>cutscene_is_ing의 값이 트리거로 인해 true가 되고, 컷씬 정지 상태가 아닐 경우</lstrong>, 컷씬이 실행됩니다.
+                    실행되고 있는 컷씬의 첫 번째 인자는 실행할 컷씬의 종류를 나타내므로, 제일 먼저 이를 switch case 문으로 판단합니다.
                     <br><br><br>
                     그 후, 각 처리 방법에 맞게 컷씬이 실행됩니다.
                 </p>
@@ -395,7 +396,7 @@
                     이런 수많은 패턴들을 <lstrong>보다 쉽게 사용할 수 있어야 하며, 성능 저하를 막기 위해 최적화도 되어 있어야 합니다.</lstrong>
                     이를 잘 구현하는 것은 예전부터 지금까지의 숙제입니다. 
                     <br><br><br>
-                    현재까지 TUD에서 개발된 몬스터 시스템에 대해 소개해보도록 하겠습니다.
+                    현재까지 TUD에서 개발된 몬스터 시스템에 대해 소개해 보도록 하겠습니다.
                 </p>
             </div>
         </div>
@@ -411,10 +412,10 @@
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
                     위의 Steel Larva 몬스터는 트레이드 스킬인 구르기를 가지고 있습니다. 일정 사거리 안에 적이 들어오면 구르기를 시전하고
-                    긴 쿨타임동안 다시 사용할 수 없습니다. 이 구르기의 데미지는 아주 강합니다.
+                    긴 쿨 타임 동안 다시 사용할 수 없습니다. 이 구르기의 데미지는 아주 강합니다.
                     <br><br><br>
-                    TUD에서 몬스터들은, 각자의 이동 방법에 맞게 이동하는 기능이 있습니다. 또한 개별적으로 배우고있는 스킬들을 사용할 수 있고
-                    스킬을 사용하면 일정 쿨타임동안 해당 스킬을 사용할 수 없습니다. 이때는 다른 스킬을 사용하거나 일반 공격을 할 수 있습니다.
+                    TUD에서 몬스터들은, 각자의 이동 방법에 맞게 이동하는 기능이 있습니다. 또한 개별적으로 배우고 있는 스킬들을 사용할 수 있고
+                    스킬을 사용하면 일정 쿨 타임 동안 해당 스킬을 사용할 수 없습니다. 이때는 다른 스킬을 사용하거나 일반 공격을 할 수 있습니다.
                 </p>
             </div>
         </div>
@@ -433,7 +434,7 @@
                     이때 move_dt_num 변수의 값만큼의 텀으로 끊어서 이동합니다.
                     <br><br><br>
                     move_dt_type이 0이므로 60프레임만큼의 텀을 가지고 끊어서 이동하지만,
-                    move_dt_type이 1일 경우 랜덤한 텀으로 끊어서 이동합니다. 
+                    move_dt_type이 1일 경우 랜덤 한 텀으로 끊어서 이동합니다. 
                     <br><br><br>
                     move_aggro_time은, 대상을 향해 움직일 때의 반응속도입니다. 즉, 값이 60이면
                     60프레임마다 대상의 위치를 확인하여 해당 위치로 이동하는 로직이 발생됩니다.
@@ -472,7 +473,7 @@
                     몬스터의 공격 스킬의 흐름을 보면 <lstrong>시작, 공격, 끝</lstrong>으로 나누어져 있고 순차적으로 진행됨을 알 수 있습니다.
                     <br><br><br>
                     각 스킬은 시작, 공격, 끝으로 흐름이 모두 동일하나, 그 과정에 존재하는 조건들은 구조가 다릅니다. 예를 들어 구르기 스킬은 발동 후 끝나는 조건이 벽이나 적에 닿았을 경우입니다.
-                    다른 예로 대쉬 스킬은 발동 후 끝나는 조건이 마찰력에 의해 자동으로 멈췄을 때 입니다. 두 스킬처럼 조건이 완전히 다른 경우들이 많을 것입니다.
+                    다른 예로 대쉬 스킬은 발동 후 끝나는 조건이 마찰력에 의해 자동으로 멈췄을 때입니다. 두 스킬처럼 조건이 완전히 다른 경우들이 많을 것입니다.
                 </p>
             </div>
         </div>
@@ -488,7 +489,7 @@
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
                     이 부분은 0번 스킬 발동의 시작에 해당하는 부분입니다. 시작은 이 스킬이 발동 가능한지 판단하고, 
-                    가능할 경우 바로 공격 부분으로 진행되도록 설계되어있습니다.
+                    가능할 경우 바로 공격 부분으로 진행되도록 설계되어 있습니다.
                     <br><br><br>
                     <lstrong>_found_target_is</lstrong> 변수는 상대를 발견 가능할 경우에 true 값이 됩니다.
                     이와 동시에 스킬의 쿨타임이 돌았을 경우 공격 시작에 해당하는 기능들을 실행시킨 뒤에, 공격 부분으로 진행되게 됩니다.
@@ -515,8 +516,8 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    카메라는 타깃이 바뀔 때마다 어떻게 <lstrong>자연스럽게 나타낼 수 있는가</lstrong>와 <lstrong>확장성</lstrong>을 염두하여 개발하였습니다.
-                    평상시에는 플레이어를 따라다니지만, 특정 이벤트나 컷씬 발생시 다른 지점으로 포커스 할 수 있습니다.
+                    카메라는 타깃이 바뀔 때마다 어떻게 <lstrong>자연스럽게 나타낼 수 있는가</lstrong>와 <lstrong>확장성</lstrong>을 염두에 두어 개발하였습니다.
+                    평상시에는 플레이어를 따라다니지만, 특정 이벤트나 컷씬 발생 시 다른 지점으로 포커스 할 수 있습니다.
                 </p>
             </div>
         </div>
@@ -608,7 +609,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp장비 아이템은 정보의 양이 일반 소비아이템 보다 많습니다. 각 장비는 고유의 능력치가 있으며, 이 값은 장비를 획득했을 때
+                    장비 아이템은 정보의 양이 일반 소비 아이템 보다 많습니다. 각 장비는 고유의 능력치가 있으며, 이 값은 장비를 획득했을 때
                     정해진 범주 안에서 랜덤으로 정해집니다. 위의 GIF 파일은 장비 아이템을 획득 후 인벤토리에서 정보를 확인할 수 있는 기능을 넣은 것입니다.
                 </p>
             </div>
@@ -624,7 +625,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp아이템들의 정보는 임시로 클라이언트 내에서 구조체를 통해 관리됩니다. 위의 구조체 형식으로 각 아이템들이 정보들을 가집니다.
+                    아이템들의 정보는 임시로 클라이언트 내에서 구조체를 통해 관리됩니다. 위의 구조체 형식으로 각 아이템들이 정보들을 가집니다.
                 </p>
             </div>
         </div>
@@ -639,7 +640,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp사과의 경우, 위 코드와 같이 정보를 가지고 있습니다. 각 언어별로 아이템의 이름을 적어주고, 아이템의 카테고리 및 사용시 회복 능력에 대한 정보를 입력할 수 있습니다.
+                    사과의 경우, 위 코드와 같이 정보를 가지고 있습니다. 각 언어별로 아이템의 이름을 적어주고, 아이템의 카테고리 및 사용 시 회복 능력에 대한 정보를 입력할 수 있습니다.
                 </p>
             </div>
         </div>
@@ -656,7 +657,7 @@
                 <p style="text-align: center;">
                     &nbsp위 코드는 아이템을 드랍하는 시스템입니다. 몬스터나, 상자 등에서 이와 같은 로직을 사용합니다. 
                     <lstrong>drop_item_info</lstrong>변수에 위와 같이 정보를 입력하면
-                    아이템을 드랍하는 알고리즘이 위 정보대로 아이템을 드랍하는 시스템입니다. 최대 몇개까지 몇퍼센트의 확률로 드랍할지도 지정할 수 있습니다.
+                    아이템을 드랍하는 알고리즘이 위 정보대로 아이템을 드랍하는 시스템입니다. 최대 몇 개까지 몇 퍼센트의 확률로 드랍할지도 지정할 수 있습니다.
                 </p>
             </div>
         </div>
