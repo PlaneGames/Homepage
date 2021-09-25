@@ -410,6 +410,11 @@ var book_img = [
                     history.pushState({page: 2, data: (index+1)}, "", portfolioUrl[index]);
                     openProjectPopup(index);
                     gallerySelect = index;
+                    if(!wcs_add) var wcs_add = {};
+                    wcs_add["wa"] = "5f6425de4b92ec";
+                    if(window.wcs) {
+                        wcs_do();
+                    }
                 }
             });
             
