@@ -195,7 +195,11 @@ var showPage = function() {
             _openProjectPopup(subpageDirect-1);
             gallerySelect = subpageDirect-1;
             subpageDirect = 0;
-            analyticsUpdate();
+            if(!wcs_add) var wcs_add = {};
+            wcs_add["wa"] = "5f6425de4b92ec";
+            if(window.wcs) {
+                wcs_do();
+            }
         }, 2000);
     }
 
@@ -243,14 +247,6 @@ var loadpageChecker = () => {
 
 }
 
-var analyticsUpdate = function() {
-    if(!wcs_add) var wcs_add = {};
-    wcs_add["wa"] = "5f6425de4b92ec";
-    if(window.wcs) {
-        wcs_do();
-    }
-}
-
 (function ($) {
 
     $(document).ready(function() {
@@ -260,7 +256,11 @@ var analyticsUpdate = function() {
                 // Resume -> Portfolio -> Subpage
                 jQuery('html > head > title').text(mainTitle + portfolioTitle);
                 history.pushState({page: 2, data: 0}, "title 2", "/pf");
-                analyticsUpdate();
+                if(!wcs_add) var wcs_add = {};
+                wcs_add["wa"] = "5f6425de4b92ec";
+                if(window.wcs) {
+                    wcs_do();
+                }
 
                 active = portfolioSubPage[index];
                 subpageDirect = index + 1;
