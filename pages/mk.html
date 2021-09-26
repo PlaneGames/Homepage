@@ -108,7 +108,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp각 타일의 정보들은 모두 구조체 형식의 변수에 저장됩니다. 게임이 시작하기 전 타일 정보를 구조체에 랜덤하게 저장한 후,
+                    각 타일의 정보들은 모두 구조체 형식의 변수에 저장됩니다. 게임이 시작하기 전 타일 정보를 구조체에 랜덤하게 저장한 후,
                     이 데이터를 이용해 맵에 격자 구조에 맞게 설치하는 작업 순서로 이루어집니다.
                 </p>
             </div>
@@ -130,7 +130,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp타일의 고유 코드를 편하게 지정하기 위해 열거형 상수를 사용했고, 구조체 변수의 형식을 사용하여 타일의 이미지 정보와 행과 열의 정보를 저장합니다.
+                    타일의 고유 코드를 편하게 지정하기 위해 열거형 상수를 사용했고, 구조체 변수의 형식을 사용하여 타일의 이미지 정보와 행과 열의 정보를 저장합니다.
                 </p>
             </div>
         </div>
@@ -145,7 +145,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp타일 설치 전, 타일 리스트에 정보를 순차적으로 저장합니다.
+                    타일 설치 전, 타일 리스트에 정보를 순차적으로 저장합니다.
                 </p>
             </div>
         </div>
@@ -160,7 +160,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp마지막으로 타일 리스트 정보들을 순차적으로 순회하며 타일을 해당 행렬에 맞게 설치하는 작업을 진행합니다.
+                    마지막으로 타일 리스트 정보들을 순차적으로 순회하며 타일을 해당 행렬에 맞게 설치하는 작업을 진행합니다.
                     <br><br>
                 </p>
             </div>
@@ -177,7 +177,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp모든 유닛은 일반적으로 16방향의 모션을 지원합니다. 90도 방향의 프레임부터 오른쪽으로 270도 방향의 프레임까지 총 9프레임의 이미지를 가집니다.
+                    모든 유닛은 일반적으로 16방향의 모션을 지원합니다. 90도 방향의 프레임부터 오른쪽으로 270도 방향의 프레임까지 총 9프레임의 이미지를 가집니다.
                     나머지 7프레임은 이미지 좌우 반전을 해서 총 16방향의 모션을 표현하도록 설계했습니다. 
                 </p>
             </div>
@@ -199,7 +199,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp<lstrong>_img_dire</lstrong> 임시 변수에서 각도에 따라 1부터 16까지의 숫자가 균등하게 나옵니다. 
+                    <lstrong>_img_dire</lstrong> 임시 변수에서 각도에 따라 1부터 16까지의 숫자가 균등하게 나옵니다. 
                     360에 22.5를 나눈 값이 16이므로, 이를 이용해 유닛의 방향에 따라 1부터 16까지의 상수가 나오도록 설계했습니다.
                     <br><br><br>
                     유닛의 스프라이트 프레임이 90도 방향부터 270도 방향으로 그려져 있으므로, 유닛의 각도변수인 <lstrong>direction</lstrong>에 90을 더했습니다.
@@ -219,7 +219,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp유닛이 공격하는 방식의 종류에는 기본적으로 근접, 원거리가 있습니다. 하지만 여기에 공중 유닛이 추가됨에 따라, 근접 유닛은 공중 유닛을 공격 타깃으로 지정하는 것을 방지하는
+                    유닛이 공격하는 방식의 종류에는 기본적으로 근접, 원거리가 있습니다. 하지만 여기에 공중 유닛이 추가됨에 따라, 근접 유닛은 공중 유닛을 공격 타깃으로 지정하는 것을 방지하는
                     로직이 필요로 해졌습니다.
                 </p>
             </div>
@@ -241,7 +241,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp각 유닛 오브젝드는 공통적으로 부모 오브젝트인 엔티티 오브젝트에게 기능을 상속받고, 이렇게 간단한 변수 선언으로 유닛의 특성을 지정할 수 있습니다.
+                    각 유닛 오브젝드는 공통적으로 부모 오브젝트인 엔티티 오브젝트에게 기능을 상속받고, 이렇게 간단한 변수 선언으로 유닛의 특성을 지정할 수 있습니다.
                     왼쪽 코드는 근접 돌격 유닛, 오른쪽 코드는 원거리 공격 유닛으로 모두 지상 유닛입니다.
                     <br><br><br>
                     <lstrong>move_type</lstrong> 변수가 0일 경우 지상, 1일 경우 공중 유닛임을 뜻합니다.
@@ -261,7 +261,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp위 코드는 지상 유닛 중 근접 공격 <lstrong>HEADBUTT(돌격)</lstrong> 유닛의 공격 타깃 선정 로직입니다. 최적화를 위해 30프레임마다 한번씩 체크하며,
+                    위 코드는 지상 유닛 중 근접 공격 <lstrong>HEADBUTT(돌격)</lstrong> 유닛의 공격 타깃 선정 로직입니다. 최적화를 위해 30프레임마다 한번씩 체크하며,
                     타깃을 지정했을 때 <lstrong>(goto_x, goto_y)</lstrong> 좌표로 이동하게 됩니다. 
                     <br><br><br>
                     핵심은 <lstrong>entity_nearest_zplace(x, y, z, ene_target);</lstrong> 입니다.
@@ -280,7 +280,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp이 알고리즘은 <lstrong>호출한 유닛의 z축보다 낮은 선상에 있는 적 유닛들 중 가장 가까운 유닛의 인스턴스 id값을 반환</lstrong>합니다. 
+                    이 알고리즘은 <lstrong>호출한 유닛의 z축보다 낮은 선상에 있는 적 유닛들 중 가장 가까운 유닛의 인스턴스 id값을 반환</lstrong>합니다. 
                     with문에서 입력된 적 오브젝트의 모든 인스턴스들을 일종의 반복문의 형태로 모두 순회합니다. 
                     <br><br><br>
                     인스턴스들을 순회하면서, 더 낮은 z축을 가진 적들과 좌표 간의 거리를 구하고, 이 거리를 <lstrong>_nearest</lstrong> 변수에 저장하고 해당 인스턴스 id 값을 _id 변수에 저장합니다.
@@ -301,7 +301,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp마지막으로 지상 유닛 중 원거리 공격 <lstrong>SHOOT(발사)</lstrong> 유닛의 공격 타깃 선정 로직입니다. 모두 근접 공격 유닛과 동일한 구조이지만, 딱 한가지 다른 것은 <lstrong>_tg_id</lstrong> 변수에
+                    마지막으로 지상 유닛 중 원거리 공격 <lstrong>SHOOT(발사)</lstrong> 유닛의 공격 타깃 선정 로직입니다. 모두 근접 공격 유닛과 동일한 구조이지만, 딱 한가지 다른 것은 <lstrong>_tg_id</lstrong> 변수에
                     <lstrong>instance_nearest()</lstrong> 함수의 반환 값을 대입한다는 것입니다. 
                     <br><br><br>
                     위의 근접 공격 유닛은 <lstrong>entity_nearest_zplace()</lstrong> 함수를 사용했습니다. 
@@ -322,7 +322,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp비행 유닛인 무당벌레가 비행하는 무브먼트를 설계할 때, 비행 레벨을 만들어 차등화 시키면 어떨까? 싶은 마음이 들었습니다.
+                    비행 유닛인 무당벌레가 비행하는 무브먼트를 설계할 때, 비행 레벨을 만들어 차등화 시키면 어떨까? 싶은 마음이 들었습니다.
                 </p>
             </div>
         </div>
@@ -337,7 +337,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp열거형 상수인 <lstrong>TURNING_8</lstrong>과 <lstrong>ACROBATIC_8</lstrong>은 각각 8자 선회 비행과, 8자 곡예 비행을 뜻합니다.
+                    열거형 상수인 <lstrong>TURNING_8</lstrong>과 <lstrong>ACROBATIC_8</lstrong>은 각각 8자 선회 비행과, 8자 곡예 비행을 뜻합니다.
                 </p>
             </div>
         </div>
@@ -358,7 +358,7 @@
         <div class="po-box po-w100 po-flexmode" style="height: auto;">
             <div class="po-subbox po-pr-w70-w100 po-flexmode po-freetext-lore" style="width: 99%; height: 98%;">
                 <p style="text-align: center;">
-                    &nbsp왼쪽은 <lstrong>8자 선회</lstrong> 비행을 하는 무당벌레이고, 오른쪽은 <lstrong>8자 곡예</lstrong> 비행을 하는 무당벌레 입니다.
+                    왼쪽은 <lstrong>8자 선회</lstrong> 비행을 하는 무당벌레이고, 오른쪽은 <lstrong>8자 곡예</lstrong> 비행을 하는 무당벌레 입니다.
                     이 외에 스텟의 차이는 전혀 없습니다. 
                     <br><br><br>
                     8자 선회 비행은 일정한 속도와 고도로 8자 비행을 하지만, 8자 곡예 비행은 부분 가속과 고도를 지속적으로 변화시키며 비행합니다.
